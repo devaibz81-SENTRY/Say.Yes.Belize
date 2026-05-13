@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .velvet-grain {
+            position: relative;
+        }
+        .velvet-grain::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+        .gold-foil-border {
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, #d4af37 0%, #8b1e3f 50%, #d4af37 100%) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        .glass-card {
+            background: rgba(40, 9, 8, 0.7);
+            backdrop-filter: blur(24px);
+        }
+        .light-sweep-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .light-sweep-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 1s ease;
+        }
+        .light-sweep-container:hover::before {
+            transform: translate(50%, 50%) rotate(45deg);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed-variant": "#871f23",
+                        "outline": "#a38b88",
+                        "tertiary-container": "#4a001a",
+                        "inverse-on-surface": "#4b2623",
+                        "on-background": "#ffdad7",
+                        "on-primary-fixed": "#410001",
+                        "surface-container-low": "#32110f",
+                        "surface-tint": "#ffb4aa",
+                        "primary-container": "#4a0404",
+                        "inverse-primary": "#9d4139",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#210504",
+                        "surface-container-highest": "#512a27",
+                        "on-surface-variant": "#dcc0bd",
+                        "tertiary-fixed": "#ffd9de",
+                        "tertiary-fixed-dim": "#ffb2bf",
+                        "secondary-container": "#871f23",
+                        "on-tertiary-fixed": "#3f0015",
+                        "secondary-fixed-dim": "#ffb3af",
+                        "on-tertiary-container": "#dd5e7c",
+                        "surface-bright": "#562e2b",
+                        "outline-variant": "#554240",
+                        "surface-dim": "#280908",
+                        "secondary-fixed": "#ffdad7",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#ff9995",
+                        "surface-container": "#371513",
+                        "on-tertiary-fixed-variant": "#871b3c",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "surface": "#280908",
+                        "secondary": "#ffb3af",
+                        "surface-variant": "#512a27",
+                        "on-secondary-fixed": "#410005",
+                        "on-tertiary": "#660027",
+                        "primary": "#ffb4aa",
+                        "inverse-surface": "#ffdad7",
+                        "tertiary": "#ffb2bf",
+                        "background": "#280908",
+                        "on-primary": "#5f1410",
+                        "on-surface": "#ffdad7",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#670410",
+                        "on-primary-container": "#d26a5f",
+                        "on-primary-fixed-variant": "#7e2b23",
+                        "surface-container-high": "#441f1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "5rem",
+                        "container-max": "1140px",
+                        "gutter": "24px",
+                        "margin-safe": "32px",
+                        "stack-md": "2.5rem",
+                        "stack-sm": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-xl": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background velvet-grain min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-red-950/60 backdrop-blur-2xl border-b border-amber-500/20 shadow-[0_4px_20px_rgba(139,30,63,0.3)]">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-amber-200" data-icon="flare">flare</span>
+<span class="text-amber-400 font-serif italic text-lg">Evelyn &amp; Julian</span>
+</div>
+<nav class="hidden md:flex space-x-8 font-serif tracking-[0.2em] uppercase text-xs">
+<a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="#">Invitation</a>
+<a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="#">Details</a>
+<a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="#">RSVP</a>
+</nav>
+<span class="material-symbols-outlined text-amber-200" data-icon="celebration">celebration</span>
+</header>
+<main class="pt-24 px-6 max-w-screen-xl mx-auto space-y-stack-lg">
+<!-- Gallery Header -->
+<section class="text-center space-y-stack-sm">
+<h1 class="font-headline-xl text-headline-xl text-primary-fixed tracking-tight">Our Belizean Story</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">Capturing the quiet moments before the sunset vows.</p>
+</section>
+<!-- Intimate Gallery Grid (Asymmetric Bento) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl light-sweep-container glass-card gold-foil-border transition-all duration-700 hover:brightness-125">
+<img class="w-full h-[400px] object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-1000" data-alt="A cinematic, low-light photograph of a couple walking along a pristine Belizean beach at dusk. The sky is a deep tapestry of violet and wine-red, reflecting off the calm Caribbean waters. Soft candlelight glows from a distance, illuminating their silhouettes. The image has a rich, grainy texture reminiscent of fine velvet, maintaining the luxury dark-mode aesthetic with amber highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt46j0-Pl1ALrxgv_FGiGJfYJx5dtgQzkjBPkcgud1mQDmQ_nQuth6YrVNzmjdPU0S7dqQVBkHTLcmuw8oqwyisQHgD7S0zxHGanJxnTxkMqeGaPf54frrafTdG61dWyjw6AE9rYRvOqm6ZbJZGbLwW0_NS4Zhr403ELCrHI2cjsV8xTMibm0HaO50dC6lLG9QhEo4dU_v7qmBp5zZSRD3rh4haDG3lvalwXhfVJyBBrjn437so6oljfI8hmwPrRCB9mtVNeqvxRWs"/>
+<div class="absolute bottom-0 left-0 p-8 space-y-2">
+<span class="font-label-caps text-label-caps text-primary uppercase">Placencia Coast</span>
+<h3 class="font-headline-md text-headline-md text-primary-fixed">The First Sunset</h3>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl light-sweep-container glass-card transition-all duration-700 hover:brightness-125">
+<img class="w-full h-full min-h-[400px] object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-1000" data-alt="A close-up, intimate shot of two hands gently holding antique gold wedding bands against a backdrop of deep mahogany wood. The lighting is warm and directional, as if from a nearby candle, creating long shadows and highlighting the metallic sheen of the gold. The atmosphere is quiet and exclusive, perfectly aligned with the luxury wine and amber color palette of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1wU4GgHKDfCZTXP_rpdvw-gMBfIUT2hhd4mFIeHeyxj50mVkpZDd78FnPDeOKdCzyDS500J48z_YQkFnjHuyhIbz6xsBc0RRKPlJBRpLEXWs1UnoymjC69iiFSwiX1PSNuIzhTxg1c5drXvlCSQxquTEcEEojXXGu6gXcQmqv_6F4gSrh4hNau_w6AgKL0JXvvuueDgZCGvRjXAwHWP79xBifJH2VP6-vNuspc-KJdfNeABiO6eKJJkQPh-WbNSQs8HWaQkYAnSIe"/>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl light-sweep-container glass-card transition-all duration-700 hover:brightness-125">
+<img class="w-full h-[300px] object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-1000" data-alt="An ethereal view of a candlelit dinner setup under a massive tropical canopy at night. Dozens of small flames flicker within glass lanterns, casting a soft gold glow on white linen and dark wood furniture. The surrounding jungle is a mysterious, deep burgundy shadow, creating a sense of privacy and sensory richness. The image is styled with a high-end, filmic grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg9QDl7lLpGNyXcVm7ILwspzj2Bj5ssFn4PBzAitPD-SvgVZq4Mo1s5QsbaeXWiV7TW7JDEvLUtFehZpEaP1VNFdioG0pY-Fcre84OWL5DDd5UBgmWt6BDuWCXGMdrx8sr-1lt9_vh6-YuoOcImggl6IZeiUhHJlkfXY3G3MF17aB-pfM24d5fC-XYkChEjZxltpOPIuZzJR10Oa0eVUsGzioOjG9zH3lceRJk7lC1av1cOF0nwEsySSS7AqcJEek0tDzs0c5KXSBT"/>
+</div>
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl light-sweep-container glass-card gold-foil-border transition-all duration-700 hover:brightness-125">
+<img class="w-full h-[300px] object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-1000" data-alt="A macro shot of tropical Belizean flowers, specifically orchids, in deep shades of crimson and violet. Droplets of evening dew cling to the petals, reflecting a warm, golden light source. The background is a velvety dark blur, emphasizing the tactile luxury of the floral texture. The lighting is moody and intentional, evoking a private, late-night garden atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMi0kLg6GYt97cdQIVlo87Uc90Xmnw6PF2rFUMRUGEcmEhpZekwcUja5tf2hUKpU4U5E9syZnajQFAkY3iAY8X9UZ6Dl_iB0XUwpwMYoV4kCbAyisACgEX5vnvE3u4rwzB0SRYzB48DfFhGvMgM8zkjMlsmvZUxUhyXeWcHWlowr78Rr6sgGmeneMN6f6H6N8NCetbdcm6u9Hayg_2Fao0owOssvTNFuurpJQmTknIgbGQ2Onl_phltnC6KYdvm0utLPCFShsk-_pF"/>
+</div>
+</section>
+<!-- Carousel / Intimate Focus -->
+<section class="flex flex-col items-center space-y-8">
+<div class="relative w-full max-w-4xl glass-card rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="flex items-center justify-between absolute inset-0 z-10 px-4 pointer-events-none">
+<button class="pointer-events-auto p-4 rounded-full bg-red-950/40 text-amber-400 hover:bg-red-900/60 transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="pointer-events-auto p-4 rounded-full bg-red-950/40 text-amber-400 hover:bg-red-900/60 transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<img class="w-full h-[500px] object-cover opacity-80" data-alt="A breathtaking landscape of the Belize Barrier Reef seen from above during the golden hour. The water transitions from a deep, mysterious navy to a luminous wine-red as the sun touches the horizon. The composition is wide and cinematic, conveying a sense of vastness and exclusive beauty. The aesthetic is sophisticated and serene, with a soft velvet-like texture overlay." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrnj23aOV2pXgCy9OMFnrhwcz1RmNpV-gv5jCzV8VkLJxwbFtmE5p8dw9wSzqpZcv0dEB0mezBJbeuOUy9jw9dP4D5WCJJDFf3DrBeawHQEVTNSTe8UJJ_ny9V0fGsyWOx1pl1TwVw0pqOo7vK8U4TzJcKs3mfJtnPY1NrFxTg-PU1UlsJqr67ONAlzsIxIyU6cFDQe5s8sWq1-kdI_IwxqdmpZjIGtRquFN-7CSq2dzVn5KbK2SXVlxuW5z2ojA6r-qe8a9v_95KD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-12 left-12 right-12 text-center">
+<p class="font-headline-md text-headline-md text-primary-fixed mb-2 italic">"In the silence of the reef, we found our forever."</p>
+</div>
+</div>
+<div class="flex space-x-3">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span class="w-2 h-2 rounded-full bg-amber-400/20"></span>
+<span class="w-2 h-2 rounded-full bg-amber-400/20"></span>
+</div>
+</section>
+<!-- RSVP Modal Section -->
+<section class="flex justify-center py-stack-lg">
+<div class="w-full max-w-xl glass-card gold-foil-border p-12 rounded-xl shadow-[0_0_80px_rgba(139,30,63,0.3)] space-y-10 relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-background px-6 py-2 border border-amber-500/30 rounded-full">
+<span class="font-label-caps text-label-caps text-amber-400 tracking-[0.3em]">REPLY REQUESTED</span>
+</div>
+<div class="text-center space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-primary-fixed">Will You Join Us?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Please favor us with your response by October 12th.</p>
+</div>
+<form class="space-y-8">
+<div class="space-y-6">
+<div class="relative group">
+<input class="w-full bg-transparent border-b border-outline-variant py-4 px-0 focus:outline-none focus:border-amber-400 text-on-background font-body-md transition-all peer" id="name" placeholder=" " type="text"/>
+<label class="absolute left-0 top-4 text-on-surface-variant/50 font-body-md transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-amber-400 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs" for="name">Guest Name</label>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label-caps text-label-caps text-primary uppercase text-[10px]">Attendance</span>
+<div class="flex gap-4">
+<button class="flex-1 py-3 px-6 glass-card border border-amber-500/20 text-primary-fixed font-body-md hover:bg-tertiary-container transition-all rounded-lg" type="button">
+                                    Joyfully Accept
+                                </button>
+<button class="flex-1 py-3 px-6 glass-card border border-outline-variant/30 text-on-surface-variant font-body-md hover:bg-surface-container transition-all rounded-lg" type="button">
+                                    Regretfully Decline
+                                </button>
+</div>
+</div>
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-primary uppercase text-[10px]">Dietary Notes</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 rounded-full border border-amber-500/20 text-[11px] font-label-caps text-amber-100 hover:bg-tertiary-container cursor-pointer transition-all">VEGAN</span>
+<span class="px-4 py-1.5 rounded-full border border-amber-500/20 text-[11px] font-label-caps text-amber-100 hover:bg-tertiary-container cursor-pointer transition-all">GLUTEN FREE</span>
+<span class="px-4 py-1.5 rounded-full border border-amber-500/20 text-[11px] font-label-caps text-amber-100 hover:bg-tertiary-container cursor-pointer transition-all">ALLERGIES</span>
+</div>
+</div>
+</div>
+<button class="w-full py-5 bg-[#D4AF37] text-tertiary-container font-headline-md font-bold tracking-widest uppercase rounded-lg shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:brightness-110 transition-all active:scale-[0.98]" type="submit">
+                        Confirm RSVP
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe pt-2 bg-red-950/80 backdrop-blur-3xl border-t border-amber-500/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">Invitation</span>
+</a>
+<a class="flex flex-col items-center justify-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">Details</span>
+</a>
+<a class="flex flex-col items-center justify-center text-amber-400 font-bold border-t-2 border-amber-400 pt-2 scale-105" href="#">
+<span class="material-symbols-outlined" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span>
+</a>
+</nav>
+<!-- Ambient Decorative Elements -->
+<div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+<div class="absolute top-[20%] left-[10%] w-64 h-64 bg-primary-container rounded-full blur-[120px] opacity-20"></div>
+<div class="absolute bottom-[30%] right-[5%] w-96 h-96 bg-tertiary-container rounded-full blur-[150px] opacity-20"></div>
+<!-- Floating Petals (Symbolic representation) -->
+<div class="absolute top-1/4 right-1/4 text-amber-500/10 animate-pulse">
+<span class="material-symbols-outlined text-4xl">eco</span>
+</div>
+<div class="absolute bottom-1/4 left-1/3 text-amber-500/10 animate-pulse delay-700">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+</div>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

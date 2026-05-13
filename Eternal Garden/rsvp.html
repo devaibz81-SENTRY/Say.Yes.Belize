@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eternal Garden - RSVP &amp; Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ede7df",
+                        "inverse-primary": "#dac0c2",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#26181a",
+                        "surface-container-low": "#f9f3ea",
+                        "tertiary-fixed": "#d6e8ce",
+                        "on-tertiary-fixed-variant": "#3b4b38",
+                        "inverse-surface": "#32302a",
+                        "primary-container": "#fde2e4",
+                        "surface-bright": "#fff9f0",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#544244",
+                        "surface-container-highest": "#e7e2d9",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1d1b16",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1d1b16",
+                        "surface-variant": "#e7e2d9",
+                        "on-tertiary-fixed": "#111f0f",
+                        "primary": "#6d595b",
+                        "on-secondary-fixed": "#241a00",
+                        "on-tertiary-container": "#5c6d58",
+                        "surface-dim": "#dfd9d1",
+                        "secondary-container": "#fed65b",
+                        "secondary": "#735c00",
+                        "outline": "#807475",
+                        "surface-container": "#f3ede4",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#f7dcde",
+                        "secondary-fixed-dim": "#e9c349",
+                        "tertiary-fixed-dim": "#baccb3",
+                        "tertiary": "#53634e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fff9f0",
+                        "inverse-on-surface": "#f6f0e7",
+                        "on-secondary-container": "#745c00",
+                        "on-surface-variant": "#4e4445",
+                        "surface-tint": "#6d595b",
+                        "secondary-fixed": "#ffe088",
+                        "on-primary-container": "#776365",
+                        "background": "#fff9f0",
+                        "tertiary-container": "#dbeed4",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#d2c3c4",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#dac0c2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1200px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Noto Serif"],
+                        "display-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "300"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .ease-out-cubic { transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 249, 240, 0.65);
+            border: 1px solid rgba(233, 195, 73, 0.3);
+        }
+        .petal-glow {
+            box-shadow: 0 40px 100px -20px rgba(253, 226, 224, 0.6);
+        }
+        .organic-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FFF9F0]/70 backdrop-blur-md border-b border-amber-200/30 shadow-[0_4px_20px_rgba(253,226,228,0.2)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700" data-icon="local_florist">local_florist</span>
+<span class="font-serif italic text-2xl text-amber-700">Eternal Garden</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-serif tracking-widest uppercase text-stone-400 hover:opacity-80 transition-opacity duration-500" href="#">Our Story</a>
+<a class="font-serif tracking-widest uppercase text-amber-800 transition-opacity duration-500" href="#">RSVP</a>
+<a class="font-serif tracking-widest uppercase text-stone-400 hover:opacity-80 transition-opacity duration-500" href="#">Registry</a>
+</nav>
+<button class="material-symbols-outlined text-stone-400" data-icon="menu_book">menu_book</button>
+</header>
+<main class="relative pt-32 pb-40">
+<!-- Floating Floral Elements -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-40">
+<div class="absolute top-[10%] -left-20 w-96 h-96 blur-3xl bg-primary-container/30 rounded-full animate-pulse"></div>
+<div class="absolute bottom-[20%] -right-20 w-[30rem] h-[30rem] blur-3xl bg-tertiary-container/20 rounded-full"></div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<!-- RSVP Hero Section -->
+<section class="max-w-4xl mx-auto text-center mb-section-gap">
+<span class="font-label-lg text-primary uppercase mb-4 block tracking-[0.2em]">The Honor of Your Presence</span>
+<h1 class="font-display-lg text-on-surface mb-8">Confirm Your Bloom</h1>
+<div class="vows-countdown"></div>
+<!-- Floating RSVP Card -->
+<div class="glass-card rounded-[2.5rem] p-8 md:p-16 petal-glow relative overflow-hidden group">
+<!-- Ornamental SVG -->
+<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+<svg class="text-tertiary" fill="none" height="120" viewbox="0 0 100 100" width="120">
+<path d="M50 10C50 10 55 30 75 30C95 30 90 50 70 50C50 50 50 90 50 90C50 90 50 50 30 50C10 50 5 30 25 30C45 30 50 10 50 10Z" stroke="currentColor" stroke-width="0.5"></path>
+</svg>
+</div>
+<form class="space-y-12 text-left">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="relative group/input">
+<label class="font-label-md text-outline absolute -top-6 left-0 transition-all group-focus-within/input:text-primary">Guest Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-3 px-0 font-body-lg text-on-surface placeholder-stone-300 transition-colors" placeholder="e.g. Julianne Sterling" type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary group-focus-within/input:w-full transition-all duration-500"></div>
+</div>
+<div class="relative group/input">
+<label class="font-label-md text-outline absolute -top-6 left-0 transition-all group-focus-within/input:text-primary">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-3 px-0 font-body-lg text-on-surface placeholder-stone-300 transition-colors" placeholder="hello@sterling.com" type="email"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary group-focus-within/input:w-full transition-all duration-500"></div>
+</div>
+</div>
+<div class="space-y-6">
+<p class="font-label-lg text-on-surface-variant mb-4">Will you be attending our secret garden union?</p>
+<div class="flex flex-wrap gap-6">
+<label class="flex items-center gap-4 cursor-pointer group/radio">
+<div class="w-6 h-6 rounded-full border border-outline flex items-center justify-center group-hover/radio:border-primary transition-colors">
+<input class="appearance-none w-3 h-3 rounded-full checked:bg-primary border-none" name="attendance" type="radio"/>
+</div>
+<span class="font-body-md">Delighted to Attend</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group/radio">
+<div class="w-6 h-6 rounded-full border border-outline flex items-center justify-center group-hover/radio:border-primary transition-colors">
+<input class="appearance-none w-3 h-3 rounded-full checked:bg-primary border-none" name="attendance" type="radio"/>
+</div>
+<span class="font-body-md">Regretfully Decline</span>
+</label>
+</div>
+</div>
+<div class="relative group/input">
+<label class="font-label-md text-outline absolute -top-6 left-0">Dietary Preferences &amp; Well Wishes</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-3 px-0 font-body-lg text-on-surface placeholder-stone-300 resize-none transition-colors" placeholder="Tell us if you need vegan petals..." rows="2"></textarea>
+</div>
+<div class="text-center pt-8">
+<button class="bg-gradient-to-r from-secondary-fixed-dim to-secondary-container text-on-secondary px-12 py-5 rounded-full font-label-lg tracking-widest shadow-lg shadow-secondary-fixed/30 hover:scale-105 active:scale-95 transition-all duration-500 ease-out-cubic">
+                                SEND RESPONSE
+                            </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="mb-section-gap">
+<div class="text-center mb-24">
+<span class="font-label-lg text-tertiary uppercase mb-4 block tracking-[0.2em]">Captured Moments</span>
+<h2 class="font-display-md text-on-surface">The Garden Archives</h2>
+</div>
+<div class="organic-grid max-w-6xl mx-auto">
+<!-- Photo 1 -->
+<div class="col-span-12 md:col-span-7 relative group">
+<div class="glass-card p-4 rounded-3xl group-hover:translate-y-[-8px] transition-transform duration-700">
+<img alt="Garden Walk" class="w-full aspect-[4/3] object-cover rounded-2xl" data-alt="A cinematic medium shot of a romantic couple walking through a sun-drenched botanical garden during the golden hour. The soft ivory and blush light creates a hazy, ethereal atmosphere with glowing dust particles in the air. The scene is framed by delicate sage green vines and blooming white peonies, maintaining a high-end minimalist luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjHGS0ccuGIeRclBRd6vPXPLBa4kif92aX8FT7JHrpc6zS6xK1PNDwrlWXS0HXBGhy-QG0MTiIgczYLMLfsQkTCBkLi-odI19jeOnbsyH6msZKXuuoPHKYQtf7QoEPjOwRQNnLR_hsC9hzq3TTxHMGMMe83A0y92IFYpsqHcyqdisLNmIdRNoo8dWKuZ-_tNgcc1fSBrTzlk4wByJNJIXEFNGMlmRThfEMIJsIw2n9_SjR4wuE3Ct0RgGneMlXx9PEKQ202XgiqxXD"/>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 opacity-30 pointer-events-none group-hover:rotate-12 transition-transform duration-1000">
+<svg class="text-amber-700" fill="none" viewbox="0 0 100 100">
+<path d="M50 0C50 0 60 40 100 50C60 60 50 100 50 100C50 100 40 60 0 50C40 40 50 0 50 0Z" stroke="currentColor" stroke-width="1"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Photo 2 -->
+<div class="col-span-12 md:col-span-5 relative mt-12 md:mt-32">
+<div class="glass-card p-4 rounded-3xl group hover:translate-y-[-8px] transition-transform duration-700">
+<img alt="Stationery Detail" class="w-full aspect-[3/4] object-cover rounded-2xl" data-alt="A close-up vertical shot of elegant wedding invitations laid on a silk ivory cloth covered in scattered pale pink petals. The lighting is soft and diffused, creating a serene and romantic light-mode atmosphere. Champagne gold metallic details on the paper catch a soft glow, harmonizing with a sage green and blush color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFRNuIvWzIj2ifiQ6b-fhqCDX9vEJak-j_XVPN-_3xIYXrXtE88xC9D3A1RvxF3QVSMY6cjKeKZIAvSX7063IcUxGY-sqch5YOhZr7U9jBZcfGSFsXRbcEuim6LDpwTFG_yVFLF9ZNG2tzjh2qQAQJcFYoNHUATLLNKnkkvB6tGy8Q53aWGvp0XvNQx5MJIn0U-tUJXL8t_Vx3zxEB9DyEzunqvwLyltaaUy7k5MmTktpgtR_kwK0amchTO1zjh7X0Ybdo4CtHYRmt"/>
+</div>
+</div>
+<!-- Photo 3 -->
+<div class="col-span-12 md:col-span-4 relative md:-mt-24">
+<div class="glass-card p-4 rounded-3xl group hover:translate-y-[-8px] transition-transform duration-700">
+<img alt="Table Setting" class="w-full aspect-square object-cover rounded-2xl" data-alt="A lush overhead shot of a formal garden table setting with crystal glassware and fine china reflecting the morning sun. The palette consists of creamy whites, soft champagnes, and muted sage greens. Tiny white jasmine flowers are interwoven into the centerpieces, contributing to a high-end, ethereal romance theme with deep bokeh blur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLa-0WUgcBaRAuxSqN9Cp4C9Kiw-pZ3VhrR_ZL9b_vXWXFD5pKVw9S-XsSeKZmTNZZAnKZ6rVYEHKkurPYQa6azglv7NZ1E5o9NIuD_HuFH-X4BWXVLlQDv_gOtWDMBTDFxnDrjh41mobBZRtkHLcfCiVNhkAJIZgUaZfZY1by36PKu516iGkCp82R2KlqHtHZV25sIGE82gXKoL_8UUzsAL0o1a9wnkqgxzzmTqCv6P-0h0w2M-NJaIPMPd9g0Fkd8thT6KtLBZfK"/>
+</div>
+</div>
+<!-- Photo 4 -->
+<div class="col-span-12 md:col-span-8 relative md:mt-8">
+<div class="glass-card p-4 rounded-3xl group hover:translate-y-[-8px] transition-transform duration-700">
+<img alt="Estate Garden" class="w-full aspect-[16/9] object-cover rounded-2xl" data-alt="A panoramic landscape of a misty, manicured estate garden at dawn featuring a classical marble gazebo and stone pathways. The colors are dominated by soft ivory morning fog and deep sage foliage with hints of pale blush roses. The mood is tranquil, timeless, and sophisticated, embodying a minimalist luxury garden aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5IgcqzvD0CIyBf1P3sd_kFiLURR0gyKVPWb60wE_XzgvzcYN5JEkvLe7IVItMg2LiyDvMgDDlS7AC4FkQBnEgwsHALsLGhyZ5-VrsGYkxxD7HJ36lcTCb9rLVkGHfuWLc0vNiGuUKsZR9XCTiG4_f7Sk0-3VZRW5kEq8Yk02lXvVn-aZyKNwqqg43kd52TqpYEUD0IBJMH6deyM71sz8Jpt4N2ODcq2_yEz-p2iFhn7T8KBFBT2AEHnoqzqMBGt6EZSIG1nB5EknN"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#FFF9F0]/80 backdrop-blur-xl border-t border-amber-100/50 shadow-[0_-10px_40px_rgba(253,226,228,0.3)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-stone-500 opacity-60 hover:scale-105 transition-transform duration-500" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="favorite">favorite</span>
+<span class="font-serif text-[10px] tracking-tight">Invite</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 opacity-60 hover:scale-105 transition-transform duration-500" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[10px] tracking-tight">Our Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-amber-800 bg-[#FDE2E4]/40 rounded-full px-4 py-1 animate-pulse-slow" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-serif text-[10px] tracking-tight">RSVP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 opacity-60 hover:scale-105 transition-transform duration-500" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="card_giftcard">card_giftcard</span>
+<span class="font-serif text-[10px] tracking-tight">Registry</span>
+</a>
+</nav>
+<!-- Contextual FAB - Restricted to Home/Dashboard contexts usually, but here provided as a blossom interaction -->
+<div class="fixed bottom-24 right-8 z-40 hidden md:block">
+<button class="w-16 h-16 rounded-full bg-primary-container text-amber-900 shadow-xl flex items-center justify-center hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+</button>
+</div>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Eternal Garden Template Initialization -->
+<script src="eternal-garden-init.js"></script>
+<script src="../countdown-widget.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

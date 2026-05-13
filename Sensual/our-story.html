@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Our Story — Evelyn & Julian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode:"class",
+    theme:{extend:{
+      colors:{
+        "primary-fixed":"#ffdad5","on-secondary-fixed-variant":"#871f23","outline":"#a38b88",
+        "tertiary-container":"#4a001a","inverse-on-surface":"#4b2623","on-background":"#ffdad7",
+        "on-primary-fixed":"#410001","surface-container-low":"#32110f","surface-tint":"#ffb4aa",
+        "primary-container":"#4a0404","inverse-primary":"#9d4139","error":"#ffb4ab",
+        "surface-container-lowest":"#210504","surface-container-highest":"#512a27",
+        "on-surface-variant":"#dcc0bd","tertiary-fixed":"#ffd9de","tertiary-fixed-dim":"#ffb2bf",
+        "secondary-container":"#871f23","on-tertiary-fixed":"#3f0015","secondary-fixed-dim":"#ffb3af",
+        "on-tertiary-container":"#dd5e7c","surface-bright":"#562e2b","outline-variant":"#554240",
+        "surface-dim":"#280908","secondary-fixed":"#ffdad7","on-error-container":"#ffdad6",
+        "on-secondary-container":"#ff9995","surface-container":"#371513","on-tertiary-fixed-variant":"#871b3c",
+        "primary-fixed-dim":"#ffb4aa","surface":"#280908","secondary":"#ffb3af",
+        "surface-variant":"#512a27","on-secondary-fixed":"#410005","on-tertiary":"#660027",
+        "primary":"#ffb4aa","inverse-surface":"#ffdad7","tertiary":"#ffb2bf",
+        "background":"#280908","on-primary":"#5f1410","on-surface":"#ffdad7",
+        "on-error":"#690005","error-container":"#93000a","on-secondary":"#670410",
+        "on-primary-container":"#d26a5f","on-primary-fixed-variant":"#7e2b23","surface-container-high":"#441f1d"
+      },
+      borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+      spacing:{"unit":"8px","stack-lg":"5rem","container-max":"1140px","gutter":"24px","margin-safe":"32px","stack-md":"2.5rem","stack-sm":"1rem"},
+      fontFamily:{"body-lg":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"headline-lg":["Noto Serif"],"headline-xl":["Noto Serif"],"headline-md":["Noto Serif"],"body-md":["Plus Jakarta Sans"]},
+      fontSize:{
+        "body-lg":["18px",{"lineHeight":"1.6","letterSpacing":"0.01em","fontWeight":"400"}],
+        "label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.15em","fontWeight":"600"}],
+        "headline-lg":["32px",{"lineHeight":"1.2","letterSpacing":"0.01em","fontWeight":"600"}],
+        "headline-xl":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],
+        "headline-md":["24px",{"lineHeight":"1.3","letterSpacing":"0.02em","fontWeight":"500"}],
+        "body-md":["16px",{"lineHeight":"1.6","letterSpacing":"0.02em","fontWeight":"400"}]
+      }
+    }}
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { min-height: 100dvh; }
+
+  /* Velvet grain overlay */
+  .velvet-grain { position: relative; }
+  .velvet-grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+  }
+
+  /* Gold classes */
+  .gold-foil-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFFACD 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass-card {
+    background: rgba(55, 21, 19, 0.65);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 4px 40px rgba(139, 30, 63, 0.18);
+  }
+  .gold-foil-border {
+    border: 1px solid transparent;
+    background-image: linear-gradient(rgba(55,21,19,0.65), rgba(55,21,19,0.65)),
+                      linear-gradient(135deg, #D4AF37 0%, #8B1E3F 50%, #D4AF37 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  .liquid-gold-btn {
+    background: linear-gradient(135deg, #D4AF37, #F9E79F, #D4AF37);
+    transition: all 0.4s ease;
+  }
+  .liquid-gold-btn:hover { filter: brightness(1.12); box-shadow: 0 0 24px rgba(212,175,55,0.45); }
+
+  /* Ambient orbs */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(120px);
+    opacity: 0.18;
+    z-index: 0;
+  }
+
+  /* Scroll-reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.22s; }
+  .reveal-delay-3 { transition-delay: 0.36s; }
+
+  /* Timeline */
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #D4AF37 20%, #8B1E3F 80%, transparent);
+    transform: translateX(-50%);
+  }
+  .timeline-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #D4AF37;
+    box-shadow: 0 0 20px rgba(212,175,55,0.6);
+    flex-shrink: 0;
+  }
+
+  /* Parallax hero */
+  .hero-bg {
+    transform: scale(1.08);
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+
+  /* Hover lift */
+  .hover-lift { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(139,30,63,0.3); }
+</style>
+  <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen velvet-grain overflow-x-hidden">
+
+<!-- Ambient orbs -->
+<div class="orb w-[600px] h-[600px] bg-red-900" style="top:10%;left:-15%"></div>
+<div class="orb w-[500px] h-[500px] bg-amber-900" style="bottom:20%;right:-10%"></div>
+
+<!-- TOP NAV -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-red-950/60 backdrop-blur-2xl border-b border-amber-500/20 shadow-[0_4px_20px_rgba(139,30,63,0.3)]">
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-amber-200" style="font-variation-settings:'FILL' 1">flare</span>
+    <span class="text-amber-400 font-serif italic text-lg">Evelyn &amp; Julian</span>
+  </div>
+  <nav class="hidden md:flex gap-8 items-center font-serif tracking-[0.2em] uppercase text-xs">
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="invitation.html">Invitation</a>
+    <a class="text-amber-400 border-b border-amber-400 pb-px" href="#">Our Story</a>
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="event-details.html">Details</a>
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="gallery.html">Gallery</a>
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="rsvp.html">RSVP</a>
+  </nav>
+  <span class="material-symbols-outlined text-amber-200">favorite</span>
+</header>
+
+<main class="relative z-10">
+
+  <!-- HERO -->
+  <section class="h-screen w-full relative flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img id="hero-img" class="hero-bg w-full h-full object-cover brightness-[0.35]"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzBW3z1aRNEtcWdA5ez7mOrODBL2knUTr194KBPAtggF4pHMvD2NG4GfqjCRAJtiRt4GkhfHXY7G931UeCizi3lmGkJq91yLxn0zszrrBdXFntE6LedtUx6VDrLqqmR0AWbZy0LzVZw477gYxQYnfmvwDef2_do7YHX--2BOcVg65NtHRsnxhrrd3ev8THlQg6K14z_N384JUzlBQZ5bAjUgdb3mJk7ElpCq4LvGZX3jMeYOpwc0Slj8AxQQZPQU8DohbI2pTgSpvs"
+        alt="Evelyn and Julian"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-red-950/50 via-transparent to-background/90"></div>
+    </div>
+    <div class="z-10 text-center px-6 max-w-3xl">
+      <p class="font-label-caps text-label-caps text-amber-400/80 mb-6 tracking-[0.35em] uppercase reveal">A Love Story</p>
+      <h1 class="font-headline-xl gold-foil-text mb-6 leading-tight reveal reveal-delay-1" style="font-size:clamp(3rem,8vw,5rem)">Our Story</h1>
+      <div class="w-32 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-8 reveal reveal-delay-2"></div>
+      <p class="font-headline-md text-headline-md italic text-primary/80 tracking-wide reveal reveal-delay-3">Evelyn &amp; Julian · Belize, 2024</p>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
+      <span class="material-symbols-outlined text-amber-400/50 text-3xl">keyboard_double_arrow_down</span>
+    </div>
+  </section>
+
+  <!-- INTRO QUOTE -->
+  <section class="py-24 px-6 flex justify-center">
+    <div class="max-w-2xl text-center reveal">
+      <span class="material-symbols-outlined text-amber-400/60 text-5xl mb-6 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+      <p class="font-headline-lg text-headline-lg text-on-surface/90 italic leading-relaxed">
+        "It began with a shared glance across a rain-swept street in London — but our hearts truly found their home under the starlit skies of the Caribbean."
+      </p>
+      <div class="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="font-label-caps text-label-caps text-amber-400 uppercase tracking-[0.3em] block mb-3">The chapters</span>
+      <h2 class="font-headline-lg text-headline-lg text-on-surface">How We Found Each Other</h2>
+    </div>
+
+    <div class="relative">
+      <div class="timeline-line hidden md:block"></div>
+
+      <!-- Chapter 1 -->
+      <div class="md:grid md:grid-cols-2 md:gap-16 mb-20 items-center reveal">
+        <div class="md:text-right mb-8 md:mb-0">
+          <span class="font-label-caps text-[10px] text-amber-400/70 uppercase tracking-widest block mb-2">London · 2019</span>
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-3">The First Glance</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            A mutual friend's gallery opening. Rain on the windows. Julian reached past Evelyn for the last glass of prosecco — and handed it to her instead. That was all it took.
+          </p>
+        </div>
+        <div class="md:pl-8 flex md:items-start items-center gap-4">
+          <div class="hidden md:flex items-center gap-4 -ml-[29px]">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="glass-card gold-foil-border rounded-xl overflow-hidden hover-lift w-full">
+            <img class="w-full h-52 object-cover opacity-70"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ6ESpCm3ymOPxT6O0FXo7v10QJuYaUpi3tNeezXXOW7TV8kzyZgshIbxRgdym9H25keuJNXordC_48Hk3AC0wHpUOS7r0_g9NSLQjkLRKCu34YHn3UMJcBqUiy2Ndj5tImCuOSVMg8xpt9rKVYRybS9GDjxYVwX-joMKO8DP-o1q1OaJHJrEwGTxHiRT43gyTqcx0LLGHAqA21orJmwv1-Ue6e-l40NQP6xriwZwnsQMTMtgbFM0crLfjC15nHPPsmIJyzAKPEoqz"
+              alt="Intertwined hands"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter 2 -->
+      <div class="md:grid md:grid-cols-2 md:gap-16 mb-20 items-center reveal">
+        <div class="md:order-2 mb-8 md:mb-0">
+          <span class="font-label-caps text-[10px] text-amber-400/70 uppercase tracking-widest block mb-2">Placencia · 2021</span>
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-3">The First Belize Sunrise</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            A spontaneous trip south. They watched the sun rise over the reef from a borrowed kayak, barefoot and laughing — and knew, quietly, that this place would always be theirs.
+          </p>
+        </div>
+        <div class="md:order-1 md:pr-8 flex justify-end gap-4">
+          <div class="glass-card gold-foil-border rounded-xl overflow-hidden hover-lift w-full">
+            <img class="w-full h-52 object-cover opacity-70"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuakAjJrLsRvNeGoK_ntlGBH66Y7Ivo8bicKMw_CCfRaf1jbxCRPwz6uirRQFNBq0x1zzEdmk2OqYfIZGg1xN3pdtj5N336Vptb22r4XQGJBGyLhrL219VzPL9QamqPdIlc-mREYjP8TnpiJrgUaDAiYWk_UzEVOP3m0v2gYCO6TqScAOeod_Fd1B6M3MkQmP3-9mR3U542w0O4ISxDcYnHot536sjvLTqcpybjMEUEz0qJi9MKtGQRHa4O-MVvDwshvGJQIgxj2cz"
+              alt="Tropical coastline at dusk"/>
+          </div>
+          <div class="hidden md:flex items-start gap-4 -mr-[29px] mt-6">
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter 3 -->
+      <div class="md:grid md:grid-cols-2 md:gap-16 mb-20 items-center reveal">
+        <div class="md:text-right mb-8 md:mb-0">
+          <span class="font-label-caps text-[10px] text-amber-400/70 uppercase tracking-widest block mb-2">Ambergris Caye · 2023</span>
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-3">The Question</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Under a canopy of lanterns at their favourite pier, Julian knelt as the last light of day melted into the sea. Evelyn said yes before he finished the sentence.
+          </p>
+        </div>
+        <div class="md:pl-8 flex md:items-start items-center gap-4">
+          <div class="hidden md:flex items-center gap-4 -ml-[29px]">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="glass-card gold-foil-border rounded-xl overflow-hidden hover-lift w-full">
+            <img class="w-full h-52 object-cover opacity-70"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXu5BoihZqWcFQYk1ILeQbEXN-PgtUvpMZJAw-5A0EykXb4LAx74tXhJG6sq2K9F60BPlb7q13pLDzXgnnsuW3ff6vdlFcz7KQdrMHHwLwqhcZ5CYj706LTQ6OeLiMjXAE9tDNBmyiDS_fpqHwlMye_xB-ZUB8GeKfK5hMRMzqyGCIdyz_h1IzI6A8sOut2PvyBKuTevBWr8oNANLbLqWMZAaGZkccNojzhYySB0eUfQxD39CDC9qZ9zfGodGrhGFV08JmLp8D9Vi_"
+              alt="Candlelit villa"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter 4 — THE WEDDING -->
+      <div class="text-center reveal">
+        <div class="hidden md:flex justify-center mb-6">
+          <div class="timeline-dot scale-150"></div>
+        </div>
+        <div class="glass-card gold-foil-border rounded-2xl p-12 max-w-xl mx-auto">
+          <span class="material-symbols-outlined text-amber-400 text-4xl mb-4 block" style="font-variation-settings:'FILL' 1">favorite</span>
+          <span class="font-label-caps text-[10px] text-amber-400/70 uppercase tracking-widest block mb-3">October 24th · 2024</span>
+          <h3 class="font-headline-lg text-headline-lg gold-foil-text mb-4">The Next Chapter</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            And now, surrounded by the people they love most, under the same Caribbean sky — they say forever.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ROW -->
+  <section class="py-20 px-6 flex flex-col sm:flex-row gap-4 justify-center items-center reveal">
+    <a href="gallery.html" class="liquid-gold-btn text-red-950 font-semibold px-10 py-4 rounded-full flex items-center gap-3 no-underline">
+      <span class="material-symbols-outlined text-[20px]">photo_library</span>
+      View Gallery
+    </a>
+    <a href="rsvp.html" class="border border-amber-500/50 text-amber-400 font-semibold px-10 py-4 rounded-full flex items-center gap-3 no-underline hover:bg-amber-400/10 transition-all">
+      <span class="material-symbols-outlined text-[20px]">mail</span>
+      Reserve Your Seat
+    </a>
+  </section>
+
+</main>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe pt-2 bg-red-950/80 backdrop-blur-3xl border-t border-amber-500/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] rounded-t-lg">
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="invitation.html">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Invite</span>
+  </a>
+  <a class="flex flex-col items-center text-amber-400 font-bold border-t-2 border-amber-400 pt-2 scale-105" href="#">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">favorite</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Story</span>
+  </a>
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="event-details.html">
+    <span class="material-symbols-outlined">event_note</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Details</span>
+  </a>
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="gallery.html">
+    <span class="material-symbols-outlined">photo_library</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Gallery</span>
+  </a>
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="rsvp.html">
+    <span class="material-symbols-outlined">mail</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span>
+  </a>
+</nav>
+<div class="h-20 md:hidden"></div>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Subtle parallax on hero bg
+  const heroImg = document.getElementById('hero-img');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    heroImg.style.transform = `scale(1.08) translateY(${y * 0.25}px)`;
+  }, {passive: true});
+</script>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+
+<!-- Sensual Template Initialization -->
+<script src="sensual-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body>
+</html>
+

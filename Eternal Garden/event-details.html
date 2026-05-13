@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#ede7df",
+                    "inverse-primary": "#dac0c2",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#26181a",
+                    "surface-container-low": "#f9f3ea",
+                    "tertiary-fixed": "#d6e8ce",
+                    "on-tertiary-fixed-variant": "#3b4b38",
+                    "inverse-surface": "#32302a",
+                    "primary-container": "#fde2e4",
+                    "surface-bright": "#fff9f0",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#544244",
+                    "surface-container-highest": "#e7e2d9",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1d1b16",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1d1b16",
+                    "surface-variant": "#e7e2d9",
+                    "on-tertiary-fixed": "#111f0f",
+                    "primary": "#6d595b",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary-container": "#5c6d58",
+                    "surface-dim": "#dfd9d1",
+                    "secondary-container": "#fed65b",
+                    "secondary": "#735c00",
+                    "outline": "#807475",
+                    "surface-container": "#f3ede4",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#f7dcde",
+                    "secondary-fixed-dim": "#e9c349",
+                    "tertiary-fixed-dim": "#baccb3",
+                    "tertiary": "#53634e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fff9f0",
+                    "inverse-on-surface": "#f6f0e7",
+                    "on-secondary-container": "#745c00",
+                    "on-surface-variant": "#4e4445",
+                    "surface-tint": "#6d595b",
+                    "secondary-fixed": "#ffe088",
+                    "on-primary-container": "#776365",
+                    "background": "#fff9f0",
+                    "tertiary-container": "#dbeed4",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#d2c3c4",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#dac0c2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Noto Serif"],
+                    "display-md": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "label-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "300"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .ease-out-cubic { transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+        .glass-petal {
+            background: rgba(255, 249, 240, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(210, 195, 196, 0.3);
+        }
+        .bg-mesh {
+            background: radial-gradient(circle at 10% 20%, rgba(253, 226, 228, 0.4) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(214, 232, 206, 0.3) 0%, transparent 40%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FFF9F0]/70 backdrop-blur-md border-b border-amber-200/30 shadow-[0_4px_20px_rgba(253,226,228,0.2)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700" data-icon="local_florist">local_florist</span>
+<h1 class="font-serif italic text-2xl text-amber-700">Eternal Garden</h1>
+</div>
+<div class="hidden md:flex gap-8 font-serif tracking-widest uppercase text-stone-400">
+<a class="text-amber-800 transition-opacity duration-500 hover:opacity-80" href="#">Our Story</a>
+<a class="hover:opacity-80 transition-opacity duration-500" href="#">Events</a>
+<a class="hover:opacity-80 transition-opacity duration-500" href="#">Registry</a>
+</div>
+<button class="material-symbols-outlined text-amber-700 hover:opacity-80 transition-opacity duration-500" data-icon="menu_book">menu_book</button>
+</header>
+<main class="min-h-screen pt-24 pb-32 bg-mesh relative">
+<!-- Floating Floral Decoration -->
+<div class="absolute top-20 right-0 w-64 h-64 opacity-20 pointer-events-none">
+<img class="w-full h-full object-contain" data-alt="Intricate SVG line-art of a climbing jasmine vine with soft white petals and sage green leaves. The style is minimalist and elegant, mirroring the luxury garden wedding aesthetic with high-key lighting and ethereal translucent textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDdf1Mo0IM3BhPnR0EyR-uHutDDCdMuCn9Kor6cRHR7Ze8TwdDODyIFsYfOKdmdqn2FnKbCp2V4DF3h3CEEeR-v8gv5DLSs2p-RnePV5i6J9lxmUrmDDva1vGzO0kcB_-zdyeBAT4UUyi_nbCfiX892EWXI5Adlmt2JfVyJJ21bm_F0iEoDhgoFW3H3YN7zlhjEl4BjOwfz-4BF-gOblKsuB6rN8vtz2a_8cRbk5_Xovotoql1Ufoeh87uj3pc4jrDU-taLKc9UzsE"/>
+</div>
+<div class="container mx-auto px-6 max-w-4xl">
+<!-- Calendar Module -->
+<section class="flex flex-col items-center mb-section-gap text-center">
+<div class="relative mb-8 group">
+<div class="w-32 h-40 bg-surface-container-lowest rounded-xl shadow-2xl flex flex-col items-center overflow-hidden border border-primary-container group-hover:scale-105 transition-transform duration-500">
+<div class="bg-primary w-full py-2 text-on-primary font-label-lg uppercase tracking-widest text-center">June</div>
+<div class="flex-1 flex items-center justify-center font-display-lg text-primary">14</div>
+<div class="pb-2 font-serif italic text-amber-700">2025</div>
+</div>
+<!-- Golden Corners -->
+<div class="absolute -top-4 -left-4 w-12 h-12 opacity-40">
+<span class="material-symbols-outlined text-secondary scale-150" data-icon="park">park</span>
+</div>
+</div>
+<h2 class="font-display-md text-primary mb-4">A Celebration of Love</h2>
+<p class="font-body-lg text-on-surface-variant max-w-xl">Join us as we write the first chapter of our forever under the canopy of the Eternal Garden.</p>
+</section>
+<!-- Detailed Events Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Ceremony Card -->
+<article class="glass-petal rounded-[2rem] p-8 relative overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="church">church</span>
+</div>
+<div class="relative z-10">
+<span class="font-label-md text-amber-700 tracking-widest uppercase mb-2 block">Part One</span>
+<h3 class="font-headline-lg text-primary mb-6">The Ceremony</h3>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<span class="text-on-surface-variant">4:30 PM — Afternoon Sun</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="text-on-surface-variant">The Weeping Willow Grove</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-8 leading-relaxed">Exchange of vows beneath the ancient willow trees, followed by a shower of fresh rose petals.</p>
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-label-lg uppercase tracking-widest rounded-full hover:bg-inverse-primary transition-colors duration-500 flex justify-center items-center gap-2 group-hover:shadow-[0_0_20px_rgba(253,226,228,0.6)]">
+                            Directions
+                            <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</button>
+</div>
+</article>
+<!-- Reception Card -->
+<article class="glass-petal rounded-[2rem] p-8 relative overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="restaurant">restaurant</span>
+</div>
+<div class="relative z-10">
+<span class="font-label-md text-amber-700 tracking-widest uppercase mb-2 block">Part Two</span>
+<h3 class="font-headline-lg text-primary mb-6">The Reception</h3>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<span class="text-on-surface-variant">6:30 PM — Twilight</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="text-on-surface-variant">The Glass Orangery</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-8 leading-relaxed">A formal dinner featuring local botanical flavors, candlelit toasts, and our first dance.</p>
+<button class="w-full py-4 border border-primary-container text-primary font-label-lg uppercase tracking-widest rounded-full hover:bg-primary-container/30 transition-all duration-500">View Menu</button>
+</div>
+</article>
+<!-- After Party Full-width Card -->
+<article class="md:col-span-2 glass-petal rounded-[2rem] p-10 relative overflow-hidden group hover:shadow-xl transition-all duration-500 flex flex-col md:flex-row gap-8 items-center">
+<div class="md:w-1/2">
+<div class="absolute bottom-0 right-0 w-64 h-64 opacity-10 pointer-events-none rotate-180">
+<img class="w-full h-full object-contain" data-alt="Lush green vine illustrations with swirling golden accents, arranged in a corner framing composition. The illustration has a hand-drawn, artisanal feel with soft transparency, fitting the ethereal and romantic wedding theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeEt8vezVUIk83V8UR2YW5RRvzaTW9dOaRep4PSNwbO5oSrWuoMJlgyiXxJE9p5UIcuefJu1K66NEvsgpAoKptil6Fasj0ery39iPGDctKmrQyisH7A3VMnxo8y8DROGVpN5WbjcNtt5E8F7dGyA68Lh4FMdOtC4yEPRJd_t-6fCzjxWXigagB7TF3W7aOSVAsMWsZLPNQeE7MjAs09pBnURSl83HIXnyF7X3uM8zoG9YrX5p6CFM8dE4kcW5VvsbSc4qZg-UO3Wp7"/>
+</div>
+<span class="font-label-md text-amber-700 tracking-widest uppercase mb-2 block">The Finale</span>
+<h3 class="font-display-md text-primary mb-4">Midnight Revelry</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">Dancing under the stars with signature botanical cocktails and late-night sweet treats.</p>
+<div class="flex gap-6 mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="nightlight">nightlight</span>
+<span class="text-label-md uppercase tracking-tighter">10 PM Onwards</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-label-md uppercase tracking-tighter">Cocktail Attire</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full h-64 rounded-2xl overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2000ms]" data-alt="An ethereal indoor reception space with high glass ceilings reflecting the night sky. Thousands of warm fairy lights are draped from the rafters like weeping willow branches. Tables are adorned with ivory linens and lush sage greenery, creating a magical and romantic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4kXzzHaSJxE0MBAAn5wxoga6DusT8vsZlSLyHWlGDYn-watuAlefPJK1HM8vTRhllyl-yf1wJRr3LYg2ynT_r43vDvHGRDnQ-Fb_GFgMz_EcCzjHwtP8BfxFo_kfsvndPNOHKu1g_xSlZZMrUBKArI9mf-R_Kl5Sbe3_2PnMxnvKZ_MJdT0h06z7s9iwEq3q7U77NSWZpHQuwAwkNx6JSI1ll17rSaJ0WC2hflL7w2P4X1hQ58F7t1uUMHBqxoMSoZrEM60XYSbZz"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+</article>
+</div>
+<!-- Hand-drawn Divider -->
+<div class="flex justify-center items-center py-section-gap opacity-30">
+<div class="h-px w-24 bg-primary"></div>
+<span class="material-symbols-outlined px-4 text-primary" data-icon="eco">eco</span>
+<div class="h-px w-24 bg-primary"></div>
+</div>
+<!-- RSVP Call to action -->
+<section class="text-center pb-24">
+<h2 class="font-display-md text-primary mb-8">Will You Bloom With Us?</h2>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="px-12 py-5 bg-secondary text-on-secondary rounded-full font-label-lg uppercase tracking-widest shadow-lg hover:shadow-secondary/40 hover:-translate-y-1 transition-all duration-300">Kindly Respond</button>
+<button class="px-12 py-5 glass-petal text-primary border border-secondary/30 rounded-full font-label-lg uppercase tracking-widest hover:bg-surface transition-all duration-300">Travel Info</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#FFF9F0]/80 backdrop-blur-xl border-t border-amber-100/50 shadow-[0_-10px_40px_rgba(253,226,228,0.3)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-stone-500 opacity-60 hover:scale-105 transition-transform duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-serif text-[10px] tracking-tight">Invite</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 opacity-60 hover:scale-105 transition-transform duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[10px] tracking-tight">Our Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-amber-800 bg-[#FDE2E4]/40 rounded-full px-4 py-1 animate-pulse-slow" href="#">
+<span class="material-symbols-outlined" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-serif text-[10px] tracking-tight">RSVP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 opacity-60 hover:scale-105 transition-transform duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
+<span class="font-serif text-[10px] tracking-tight">Registry</span>
+</a>
+</nav>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Eternal Garden Template Initialization -->
+<script src="eternal-garden-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

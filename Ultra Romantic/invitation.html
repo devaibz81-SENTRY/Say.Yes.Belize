@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "primary": "#665c5e",
+                    "inverse-on-surface": "#f4f0ec",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline": "#7f7576",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f7f3ef",
+                    "on-surface-variant": "#4d4546",
+                    "primary-fixed-dim": "#d1c3c5",
+                    "background": "#fdf9f5",
+                    "on-primary-fixed": "#211a1b",
+                    "on-primary-container": "#716668",
+                    "secondary": "#735c00",
+                    "tertiary": "#635e53",
+                    "inverse-surface": "#31302e",
+                    "inverse-primary": "#d1c3c5",
+                    "surface-dim": "#ddd9d6",
+                    "on-tertiary-fixed": "#1e1b13",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container-high": "#ebe7e4",
+                    "secondary-container": "#fed65b",
+                    "primary-fixed": "#eedfe1",
+                    "surface-tint": "#665c5e",
+                    "tertiary-fixed": "#e9e2d3",
+                    "surface": "#fdf9f5",
+                    "outline-variant": "#d0c3c5",
+                    "primary-container": "#f5e6e8",
+                    "on-tertiary-container": "#6d685d",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e5e2de",
+                    "on-surface": "#1c1c19",
+                    "tertiary-fixed-dim": "#cdc6b8",
+                    "on-background": "#1c1c19",
+                    "tertiary-container": "#f1e9da",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fdf9f5",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#ffe088",
+                    "on-tertiary-fixed-variant": "#4b463c",
+                    "on-primary-fixed-variant": "#4e4446",
+                    "surface-container-highest": "#e5e2de",
+                    "on-secondary-container": "#745c00",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#574500",
+                    "surface-container": "#f1ede9",
+                    "secondary-fixed-dim": "#e9c349"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "2rem",
+                    "unit": "8px",
+                    "section-gap": "4rem",
+                    "gutter": "1.5rem",
+                    "element-gap": "1rem"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Noto Serif"],
+                    "script-accent": ["Noto Serif"],
+                    "headline-xl": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "label-sm": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "script-accent": ["28px", {"lineHeight": "1", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .satin-gradient {
+            background: linear-gradient(135deg, #F5E6E8 0%, #FDF9F5 50%, #EEDFE1 100%);
+        }
+        .gold-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            background-size: 200% 100%;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+.vows-countdown .vows-cd-num { color: #D4AF37; }
+.vows-countdown .vows-cd-label { color: #D4AF37; opacity: 0.6; }
+.vows-countdown .vows-cd-digits { color: #D4AF37; }
+.vows-countdown .vows-cd-celebrate { color: #D4AF37; }
+</style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-primary">
+<!-- TopAppBar Component -->
+<header class="bg-[#F5E6E8]/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-white/40 shadow-[0_8px_32px_0_rgba(242,210,217,0.3)] z-[100]">
+<div class="flex justify-between items-center w-full px-6 h-16 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#D4AF37]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h1 class="text-xl font-serif italic text-rose-800 dark:text-rose-200 tracking-wide">Evelyn &amp; Julian</h1>
+<div class="flex items-center gap-6 hidden md:flex">
+<nav class="flex gap-8">
+<a class="text-rose-900 dark:text-rose-100 font-semibold font-serif text-label-sm uppercase hover:opacity-80 transition-opacity" href="#">Our Story</a>
+<a class="text-rose-400 dark:text-rose-300 font-serif text-label-sm uppercase hover:opacity-80 transition-opacity" href="#">Ceremony</a>
+<a class="text-rose-400 dark:text-rose-300 font-serif text-label-sm uppercase hover:opacity-80 transition-opacity" href="#">Registry</a>
+<a class="text-rose-400 dark:text-rose-300 font-serif text-label-sm uppercase hover:opacity-80 transition-opacity" href="rsvp.html">RSVP</a>
+</nav>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#D4AF37]" data-icon="favorite">favorite</span>
+</div>
+</div>
+</header>
+<main class="relative min-h-screen overflow-hidden">
+<!-- Background Silk Texture & Floral Elements -->
+<div class="absolute inset-0 satin-gradient -z-10 opacity-60"></div>
+<div class="absolute -top-24 -left-24 w-96 h-96 opacity-10 pointer-events-none rotate-12">
+<img class="w-full h-full object-contain" data-alt="Exquisite vintage botanical illustration of soft cream peonies and delicate rosebuds. The illustration is rendered in a fine-line aesthetic with muted watercolor washes of ivory and dusty rose, perfectly blending into a luxurious, high-end wedding invitation background. The mood is timeless, romantic, and ethereal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmTwlaqmggASss2zNOP1DcItn8s0yeUVmkpB0o_NHkapXc6fKfqBj5p3SysNCYW1Yw56xfAtrR0ekCzTXRdQhVHCxeNsnWuzmwvdDK5RUMLe38foGXSnKcdYavYrSVx30dlzrKeTq5tRWrQEcPqnp-4CLzSdUUDu3rr3olUS9ju4u_4wRqPGrzeeOR9ARrMUYVMqC318taFRw1_J6lVaBV-3WmhuBbDafe1rPwpsR6DSdfGzDy59s8TaYO70pcZ0U3iBLrCGlIePbS"/>
+</div>
+<div class="absolute -bottom-24 -right-24 w-[500px] h-[500px] opacity-15 pointer-events-none -rotate-12">
+<img class="w-full h-full object-contain" data-alt="Soft-focus ethereal floral arrangement featuring white ranunculus and eucalyptus leaves. The style is light-filled and dreamy, with a high-key color palette of whites, pale greens, and subtle gold flecks. The composition creates a sense of natural elegance and luxury, mimicking the delicate touch of a silk scarf." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_2vgCc8cd-Ax80kIjzvRPlm5nmVeyIIQg6bZVQW9lP_OgP4viKx6qClg5mG8ZIMqetQc1PfJkgFEi7RrFWgXB3l-XIrakXTSEFKBj2AQXKzl2etop3japMrCqJ6wzrHXV-VU2ciTJk8zNupTsbj5D2Kxgp1yT7qMjC7KhMoNV07McXnvLxHjzjH_cfZfajDRttlEvU72euxG4TDHwIrRZJJaYN6cHfyIvg7aBJ8n3wFhhId_7hajaJfAwmCIF7EQmEp7jvU7afwAM"/>
+</div>
+<!-- Hero Section -->
+<section class="relative max-w-[1200px] mx-auto px-container-padding pt-12 pb-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Narrative Block -->
+<div class="lg:col-span-5 z-10 space-y-element-gap">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full glass-panel border border-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[14px] mr-2 text-secondary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-secondary uppercase tracking-[0.2em]">Save the Date</span>
+</div>
+<div class="space-y-4">
+<h2 class="font-script-accent text-script-accent italic text-primary leading-tight">Join us for the wedding of</h2>
+<div class="space-y-0">
+<h3 class="font-headline-xl text-[64px] lg:text-[80px] text-rose-900 leading-none tracking-tighter">Evelyn Rose</h3>
+<div class="flex items-center gap-4 py-2">
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+<span class="font-script-accent italic text-primary text-headline-md">&amp;</span>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<h3 class="font-headline-xl text-[64px] lg:text-[80px] text-rose-900 leading-none tracking-tighter">Julian Vance</h3>
+</div>
+</div>
+<p class="font-body-lg text-on-surface-variant max-w-md">
+                        In the heart of the Amalfi Coast, amidst the scent of blooming lemons and the whispering sea, we invite you to celebrate our union.
+                    </p>
+<!-- Floating Calendar Date Module -->
+<div class="pt-8">
+<div class="inline-block glass-panel p-6 rounded-2xl shadow-[0_20px_50px_rgba(212,175,55,0.15)] relative overflow-hidden group">
+<div class="absolute inset-0 gold-shimmer opacity-30"></div>
+<div class="flex items-center gap-6 relative z-10">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-primary uppercase">June</span>
+<span class="font-headline-xl text-rose-900">24</span>
+<span class="font-label-sm text-primary uppercase">2025</span>
+</div>
+<div class="w-[1px] h-16 bg-outline-variant/50"></div>
+<div>
+<div class="font-headline-md text-primary">Ravello, Italy</div>
+<div class="font-body-md text-on-surface-variant italic">Villa Cimbrone • 4:00 PM</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vows-countdown" style="margin: 24px 0;"></div>
+</div>
+<!-- Right Visual Block: Hero Image with Shimmer & Floating Elements -->
+<div class="lg:col-span-7 relative">
+<div class="relative w-full aspect-[4/5] lg:aspect-square rounded-[40px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end cinematic portrait of a beautiful couple in elegant wedding attire, embracing softly in a sun-drenched Italian garden. The lighting is golden-hour warm, with glowing light leaks and ethereal floating dust particles caught in the rays. The overall style is romantic, dreamlike, and luxurious, with soft blurred greens and whites in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJQ9K2f4E2VX4wagoNYbFjQ6XXxLRTqE3j8nmwoEb08SY-bn9YSbamLhUWTP1OTboTcfrFCsxPO51npKb-WaEl7RobeiQp_JrDJvlSejlC-mj4D-UYuQ83CEsSISc4GPtS1DoKTSrbL5g9evlJVcHjHmjij1K-14GEeJAk4PVutfmVhxjLUC0PN6aKJakpn83zVFDl2H-ILSN1RZqTl6aBH7scHh6E3fH19WGoeyWyw1RIIYGO7ogJYID5r1aJuO7niDJDXuHTH9b"/>
+<div class="absolute inset-0 bg-gradient-to-t from-rose-900/40 via-transparent to-transparent"></div>
+<!-- Floating Glass Action Card -->
+<div class="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-2xl flex justify-between items-center transform translate-y-2 opacity-100 transition-all duration-500">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-primary-container">
+<span class="material-symbols-outlined text-primary p-1.5" data-icon="group">group</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-white glass-panel flex items-center justify-center text-[10px] font-bold text-primary italic">+120</div>
+</div>
+<a href="rsvp.html" class="bg-gradient-to-r from-[#F5E6E8] to-[#EEDFE1] text-rose-900 font-label-sm uppercase px-8 py-3 rounded-full border border-[#D4AF37]/30 shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-2">
+                                RSVP Now
+                                <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Floating Sparkle Particles (Simulated) -->
+<div class="absolute -top-10 -right-10 w-24 h-24 bg-tertiary-container/30 blur-3xl rounded-full floating"></div>
+<div class="absolute top-1/2 -left-12 w-16 h-16 bg-primary-container/40 blur-2xl rounded-full floating" style="animation-delay: 1s;"></div>
+<div class="absolute -bottom-8 right-1/4 w-20 h-20 bg-secondary-container/20 blur-2xl rounded-full floating" style="animation-delay: 2s;"></div>
+</div>
+</div>
+</section>
+<!-- Details Section: Bento Grid -->
+<section class="max-w-[1200px] mx-auto px-container-padding py-section-gap">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-rose-900 mb-4 italic">The Celebration</h2>
+<div class="w-24 h-[1px] bg-[#D4AF37] mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Bento Card 1: Our Story -->
+<div class="md:col-span-2 glass-panel rounded-[32px] p-10 flex flex-col justify-between relative overflow-hidden group shadow-[0_10px_30px_rgba(212,175,55,0.05)]">
+<div class="relative z-10">
+<span class="font-label-sm text-secondary uppercase tracking-widest block mb-4">A decade of love</span>
+<h3 class="font-headline-md text-rose-900 mb-4 italic">Our Journey Together</h3>
+<p class="font-body-md text-on-surface-variant max-w-lg mb-8">
+                            From a chance meeting in a rainy London bookstore to sunset walks along the Amalfi Coast, every moment has led us to this day. We can't wait to share our story with you.
+                        </p>
+<a class="inline-flex items-center text-rose-900 font-label-sm uppercase hover:gap-3 transition-all" href="#">
+                            Read the full story <span class="material-symbols-outlined ml-2" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<div class="absolute bottom-[-10%] right-[-5%] w-64 h-64 opacity-20 pointer-events-none group-hover:scale-110 transition-transform duration-1000">
+<img class="w-full h-full object-contain" data-alt="Close-up artistic shot of a delicate fountain pen resting on an aged ivory wedding vow parchment. The lighting is intimate and warm, with a soft blur on the surroundings. The aesthetic is tactile and sentimental, capturing the feeling of high-quality handcrafted stationery and cherished memories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLJNnRkA0O2xAjwSLx_KCXn9g6870oW6jkmwecocy6U1CrcU-5tQCtXvh3j7AfCmFQvXHdMVi7mbydY0FRDeMiwikry1Emjf4L09hqoOKoHWUEqLuMYDhQo17rp-f7qRIXNLfFv366K8bkYjCTc8YXxrwl0ml5I5R7EinvJvRlVHzJUESDJnCGhd9RvGz_yD6DVEHAdJ7QrLGawPiUEWkRYeETDbCrsU-MuCK5l2dALGNxvxiSXk4LiV0JRZ_FT3fI8gs7ZriR7OTB"/>
+</div>
+</div>
+<!-- Bento Card 2: Registry -->
+<div class="glass-panel rounded-[32px] p-8 flex flex-col items-center text-center justify-center shadow-[0_10px_30px_rgba(212,175,55,0.05)] bg-gradient-to-br from-white/40 to-secondary-container/10">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-rose-800 text-3xl" data-icon="card_giftcard">card_giftcard</span>
+</div>
+<h3 class="font-headline-md text-rose-900 mb-2 italic">Registry</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Your presence is our greatest gift, but if you wish to honor us with a token...</p>
+<button class="w-full py-3 rounded-xl border border-rose-200 text-rose-900 font-label-sm uppercase hover:bg-white transition-colors">View Registry</button>
+</div>
+<!-- Bento Card 3: Ceremony Details -->
+<div class="glass-panel rounded-[32px] p-8 shadow-[0_10px_30px_rgba(212,175,55,0.05)] bg-gradient-to-tr from-white/40 to-primary-container/10">
+<span class="material-symbols-outlined text-rose-800 mb-4" data-icon="church">church</span>
+<h3 class="font-headline-md text-rose-900 mb-4 italic">The Ceremony</h3>
+<p class="font-body-md text-on-surface-variant mb-4">
+                        Villa Cimbrone Garden Terrace<br/>
+                        Via S. Chiara, 26, Ravello SA, Italy
+                    </p>
+<div class="flex items-center gap-2 text-rose-800 font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span>Starts at 4:30 PM</span>
+</div>
+</div>
+<!-- Bento Card 4: Reception -->
+<div class="glass-panel rounded-[32px] p-8 shadow-[0_10px_30px_rgba(212,175,55,0.05)] bg-gradient-to-bl from-white/40 to-tertiary-container/10">
+<span class="material-symbols-outlined text-rose-800 mb-4" data-icon="restaurant">restaurant</span>
+<h3 class="font-headline-md text-rose-900 mb-4 italic">The Reception</h3>
+<p class="font-body-md text-on-surface-variant mb-4">
+                        The Infinity Terrace<br/>
+                        Cocktails, Dinner &amp; Dancing until late
+                    </p>
+<div class="flex items-center gap-2 text-rose-800 font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="nights_stay">nights_stay</span>
+<span>Carriages at 1:00 AM</span>
+</div>
+</div>
+<!-- Bento Card 5: Destination Map -->
+<div class="glass-panel rounded-[32px] overflow-hidden shadow-[0_10px_30px_rgba(212,175,55,0.05)] relative group">
+<div class="absolute inset-0 bg-rose-900/10 group-hover:bg-rose-900/0 transition-colors duration-500 z-10"></div>
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="An elegant, minimalist stylized map of the Amalfi Coast, specifically Ravello, Italy. The map features sophisticated gold-line illustrations of key landmarks like Villa Cimbrone and the Amalfi cathedral. The background is a soft ivory parchment texture with delicate typography in a classic serif font. It exudes a sense of luxury travel and exclusive wedding destination vibes." data-location="Ravello, Italy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKgyyV4qQ6LR77Xd7PV8SIlga8vNZMwfXhWb4f98_r1eTtv8a21xopiP6FjxOhFMvgbPndeLrrVRsPXedUzo8pquD4Cvc0sFzSQS6adC9_g2YTiv_wwSm6zERA1Loz2VrIg1l9nXOW5Sr7_fym-COj2G7OFBx4Gu6-NH1GLHcKdQOQZSgETiUZslpIVqCkYhW7k24mVJTb5sv_2fsxXX0RgLq4G33emVgnRcuUiRVNq4UwJ155Y2os7BskCi6HOkNyJkn1hy0DDXpz"/>
+<div class="absolute bottom-6 left-6 z-20">
+<div class="glass-panel px-4 py-2 rounded-full border border-white/50 backdrop-blur-md">
+<span class="font-label-sm text-rose-900">Explore Ravello</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Component for Mobile -->
+<nav class="md:hidden bg-white/60 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-3xl border-t border-white/50 shadow-[0_-10px_40px_rgba(212,175,55,0.12)]">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6">
+<div class="flex flex-col items-center justify-center text-rose-900 dark:text-rose-100 scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-serif text-[10px] uppercase tracking-widest text-rose-800">Our Story</span>
+</div>
+<div class="flex flex-col items-center justify-center text-rose-300 dark:text-rose-400 opacity-60">
+<span class="material-symbols-outlined" data-icon="church">church</span>
+<span class="font-serif text-[10px] uppercase tracking-widest text-rose-800">Ceremony</span>
+</div>
+<div class="flex flex-col items-center justify-center text-rose-300 dark:text-rose-400 opacity-60">
+<span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
+<span class="font-serif text-[10px] uppercase tracking-widest text-rose-800">Registry</span>
+</div>
+<div class="flex flex-col items-center justify-center text-rose-300 dark:text-rose-400 opacity-60">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[10px] uppercase tracking-widest text-rose-800">RSVP</span>
+</div>
+</div>
+</nav>
+<!-- Floating Action Button: Suppressed on Hero as per rules if needed, but relevant for wedding RSVP flow -->
+<div class="fixed bottom-8 right-8 z-[60] hidden md:block">
+<button class="bg-rose-900 text-white w-16 h-16 rounded-full shadow-[0_15px_35px_rgba(147,0,10,0.3)] hover:scale-110 transition-transform flex items-center justify-center group">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</button>
+</div>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Ultra Romantic Template Initialization -->
+<script src="ultra-romantic-init.js"></script>
+<script src="../countdown-widget.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

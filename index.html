@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Said Yes Belize - Wedding Template Atelier</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ink:#1a1a1a;
+  --paper:#fdfcf8;
+  --paper-2:#f7f4ec;
+  --line:rgba(0,0,0,.06);
+  --line-strong:rgba(0,0,0,.12);
+  --gold:#b88e44;
+  --muted:#8c8c8c;
+  --soft:#ffffff;
+  --accent-glow:rgba(184,142,68,0.08);
+}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 15% 0%,var(--accent-glow),transparent 45%),
+    radial-gradient(circle at 85% 15%,rgba(0,0,0,0.02),transparent 25%),
+    linear-gradient(180deg,#fdfcf8,#f7f4ec);
+  color:var(--ink);
+  font-family:"Plus Jakarta Sans",system-ui,sans-serif;
+  min-height:100vh;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.38;
+  background-image:linear-gradient(rgba(23,19,15,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,19,15,.025) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+a{color:inherit}
+button,a{font:inherit}
+.shell{width:min(1480px,calc(100% - 48px));margin:0 auto}
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(247,241,232,.84);
+  backdrop-filter:blur(20px) saturate(140%);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.brand-mark{
+  width:34px;height:34px;border:1px solid var(--line-strong);border-radius:50%;
+  display:grid;place-items:center;color:var(--gold);
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;
+  background:rgba(255,250,243,.58);
+}
+.brand-text{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.nav-meta{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.nav-dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.hero{padding:76px 0 54px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:54px;align-items:end}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
+h1{
+  font-family:"Cormorant Garamond", serif;
+  font-weight:300;
+  font-size:clamp(4.4rem,11vw,10rem);
+  line-height:.82;
+  letter-spacing:-.03em;
+  margin:0;
+  color: var(--ink);
+}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-copy{max-width:720px;margin:28px 0 0;color:var(--muted);font-size:17px;line-height:1.7}
+.summary{
+  border:1px solid var(--line);
+  background:rgba(255,250,243,.52);
+  border-radius:8px;
+  padding:28px;
+  display:grid;
+  gap:22px;
+}
+.summary-row{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.summary-row:last-child{border-bottom:0;padding-bottom:0}
+.summary-num{font-family:"Cormorant Garamond",serif;font-size:52px;line-height:.85;color:var(--ink)}
+.summary-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:right}
+.filters{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+.filter-group{display:flex;gap:8px;flex-wrap:wrap}
+.search-wrap{position:relative;flex:1;max-width:320px}
+.search-wrap input{width:100%;height:40px;background:rgba(255,250,243,.4);border:1px solid var(--line);border-radius:999px;padding:0 40px 0 18px;font-size:13px;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+.search-wrap input:focus{border-color:var(--gold);background:rgba(255,250,243,.8)}
+.search-wrap svg{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.filter-btn{
+  min-height:40px;
+  border:1px solid var(--line);
+  background:rgba(255,250,243,.48);
+  color:var(--muted);
+  border-radius:999px;
+  padding:0 18px;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  transition:background .2s,border-color .2s,color .2s,transform .2s;
+}
+.filter-btn:hover,.filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.catalog{padding:34px 0 80px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.template-card{
+  --accent:#a9823c;
+  --bg1:#f8efe5;
+  --bg2:#dcc5ad;
+  border:1px solid var(--line);
+  background:rgba(255,250,243,.62);
+  border-radius:10px;
+  overflow:hidden;
+  min-height:560px;
+  display:grid;
+  grid-template-rows:320px 1fr;
+  box-shadow:0 18px 70px rgba(45,34,22,.08);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.template-card:hover{transform:translateY(-4px);box-shadow:0 28px 90px rgba(45,34,22,.13);border-color:rgba(169,130,60,.36)}
+.thumb{
+  position:relative;
+  overflow:hidden;
+  background:var(--soft);
+  min-height:320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thumb::after{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%, rgba(184,142,68,0.05), transparent 70%);
+}
+.thumb-title{
+  position:absolute;left:28px;right:28px;bottom:24px;z-index:10;
+  font-family:"Cormorant Garamond", serif;
+  font-size:clamp(2.5rem,6vw,4.4rem);
+  line-height:.86;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.thumb-title em{font-family:"Plus Jakarta Sans"; font-style:normal; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold); display: block; margin-top: 8px;}
+
+/* Mini UI Render Styles - Light Theme */
+.mini-ui{
+  width: 280px;
+  height: 180px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+  transform: rotateX(8deg) rotateY(-8deg);
+  transition: transform 0.5s ease;
+}
+.template-card:hover .mini-ui{ transform: rotateX(0deg) rotateY(0deg) scale(1.03); }
+.mini-nav{ height: 14px; border-bottom: 1px solid rgba(0,0,0,0.03); display: flex; align-items: center; justify-content: space-between; padding: 0 10px; }
+.mini-dot{ width: 3px; height: 3px; background: var(--gold); border-radius: 50%; opacity: 0.6; }
+.mini-hero{ height: 100px; position: relative; background: linear-gradient(180deg, transparent, rgba(184,142,68,0.02)); }
+.mini-hero::before{ content: ""; position: absolute; top: 35px; left: 50%; transform: translateX(-50%); width: 70px; height: 1px; background: rgba(184,142,68,0.2); }
+.mini-text-block{ position: absolute; bottom: 25px; left: 15px; width: 45px; height: 2px; background: var(--gold); opacity: 0.4; }
+.mini-photo{ width: 55px; height: 75px; background: #fdfcf8; border: 1px solid rgba(0,0,0,0.05); position: absolute; right: 25px; top: 45px; border-radius: 2px; z-index: 2; box-shadow: 0 12px 25px rgba(0,0,0,0.05); }
+.mini-photo::after{ content: ""; position: absolute; inset: 5px; border: 1px solid rgba(184,142,68,0.08); }
+.mini-ring{ width: 140px; height: 140px; border: 1px solid rgba(184,142,68,0.02); border-radius: 50%; position: absolute; left: -30px; top: -30px; }
+.card-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:22px}
+.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.template-name{
+  font-family:"Cormorant Garamond",serif;
+  font-size:42px;
+  font-weight:400;
+  line-height:.95;
+  margin:0;
+  letter-spacing:-.025em;
+}
+.template-index{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--gold)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,250,243,.54)}
+.requirements{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.metric{
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px;
+  background:var(--soft);
+}
+.metric strong{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:36px;line-height:.92;color:var(--accent)}
+.metric span{display:block;margin-top:7px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.breakdown{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.breakdown-item{
+  min-height:66px;
+  border:1px dashed color-mix(in srgb,var(--accent),transparent 45%);
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:10px;
+  background:color-mix(in srgb,var(--accent),transparent 92%);
+}
+.breakdown-item b{font-size:18px;color:var(--accent)}
+.breakdown-item span{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.page-list{display:flex;flex-wrap:wrap;gap:8px 12px}
+.page-chip{
+  color:var(--muted);
+  border-bottom:1px solid var(--line-strong);
+  padding-bottom:3px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:color .2s,border-color .2s;
+}
+.page-chip:hover{color:var(--gold);border-color:var(--gold)}
+.card-actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid var(--line);padding-top:18px}
+.open-template{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border:1px solid var(--ink);
+  border-radius:999px;
+  background:var(--ink);
+  color:var(--paper);
+  padding:0 20px;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  transition:transform .2s,background .2s,color .2s;
+}
+.open-template:hover{transform:translateY(-1px);background:var(--accent);border-color:var(--accent);color:#fffaf3}
+.note{font-size:11px;color:var(--muted);line-height:1.5;text-align:right}
+.footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.footer a{text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:4px}
+.footer a:hover{color:var(--gold)}
+.dark-card{color:var(--ink)}
+.dark-card .card-body{background:var(--paper-2);color:var(--ink)}
+.dark-card .template-name,.dark-card .template-index{color:var(--ink)}
+.dark-card .tag,.dark-card .metric,.dark-card .breakdown-item{background:var(--soft);border-color:var(--line)}
+.dark-card .page-chip,.dark-card .metric span,.dark-card .breakdown-item span,.dark-card .note{color:var(--muted)}
+.dark-card .card-actions{border-top-color:var(--line)}
+.dark-card .open-template{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.dark-card .open-template:hover{background:var(--gold);border-color:var(--gold);color:var(--paper)}
+.dark-card .requirements,.dark-card .breakdown{color:var(--ink)}
+[data-id="analog"]{--accent:#bc4637;--bg1:#23201b;--bg2:#c7a565}
+[data-id="bloom"]{--accent:#c65878;--bg1:#fff8f9;--bg2:#ebb1c1}
+[data-id="editorial"]{--accent:#b08a2e;--bg1:#151515;--bg2:#6f604a}
+[data-id="garden"]{--accent:#7d8e4d;--bg1:#f7f5e3;--bg2:#b4bd82}
+[data-id="film"]{--accent:#d7b55a;--bg1:#100d0a;--bg2:#745529}
+[data-id="boho"]{--accent:#ac6651;--bg1:#fbefe2;--bg2:#c58c66}
+[data-id="sensual"]{--accent:#d4af37;--bg1:#240808;--bg2:#8a243f}
+[data-id="soft"]{--accent:#c8a95a;--bg1:#fbfaf7;--bg2:#d9c48e}
+[data-id="timeless"]{--accent:#8a9a79;--bg1:#f8f4ea;--bg2:#b9c3a2}
+[data-id="romantic"]{--accent:#c9778d;--bg1:#fff7f3;--bg2:#f0bdc8}
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:1fr}
+  .summary{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .summary-row{display:block;border-bottom:0;border-right:1px solid var(--line);padding:0 18px 0 0}
+  .summary-row:last-child{border-right:0}
+  .summary-label{text-align:left;margin-top:8px}
+  .catalog{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .shell{width:min(100% - 28px,1480px)}
+  .topbar-inner{height:auto;min-height:60px;align-items:flex-start;flex-direction:column;padding:14px 0}
+  .nav-meta{font-size:10px;gap:10px;flex-wrap:wrap}
+  .hero{padding:46px 0 36px}
+  h1{font-size:clamp(3.9rem,18vw,6rem)}
+  .summary{grid-template-columns:1fr;padding:20px}
+  .summary-row{border-right:0;border-bottom:1px solid var(--line);padding:0 0 16px}
+  .catalog{padding-top:22px;gap:18px}
+  .template-card{grid-template-rows:260px 1fr;min-height:auto}
+  .thumb{min-height:260px}
+  .mock-panel{width:154px;height:90px}
+  .mock-phone{width:86px;height:154px;right:22px}
+  .mock-photo.one{right:120px}
+  .mock-photo.two{right:48px}
+  .requirements,.breakdown{grid-template-columns:1fr}
+  .card-head,.card-actions{display:block}
+  .template-index,.note{display:block;text-align:left;margin-top:10px}
+  .open-template{width:100%;margin-top:0}
+  .footer{display:block;line-height:2}
+}
+
+
+</style>
+  <link href="fonts.css" rel="stylesheet"/>
+  <link href="premium.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <div class="brand" aria-label="Said Yes Belize">
+      <span class="brand-mark">SY</span>
+      <span class="brand-text">Said Yes Belize Template Atelier</span>
+    </div>
+    <div class="nav-meta" aria-label="Collection summary">
+      <span>10 templates</span><span class="nav-dot"></span><span>45 pages</span><span class="nav-dot"></span><span>10 album photos each</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Wedding website collection</p>
+        <h1>Choose the <em>feeling</em><br/>then add the photos.</h1>
+
+      </div>
+      <aside class="summary" aria-label="Collection requirements">
+        <div class="summary-row"><span class="summary-num">10</span><span class="summary-label">Templates</span></div>
+        <div class="summary-row"><span class="summary-num">100</span><span class="summary-label">Album photo slots</span></div>
+        <div class="summary-row"><span class="summary-num">3+7</span><span class="summary-label">Story + Gallery</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="shell filters" aria-label="Filter templates">
+    <div class="filter-group">
+      <button class="filter-btn active" type="button" data-filter="all">All</button>
+      <button class="filter-btn" type="button" data-filter="light">Light</button>
+      <button class="filter-btn" type="button" data-filter="dark">Dark</button>
+      <button class="filter-btn" type="button" data-filter="romantic">Romantic</button>
+      <button class="filter-btn" type="button" data-filter="editorial">Editorial</button>
+      <button class="filter-btn" type="button" data-filter="cinematic">Cinematic</button>
+      <button class="filter-btn" type="button" data-filter="boho">Boho</button>
+    </div>
+    <div class="search-wrap">
+      <input type="text" id="templateSearch" placeholder="Search templates or styles..." aria-label="Search templates">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </div>
+  </section>
+
+  <section class="shell catalog" id="catalog" aria-label="Wedding templates"></section>
+</main>
+
+<footer class="shell footer">
+  <span>Said Yes Belize - curated wedding websites</span>
+  <a href="guest-book.html">Open shared guest book</a>
+</footer>
+
+<script>
+const templates = [
+  {id:"analog",name:"Analog Indie Nuptials",tags:["Vintage","Film","Indie"],themes:["dark","cinematic"],main:"Analog Indie Nuptials UI/invitation.html",pages:["Invitation","Our Story","Event Details","Gallery","RSVP"]},
+  {id:"bloom",name:"Bloom",tags:["Romantic","Floral","Watercolor"],themes:["light","romantic"],main:"Bloom/event-details.html",pages:["Event Details","Our Story","Gallery"]},
+  {id:"editorial",name:"Editorial Luxury",tags:["Editorial","Couture","Minimal"],themes:["dark","editorial"],main:"Editorial Luxury/invitation.html",pages:["Our Story","Invitation","Gallery","RSVP"]},
+  {id:"garden",name:"Eternal Garden",tags:["Garden","Botanical","Sage"],themes:["light","romantic"],main:"Eternal Garden/invitation.html",pages:["Our Story","Event Details","RSVP","Gallery"]},
+  {id:"film",name:"Forever Film",tags:["Cinematic","Dark","Moody"],themes:["dark","cinematic"],main:"Forever Film/invitation.html",pages:["Feature","Our Story","RSVP","Gallery"]},
+  {id:"boho",name:"Organic Boho",tags:["Boho","Earthy","Natural"],themes:["light","boho"],main:"Organic Boho/invitation.html",pages:["Invitation","Our Story","RSVP","Gallery"]},
+  {id:"sensual",name:"Sensual",tags:["Dark","Moody","Intimate"],themes:["dark","editorial"],main:"Sensual/invitation.html",pages:["Invitation","Our Story","Event Details","Gallery","RSVP"]},
+  {id:"soft",name:"Soft Luxury",tags:["Champagne","Soft","Elegant"],themes:["light","romantic"],main:"soft luxury/invitation.html",pages:["Invitation","Our Story","Event Details","Gallery","RSVP"]},
+  {id:"timeless",name:"Timeless",tags:["Classic","Ivory","Elegant"],themes:["light","editorial"],main:"Timeless/invitation.html",pages:["Invitation","Our Story","RSVP"]},
+  {id:"romantic",name:"Ultra Romantic",tags:["Romantic","Blush","Dreamy"],themes:["light","romantic"],main:"Ultra Romantic/invitation.html",pages:["Invitation","Event & Gallery","Our Story","RSVP Mobile","RSVP Desktop","Gallery","Event Details","Photo Gallery"]}
+];
+
+function encodePath(path){
+  return path.replace(/ /g,"%20").replace(/\(/g,"%28").replace(/\)/g,"%29");
+}
+
+function guidedEditPath(path){
+  return `${encodePath(path)}?edit=1&fresh=1`;
+}
+
+function thumbnailMarkup(template){
+  return `
+    <div class="mini-ui" aria-hidden="true">
+      <div class="mini-nav"><div class="mini-dot"></div><div class="mini-dot"></div></div>
+      <div class="mini-hero"></div>
+      <div class="mini-text-block"></div>
+      <div class="mini-photo"></div>
+      <div class="mini-ring"></div>
+    </div>
+    <div class="thumb-title">${template.name.split(" ")[0]}<br/><em>${template.name.split(" ").slice(1).join(" ") || "Wedding Collection"}</em></div>
+  `;
+}
+
+function getPagePath(template, pageName) {
+  const folder = template.main.split('/')[0];
+  const fileName = pageName.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-") + ".html";
+  return `${folder}/${fileName}`;
+}
+
+function cardMarkup(template,index){
+  const dark = template.themes.includes("dark") ? " dark-card" : "";
+  const tags = template.tags.map(tag=>`<span class="tag">${tag}</span>`).join("");
+  const pages = template.pages.map(page=>`<a class="page-chip" href="${getPagePath(template, page)}">${page}</a>`).join("");
+  const number = String(index + 1).padStart(2,"0");
+  return `
+    <article class="template-card${dark}" data-id="${template.id}" data-themes="${template.themes.join(" ")}" data-name="${template.name.toLowerCase()}">
+      <div class="thumb" aria-hidden="true">${thumbnailMarkup(template)}</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h2 class="template-name">${template.name}</h2>
+          <span class="template-index">${number}</span>
+        </div>
+        <div class="tags">${tags}</div>
+        <div class="requirements" aria-label="${template.name} requirements">
+          <div class="metric"><strong>10</strong><span>Album photos</span></div>
+          <div class="metric"><strong>${template.pages.length}</strong><span>Pages included</span></div>
+        </div>
+        <div class="breakdown" aria-label="Photo breakdown">
+          <div class="breakdown-item"><b>3</b><span>Story photos</span></div>
+          <div class="breakdown-item"><b>7</b><span>Gallery photos</span></div>
+          <div class="breakdown-item"><b>1</b><span>Hero swap</span></div>
+        </div>
+        <div class="page-list" aria-label="Included pages">${pages}</div>
+        <div class="card-actions">
+          <a class="open-template" href="${guidedEditPath(template.main)}">Start guided edit</a>
+          <span class="note">Starts fresh and clears saved browser photos.</span>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+const catalog = document.getElementById("catalog");
+catalog.innerHTML = templates.map(cardMarkup).join("");
+
+function filterTemplates() {
+  const filter = document.querySelector(".filter-btn.active").dataset.filter;
+  const search = document.getElementById("templateSearch").value.toLowerCase();
+  
+  document.querySelectorAll(".template-card").forEach(card=>{
+    const themeMatch = filter === "all" || card.dataset.themes.includes(filter);
+    const nameMatch = card.dataset.name.includes(search) || card.textContent.toLowerCase().includes(search);
+    card.hidden = !(themeMatch && nameMatch);
+  });
+}
+
+document.querySelectorAll(".filter-btn").forEach(button=>{
+  button.addEventListener("click",()=>{
+    document.querySelectorAll(".filter-btn").forEach(item=>item.classList.remove("active"));
+    button.classList.add("active");
+    filterTemplates();
+  });
+});
+
+document.getElementById("templateSearch").addEventListener("input", filterTemplates);
+</script>
+  <script src="premium.js"></script>
+  <script src="mobile-optimize.js"></script>
+</body>
+</html>

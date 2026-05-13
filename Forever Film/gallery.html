@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gallery — Forever Film</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary":"#fbc66f","background":"#131313","surface-container":"#201f1f","surface-container-high":"#2a2a2a","surface-container-highest":"#353534","on-surface":"#e5e2e1","on-surface-variant":"#d0c5af","primary":"#f2ca50","primary-container":"#d4af37","on-primary":"#3c2f00","outline-variant":"#4d4635","outline":"#99907c"},spacing:{"frame-margin":"4rem","section-padding":"8rem"},fontFamily:{"hero-title":["Noto Serif"],"body-classic":["Be Vietnam Pro"],"movie-headline":["Noto Serif"],"caption-info":["Be Vietnam Pro"],"credit-label":["Be Vietnam Pro"]},fontSize:{"hero-title":["84px",{"lineHeight":"92px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-classic":["18px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"300"}],"movie-headline":["48px",{"lineHeight":"56px","letterSpacing":"0.05em","fontWeight":"400"}],"caption-info":["14px",{"lineHeight":"20px","fontWeight":"400"}],"credit-label":["12px",{"lineHeight":"16px","letterSpacing":"0.3em","fontWeight":"600"}]}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24}
+.film-grain{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;pointer-events:none}
+.projector-beam{background:linear-gradient(45deg,rgba(212,175,55,.08) 0%,transparent 70%)}
+.halation-glow{text-shadow:0 0 12px rgba(212,175,55,.4),0 0 24px rgba(212,175,55,.2)}
+.hide-scrollbar::-webkit-scrollbar{display:none}
+.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+/* film develop animation */
+.develop{opacity:0;filter:saturate(0) brightness(1.4);transform:scale(.97);transition:opacity .9s ease,filter 1.1s ease,transform .8s ease}
+.develop.in{opacity:1;filter:saturate(1) brightness(1);transform:scale(1)}
+/* lightbox */
+#lb{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.95);align-items:center;justify-content:center;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:88vh;object-fit:contain}
+</style>
+  <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-classic" style="min-height:100dvh">
+<div class="fixed inset-0 film-grain z-[100]"></div>
+<div class="fixed inset-0 projector-beam z-0 pointer-events-none"></div>
+
+<header class="fixed top-0 left-0 w-full z-[60] bg-black/80 backdrop-blur-2xl border-b border-yellow-600/20 shadow-[0_0_15px_rgba(212,175,55,.1)] flex justify-between items-center px-6 py-4">
+  <span class="material-symbols-outlined text-yellow-600 cursor-pointer">menu</span>
+  <h1 class="text-lg italic font-serif tracking-[0.4em] text-yellow-600">FOREVER FILM</h1>
+  <span class="material-symbols-outlined text-yellow-600 cursor-pointer">photo_library</span>
+</header>
+
+<main class="relative z-10 pt-24 pb-32">
+
+  <!-- Hero header -->
+  <section class="px-frame-margin py-16 text-center max-w-4xl mx-auto">
+    <p class="font-credit-label text-credit-label text-primary-container mb-4">THE PRODUCTION STILLS</p>
+    <h2 class="font-hero-title italic text-primary halation-glow" style="font-size:clamp(3rem,8vw,5.5rem)">Gallery</h2>
+    <div class="w-24 h-px bg-primary/30 mx-auto mt-8"></div>
+  </section>
+
+  <!-- Film strip scroll — Act I -->
+  <section class="py-16">
+    <div class="px-frame-margin mb-8 flex items-center gap-4">
+      <div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+      <h3 class="font-movie-headline text-2xl text-primary">ACT I — THE MEETING</h3>
+      <div class="flex-grow h-px bg-primary/20"></div>
+      <div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+    </div>
+    <div class="flex gap-4 overflow-x-auto hide-scrollbar px-frame-margin snap-x pb-6">
+      <div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)" style="transition-delay:0s">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr-88btaTWoStSrWVtM1yD871dYhPNXKA8ftP1eaGCJTq1-QcT5TOZ7S8agruQJoeT-nYrDCFvdhyNlF_aSMLpyv9RCLvecdDRPjTu6Ku7uk3g0EWkX8tDf3qnSNVQHT3fwIZ98YeCp4Nit5tSVwK6ftmT5stEx7yUozREpuAMR3c-jANRvYwYt6M6MAyMc8_iHKdqVOlmVBS4-40EmXgvOmfqPI0JR4mjyNZAoFryXnSvnIeXhUmH6Ix6lBIQIq4SzUT3l0CJwCyy"
+          alt="The first encounter"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+        <div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 01 — The First Encounter</span></div>
+      </div>
+      <div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)" style="transition-delay:.15s">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSDZuXHckWgGsP2pvzTRBhxD7HwukiC6KuWUDWrlV6ocMwPmo_-5G3kh-oA8q0Nv2-QmFAcndcX3-oPDRS1-uN7VLY-gsc5QM__LHEYQblgEjSkrHHDk3hcPNgCX7_VQoI9Xm_ewEX8e5KJ_abK5TsciiXmEWogf3AfQtmslN9H_j5s8S4ECjs_v2hxQi8JxR0DuC257c_gaVXNJKKXIf94-LQ6YIS5pcoHICXf29Jh1H9z9eiEjyWW4mLTbzbKyQgxikqNB9RTaBk"
+          alt="Coffee hands"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+        <div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 02 — The Almost Touch</span></div>
+      </div>
+      <div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)" style="transition-delay:.3s">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbrBtVTOzObCEGROeV7ecCRoao7ZBp_-Emri4A925sQVEngS_j-6oEygRm5wbzHcth3HEayzUsvufTIYwfaLfPAwnU53UdNnbBH4PRIgahr0MN99KPrH90mKQBL4_2LP4j3rN6_VOrbz3FY-tBu0UFp4Sb9e-ft8OjAzCxg_s9RZond3hFACWd1EczwjdTjnq7PIkV1KyDGiTtEJKNDWhI31inu6SkXFC1IzdJqfI_FP65SjoR6B8jdvPUC8rDKDPtvkNvjAFs2UD"
+          alt="Garden walk"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+        <div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 03 — The Garden Walk</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Act II -->
+  <section class="py-16">
+    <div class="px-frame-margin mb-8 flex items-center gap-4 flex-row-reverse">
+      <div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+      <h3 class="font-movie-headline text-2xl text-primary">ACT II — THE ADVENTURES</h3>
+      <div class="flex-grow h-px bg-primary/20"></div>
+      <div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+    </div>
+    <div class="flex gap-4 overflow-x-auto hide-scrollbar px-frame-margin snap-x pb-6 flex-row-reverse">
+      <div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)" style="transition-delay:.1s">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9S2_cWCqeW0n5vDpIg6khE-Wr72u72g59Wz6HrgK4Q8MCDqlznqUIckiVMLs_VwnDdeV_WWeV9RWnjB34QruMZBX_BmnP8nJE0Qa4NtqvESb-toXp9vjkQPZviAt7ELyGS8ob92luBcmj546zpVa87mhPqsXECCy-2Kd39KBcJvf-nbaBCbSr3mhLF9f3WU_RxATBcqdFzm2J1NB7bUUxhrKfXU0o5XawCZCf_-zsU3c09RlbbHTOGFkF7xgIkAWPJGRR6znnc6nU"
+          alt="Beach run"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+        <div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 04 — The Escape</span></div>
+      </div>
+      <div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)" style="transition-delay:.25s">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgUxz4AlPxFET4lWifoVmAyOzP7NoesSZYGZ1Md8IxZuDcqZZZ2469kmHtq8BeiXXZUWQVeDPrkx9O2JpWKkCWf9JJoWoPlefs5frngS-1SPR-H7GKv0z-Q8euhcuSwHSdBjC5V-HJyiCTh0OE6_eeI30PL60qbIJAGrRj37koLkuliksBjMrdjCEZi0nty-P1sUoGurMbL11_UTH8wRTbPEquJonrAv08J0iyIhJEyHRko1SlmhW4YnSndHkQKzfcZSjnrHce_MX2"
+          alt="Kitchen night"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+        <div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 05 — The Night Kitchen</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Act III — Feature wide -->
+  <section class="px-frame-margin py-16">
+    <div class="flex items-center gap-4 mb-8">
+      <div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+      <h3 class="font-movie-headline text-2xl text-primary">ACT III — THE CLIMAX</h3>
+      <div class="flex-grow h-px bg-primary/20"></div>
+      <div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+    </div>
+    <div class="w-full max-w-6xl mx-auto aspect-[21/9] relative rounded-sm overflow-hidden shadow-2xl group develop cursor-pointer" onclick="openLb(this)">
+      <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1500ms]"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHUccs5bYlYrYjrnCAJ70UZbOoRPSrj9IFWuVz8yhsEmSxsu0mZBv6g7ojFGoytqWlvpZIdWfRy7i2-62F33OhQIbjsu94XQVAVLAOrvkysRcjdq5sfcAZErsyNms96mltV8XyriU-4rDwy61-nXxveXVh3i7ClJnRxNOd6q3QxQZrSxn7L_vJTWg6NC3L6gfNlrmVHpodbc2f4n7v0iXRH0wg-ZzLlFZbQClWmHG3Y-7HzwzjlLVG2zhgDq2cpUHwQ7fAplckMeIr"
+        alt="The proposal"/>
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-[1500ms]"></div>
+      <div class="absolute bottom-8 left-8">
+        <span class="px-4 py-2 bg-primary text-on-primary font-credit-label text-[10px] rounded-full">PRODUCTION WRAP — THE PROPOSAL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-2xl mx-auto text-center px-frame-margin py-16">
+    <h4 class="font-movie-headline text-3xl text-primary mb-6 italic">"To Be Continued..."</h4>
+    <p class="font-body-classic text-on-surface/70 mb-10">We invite you to join the cast for the most important premiere of our lives.</p>
+    <a href="rsvp.html" class="px-12 py-4 border border-primary text-primary font-credit-label hover:bg-primary hover:text-on-primary transition-all duration-500 tracking-[0.4em] no-underline inline-block">RESERVE YOUR SEAT</a>
+  </section>
+
+</main>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-black/90 backdrop-blur-3xl border-t border-yellow-600/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+  <div class="flex justify-around items-center px-4 pb-6 pt-2">
+    <a class="flex flex-col items-center text-gray-500 pt-2 opacity-60 hover:opacity-100" href="invitation.html"><span class="material-symbols-outlined mb-1">movie</span><span class="font-serif text-[10px] tracking-widest uppercase">Feature</span></a>
+    <a class="flex flex-col items-center text-gray-500 pt-2 opacity-60 hover:opacity-100" href="our-story.html"><span class="material-symbols-outlined mb-1">history_edu</span><span class="font-serif text-[10px] tracking-widest uppercase">Story</span></a>
+    <a class="flex flex-col items-center text-gray-500 pt-2 opacity-60 hover:opacity-100" href="rsvp.html"><span class="material-symbols-outlined mb-1">confirmation_number</span><span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span></a>
+    <a class="flex flex-col items-center text-yellow-600 border-t-2 border-yellow-600 pt-2"><span class="material-symbols-outlined mb-1" style="font-variation-settings:'FILL' 1">photo_library</span><span class="font-serif text-[10px] tracking-widest uppercase">Gallery</span></a>
+  </div>
+</nav>
+
+<div id="lb" onclick="closeLb()">
+  <img id="lb-img" src="" alt=""/>
+  <button onclick="closeLb()" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(242,202,80,.15);border:1px solid rgba(242,202,80,.3);color:#f2ca50;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer">✕</button>
+</div>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.08});
+document.querySelectorAll('.develop').forEach(el=>io.observe(el));
+function openLb(card){const img=card.querySelector('img');document.getElementById('lb-img').src=img.src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+</script>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Forever Film Template Initialization -->
+<script src="forever-film-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>
+

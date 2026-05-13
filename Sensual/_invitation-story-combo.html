@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed-variant": "#871f23",
+                        "outline": "#a38b88",
+                        "tertiary-container": "#4a001a",
+                        "inverse-on-surface": "#4b2623",
+                        "on-background": "#ffdad7",
+                        "on-primary-fixed": "#410001",
+                        "surface-container-low": "#32110f",
+                        "surface-tint": "#ffb4aa",
+                        "primary-container": "#4a0404",
+                        "inverse-primary": "#9d4139",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#210504",
+                        "surface-container-highest": "#512a27",
+                        "on-surface-variant": "#dcc0bd",
+                        "tertiary-fixed": "#ffd9de",
+                        "tertiary-fixed-dim": "#ffb2bf",
+                        "secondary-container": "#871f23",
+                        "on-tertiary-fixed": "#3f0015",
+                        "secondary-fixed-dim": "#ffb3af",
+                        "on-tertiary-container": "#dd5e7c",
+                        "surface-bright": "#562e2b",
+                        "outline-variant": "#554240",
+                        "surface-dim": "#280908",
+                        "secondary-fixed": "#ffdad7",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#ff9995",
+                        "surface-container": "#371513",
+                        "on-tertiary-fixed-variant": "#871b3c",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "surface": "#280908",
+                        "secondary": "#ffb3af",
+                        "surface-variant": "#512a27",
+                        "on-secondary-fixed": "#410005",
+                        "on-tertiary": "#660027",
+                        "primary": "#ffb4aa",
+                        "inverse-surface": "#ffdad7",
+                        "tertiary": "#ffb2bf",
+                        "background": "#280908",
+                        "on-primary": "#5f1410",
+                        "on-surface": "#ffdad7",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#670410",
+                        "on-primary-container": "#d26a5f",
+                        "on-primary-fixed-variant": "#7e2b23",
+                        "surface-container-high": "#441f1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "5rem",
+                        "container-max": "1140px",
+                        "gutter": "24px",
+                        "margin-safe": "32px",
+                        "stack-md": "2.5rem",
+                        "stack-sm": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-xl": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.velvet-grain {
+    position: relative
+    }
+.velvet-grain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC__4rOJVHP4-rj846PgzbnOvn7algTHJbi_e2VCVQSEkqAAW9sLDx5gLlYYQyjbxS01T3MOsf84cHTgGHXD3NPuWRbf0MtGThr6SF8I6BfsbXz3NwgyOd4SNrmPp5SQ5QHaIV0HYaxS_NXEpmpkGhMddmm8UZtvGRtBWtNk64BIujfXCVZhQ-DpSWOs616-9BNfbCbj1Xa40vEv1KQUpLwwSHknsj9Wc8lx_5Az5trC9RFi4sswJsm2zhOas0_4WLPebbW2Qw3qQL1);
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 10
+    }
+.gold-foil-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFFACD 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+    }
+.gold-border {
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #D4AF37, #8B1E3F, #D4AF37) 1
+    }
+.glass-card {
+    background: rgba(74, 4, 4, 0.7);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(139, 30, 63, 0.2)
+    }
+.liquid-gold-btn {
+    background: linear-gradient(135deg, #D4AF37, #F9E79F, #D4AF37);
+    transition: all 0.5s ease
+    }
+.liquid-gold-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-primary min-h-screen velvet-grain overflow-x-hidden">
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-red-950/60 backdrop-blur-2xl border-b border-amber-500/20 shadow-[0_4px_20px_rgba(139,30,63,0.3)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-200" style="font-variation-settings: 'FILL' 1;">flare</span>
+<span class="text-amber-400 font-serif italic text-lg">Evelyn &amp; Julian</span>
+</div>
+<div class="hidden md:flex gap-8 items-center font-serif tracking-[0.2em] uppercase text-xs">
+<a class="text-amber-400 hover:text-amber-300 transition-colors duration-500" href="#">Invitation</a>
+<a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="#">Details</a>
+<a class="text-amber-100/50 hover:text-amber-300 transition-colors duration-500" href="#">RSVP</a>
+</div>
+<span class="material-symbols-outlined text-amber-200">celebration</span>
+</header>
+<!-- Hero Section -->
+<main class="relative">
+<section class="h-screen w-full relative flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.2] brightness-[0.4]" data-alt="A cinematic, low-light photograph of a romantic couple walking hand-in-hand through a lush Belizean jungle during a deep amber sunset. The scene is enveloped in a warm, atmospheric glow with a heavy dark vignette focusing on the couple's silhouettes against the golden sky. The visual style is premium and evocative, utilizing deep wine-reds and rich gold tones to establish an intimate and exclusive mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzBW3z1aRNEtcWdA5ez7mOrODBL2knUTr194KBPAtggF4pHMvD2NG4GfqjCRAJtiRt4GkhfHXY7G931UeCizi3lmGkJq91yLxn0zszrrBdXFntE6LedtUx6VDrLqqmR0AWbZy0LzVZw477gYxQYnfmvwDef2_do7YHX--2BOcVg65NtHRsnxhrrd3ev8THlQg6K14z_N384JUzlBQZ5bAjUgdb3mJk7ElpCq4LvGZX3jMeYOpwc0Slj8AxQQZPQU8DohbI2pTgSpvs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-red-950/40 via-transparent to-background/80"></div>
+</div>
+<div class="z-10 text-center px-gutter max-w-3xl">
+<p class="font-label-caps text-label-caps text-on-primary-container mb-stack-sm tracking-[0.3em] uppercase">Join us for an evening in Belize</p>
+<h1 class="font-headline-xl text-headline-xl gold-foil-text mb-stack-sm leading-tight">Evelyn &amp; Julian</h1>
+<div class="w-24 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-stack-md"></div>
+<p class="font-headline-md text-headline-md italic text-primary tracking-wide">October 24th, 2024 • San Pedro</p>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-amber-400/50 text-3xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-stack-lg px-margin-safe bg-background relative overflow-hidden">
+<!-- Decorative Floating Elements (SVG Petals) -->
+<div class="absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full blur-md animate-pulse"></div>
+<div class="absolute bottom-40 right-20 w-8 h-8 bg-tertiary/10 rounded-full blur-xl"></div>
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md items-center">
+<div class="order-2 md:order-1 glass-card p-10 rounded-xl gold-border relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+<h2 class="font-headline-lg text-headline-lg gold-foil-text mb-stack-sm italic">Our Story</h2>
+<div class="space-y-6 text-on-surface/80 font-body-lg text-body-lg leading-relaxed">
+<p>It began with a shared glance across a rain-swept street in London, but our hearts truly found their home under the starlit skies of the Caribbean. From the rhythmic pulses of the ocean to the quiet whispers of the jungle, every moment together has been a chapter in a story we never want to end.</p>
+<p>Join us as we step into this new beginning, returning to the shores where Julian proposed, surrounding ourselves with the people who have shaped the tapestry of our lives. This evening isn't just a ceremony; it's a celebration of every quiet conversation and grand adventure that led us here.</p>
+</div>
+<div class="mt-stack-md">
+<button class="liquid-gold-btn text-background font-headline-md px-8 py-3 rounded-full flex items-center gap-3">
+                                View Gallery
+                                <span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</div>
+<div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="h-64 rounded-xl overflow-hidden gold-border">
+<img class="w-full h-full object-cover" data-alt="A macro shot of two hands gently intertwined, resting on a dark velvet fabric. The lighting is low and candlelit, casting soft golden highlights on the skin and reflecting off a simple, elegant engagement ring. The overall mood is intimate, quiet, and deeply romantic, consistent with the wedding's premium dark burgundy and gold theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ6ESpCm3ymOPxT6O0FXo7v10QJuYaUpi3tNeezXXOW7TV8kzyZgshIbxRgdym9H25keuJNXordC_48Hk3AC0wHpUOS7r0_g9NSLQjkLRKCu34YHn3UMJcBqUiy2Ndj5tImCuOSVMg8xpt9rKVYRybS9GDjxYVwX-joMKO8DP-o1q1OaJHJrEwGTxHiRT43gyTqcx0LLGHAqA21orJmwv1-Ue6e-l40NQP6xriwZwnsQMTMtgbFM0crLfjC15nHPPsmIJyzAKPEoqz"/>
+</div>
+<div class="h-48 rounded-xl overflow-hidden glass-card flex items-center justify-center p-6 text-center gold-border">
+<p class="font-headline-md text-headline-md italic text-amber-200">"To find someone you love, and who loves you back, is a beautiful feeling."</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="h-48 rounded-xl overflow-hidden gold-border">
+<img class="w-full h-full object-cover" data-alt="A scenic shot of a tropical coastline at dusk, featuring dark silhouetted palm trees against a deep purple and wine-red sky. Gentle waves with golden reflections wash onto a dark sandy beach. The image captures the mysterious and sophisticated Belizean night atmosphere, emphasizing high-end luxury and natural beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuakAjJrLsRvNeGoK_ntlGBH66Y7Ivo8bicKMw_CCfRaf1jbxCRPwz6uirRQFNBq0x1zzEdmk2OqYfIZGg1xN3pdtj5N336Vptb22r4XQGJBGyLhrL219VzPL9QamqPdIlc-mREYjP8TnpiJrgUaDAiYWk_UzEVOP3m0v2gYCO6TqScAOeod_Fd1B6M3MkQmP3-9mR3U542w0O4ISxDcYnHot536sjvLTqcpybjMEUEz0qJi9MKtGQRHa4O-MVvDwshvGJQIgxj2cz"/>
+</div>
+<div class="h-64 rounded-xl overflow-hidden gold-border">
+<img class="w-full h-full object-cover" data-alt="An atmospheric indoor shot of a luxury villa in Belize, illuminated by dozens of flickering candles in tall glass holders. The warm light glows against dark mahogany wood and deep red textiles. The scene is moody and intimate, with soft blurs creating a sense of sophisticated, private celebration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXu5BoihZqWcFQYk1ILeQbEXN-PgtUvpMZJAw-5A0EykXb4LAx74tXhJG6sq2K9F60BPlb7q13pLDzXgnnsuW3ff6vdlFcz7KQdrMHHwLwqhcZ5CYj706LTQ6OeLiMjXAE9tDNBmyiDS_fpqHwlMye_xB-ZUB8GeKfK5hMRMzqyGCIdyz_h1IzI6A8sOut2PvyBKuTevBWr8oNANLbLqWMZAaGZkccNojzhYySB0eUfQxD39CDC9qZ9zfGodGrhGFV08JmLp8D9Vi_"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RSVP Teaser -->
+<section class="py-stack-lg bg-surface-container relative">
+<div class="max-w-2xl mx-auto text-center px-gutter">
+<span class="material-symbols-outlined text-amber-400 text-4xl mb-stack-sm">mail</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Will You Join Us?</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">We would be honored by your presence at our celebration. Kindly let us know if you can attend by the first of September.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="liquid-gold-btn text-background font-headline-md px-10 py-4 rounded-full">Reserve Your Seat</button>
+<button class="border border-amber-500/50 text-amber-400 font-headline-md px-10 py-4 rounded-full bg-red-950/40 backdrop-blur-md hover:bg-red-950/60 transition-all">Event Details</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer / BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe pt-2 bg-red-950/80 backdrop-blur-3xl border-t border-amber-500/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-amber-400 font-bold border-t-2 border-amber-400 pt-2 scale-105 duration-700 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">Invitation</span>
+</a>
+<a class="flex flex-col items-center justify-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">Details</span>
+</a>
+<a class="flex flex-col items-center justify-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span>
+</a>
+</nav>
+<!-- Spacer for Bottom Nav on Mobile -->
+<div class="h-20 md:hidden"></div>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

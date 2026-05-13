@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gallery — Evelyn & Julian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#ffdad5","tertiary-container":"#4a001a","on-background":"#ffdad7","primary-container":"#4a0404","surface-container-lowest":"#210504","surface-container-highest":"#512a27","on-surface-variant":"#dcc0bd","secondary-container":"#871f23","outline-variant":"#554240","surface-dim":"#280908","surface-container":"#371513","primary":"#ffb4aa","background":"#280908","on-surface":"#ffdad7","on-primary-container":"#d26a5f","surface-container-high":"#441f1d","tertiary":"#ffb2bf","on-tertiary-container":"#dd5e7c"},spacing:{"stack-lg":"5rem","container-max":"1140px","gutter":"24px","stack-md":"2.5rem","stack-sm":"1rem"},fontFamily:{"headline-xl":["Noto Serif"],"headline-lg":["Noto Serif"],"headline-md":["Noto Serif"],"body-md":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"]},fontSize:{"headline-xl":["48px",{"lineHeight":"1.1","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"1.2","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"1.3","fontWeight":"500"}],"label-caps":["12px",{"lineHeight":"1","letterSpacing":"0.15em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}]}}}}
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{min-height:100dvh}
+.velvet-grain::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.035;pointer-events:none;z-index:9999;mix-blend-mode:overlay}
+.gold-foil-text{background:linear-gradient(135deg,#D4AF37,#FFFACD,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.glass-card{background:rgba(55,21,19,.65);backdrop-filter:blur(24px);box-shadow:0 4px 40px rgba(139,30,63,.18)}
+.gold-foil-border{border:1px solid transparent;background-image:linear-gradient(rgba(55,21,19,.65),rgba(55,21,19,.65)),linear-gradient(135deg,#D4AF37,#8B1E3F,#D4AF37);background-origin:border-box;background-clip:padding-box,border-box}
+.liquid-gold-btn{background:linear-gradient(135deg,#D4AF37,#F9E79F,#D4AF37);transition:all .4s ease}
+.liquid-gold-btn:hover{filter:brightness(1.12);box-shadow:0 0 24px rgba(212,175,55,.45)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+.img-hover{transition:opacity .6s ease,transform .6s ease;transform:scale(1)}
+.img-hover:hover{opacity:.95!important;transform:scale(1.03)}
+.orb{position:fixed;border-radius:50%;pointer-events:none;filter:blur(120px);opacity:.15;z-index:0}
+/* lightbox */
+#lb{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);align-items:center;justify-content:center}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:88vh;object-fit:contain;border:1px solid rgba(212,175,55,.3)}
+</style>
+  <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md velvet-grain overflow-x-hidden">
+
+<div class="orb w-[500px] h-[500px] bg-red-900" style="top:5%;left:-10%"></div>
+<div class="orb w-[400px] h-[400px] bg-amber-900" style="bottom:15%;right:-8%"></div>
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-red-950/60 backdrop-blur-2xl border-b border-amber-500/20 shadow-[0_4px_20px_rgba(139,30,63,0.3)]">
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-amber-200" style="font-variation-settings:'FILL' 1">flare</span>
+    <span class="text-amber-400 font-serif italic text-lg">Evelyn &amp; Julian</span>
+  </div>
+  <nav class="hidden md:flex gap-8 font-serif tracking-[0.2em] uppercase text-xs">
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="invitation.html">Invitation</a>
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="our-story.html">Story</a>
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="event-details.html">Details</a>
+    <a class="text-amber-400 border-b border-amber-400 pb-px" href="#">Gallery</a>
+    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="rsvp.html">RSVP</a>
+  </nav>
+  <span class="material-symbols-outlined text-amber-200">photo_library</span>
+</header>
+
+<main class="relative z-10 pt-28 pb-32 px-6 max-w-screen-xl mx-auto space-y-16">
+
+  <!-- Header -->
+  <section class="text-center space-y-4 reveal">
+    <span class="font-label-caps text-label-caps text-amber-400 uppercase tracking-[0.3em] block">Our Belizean Story</span>
+    <h1 class="font-headline-xl text-headline-xl gold-foil-text">Gallery</h1>
+    <div class="w-24 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto"></div>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto italic">Moments captured before the vows — light, shadow, and love.</p>
+  </section>
+
+  <!-- Bento Grid -->
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-4">
+    <div class="md:col-span-8 group relative overflow-hidden rounded-xl gold-foil-border cursor-pointer reveal" onclick="openLb(this)">
+      <img class="w-full h-[420px] object-cover opacity-60 img-hover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt46j0-Pl1ALrxgv_FGiGJfYJx5dtgQzkjBPkcgud1mQDmQ_nQuth6YrVNzmjdPU0S7dqQVBkHTLcmuw8oqwyisQHgD7S0zxHGanJxnTxkMqeGaPf54frrafTdG61dWyjw6AE9rYRvOqm6ZbJZGbLwW0_NS4Zhr403ELCrHI2cjsV8xTMibm0HaO50dC6lLG9QhEo4dU_v7qmBp5zZSRD3rh4haDG3lvalwXhfVJyBBrjn437so6oljfI8hmwPrRCB9mtVNeqvxRWs"
+        alt="Placencia Coast"/>
+      <div class="absolute bottom-0 left-0 p-6 space-y-1 z-10">
+        <span class="font-label-caps text-label-caps text-amber-400 uppercase block">Placencia Coast</span>
+        <p class="font-headline-md text-headline-md text-on-surface">The First Sunset</p>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-background/30">
+        <span class="material-symbols-outlined text-amber-400 text-4xl">zoom_in</span>
+      </div>
+    </div>
+
+    <div class="md:col-span-4 group relative overflow-hidden rounded-xl glass-card cursor-pointer reveal reveal-d1" onclick="openLb(this)">
+      <img class="w-full h-[420px] object-cover opacity-50 img-hover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1wU4GgHKDfCZTXP_rpdvw-gMBfIUT2hhd4mFIeHeyxj50mVkpZDd78FnPDeOKdCzyDS500J48z_YQkFnjHuyhIbz6xsBc0RRKPlJBRpLEXWs1UnoymjC69iiFSwiX1PSNuIzhTxg1c5drXvlCSQxquTEcEEojXXGu6gXcQmqv_6F4gSrh4hNau_w6AgKL0JXvvuueDgZCGvRjXAwHWP79xBifJH2VP6-vNuspc-KJdfNeABiO6eKJJkQPh-WbNSQs8HWaQkYAnSIe"
+        alt="Gold rings"/>
+      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-background/30">
+        <span class="material-symbols-outlined text-amber-400 text-4xl">zoom_in</span>
+      </div>
+    </div>
+
+    <div class="md:col-span-4 group relative overflow-hidden rounded-xl glass-card cursor-pointer reveal" onclick="openLb(this)">
+      <img class="w-full h-[320px] object-cover opacity-50 img-hover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg9QDl7lLpGNyXcVm7ILwspzj2Bj5ssFn4PBzAitPD-SvgVZq4Mo1s5QsbaeXWiV7TW7JDEvLUtFehZpEaP1VNFdioG0pY-Fcre84OWL5DDd5UBgmWt6BDuWCXGMdrx8sr-1lt9_vh6-YuoOcImggl6IZeiUhHJlkfXY3G3MF17aB-pfM24d5fC-XYkChEjZxltpOPIuZzJR10Oa0eVUsGzioOjG9zH3lceRJk7lC1av1cOF0nwEsySSS7AqcJEek0tDzs0c5KXSBT"
+        alt="Candlelit dinner"/>
+      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-background/30">
+        <span class="material-symbols-outlined text-amber-400 text-4xl">zoom_in</span>
+      </div>
+    </div>
+
+    <div class="md:col-span-8 group relative overflow-hidden rounded-xl gold-foil-border cursor-pointer reveal reveal-d1" onclick="openLb(this)">
+      <img class="w-full h-[320px] object-cover opacity-65 img-hover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMi0kLg6GYt97cdQIVlo87Uc90Xmnw6PF2rFUMRUGEcmEhpZekwcUja5tf2hUKpU4U5E9syZnajQFAkY3iAY8X9UZ6Dl_iB0XUwpwMYoV4kCbAyisACgEX5vnvE3u4rwzB0SRYzB48DfFhGvMgM8zkjMlsmvZUxUhyXeWcHWlowr78Rr6sgGmeneMN6f6H6N8NCetbdcm6u9Hayg_2Fao0owOssvTNFuurpJQmTknIgbGQ2Onl_phltnC6KYdvm0utLPCFShsk-_pF"
+        alt="Tropical orchids"/>
+      <div class="absolute bottom-0 left-0 p-6 z-10">
+        <p class="font-label-caps text-label-caps text-amber-400 uppercase">Belizean Flora</p>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"></div>
+      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-background/30">
+        <span class="material-symbols-outlined text-amber-400 text-4xl">zoom_in</span>
+      </div>
+    </div>
+
+    <!-- Feature wide -->
+    <div class="md:col-span-12 group relative overflow-hidden rounded-xl gold-foil-border cursor-pointer reveal" onclick="openLb(this)">
+      <img class="w-full h-[480px] object-cover opacity-65 img-hover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrnj23aOV2pXgCy9OMFnrhwcz1RmNpV-gv5jCzV8VkLJxwbFtmE5p8dw9wSzqpZcv0dEB0mezBJbeuOUy9jw9dP4D5WCJJDFf3DrBeawHQEVTNSTe8UJJ_ny9V0fGsyWOx1pl1TwVw0pqOo7vK8U4TzJcKs3mfJtnPY1NrFxTg-PU1UlsJqr67ONAlzsIxIyU6cFDQe5s8sWq1-kdI_IwxqdmpZjIGtRquFN-7CSq2dzVn5KbK2SXVlxuW5z2ojA6r-qe8a9v_95KD"
+        alt="Belize Barrier Reef"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-center w-full px-6">
+        <p class="font-headline-md text-headline-md text-on-surface italic">"In the silence of the reef, we found our forever."</p>
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-background/30">
+        <span class="material-symbols-outlined text-amber-400 text-5xl">zoom_in</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal">
+    <a href="rsvp.html" class="liquid-gold-btn text-red-950 font-semibold px-10 py-4 rounded-full flex items-center gap-3 no-underline">
+      <span class="material-symbols-outlined text-[20px]">mail</span>
+      Reserve Your Seat
+    </a>
+    <a href="our-story.html" class="border border-amber-500/50 text-amber-400 font-semibold px-10 py-4 rounded-full flex items-center gap-3 no-underline hover:bg-amber-400/10 transition-all">
+      <span class="material-symbols-outlined text-[20px]">favorite</span>
+      Our Story
+    </a>
+  </section>
+
+</main>
+
+<!-- Lightbox -->
+<div id="lb" onclick="closeLb()">
+  <img id="lb-img" src="" alt="Gallery photo"/>
+  <button onclick="closeLb()" class="absolute top-6 right-6 text-amber-400 bg-red-950/60 rounded-full w-10 h-10 flex items-center justify-center text-xl hover:bg-red-900 transition-all">✕</button>
+</div>
+
+<!-- MOBILE NAV -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe pt-2 bg-red-950/80 backdrop-blur-3xl border-t border-amber-500/10 rounded-t-lg">
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="invitation.html">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Invite</span>
+  </a>
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="our-story.html">
+    <span class="material-symbols-outlined">favorite</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Story</span>
+  </a>
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="event-details.html">
+    <span class="material-symbols-outlined">event_note</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Details</span>
+  </a>
+  <a class="flex flex-col items-center text-amber-400 font-bold border-t-2 border-amber-400 pt-2 scale-105" href="#">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">photo_library</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">Gallery</span>
+  </a>
+  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="rsvp.html">
+    <span class="material-symbols-outlined">mail</span>
+    <span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span>
+  </a>
+</nav>
+<div class="h-20 md:hidden"></div>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+function openLb(card){
+  const img = card.querySelector('img');
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLb(){
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLb(); });
+</script>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+
+<!-- Sensual Template Initialization -->
+<script src="sensual-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body>
+</html>
+

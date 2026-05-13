@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400&amp;family=Noto+Serif:ital,wght@0,400;1,400&amp;family=Be+Vietnam+Pro:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#d9e4c6",
+                    "surface-dim": "#dcdad3",
+                    "on-primary-fixed-variant": "#703624",
+                    "surface-bright": "#fcf9f2",
+                    "on-secondary-fixed-variant": "#414a34",
+                    "tertiary-container": "#8a7055",
+                    "outline-variant": "#d8c2bc",
+                    "primary-container": "#a7624d",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "inverse-primary": "#ffb59f",
+                    "on-surface-variant": "#53433f",
+                    "primary": "#8a4b37",
+                    "secondary-fixed-dim": "#c0caae",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#59422b",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f1eee7",
+                    "on-primary-fixed": "#390c01",
+                    "inverse-on-surface": "#f3f0e9",
+                    "surface": "#fcf9f2",
+                    "surface-container-high": "#ebe8e1",
+                    "tertiary-fixed-dim": "#e1c1a2",
+                    "surface-container-highest": "#e5e2db",
+                    "on-secondary-container": "#5c664e",
+                    "primary-fixed-dim": "#ffb59f",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#31312c",
+                    "on-surface": "#1c1c18",
+                    "secondary": "#58624a",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#291805",
+                    "surface-tint": "#8d4d39",
+                    "outline": "#86736e",
+                    "tertiary-fixed": "#ffdcbd",
+                    "tertiary": "#70573f",
+                    "on-tertiary": "#ffffff",
+                    "background": "#fcf9f2",
+                    "surface-container-low": "#f6f3ec",
+                    "on-background": "#1c1c18",
+                    "on-tertiary-container": "#fffbff",
+                    "primary-fixed": "#ffdbd1",
+                    "secondary-fixed": "#dce6c9",
+                    "surface-variant": "#e5e2db",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-page": "40px",
+                    "gutter": "24px",
+                    "touch-target": "48px",
+                    "section-gap": "80px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "script-accent": ["Noto Serif"],
+                    "headline-display": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "body-md": ["Epilogue"],
+                    "headline-lg": ["Noto Serif"],
+                    "body-lg": ["Epilogue"],
+                    "label-caps": ["Be Vietnam Pro"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .linen-texture {
+            background-color: #fcf9f2;
+            background-image: repeating-linear-gradient(45deg, rgba(172, 102, 81, 0.03) 0px, rgba(172, 102, 81, 0.03) 1px, transparent 1px, transparent 10px),
+                              repeating-linear-gradient(-45deg, rgba(172, 102, 81, 0.03) 0px, rgba(172, 102, 81, 0.03) 1px, transparent 1px, transparent 10px);
+        }
+        .deckled-edge {
+            clip-path: polygon(0% 0%, 5% 1%, 10% 0%, 15% 2%, 20% 0%, 25% 1%, 30% 0%, 35% 2%, 40% 0%, 45% 1%, 50% 0%, 55% 2%, 60% 0%, 65% 1%, 70% 0%, 75% 2%, 80% 0%, 85% 1%, 90% 0%, 95% 2%, 100% 0%, 100% 100%, 95% 98%, 90% 100%, 85% 99%, 80% 100%, 75% 98%, 70% 100%, 65% 99%, 60% 100%, 55% 98%, 50% 100%, 45% 99%, 40% 100%, 35% 98%, 30% 100%, 25% 99%, 20% 100%, 15% 98%, 10% 100%, 5% 99%, 0% 100%);
+        }
+        .paper-stack-shadow {
+            box-shadow: 2px 2px 15px rgba(138, 75, 55, 0.08), -1px -1px 5px rgba(255, 255, 255, 0.8);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-md border-b-[0.5px] border-[#AC6651]/20 shadow-sm shadow-[#AC6651]/5 flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#AC6651] cursor-pointer hover:opacity-70 transition-opacity duration-500" data-icon="menu">menu</span>
+<h1 class="font-serif italic text-2xl tracking-wide text-[#AC6651]">Evelyn &amp; Julian</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 text-[#AC6651] font-label-caps text-[10px] tracking-widest uppercase">
+<a class="hover:opacity-70 transition-opacity" href="#">Ceremony</a>
+<a class="hover:opacity-70 transition-opacity" href="#">Gallery</a>
+<a class="hover:opacity-70 transition-opacity" href="#">RSVP</a>
+</nav>
+<span class="material-symbols-outlined text-[#AC6651] cursor-pointer hover:opacity-70 transition-opacity duration-500" data-icon="favorite">favorite</span>
+</div>
+</header>
+<main class="min-h-screen pt-32 pb-40 px-6 linen-texture relative overflow-hidden">
+<!-- Floating Botanical Elements (Visual Polish) -->
+<div class="absolute top-20 -right-20 opacity-20 pointer-events-none transform rotate-12">
+<img alt="" class="w-80 h-80 object-contain" data-alt="A delicate, hand-drawn botanical illustration of wild eucalyptus leaves and dried flowers. The art is rendered in soft sage and muted terracotta tones on a transparent background, matching a light-mode wedding aesthetic. The lines are fine and organic, suggesting a premium, artisan stationary feel with a serene, natural mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRyzM4iyia5x5Pwn7eNs1WXpuUkvDK7Qr6b1aTE1pTB2Kc4zY6Jk4BE9NlGGSFTO8I6wroz2xi0JEwevTUiqnBYc6w_i2os1PNGI4yFgspFOJOPzSwCNLdIX_HeMyRbFMbxCHwQwp5ipsCABVwSGgm-VEmpECiiIxVYz2qufHviExOTd0j8cmTi5CxzPqRliBBfGbUCZd8OB-LJFIhlet9raBx4i421TaFkKQxRgO81EDq2T248jsWMfXS7h4mrWEgxKQ4VUbeXmB0"/>
+</div>
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<!-- Hero Date Module -->
+<section class="mb-section-gap relative flex flex-col items-center">
+<div class="relative w-32 h-44 mb-8">
+<!-- The Hanging Tag Calendar -->
+<div class="absolute inset-0 bg-white border border-[#AC6651]/10 rounded-sm paper-stack-shadow deckled-edge transform -rotate-3 transition-transform hover:rotate-0 duration-700 flex flex-col items-center justify-center p-4">
+<div class="w-2 h-2 rounded-full bg-stone-300 absolute top-2 left-1/2 -translate-x-1/2"></div>
+<span class="font-label-caps text-secondary text-[10px] uppercase mb-1">September</span>
+<span class="font-headline-display text-primary text-5xl">24</span>
+<span class="font-label-caps text-secondary text-[10px] uppercase mt-1">2024</span>
+</div>
+<!-- Secondary offset card underneath -->
+<div class="absolute inset-0 bg-surface-container -z-10 rounded-sm transform rotate-6 scale-95 opacity-60 deckled-edge"></div>
+</div>
+<h2 class="font-headline-lg text-primary text-center mb-4">Our Celebration</h2>
+<p class="font-body-lg text-on-surface-variant text-center max-w-lg italic">
+                    "Two souls, one heart, a lifetime of beautiful moments beginning under the golden California sun."
+                </p>
+</section>
+<!-- Stacked Details Cards -->
+<section class="w-full space-y-12 relative">
+<!-- Card 1: The Ceremony -->
+<div class="relative group">
+<div class="bg-white p-10 md:p-16 rounded-sm paper-stack-shadow deckled-edge relative z-10 transform transition-transform duration-500 hover:-translate-y-1">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<span class="font-label-caps text-secondary text-xs uppercase mb-4 block tracking-[0.2em]">The Ceremony</span>
+<h3 class="font-headline-lg text-primary mb-6">Oak Grove Estate</h3>
+<div class="space-y-4 font-body-md text-on-surface-variant">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#AC6651] text-xl" data-icon="schedule">schedule</span>
+<p>Processional begins at four o'clock in the afternoon</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#AC6651] text-xl" data-icon="location_on">location_on</span>
+<p>1284 Whispering Pines Way,<br/>Ojai, California 93023</p>
+</div>
+</div>
+<button class="mt-8 px-8 py-3 bg-primary text-on-primary font-label-caps text-[10px] tracking-widest uppercase hover:bg-on-primary-fixed-variant transition-colors duration-300">
+                                    View Map
+                                </button>
+</div>
+<div class="w-full md:w-1/2 h-64 overflow-hidden rounded-sm relative">
+<img alt="" class="w-full h-full object-cover" data-alt="A sun-drenched outdoor wedding ceremony setup under a massive, ancient oak tree. The scene features minimalist wooden chairs arranged in neat rows on a grassy lawn, with soft golden hour lighting filtering through the leaves. The aesthetic is organic and bohemian, using a palette of warm terracotta, sage green, and cream. The mood is tranquil and deeply romantic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP7lMn0V1CpnmlVu_6KCJXD-58nYE-wy29lz1EQQaD18h3sAouZtAQDP-0RV2uPmLzDowE7Qf76ImECvhFauKB3wp2TrCL1E6mJAucDiavTBqupHHYePoI0DLQTVdQfK8IsbjO8FwaF-iDPbv8JI97M6LVRO4-aOzMu4II3kJU45-uZ516EBvpFrK03eOMYR2bQHfy5Ydp2ITFVb4Jtl_tb_ZKkp0Xh0KmNHyGRVv0kX8_a9vNS_kRnlSs0PDOMyHXtkv0BzFvgGcL"/>
+</div>
+</div>
+</div>
+<!-- Offset background paper -->
+<div class="absolute inset-0 bg-surface-container-high -z-10 transform -rotate-1 translate-y-2 translate-x-2 rounded-sm deckled-edge"></div>
+</div>
+<!-- Card 2: The Reception -->
+<div class="relative group md:ml-12">
+<div class="bg-surface-container-low p-10 md:p-16 rounded-sm paper-stack-shadow deckled-edge relative z-10 transform transition-transform duration-500 hover:-translate-y-1">
+<div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+<div class="w-full md:w-1/2 text-right md:text-left">
+<span class="font-label-caps text-secondary text-xs uppercase mb-4 block tracking-[0.2em]">The Reception</span>
+<h3 class="font-headline-lg text-primary mb-6">Dinner &amp; Dancing</h3>
+<div class="space-y-4 font-body-md text-on-surface-variant">
+<div class="flex items-start justify-end md:justify-start gap-3">
+<span class="material-symbols-outlined text-[#AC6651] text-xl" data-icon="restaurant">restaurant</span>
+<p>Cocktail hour and garden dinner to follow</p>
+</div>
+<div class="flex items-start justify-end md:justify-start gap-3">
+<span class="material-symbols-outlined text-[#AC6651] text-xl" data-icon="nightlife">nightlife</span>
+<p>Festivities until the stars emerge at midnight</p>
+</div>
+</div>
+<div class="mt-8 flex flex-wrap gap-3 justify-end md:justify-start">
+<span class="px-4 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] uppercase rounded-full">Formal Attire</span>
+<span class="px-4 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] uppercase rounded-full">Outdoor</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-64 overflow-hidden rounded-sm relative">
+<img alt="" class="w-full h-full object-cover" data-alt="An intimate wedding reception table set outdoors under a canopy of bistro lights. The table is dressed with fine linen runners in sand tones, featuring stoneware plates, artisanal terracotta napkins, and clusters of dried wildflowers in ceramic vases. The lighting is warm and ambient, creating a tactile, hand-crafted aesthetic that feels grounded and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfUwttk5JziXvp17QUoLRTxfaJgIAxi5xpGUzinQsDEXsdHWjOrpfPs-Jv4GxPwMNcUjEp0AyLStbZ2oZa1bGlQY8ekGNugZpG2DBgZ-M-WGN6veFuvqC7V8a4TlOWIBpjSitLoVBMZTJtir4U5FA_VA_vOUYe_q0KZiMneHI3Cci9LeyCTGSPYvVb3f6-QDY8ZRua05Kxc48cEUQQFozl9LkMJBnfoZ_AgI9Z781HSl3m3A8IijcMFnheOATmsaWtt-rhRTcg95C1"/>
+</div>
+</div>
+</div>
+<!-- Offset background paper -->
+<div class="absolute inset-0 bg-[#E5E1D8] -z-10 transform rotate-1 -translate-y-2 -translate-x-2 rounded-sm deckled-edge"></div>
+</div>
+<!-- Card 3: Accommodations (Asymmetric Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+<div class="bg-white p-8 rounded-sm paper-stack-shadow deckled-edge transform rotate-1">
+<h4 class="font-headline-md text-primary mb-4">Where to Stay</h4>
+<p class="font-body-md text-on-surface-variant mb-6">We have reserved a block of rooms at the Ojai Valley Inn for our guests.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label-caps text-[10px] uppercase tracking-widest border-b border-primary/30 pb-1 hover:border-primary transition-all" href="#">
+                            Book Your Stay <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</a>
+</div>
+<div class="bg-surface-container p-8 rounded-sm paper-stack-shadow deckled-edge transform -rotate-2 mt-4 md:mt-24">
+<h4 class="font-headline-md text-primary mb-4">Gift Registry</h4>
+<p class="font-body-md text-on-surface-variant mb-6">Your presence is the only gift we require, but if you wish to contribute to our honeymoon...</p>
+<a class="inline-flex items-center gap-2 text-primary font-label-caps text-[10px] uppercase tracking-widest border-b border-primary/30 pb-1 hover:border-primary transition-all" href="#">
+                            Visit Registry <span class="material-symbols-outlined text-sm" data-icon="favorite">favorite</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-[40px] bg-[#F4F1EA] border border-[#AC6651]/10 shadow-[0_8px_30px_rgb(172,102,81,0.12)] z-50 flex justify-around items-center px-4 py-2">
+<button class="p-3 bg-[#E5E1D8] text-[#AC6651] rounded-full transition-all duration-500 ease-in-out">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+</button>
+<button class="text-stone-400 p-3 hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</button>
+<button class="text-stone-400 p-3 hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</button>
+<button class="text-stone-400 p-3 hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+</button>
+</nav>
+<!-- Contextual FAB -->
+<button class="fixed bottom-24 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg shadow-primary/20 flex items-center justify-center hover:scale-110 transition-transform duration-300 z-40 group">
+<span class="material-symbols-outlined text-2xl" data-icon="mail">mail</span>
+<span class="absolute right-16 bg-white px-3 py-1 rounded text-[10px] font-label-caps text-primary opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm border border-primary/10">RSVP Now</span>
+</button>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Organic Boho Template Initialization -->
+<script src="organic-boho-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

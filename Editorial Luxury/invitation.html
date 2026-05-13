@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Noto+Serif:ital,wght@0,300;0,400;1,300&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(251, 249, 249, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hairline-border {
+            border: 0.5px solid rgba(212, 175, 55, 0.3);
+        }
+        body {
+            background-color: #fbf9f9;
+            background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px);
+            background-size: 40px 40px;
+            background-attachment: fixed;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#735c00",
+                        "outline": "#7f7663",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#444542",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-container": "#636262",
+                        "tertiary": "#5e5f5b",
+                        "inverse-surface": "#303031",
+                        "tertiary-container": "#b3b3af",
+                        "secondary": "#5f5e5e",
+                        "outline-variant": "#d0c5af",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-primary": "#e9c349",
+                        "surface-tint": "#735c00",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e3e2e2",
+                        "tertiary-fixed": "#e3e3de",
+                        "surface-container-high": "#e9e8e7",
+                        "surface-dim": "#dbdad9",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#e2dfde",
+                        "primary-fixed": "#ffe088",
+                        "primary-container": "#d4af37",
+                        "on-tertiary-fixed-variant": "#464744",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-primary-fixed": "#241a00",
+                        "on-surface": "#1b1c1c",
+                        "on-primary-container": "#554300",
+                        "surface-container": "#efeded",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fbf9f9",
+                        "surface": "#fbf9f9",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary-fixed-dim": "#c7c7c2",
+                        "on-surface-variant": "#4d4635",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "background": "#fbf9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-container-highest": "#e3e2e2"
+                    },
+                    "fontFamily": {
+                        "body-md": ["inter"],
+                        "ui-label": ["inter"],
+                        "headline-md": ["notoSerif"],
+                        "display-hero": ["notoSerif"],
+                        "body-lg": ["inter"],
+                        "caption": ["inter"],
+                        "headline-lg": ["notoSerif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "ui-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                        "caption": ["11px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+.vows-countdown .vows-cd-num { color: #D4AF37; }
+.vows-countdown .vows-cd-label { color: #D4AF37; opacity: 0.6; }
+.vows-countdown .vows-cd-digits { color: #D4AF37; }
+.vows-countdown .vows-cd-celebrate { color: #D4AF37; }
+</style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-stone-50/60 dark:bg-stone-900/60 backdrop-blur-xl border-b-[0.5px] border-amber-200/50 dark:border-amber-800/50 shadow-sm shadow-black/5">
+<div class="flex items-center gap-4">
+<button class="text-amber-600 dark:text-amber-400 hover:opacity-70 transition-opacity duration-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-serif tracking-widest uppercase text-xs text-amber-600 dark:text-amber-400">ELEGANCE &amp; GRACE</span>
+</div>
+<div class="font-serif italic text-xl tracking-tighter text-amber-600 dark:text-amber-400">A &amp; B</div>
+<button class="text-amber-600 dark:text-amber-400 hover:opacity-70 transition-opacity duration-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</header>
+<main class="pt-32 pb-40 px-6 md:px-32 max-w-7xl mx-auto">
+<!-- Hero Section & Luxury Flip Calendar -->
+<section class="mb-32 grid grid-cols-1 lg:grid-cols-12 gap-16 items-end">
+<div class="lg:col-span-7">
+<h1 class="font-display-hero text-display-hero mb-8 text-on-surface">The Celebration <br/><span class="italic text-primary">Details</span></h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">Join us for an unforgettable evening of love and artistry. Every detail has been curated to reflect our journey together in the heart of the city.</p>
+<a class="inline-block mt-10 px-10 py-4 border border-primary text-primary font-ui-label uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-500" href="rsvp.html">Kindly Respond</a>
+</div>
+<div class="lg:col-span-5 flex justify-end">
+<!-- Flip Calendar Module -->
+<div class="glass-panel hairline-border p-8 text-center w-64 shadow-2xl">
+<div class="font-ui-label text-ui-label text-primary mb-4 uppercase tracking-[0.3em]">Save the Date</div>
+<div class="relative">
+<div class="bg-surface-container-highest hairline-border rounded-lg p-6 mb-2">
+<span class="font-display-hero text-6xl text-on-surface">24</span>
+</div>
+<div class="absolute inset-y-1/2 left-0 w-full h-[1px] bg-amber-200/50"></div>
+</div>
+<div class="font-headline-md text-headline-md uppercase tracking-widest text-on-surface-variant">September</div>
+<div class="font-body-md text-body-md text-outline mt-2 italic">Two Thousand Twenty-Four</div>
+</div>
+</div>
+</section>
+<div class="vows-countdown" style="margin: 24px 0;"></div>
+<!-- Bento Grid Event Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Ceremony Card -->
+<div class="lg:col-span-2 group">
+<div class="glass-panel hairline-border p-12 h-full flex flex-col md:flex-row gap-12 hover:shadow-xl transition-all duration-700">
+<div class="w-full md:w-1/2 overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover grayscale-[30%] group-hover:scale-105 transition-transform duration-1000" data-alt="A sun-drenched, high-fashion wedding ceremony setting in a minimalist stone cathedral with soaring arches. The lighting is soft and ethereal, casting long shadows across ivory marble floors. Delicate champagne gold accents and white floral arrangements create an atmosphere of quiet luxury and timeless elegance. The mood is serene, intimate, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjUZAOcXsOBE75GryR7Pe-4VRknkckCGO6bNfIhJwnI6RIBjNMXglQRKrjttSYadI3NHpR-A7nGdbqIip1qBi7ddwbQRUkDfRTlzLvHdTzojbge-KXAzhdnz4bMIklTPGfne4XFdWbkUM6KJdykxa0sr44f_-vtFW0fetvpujEfwebjvg59SUQMdiDtLOJPTdIWyr9IVVkYpYJFkvDFI1jeXsBHKJujAwkisgqQjMic-25cJAnYCuSwswd78e_DVrrEiiwPtzTRmwP"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center">
+<span class="font-ui-label text-ui-label text-primary mb-6 uppercase">01 — The Vows</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">Ceremony</h2>
+<p class="font-body-md text-body-md text-secondary mb-8">Held at the historic Saint Jude’s Chapel, where sunlight dances through stained glass to bless our union.</p>
+<div class="mt-auto space-y-4 border-t border-amber-100/50 pt-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="font-body-md text-body-md">Four O'Clock in the Afternoon</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-body-md text-body-md">1200 Cathedral District, Florence</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Travel & Stay Card -->
+<div class="lg:col-span-1 group">
+<div class="glass-panel hairline-border p-8 h-full flex flex-col hover:shadow-xl transition-all duration-700">
+<div class="aspect-square mb-8 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-1000" data-alt="A luxurious boutique hotel suite overlooking a classic European cityscape at dusk. The interior is decorated with muted beige textiles, dark wood accents, and warm ambient lighting. A crystal carafe and fine linens suggest high-end hospitality. The overall aesthetic is one of exclusive comfort and refined travel experiences." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBduSwpEPmI18YdfO3gWwe7l9D0jF71yZ6zzv5W0fM0RD-eVjwEsU2OFLIwmsV0aP6OteXvChKrEgpaPgg2fMRq1BI6ugmbVZ3p7jMlu6hzRUwjNIb39WXDsBpI1bFfx4tynexLqU4lCRgCY0sRE93JLRH2ZuNsWDnZwcmUtyPxoXe-uhzMp3NSOrY-6mxIXghUF5OxY8RMn2QN1j9Gqx_h2I7DoI33vlVp4tlVa2lT_pqaBdPmKSzwfkJG47PK2-jIR1MvSuwa2nIa"/>
+</div>
+<span class="font-ui-label text-ui-label text-primary mb-4 uppercase">Accommodation</span>
+<h2 class="font-headline-md text-headline-md mb-4">Travel &amp; Stay</h2>
+<p class="font-body-md text-body-md text-secondary mb-8">We have reserved a block of rooms at the Grand Continental for our honored guests.</p>
+<button class="w-full py-4 border border-primary text-primary font-ui-label uppercase hover:bg-primary hover:text-white transition-all duration-500 mt-auto">Book Registry Rate</button>
+</div>
+</div>
+<!-- Reception Card -->
+<div class="lg:col-span-1 group">
+<div class="glass-panel hairline-border p-8 h-full flex flex-col hover:shadow-xl transition-all duration-700">
+<span class="font-ui-label text-ui-label text-primary mb-4 uppercase">02 — The Toast</span>
+<h2 class="font-headline-md text-headline-md mb-4">Reception</h2>
+<div class="aspect-[3/4] mb-6 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[10%] group-hover:scale-105 transition-transform duration-1000" data-alt="A minimalist reception hall set for an intimate banquet. Long wooden tables are adorned with thin champagne gold candles and simple greenery. Crystal glassware catches the soft evening light. The architecture is modern with clean lines and large windows, creating a spacious and curated celebratory atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo14Zwwe0Xn0Duf8aBjafFL5s4x8RiwwAJo-5uKgRARQ5DnwVtsRpye9Dhwtdwz4HOZPSkVeLZM1YYa37OVyf8RYuS6DHG-DH2GAkroyImQ5NoL3jq_KYv0J89nkPOLHLlLnGIhOTuozrTd68-iy-2TjYx3xvbMg9FX4el9EWTQmC8fNYUDaoBR8PTSTSpgkJ8SImBUjRcm4ZYAGpZimgGtRxrMNSx6cBBpkUlNJCi-l6kf_4RnrQ5H-vE79Zekz_4QctTaENOihK5"/>
+</div>
+<p class="font-body-md text-body-md text-secondary">Cocktails and dining to follow at The Glasshouse Pavilion. Attire: Black Tie Optional.</p>
+</div>
+</div>
+<!-- Map Integration placeholder -->
+<div class="lg:col-span-2 group">
+<div class="glass-panel hairline-border p-8 h-full flex flex-col hover:shadow-xl transition-all duration-700">
+<div class="flex justify-between items-center mb-6">
+<div>
+<span class="font-ui-label text-ui-label text-primary mb-2 uppercase block">Venue Mapping</span>
+<h2 class="font-headline-md text-headline-md">The Journey</h2>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-primary p-2 border border-amber-100 rounded-full">directions_car</span>
+<span class="material-symbols-outlined text-primary p-2 border border-amber-100 rounded-full">directions_walk</span>
+</div>
+</div>
+<div class="relative grow bg-surface-container-high overflow-hidden min-h-[300px]">
+<img class="w-full h-full object-cover opacity-60" data-alt="A stylized, minimalist architectural map showing the urban layout of a historic European city center. The map uses a palette of soft creams, greys, and champagne gold lines to highlight key landmarks. The visual style is clean and editorial, resembling an invitation card more than a utility map. High-fashion aesthetics with thin line-work and elegant typography." data-location="Florence, Italy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgG2pbU15-uirGeiX5aVzkoc4E4rAChjptTZ0fno3Ya9AeEwtoDtKdwEvWzNY7-T0NyD9JV7FPOrJKJapt4m0AIygQ3e5CpddjYbNRVhyaN1DtgM53YvMiK5yXfd9cs1UKnXBfeANmyJqik50P-anLEtZLv1IOShqpbK0CzqNIbJA019oSmn63n6t98agfCT3KLkmYfRUoIg5h4O1WGwiIhs-jrtYQUfnVjfeT6xC9xRziDVN9B8rNcS-HcFEW3TNWZvaDBn8oU-Ej"/>
+<!-- Map Pins -->
+<div class="absolute top-1/3 left-1/4 group/pin cursor-pointer">
+<div class="w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_rgba(115,92,0,0.5)]"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur px-3 py-1 text-[10px] uppercase tracking-widest font-bold border border-primary opacity-0 group-hover:opacity-100 transition-opacity">Chapel</div>
+</div>
+<div class="absolute bottom-1/4 right-1/3 group/pin cursor-pointer">
+<div class="w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(115,92,0,0.5)]"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur px-3 py-1 text-[10px] uppercase tracking-widest font-bold border border-primary opacity-0 group-hover:opacity-100 transition-opacity">Pavilion</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-2xl border-t-[0.5px] border-amber-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 pt-2 hover:text-amber-500 transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-amber-700 dark:text-amber-300 font-bold border-t-2 border-amber-600 -mt-[0.5px] pt-2" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 pt-2 hover:text-amber-500 transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">card_giftcard</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Registry</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 pt-2 hover:text-amber-500 transition-colors duration-300" href="rsvp.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">RSVP</span>
+</a>
+</nav>
+<!-- Navigation Drawer (Desktop Hidden by default, showing logic) -->
+<div class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[60] hidden">
+<div class="h-full w-80 bg-stone-50 dark:bg-stone-950 shadow-2xl flex flex-col p-8 divide-y divide-amber-100/30 dark:divide-amber-900/20">
+<div class="font-serif italic text-4xl py-12 text-center text-stone-800 dark:text-stone-100">A &amp; B</div>
+<div class="py-6 flex flex-col gap-4">
+<a class="flex items-center gap-4 text-amber-700 dark:text-amber-300 bg-stone-100 dark:bg-stone-900 font-serif text-lg tracking-wide p-4 transition-all duration-500 hover:pl-6" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                    Our Story
+                </a>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide p-4 transition-all duration-500 hover:pl-6" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                    The Venue
+                </a>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide p-4 transition-all duration-500 hover:pl-6" href="#">
+<span class="material-symbols-outlined">flight</span>
+                    Travel &amp; Stay
+                </a>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide p-4 transition-all duration-500 hover:pl-6" href="#">
+<span class="material-symbols-outlined">redeem</span>
+                    Gift Registry
+                </a>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide p-4 transition-all duration-500 hover:pl-6" href="#">
+<span class="material-symbols-outlined">contact_mail</span>
+                    Contact
+                </a>
+</div>
+</div>
+</div>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Editorial Luxury Template Initialization -->
+<script src="editorial-luxury-init.js"></script>
+<script src="../countdown-widget.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

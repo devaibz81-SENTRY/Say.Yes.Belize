@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#ffdad5",
+            "on-secondary-fixed-variant": "#871f23",
+            "outline": "#a38b88",
+            "tertiary-container": "#4a001a",
+            "inverse-on-surface": "#4b2623",
+            "on-background": "#ffdad7",
+            "on-primary-fixed": "#410001",
+            "surface-container-low": "#32110f",
+            "surface-tint": "#ffb4aa",
+            "primary-container": "#4a0404",
+            "inverse-primary": "#9d4139",
+            "error": "#ffb4ab",
+            "surface-container-lowest": "#210504",
+            "surface-container-highest": "#512a27",
+            "on-surface-variant": "#dcc0bd",
+            "tertiary-fixed": "#ffd9de",
+            "tertiary-fixed-dim": "#ffb2bf",
+            "secondary-container": "#871f23",
+            "on-tertiary-fixed": "#3f0015",
+            "secondary-fixed-dim": "#ffb3af",
+            "on-tertiary-container": "#dd5e7c",
+            "surface-bright": "#562e2b",
+            "outline-variant": "#554240",
+            "surface-dim": "#280908",
+            "secondary-fixed": "#ffdad7",
+            "on-error-container": "#ffdad6",
+            "on-secondary-container": "#ff9995",
+            "surface-container": "#371513",
+            "on-tertiary-fixed-variant": "#871b3c",
+            "primary-fixed-dim": "#ffb4aa",
+            "surface": "#280908",
+            "secondary": "#ffb3af",
+            "surface-variant": "#512a27",
+            "on-secondary-fixed": "#410005",
+            "on-tertiary": "#660027",
+            "primary": "#ffb4aa",
+            "inverse-surface": "#ffdad7",
+            "tertiary": "#ffb2bf",
+            "background": "#280908",
+            "on-primary": "#5f1410",
+            "on-surface": "#ffdad7",
+            "on-error": "#690005",
+            "error-container": "#93000a",
+            "on-secondary": "#670410",
+            "on-primary-container": "#d26a5f",
+            "on-primary-fixed-variant": "#7e2b23",
+            "surface-container-high": "#441f1d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "unit": "8px",
+            "stack-lg": "5rem",
+            "container-max": "1140px",
+            "gutter": "24px",
+            "margin-safe": "32px",
+            "stack-md": "2.5rem",
+            "stack-sm": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-caps": ["Plus Jakarta Sans"],
+            "headline-lg": ["Noto Serif"],
+            "headline-xl": ["Noto Serif"],
+            "headline-md": ["Noto Serif"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.02em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>.glass-card {
+    background: rgba(74, 4, 4, 0.7);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden
+    }
+.velvet-grain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDF_8wkQhJ10NB8jJz8hBcjvuARSkoT9-EmHBdUGmEVijEPCpBMPTeXN9PKnwJ_QaU9RArjfGuQSOW1h0bLyOPCUh9q54KcT4JXWvL2HY5UUcbxT_wlTz6EbIhmHVgoyZrSS4mwabclhcDP2IP08qTJIN-BZqXV4rkYE_Fvr4LQUxnMaLXtx79PdwWbKx3BbU3Qa_oy1sPl7VaMLLyrOrnE8heFLHLnaoAf86pXHizQtGoAr-6AtDfXg9qLIrYgYMBxF_7ZP9Rye-Uc);
+    opacity: 0.04;
+    pointer-events: none
+    }
+.gold-foil-border {
+    border: 1px solid transparent;
+    background-image: linear-gradient(rgba(74, 4, 4, 0.7), rgba(74, 4, 4, 0.7)), linear-gradient(135deg, #D4AF37 0%, #8B1E3F 50%, #D4AF37 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box
+    }
+.candlelight-glow {
+    box-shadow: 0 0 40px rgba(139, 30, 63, 0.25)
+    }
+.flip-card-inner {
+    background: linear-gradient(180deg, #512a27 0%, #32110f 100%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen selection:bg-tertiary-container selection:text-tertiary">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-red-950/60 backdrop-blur-2xl border-b border-amber-500/20 shadow-[0_4px_20px_rgba(139,30,63,0.3)] backdrop-brightness-75">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-200">flare</span>
+<h1 class="font-serif tracking-[0.2em] uppercase text-xs text-amber-200">Evelyn &amp; Julian</h1>
+</div>
+<span class="text-amber-400 font-serif italic text-lg">Details</span>
+<span class="material-symbols-outlined text-amber-200">celebration</span>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-container-max mx-auto space-y-stack-lg">
+<!-- Hero Header -->
+<section class="text-center space-y-stack-sm">
+<span class="font-label-caps text-label-caps text-on-tertiary-container uppercase tracking-[0.3em]">The Celebration</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Event Itinerary</h2>
+<div class="w-12 h-[1px] bg-secondary-fixed mx-auto opacity-30"></div>
+</section>
+<!-- Central Flip Card Date Module -->
+<section class="flex flex-col items-center justify-center space-y-6">
+<div class="flex gap-4 items-end">
+<!-- Day Card -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-24 h-32 glass-card velvet-grain gold-foil-border candlelight-glow rounded-xl flex items-center justify-center relative">
+<div class="absolute inset-x-0 top-1/2 h-[1px] bg-amber-500/20"></div>
+<span class="font-headline-xl text-headline-xl text-amber-400">14</span>
+</div>
+<span class="font-label-caps text-[10px] text-amber-200/60 uppercase tracking-widest">October</span>
+</div>
+<div class="pb-8">
+<span class="font-headline-md text-amber-200/40">/</span>
+</div>
+<!-- Year Card -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-24 h-32 glass-card velvet-grain gold-foil-border candlelight-glow rounded-xl flex items-center justify-center relative">
+<div class="absolute inset-x-0 top-1/2 h-[1px] bg-amber-500/20"></div>
+<span class="font-headline-xl text-headline-xl text-amber-400">24</span>
+</div>
+<span class="font-label-caps text-[10px] text-amber-200/60 uppercase tracking-widest">Year</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">Sunset at Ambergris Caye</p>
+</section>
+<!-- Bento-ish Details Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Wedding Ceremony -->
+<div class="glass-card velvet-grain gold-foil-border p-8 rounded-xl space-y-6 group">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-amber-400 text-3xl" data-weight="fill">temple_hindu</span>
+<span class="font-label-caps text-amber-200/50">04:30 PM</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Beachside Vows</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">White sands and coral reefs provide the backdrop as we exchange vows at the edge of the Caribbean Sea.</p>
+</div>
+<div class="pt-4 border-t border-amber-500/10">
+<p class="font-label-caps text-amber-400">Attire: Tropical Black Tie</p>
+</div>
+</div>
+<!-- Reception Card -->
+<div class="glass-card velvet-grain gold-foil-border p-8 rounded-xl space-y-6">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-amber-400 text-3xl">restaurant</span>
+<span class="font-label-caps text-amber-200/50">06:00 PM</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Cocktails &amp; Cuisines</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">An evening of Belizean-inspired gastronomy and rhythmic soul under the starlit sky.</p>
+</div>
+<div class="pt-4 border-t border-amber-500/10">
+<p class="font-label-caps text-amber-400">Location: The Azure Pavilion</p>
+</div>
+</div>
+<!-- Large Feature Card: Location -->
+<div class="md:col-span-2 relative h-96 rounded-xl overflow-hidden gold-foil-border candlelight-glow">
+<img class="w-full h-full object-cover opacity-60" data-alt="A panoramic wide shot of a luxury Belizean beach resort at dusk. The sky is a deep indigo with streaks of amber and violet from the setting sun. Warm candlelight flickers from lanterns along a private pier reaching into the turquoise water. The architecture is sophisticated and open-air, blending modern luxury with natural wood textures. The mood is intimate, exclusive, and breathtakingly romantic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfQHzgHfmbcfUACRHCkBECwHlzTIAZIVr1coIs8x_Cm6kPVUibDZdiRjWpnCmlmKwh3Y3i-SORM3y2V5zo36vqqdMwj4e8440BCyVXr_rLGujAIHzqG748nRWQUwfLu38arprtA3N-QkkvDvbrGkLu__rtyrOaSSjbeD3YB1IOnu7S1dO_W_W9TzxznilZe8KXtddF0ESnSkvAVxklQeK1BQ6kmQEdqZQoD5eugDBLiY-6Uyjpg7uxGwlGkbquBqq5JDNrGt8xuVD-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-red-950 via-red-950/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 space-y-4">
+<span class="font-label-caps text-amber-400 uppercase tracking-widest">The Destination</span>
+<h3 class="font-headline-xl text-headline-xl text-on-surface">Matachica Resort &amp; Spa</h3>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-[#D4AF37] text-red-950 font-body-md font-semibold rounded-full hover:brightness-110 transition-all">View Map</button>
+<button class="px-6 py-2 border border-amber-400/50 text-amber-400 font-body-md rounded-full hover:bg-amber-400/10 transition-all">Travel Guide</button>
+</div>
+</div>
+</div>
+<!-- Additional Logistics -->
+<div class="glass-card velvet-grain gold-foil-border p-8 rounded-xl flex items-center gap-6">
+<div class="p-4 bg-tertiary-container rounded-full">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">local_taxi</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Transportation</h4>
+<p class="font-body-md text-on-surface-variant">Shuttles depart from San Pedro Airport every 30 minutes.</p>
+</div>
+</div>
+<div class="glass-card velvet-grain gold-foil-border p-8 rounded-xl flex items-center gap-6">
+<div class="p-4 bg-tertiary-container rounded-full">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">spa</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Honeymoon Vibe</h4>
+<p class="font-body-md text-on-surface-variant">The resort is reserved exclusively for our guests for three days.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe pt-2 bg-red-950/80 backdrop-blur-3xl border-t border-amber-500/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<!-- Invitation Tab -->
+<a class="flex flex-col items-center justify-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="invitation.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">Invitation</span>
+</a>
+<!-- Details Tab (Active) -->
+<a class="flex flex-col items-center justify-center text-amber-400 font-bold border-t-2 border-amber-400 pt-2 scale-105 duration-700 ease-in-out" href="event-details.html">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">Details</span>
+</a>
+<!-- RSVP Tab -->
+<a class="flex flex-col items-center justify-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="rsvp.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span>
+</a>
+</nav>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../countdown-widget.js"></script>
+
+<!-- Sensual Template Initialization -->
+<script src="sensual-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

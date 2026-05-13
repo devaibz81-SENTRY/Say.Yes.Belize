@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guest Book — Said Yes Belize</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf8f6;--surface:#fff;--surface2:#f3f0ed;--text:#1a1a1a;--text2:#6b6059;
+  --accent:#8b5e52;--accent2:#d4af37;--border:rgba(139,94,82,.15);
+  --radius:1.25rem;--shadow:0 8px 40px rgba(0,0,0,.1);--font-serif:'Noto Serif',serif;
+  --font-sans:'Be Vietnam Pro',sans-serif
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);min-height:100dvh;overflow-x:hidden}
+
+/* ─── Grain overlay ─── */
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:1000}
+
+/* ─── Hero ─── */
+.hero{background:linear-gradient(160deg,#2b1a14 0%,#4a2c22 50%,#1a1209 100%);min-height:44vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:4rem 2rem 3rem;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(212,175,55,.12) 0%,transparent 65%);pointer-events:none}
+.hero-eyebrow{font-family:var(--font-sans);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(212,175,55,.6);margin-bottom:1rem}
+.hero-title{font-family:var(--font-serif);font-size:clamp(2.5rem,7vw,5rem);color:#f5e8d0;line-height:1;font-style:italic}
+.hero-sub{font-family:var(--font-sans);font-size:.9rem;color:rgba(245,232,208,.45);margin-top:1.25rem;letter-spacing:.1em}
+
+/* ─── Layout ─── */
+.page{max-width:860px;margin:0 auto;padding:0 1.5rem 8rem}
+
+/* ─── Compose Card ─── */
+.compose-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;margin-top:-2rem;position:relative;z-index:10;box-shadow:var(--shadow)}
+.compose-card h2{font-family:var(--font-serif);font-size:1.5rem;color:var(--accent);margin-bottom:1.5rem;font-style:italic}
+.form-row{display:flex;gap:1rem;flex-wrap:wrap}
+.form-group{display:flex;flex-direction:column;gap:.4rem;flex:1 1 200px}
+.form-group label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text2);font-weight:500}
+.form-group input,.form-group textarea,.form-group select{font-family:var(--font-sans);font-size:1rem;background:var(--surface2);border:1px solid var(--border);border-radius:.5rem;padding:.75rem 1rem;color:var(--text);outline:none;transition:border-color .25s,box-shadow .25s;resize:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(139,94,82,.12)}
+.tone-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.tone-chip{padding:.35rem .85rem;border:1px solid var(--border);border-radius:9999px;font-size:.78rem;cursor:pointer;transition:all .2s;background:transparent;color:var(--text2)}
+.tone-chip.active,.tone-chip:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.submit-btn{margin-top:1.75rem;width:100%;padding:1rem;background:var(--accent);color:#fff;border:none;border-radius:.75rem;font-family:var(--font-serif);font-size:1.1rem;font-style:italic;cursor:pointer;transition:background .3s,transform .15s,box-shadow .3s;box-shadow:0 4px 20px rgba(139,94,82,.3)}
+.submit-btn:hover{background:#7a4f44;transform:translateY(-1px);box-shadow:0 8px 28px rgba(139,94,82,.4)}
+.submit-btn:active{transform:translateY(0)}
+
+/* ─── Messages Feed ─── */
+.feed-header{display:flex;align-items:baseline;gap:1rem;margin-top:3.5rem;margin-bottom:1.5rem}
+.feed-header h2{font-family:var(--font-serif);font-size:1.75rem;font-style:italic;color:var(--accent)}
+.feed-count{font-size:.78rem;color:var(--text2);letter-spacing:.1em}
+.messages-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.message-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;position:relative;transition:box-shadow .3s,transform .3s;animation:cardIn .6s cubic-bezier(.34,1.56,.64,1) both}
+.message-card:hover{box-shadow:0 12px 36px rgba(0,0,0,.1);transform:translateY(-3px)}
+@keyframes cardIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.msg-tone{position:absolute;top:1.25rem;right:1.25rem;font-size:1.25rem}
+.msg-name{font-family:var(--font-serif);font-size:1rem;color:var(--accent);font-style:italic;margin-bottom:.5rem}
+.msg-relation{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text2);margin-bottom:1rem}
+.msg-text{font-family:var(--font-serif);font-size:.95rem;line-height:1.7;color:var(--text);font-style:italic}
+.msg-gold-line{height:2px;width:2rem;background:linear-gradient(90deg,var(--accent2),transparent);border-radius:9999px;margin-bottom:1rem}
+.msg-date{font-size:.68rem;color:var(--border);letter-spacing:.1em;margin-top:1.25rem;color:var(--text2)}
+.empty-state{grid-column:1/-1;text-align:center;padding:4rem;color:var(--text2);font-family:var(--font-serif);font-style:italic;font-size:1.2rem}
+
+/* ─── Gold divider ─── */
+.gold-divider{height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);margin:3rem 0;opacity:.4}
+
+/* ─── Confetti burst (pure CSS) ─── */
+.burst{position:fixed;pointer-events:none;top:50%;left:50%;z-index:9000}
+.burst span{position:absolute;width:8px;height:8px;border-radius:50%;animation:burstOut .8s ease both}
+.burst span:nth-child(1){background:#d4af37;--tx:-80px;--ty:-100px}
+.burst span:nth-child(2){background:#8b5e52;--tx:80px;--ty:-120px}
+.burst span:nth-child(3){background:#c084a4;--tx:-100px;--ty:20px}
+.burst span:nth-child(4){background:#d4af37;--tx:60px;--ty:80px}
+.burst span:nth-child(5){background:#8b5e52;--tx:-50px;--ty:110px}
+.burst span:nth-child(6){background:#a8d4a0;--tx:110px;--ty:-30px}
+@keyframes burstOut{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--tx),var(--ty)) scale(.5)}}
+
+/* ─── Success toast ─── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(4rem);background:#2b1a14;color:#f5e8d0;padding:1rem 2rem;border-radius:.75rem;font-family:var(--font-serif);font-style:italic;font-size:1rem;box-shadow:0 8px 32px rgba(0,0,0,.35);transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .4s;opacity:0;z-index:2000;border-left:3px solid var(--accent2)}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+/* ─── Nav back ─── */
+.back-bar{display:flex;align-items:center;gap:.5rem;padding:1rem 1.5rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s}
+.back-bar:hover{color:var(--accent)}
+.back-bar svg{width:14px;height:14px}
+</style>
+  <link href="fonts.css" rel="stylesheet"/>
+  <link href="premium.css" rel="stylesheet"/>
+</head>
+<body>
+
+<a class="back-bar" href="javascript:history.back()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  Back to template
+</a>
+
+<section class="hero">
+  <p class="hero-eyebrow">A Message for the Couple</p>
+  <h1 class="hero-title">Guest Book</h1>
+  <p class="hero-sub">Leave your words. They'll keep them forever.</p>
+</section>
+
+<div class="page">
+  <!-- Compose -->
+  <div class="compose-card">
+    <h2>Leave a Message</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input id="gb-name" type="text" placeholder="e.g. Aunt Claire"/>
+      </div>
+      <div class="form-group">
+        <label>Relation to the Couple</label>
+        <select id="gb-relation">
+          <option value="">— Select —</option>
+          <option>Family of the Bride</option>
+          <option>Family of the Groom</option>
+          <option>Friend of the Couple</option>
+          <option>Colleague</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group" style="margin-top:1.25rem">
+      <label>Your Message</label>
+      <textarea id="gb-msg" rows="4" placeholder="Share a memory, a wish, a piece of advice..."></textarea>
+    </div>
+    <div class="form-group" style="margin-top:1.25rem">
+      <label>Tone</label>
+      <div class="tone-chips" id="tone-chips">
+        <button class="tone-chip active" data-tone="🌹" data-label="Romantic">🌹 Romantic</button>
+        <button class="tone-chip" data-tone="😂" data-label="Funny">😂 Funny</button>
+        <button class="tone-chip" data-tone="🕊️" data-label="Heartfelt">🕊️ Heartfelt</button>
+        <button class="tone-chip" data-tone="🥂" data-label="Celebratory">🥂 Celebratory</button>
+        <button class="tone-chip" data-tone="✨" data-label="Magical">✨ Magical</button>
+      </div>
+    </div>
+    <button class="submit-btn" id="gb-submit">Sign the Guest Book ♥</button>
+  </div>
+
+  <div class="gold-divider"></div>
+
+  <!-- Feed -->
+  <div class="feed-header">
+    <h2>Messages</h2>
+    <span class="feed-count" id="feed-count">0 messages</span>
+  </div>
+  <div class="messages-grid" id="messages-grid">
+    <p class="empty-state">Be the first to leave a message ♥</p>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">Message left with love ♥</div>
+
+<script>
+const KEY='vows_guestbook';
+let selectedTone={emoji:'🌹',label:'Romantic'};
+
+document.querySelectorAll('.tone-chip').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tone-chip').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedTone={emoji:btn.dataset.tone,label:btn.dataset.label};
+  });
+});
+
+function getMessages(){
+  try{return JSON.parse(localStorage.getItem(KEY))||[];}catch{return[];}
+}
+function saveMessages(msgs){
+  localStorage.setItem(KEY,JSON.stringify(msgs));
+}
+function renderMessages(){
+  const msgs=getMessages();
+  const grid=document.getElementById('messages-grid');
+  document.getElementById('feed-count').textContent=`${msgs.length} message${msgs.length!==1?'s':''}`;
+  if(!msgs.length){grid.innerHTML='<p class="empty-state">Be the first to leave a message ♥</p>';return;}
+  grid.innerHTML=msgs.slice().reverse().map((m,i)=>`
+    <div class="message-card" style="animation-delay:${i*.06}s">
+      <span class="msg-tone">${m.tone}</span>
+      <div class="msg-gold-line"></div>
+      <div class="msg-name">${escHtml(m.name)}</div>
+      <div class="msg-relation">${escHtml(m.relation||'Guest')}</div>
+      <div class="msg-text">"${escHtml(m.message)}"</div>
+      <div class="msg-date">${m.date}</div>
+    </div>`).join('');
+}
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function showBurst(){
+  const b=document.createElement('div');b.className='burst';
+  for(let i=0;i<6;i++)b.appendChild(document.createElement('span'));
+  document.body.appendChild(b);setTimeout(()=>b.remove(),900);
+}
+function showToast(){
+  const t=document.getElementById('toast');t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+document.getElementById('gb-submit').addEventListener('click',()=>{
+  const name=document.getElementById('gb-name').value.trim();
+  const msg=document.getElementById('gb-msg').value.trim();
+  const rel=document.getElementById('gb-relation').value;
+  if(!name||!msg){
+    document.getElementById('gb-name').style.borderColor=name?'':getComputedStyle(document.documentElement).getPropertyValue('--accent');
+    document.getElementById('gb-msg').style.borderColor=msg?'':getComputedStyle(document.documentElement).getPropertyValue('--accent');
+    return;
+  }
+  const msgs=getMessages();
+  msgs.push({name,relation:rel,message:msg,tone:selectedTone.emoji,date:new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})});
+  saveMessages(msgs);
+  document.getElementById('gb-name').value='';
+  document.getElementById('gb-msg').value='';
+  document.getElementById('gb-relation').value='';
+  renderMessages();
+  showBurst();
+  showToast();
+});
+
+renderMessages();
+</script>
+  <script src="font-picker.js"></script>
+  <script src="premium.js"></script>
+</body></html>

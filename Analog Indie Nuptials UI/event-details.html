@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Event Details — The Wedding Zine</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#516051","on-surface":"#1b1c1c","on-surface-variant":"#434842","surface":"#fcf9f8","surface-container":"#f0eded","surface-container-lowest":"#ffffff","surface-dim":"#dcd9d9","outline":"#747872","outline-variant":"#c4c8c0","secondary-fixed":"#ffdad3","primary-fixed":"#d7e7d4"},borderRadius:{none:"0px",lg:"0px",xl:"0px"},spacing:{"margin-edge":"40px","offset-lg":"64px"},fontFamily:{"body-md":["Newsreader"],"mono-sm":["Space Grotesk"],"headline-lg":["Newsreader"],"body-lg":["Newsreader"],"headline-md":["Newsreader"],"display-xl":["Newsreader"],"mono-label":["Space Grotesk"]}}}}
+</script>
+<style>
+body{background:#fcf9f8;color:#1b1c1c}
+#vows-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(252,249,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(116,120,114,.2);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:44px;font-family:'Space Grotesk',sans-serif;transform:translateY(-100%);animation:navIn .6s .4s ease forwards}
+.vn-link{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#747872;text-decoration:none;padding:5px 12px;border:1px solid transparent;transition:all .2s;font-weight:500}
+.vn-link:hover,.vn-link.active{color:#516051;border-color:rgba(81,96,81,.4);background:rgba(81,96,81,.06)}
+@keyframes navIn{to{transform:translateY(0)}}
+.sc{opacity:0;transform:translateX(-20px);transition:opacity .5s ease,transform .5s ease}
+.sc.in{opacity:1;transform:none}
+.sc:hover{transform:translateY(-4px)!important;box-shadow:0 8px 24px rgba(27,28,28,.12)}
+</style>
+  <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="font-body-md" style="padding-top:44px">
+
+<nav id="vows-nav">
+  <a href="../index.html" style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#516051;text-decoration:none;font-weight:600">Said Yes Belize</a>
+  <div style="display:flex;gap:4px">
+    <a class="vn-link" href="invitation.html">💌 Invitation</a>
+    <a class="vn-link" href="our-story.html">📖 Story</a>
+    <a class="vn-link active" href="#">📅 Details</a>
+    <a class="vn-link" href="gallery.html">🖼 Gallery</a>
+    <a class="vn-link" href="rsvp.html">✉️ RSVP</a>
+  </div>
+  <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c4c8c0;font-family:'Space Grotesk',sans-serif">Analog Indie Nuptials</span>
+</nav>
+
+<section class="py-16 px-margin-edge bg-surface-dim border-b border-outline-variant">
+  <p class="font-mono-label text-primary text-xs uppercase tracking-[0.3em] mb-4">Issue No. 02 — Program</p>
+  <h1 class="font-display-xl leading-[0.88] tracking-tighter" style="font-size:clamp(3.5rem,8vw,7rem)">The <em>Details</em></h1>
+</section>
+
+<section class="bg-surface-container py-offset-lg border-y border-outline-variant">
+  <div class="max-w-md mx-auto px-margin-edge">
+    <h3 class="font-mono-label text-center text-primary uppercase tracking-[0.3em] mb-12">Program Details</h3>
+    <div class="space-y-12">
+      <div class="border border-on-surface p-8 bg-surface-container-lowest relative sc" style="transition-delay:0s">
+        <div class="absolute -top-3 -left-3 bg-on-surface text-surface px-3 py-1 font-mono-sm text-sm">01</div>
+        <span class="font-mono-label block text-xs uppercase mb-2">The Vows — 4:00 PM</span>
+        <h4 class="font-headline-md text-2xl mb-4">Under the Great Oak</h4>
+        <p class="font-body-md text-on-surface-variant">Four o'clock in the afternoon. Dress in your Sunday best, whatever that means to you.</p>
+        <p class="font-mono-sm text-xs text-outline mt-4 uppercase tracking-widest">Meadow Hill Farm · Attire: Relaxed Formal</p>
+      </div>
+      <div class="border border-on-surface p-8 bg-surface-container-lowest relative sc" style="transition-delay:.15s">
+        <div class="absolute -top-3 -left-3 bg-on-surface text-surface px-3 py-1 font-mono-sm text-sm">02</div>
+        <span class="font-mono-label block text-xs uppercase mb-2">The Feast — 6:00 PM</span>
+        <h4 class="font-headline-md text-2xl mb-4">The Glass House</h4>
+        <p class="font-body-md text-on-surface-variant">Dinner, drinks, and a lot of bad dancing. Seasonal plates and local wine.</p>
+        <p class="font-mono-sm text-xs text-outline mt-4 uppercase tracking-widest">Glass House Pavilion · +15 min walk</p>
+      </div>
+      <div class="border border-on-surface p-8 bg-surface-container-lowest relative translate-x-4 sc" style="transition-delay:.3s">
+        <div class="absolute -top-3 -left-3 bg-on-surface text-surface px-3 py-1 font-mono-sm text-sm">03</div>
+        <span class="font-mono-label block text-xs uppercase mb-2">The Send-off — Midnight</span>
+        <h4 class="font-headline-md text-2xl mb-4">Sparklers &amp; Getaway</h4>
+        <p class="font-body-md text-on-surface-variant">Sparklers and a getaway car. We head off; you keep the party going.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-offset-lg px-margin-edge text-center bg-on-surface">
+  <h2 class="font-display-xl text-surface text-4xl mb-8">Will you join us?</h2>
+  <a href="rsvp.html" class="px-10 py-4 bg-primary text-surface font-mono-label uppercase tracking-widest hover:bg-primary-fixed hover:text-on-surface transition-colors no-underline inline-block">RSVP Now</a>
+</section>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.08});
+document.querySelectorAll('.sc').forEach(el=>io.observe(el));
+</script>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Analog Indie Nuptials UI Template Initialization -->
+<script src="analog-indie-nuptials-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>
+

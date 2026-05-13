@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Noto+Serif:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#735c00",
+                    "outline": "#7f7663",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#444542",
+                    "on-tertiary-fixed": "#1b1c19",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-secondary-container": "#636262",
+                    "tertiary": "#5e5f5b",
+                    "inverse-surface": "#303031",
+                    "tertiary-container": "#b3b3af",
+                    "secondary": "#5f5e5e",
+                    "outline-variant": "#d0c5af",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "inverse-primary": "#e9c349",
+                    "surface-tint": "#735c00",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e3e2e2",
+                    "tertiary-fixed": "#e3e3de",
+                    "surface-container-high": "#e9e8e7",
+                    "surface-dim": "#dbdad9",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed": "#ffe088",
+                    "primary-container": "#d4af37",
+                    "on-tertiary-fixed-variant": "#464744",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-primary-fixed": "#241a00",
+                    "on-surface": "#1b1c1c",
+                    "on-primary-container": "#554300",
+                    "surface-container": "#efeded",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f9",
+                    "surface": "#fbf9f9",
+                    "primary-fixed-dim": "#e9c349",
+                    "tertiary-fixed-dim": "#c7c7c2",
+                    "on-surface-variant": "#4d4635",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f9",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1b1c1c",
+                    "surface-container-low": "#f5f3f3",
+                    "surface-container-highest": "#e3e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "64px",
+                    "section-gap": "128px",
+                    "element-gap": "24px",
+                    "unit": "8px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "ui-label": ["Inter"],
+                    "headline-md": ["Noto Serif"],
+                    "display-hero": ["Noto Serif"],
+                    "body-lg": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-lg": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "ui-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "caption": ["11px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(251, 249, 249, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hairline-gold {
+            border-bottom: 0.5px solid rgba(115, 92, 0, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-stone-50/60 dark:bg-stone-900/60 backdrop-blur-xl border-b-[0.5px] border-amber-200/50 dark:border-amber-800/50 shadow-sm shadow-black/5">
+<div class="flex items-center">
+<button class="text-amber-600 dark:text-amber-400 hover:opacity-70 transition-opacity duration-500">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="font-serif italic text-xl tracking-tighter text-amber-600 dark:text-amber-400">
+            ELEGANCE &amp; GRACE
+        </div>
+<div class="flex items-center">
+<button class="text-amber-600 dark:text-amber-400 hover:opacity-70 transition-opacity duration-500">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Editorial Hero Section -->
+<section class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden">
+<!-- Hero Image Background -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-[0.85]" data-alt="A cinematic, high-fashion editorial portrait of a sophisticated couple in a modernist architectural setting. The lighting is soft and golden, casting long, elegant shadows across clean concrete lines and large glass panes. The mood is one of quiet luxury and timeless romance, with a color palette of warm ivories, deep ambers, and soft charcoal. The composition is asymmetrical and artistic, resembling a luxury fragrance campaign." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2w9VQROfBuJrTPci-0OSp-WNNDTQjUqTKLbX9-fddkbCinbphxnPHrdpK99sbbNhIlXZjhgYXbGOTtqTq5Hkw__uyjkReWD-CUOAM3h9zAIKItiZvLigRTLeFl9W4L4eo8MNmIjN39zV83rrhEba7-agOqJOmzJ8egwefU9LspfHY7Qsh1sYnRoCplkXBO-rUfe2ricjLzGo4KS6nsYdFNqi0umCgf5eA6gWclKEFio3VEuEs7eoouz9C2HPEvj4w1IuxydEG_sEx"/>
+</div>
+<!-- Content Overlay -->
+<div class="relative z-10 flex flex-col items-center text-center px-6">
+<p class="font-ui-label text-ui-label text-on-primary-fixed mb-8 tracking-[0.4em] uppercase opacity-80">
+                    The Union Of
+                </p>
+<div class="flex flex-col md:flex-row items-center gap-4 md:gap-12 mb-12">
+<h1 class="font-display-hero text-[80px] md:text-[120px] text-white leading-none tracking-tighter">
+                        Arthur
+                    </h1>
+<span class="font-headline-md text-headline-md italic text-primary-fixed-dim opacity-60 font-light">&amp;</span>
+<h1 class="font-display-hero text-[80px] md:text-[120px] text-white leading-none tracking-tighter">
+                        Beatrice
+                    </h1>
+</div>
+<!-- Gold Kinetic Date Panel (Glassmorphism) -->
+<div class="glass-panel px-12 py-6 rounded-none border border-white/20 shadow-2xl">
+<div class="flex flex-col items-center">
+<span class="font-ui-label text-ui-label text-primary tracking-[0.3em] uppercase mb-2">Save The Date</span>
+<div class="flex items-center gap-6">
+<div class="w-12 h-[0.5px] bg-primary/40"></div>
+<span class="font-headline-md text-headline-md text-primary tracking-widest uppercase">October 24 2025</span>
+<div class="w-12 h-[0.5px] bg-primary/40"></div>
+</div>
+<span class="font-caption text-caption text-outline italic mt-2">Lake Como, Italy</span>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-28 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
+<div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+</div>
+</section>
+<!-- Asymmetric Editorial Grid Content -->
+<section class="bg-white py-section-gap px-6 md:px-container-padding max-w-7xl mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column Text -->
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center mb-16 md:mb-0">
+<span class="font-ui-label text-ui-label text-primary uppercase tracking-[0.2em] mb-4">Our Journey</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 leading-tight">
+                        A love story written in the stars and captured in <span class="italic font-light">moments of grace.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-outline max-w-md">
+                        From the cobblestone streets of Paris to the serene shores of Como, our journey has been a curated collection of shared silence and vibrant celebration. We invite you to join the next chapter.
+                    </p>
+<div class="mt-12 flex">
+<button class="px-10 py-4 border border-primary text-primary font-ui-label text-ui-label uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-500 active:scale-95">
+                            Our Story
+                        </button>
+</div>
+</div>
+<!-- Right Column Images (Bento-style) -->
+<div class="col-span-12 md:col-span-7 grid grid-cols-2 gap-6 items-start">
+<div class="aspect-[3/4] overflow-hidden shadow-2xl mt-12">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="A high-angle architectural shot of a minimalist wedding venue with white marble floors and clean geometry. The scene is bathed in bright, neutral light, emphasizing the luxury editorial feel. A few scattered white rose petals on the floor provide a romantic touch against the cold stone. The aesthetic is clean, expensive, and modern light-mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2I-yK6Ts0aUSJGFoUEHvbf2imka8Mmx2WkyrisADS7UMKoAfKzqI4DJCHUHgQt1Sk4eeYADw0B-3skyVQIgHE5PvN4bpgfr_7vKixW4q5Q51QEmQMD28vgHaX_LtEHBAEKmE8he3FQd9ZW6knlqpyN_Z3t-Li3hOJFSyksWnLqDbbuEDzdLaOPyhvQEtbaZCohWp6aSYYO8i2IXEGQkI8C7X9R_bEtr1lJdntMEwUovGI3oGP2LM9vE0sBdA6QaltMrOrjEoAdbF7"/>
+</div>
+<div class="aspect-[3/5] overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Macro detail of an elegant invitation suite on fine linen paper with gold foil lettering. The typography is a mix of sophisticated serif and minimal sans-serif. The lighting is soft and side-lit, creating gentle shadows that reveal the paper's texture. The color palette is strictly ivory, champagne gold, and soft gray, maintaining a high-fashion, boutique brand presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEN32Q1kMad0waNoaWOnnicPXEoyq32kkV1cmTKj0ynLJ3ijCwaohbeODEmqOWWTksz5nYabY6FRRMvHahG0QNtUiizDnn_L2xb63k4st_zq1kmzfYkWDycfJ_pKCxWvm_3cqOgya5aaR2h_eQTYLbBV9qZ6tIMFGGVEK8PAnS0P6-hbVt0VK4KTPxIRpF0Y67m3NOm1puWFJlo3lEoLpHB2TW4eW9zLpRTXwR6_tkF9ggWcMFRpzE12tisbnqSVWQ_LvIMBDe1Ul7"/>
+</div>
+</div>
+</div>
+</section>
+<!-- RSVP Call to Action -->
+<section class="py-section-gap bg-surface-container-low flex flex-col items-center">
+<div class="max-w-3xl w-full px-6 text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">mail</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Will You Join Us?</h3>
+<p class="font-body-md text-body-md text-outline mb-10">
+                    Kindly respond by the first of September to ensure your place at our table. We look forward to celebrating this evening of elegance with our nearest and dearest.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<div class="relative flex-1 max-w-xs mx-auto md:mx-0">
+<input class="w-full bg-transparent border-0 border-b border-primary/30 focus:ring-0 focus:border-primary py-3 font-ui-label text-ui-label tracking-widest placeholder:text-outline-variant text-center" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+</div>
+<button class="bg-on-surface text-surface py-4 px-12 font-ui-label text-ui-label uppercase tracking-widest hover:opacity-90 transition-opacity active:scale-95">
+                        Reserve Your Seat
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-2xl border-t-[0.5px] border-amber-200/50 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+<a class="flex flex-col items-center justify-center text-amber-700 dark:text-amber-300 font-bold border-t-2 border-amber-600 -mt-[0.5px] pt-2" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 pt-2 hover:text-amber-500 transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 pt-2 hover:text-amber-500 transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">card_giftcard</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Registry</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 pt-2 hover:text-amber-500 transition-colors duration-300" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">RSVP</span>
+</a>
+</nav>
+<!-- Navigation Overlay / Drawer Mock (Hidden by default) -->
+<aside class="hidden fixed inset-0 z-[60] bg-stone-950/20 backdrop-blur-md">
+<div class="h-full w-80 bg-stone-50 dark:bg-stone-950 shadow-2xl flex flex-col p-8">
+<div class="font-serif italic text-4xl py-12 text-center text-stone-800 dark:text-stone-100">A &amp; B</div>
+<nav class="flex flex-col gap-2 divide-y divide-amber-100/30 dark:divide-amber-900/20">
+<a class="flex items-center gap-4 py-4 px-2 text-amber-700 dark:text-amber-300 bg-stone-100 dark:bg-stone-900 font-serif text-lg tracking-wide hover:pl-6 transition-all duration-500" href="#">
+<span class="material-symbols-outlined">auto_stories</span> Our Story
+                </a>
+<a class="flex items-center gap-4 py-4 px-2 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide hover:pl-6 transition-all duration-500" href="#">
+<span class="material-symbols-outlined">location_on</span> The Venue
+                </a>
+<a class="flex items-center gap-4 py-4 px-2 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide hover:pl-6 transition-all duration-500" href="#">
+<span class="material-symbols-outlined">flight</span> Travel &amp; Stay
+                </a>
+<a class="flex items-center gap-4 py-4 px-2 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide hover:pl-6 transition-all duration-500" href="#">
+<span class="material-symbols-outlined">redeem</span> Gift Registry
+                </a>
+<a class="flex items-center gap-4 py-4 px-2 text-stone-600 dark:text-stone-400 font-serif text-lg tracking-wide hover:pl-6 transition-all duration-500" href="#">
+<span class="material-symbols-outlined">contact_mail</span> Contact
+                </a>
+</nav>
+</div>
+</aside>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Editorial Luxury Template Initialization -->
+<script src="editorial-luxury-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

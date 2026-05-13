@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dbdad7",
+                    "primary-fixed": "#ffdf91",
+                    "surface-container": "#efeeeb",
+                    "secondary-fixed": "#eddfe4",
+                    "surface-container-high": "#e9e8e5",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#faf9f6",
+                    "tertiary-container": "#c5c6ae",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#665c60",
+                    "on-secondary-fixed-variant": "#4e4448",
+                    "on-background": "#1a1c1a",
+                    "inverse-surface": "#2f312f",
+                    "secondary-fixed-dim": "#d1c3c8",
+                    "surface-variant": "#e3e2e0",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "on-primary-container": "#654e02",
+                    "inverse-on-surface": "#f2f1ee",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#515240",
+                    "on-primary-fixed": "#241a00",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "primary-container": "#e1c16e",
+                    "on-secondary-container": "#6a6064",
+                    "tertiary": "#5e604d",
+                    "on-primary-fixed-variant": "#584400",
+                    "primary": "#735b11",
+                    "outline-variant": "#cfc5b3",
+                    "on-surface-variant": "#4c4638",
+                    "background": "#faf9f6",
+                    "primary-fixed-dim": "#e3c370",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "on-secondary-fixed": "#211a1d",
+                    "secondary-container": "#eadce1",
+                    "outline": "#7e7666",
+                    "inverse-primary": "#e3c370",
+                    "surface-container-low": "#f4f3f1",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e4e4cc",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1a1c1a",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#735b11",
+                    "surface": "#faf9f6",
+                    "surface-container-highest": "#e3e2e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "margin-edge": "40px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Noto Serif"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Noto Serif"],
+                    "headline-sm": ["Noto Serif"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "noto-serif": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(225, 193, 110, 0.15);
+        }
+        .champagne-glow {
+            background: radial-gradient(circle, rgba(225, 193, 110, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        .shimmer-effect {
+            background: linear-gradient(90deg, #E1C16E 0%, #F3E5AB 50%, #E1C16E 100%);
+            background-size: 200% auto;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/70 dark:bg-stone-900/70 backdrop-blur-md border-b border-[#E1C16E]/20 shadow-[0_4px_40px_rgba(225,193,110,0.1)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-[#E1C16E] transition-colors">menu</span>
+</div>
+<div class="font-noto-serif tracking-widest text-2xl font-light text-[#E1C16E] uppercase">A &amp; M</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-[#E1C16E]/30">
+<img alt="Couple's Engagement Photo" class="w-full h-full object-cover" data-alt="A close-up, high-end professional portrait of a stylish couple in formal wedding attire, captured in soft, sun-drenched natural light. The mood is intimate and romantic, with a focus on their joyful expressions and the delicate textures of their clothing. The lighting is high-key and airy, perfectly aligning with the soft luxury aesthetic of the ethereal minimalist invitation theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC481GSO4AxBr7b0DRgDI6pmNVmnadpgPWVfUWgh6N0Z2hl4stlbVWSGQO0OCCUgFIamn1tWJm9uB4OLO82UwqVo7f064OGcBs0vQRFCQ1UZQswuoj0sP2Yj2vicNruoZdK-7njXfgio1zrw9iDYusvR1m21-oYfyJpnjpjviw1xHG7vuFmONXArDwUdXyOCuZeF3h7EVBAUWqOu7kqoUJ-3mZGkPPDtZfhC4TiJ7i7XD8ly8hSpkfhqHQG__zYPX3GaufTB70TmtO8"/>
+</div>
+</div>
+</header>
+<main class="relative min-h-screen pt-16 pb-20">
+<!-- Hero Background Canvas -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-background/90 z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A breathtaking, sun-drenched outdoor wedding setting in a lush Mediterranean garden at golden hour. Soft, warm sunlight filters through olive branches, creating a hazy, ethereal atmosphere. The background is high-key and bright, with subtle hints of white floral arrangements and soft beige stone architecture. The entire image has a dreamlike, low-contrast quality that serves as the perfect minimalist backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3dtZB5SVexvlLLXwTuq05X3VuXhQIwST6I65slAoZnXPlCVPBtu6a3kTtgA8zYwwAsdWUpXukEIAxhS06oOH-YCiTm47akui-JASkEgwSRQJD8s0uCj-ADjHoWJHk6Rtqhw4NxJ382ltNpUSNn4w-OwkD9wxFfHUgNgW_gjuk-EeDF10H83oyGpHrS_8q-tYHDx8CJqYlpiWRVOgxPEPObOz9pRQJaJGfNA9GxcTcGw52pj_ntZGxe3PcQiZQR4-HUxp_MCt69goj"/>
+</div>
+<!-- Content Invitation Canvas -->
+<section class="relative z-20 flex flex-col items-center justify-center min-h-[calc(100vh-144px)] px-margin-edge">
+<!-- Layered Glassmorphism Main Panel -->
+<div class="max-w-[700px] w-full glass-panel rounded-xl p-12 md:p-20 text-center shadow-[0_40px_80px_rgba(225,193,110,0.08)] relative">
+<!-- Subtle Gold SVG Accents -->
+<div class="absolute -top-12 -left-12 w-32 h-32 opacity-40 pointer-events-none">
+<svg class="w-full h-full text-[#E1C16E] fill-none stroke-current stroke-[0.5]" viewbox="0 0 100 100">
+<path d="M10,90 Q30,50 90,10 M20,80 Q40,40 80,20"></path>
+</svg>
+</div>
+<div class="absolute -bottom-16 -right-16 w-48 h-48 opacity-30 pointer-events-none rotate-180">
+<svg class="w-full h-full text-[#E1C16E] fill-none stroke-current stroke-[0.5]" viewbox="0 0 100 100">
+<path d="M10,90 Q50,80 90,10 M30,90 Q60,70 90,30"></path>
+</svg>
+</div>
+<!-- Invitation Typography -->
+<div class="champagne-glow absolute inset-0 -z-10 rounded-xl"></div>
+<p class="font-label-caps text-label-caps text-outline uppercase tracking-[0.3em] mb-8">Together with their families</p>
+<h1 class="font-display-lg text-display-lg md:text-[64px] text-primary mb-6 leading-tight">
+<span class="italic font-noto-serif block md:inline">Adeline</span>
+<span class="font-light text-2xl mx-4 text-outline block md:inline">&amp;</span>
+<span class="italic font-noto-serif block md:inline">Maxwell</span>
+</h1>
+<div class="w-24 h-px bg-[#E1C16E]/30 mx-auto mb-8 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background p-1">
+<span class="material-symbols-outlined text-[#E1C16E] text-xs">filter_vintage</span>
+</div>
+</div>
+<p class="font-headline-sm text-headline-sm text-secondary mb-12 max-w-md mx-auto italic">
+                    Request the pleasure of your company as they exchange vows and celebrate their union.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 mb-16 text-on-surface-variant">
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-[10px] uppercase tracking-widest text-outline mb-2">When</span>
+<p class="font-headline-sm text-xl">June 24th, 2024</p>
+<p class="font-body-md text-sm italic">at four o'clock</p>
+</div>
+<div class="hidden md:block w-px h-12 bg-[#E1C16E]/20"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-[10px] uppercase tracking-widest text-outline mb-2">Where</span>
+<p class="font-headline-sm text-xl">The Glass House</p>
+<p class="font-body-md text-sm italic">Ravello, Amalfi Coast</p>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="shimmer-effect px-10 py-5 rounded-full text-white font-label-caps text-xs tracking-[0.2em] uppercase shadow-lg hover:shadow-xl transition-all duration-300 transform active:scale-95 group">
+<span class="relative z-10">Request the Pleasure</span>
+</button>
+</div>
+<!-- Scroll Indicator -->
+<div class="mt-16 flex flex-col items-center gap-2 text-[#E1C16E] opacity-60">
+<span class="font-label-caps text-[10px] uppercase tracking-[0.2em]">Discover More</span>
+<span class="material-symbols-outlined text-lg animate-bounce">expand_more</span>
+</div>
+</section>
+<!-- Secondary Details Section (Peek) -->
+<section class="max-w-container-max mx-auto px-6 py-section-gap grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-panel p-8 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-[#E1C16E] text-4xl mb-4" data-weight="fill">favorite</span>
+<h3 class="font-headline-sm text-primary mb-2">Our Story</h3>
+<p class="font-body-md text-secondary max-w-xs">From the first coffee date in London to a sunset proposal in the Italian Alps.</p>
+</div>
+<div class="relative rounded-xl overflow-hidden min-h-[300px]">
+<img class="w-full h-full object-cover" data-alt="A beautifully set wedding table featuring fine bone china, crystal glassware, and gold-trimmed menus on a minimalist white linen tablecloth. Soft sunlight creates long shadows and highlights the delicate texture of the vellum paper cards. The arrangement is modern yet romantic, with sparse but elegant floral accents in shades of blush and cream." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDi9BMoHR-DCfzvbAo9oh3Oac7xqdEN1RF4LQcJHaMx52XwSNPDeWouBVxqNJ4VXfldIUooqzLviXqhIqHU7DWp6L95Aw1ZlY1LEHe4dsLpwNdywaisHCtJT2-RWQ112KBGk3u8tPDaPAuSVw8gU8K0WB4hFVahmW7KYG-Q78OG7BrHsQvsk-qrAERHZg37oGm32H07VG42Rh9sKVFJMCdCwvywPQ_2VqOYcapGgw06wF65z4SF5j7RvPu9Bd08dbsID0r_0PGdvaE"/>
+<div class="absolute inset-0 bg-black/5"></div>
+</div>
+</section>
+</main>
+<!-- Navigation Shell (BottomNavBar) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe bg-white/70 dark:bg-stone-950/70 backdrop-blur-xl border-t border-[#E1C16E]/10 shadow-[0_-10px_40px_rgba(225,193,110,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#E1C16E] font-semibold transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">favorite</span>
+<span class="font-noto-serif tracking-widest text-[10px] uppercase mt-1">Invite</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#E1C16E] transition-all" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-noto-serif tracking-widest text-[10px] uppercase mt-1">Details</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#E1C16E] transition-all" href="#">
+<span class="material-symbols-outlined">card_giftcard</span>
+<span class="font-noto-serif tracking-widest text-[10px] uppercase mt-1">Registry</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#E1C16E] transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-noto-serif tracking-widest text-[10px] uppercase mt-1">RSVP</span>
+</a>
+</nav>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- soft luxury Template Initialization -->
+<script src="soft-luxury-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

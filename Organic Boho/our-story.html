@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400&amp;family=Noto+Serif:ital,wght@0,400;1,400&amp;family=Be+Vietnam+Pro:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#d9e4c6",
+                    "surface-dim": "#dcdad3",
+                    "on-primary-fixed-variant": "#703624",
+                    "surface-bright": "#fcf9f2",
+                    "on-secondary-fixed-variant": "#414a34",
+                    "tertiary-container": "#8a7055",
+                    "outline-variant": "#d8c2bc",
+                    "primary-container": "#a7624d",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "inverse-primary": "#ffb59f",
+                    "on-surface-variant": "#53433f",
+                    "primary": "#8a4b37",
+                    "secondary-fixed-dim": "#c0caae",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#59422b",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f1eee7",
+                    "on-primary-fixed": "#390c01",
+                    "inverse-on-surface": "#f3f0e9",
+                    "surface": "#fcf9f2",
+                    "surface-container-high": "#ebe8e1",
+                    "tertiary-fixed-dim": "#e1c1a2",
+                    "surface-container-highest": "#e5e2db",
+                    "on-secondary-container": "#5c664e",
+                    "primary-fixed-dim": "#ffb59f",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#31312c",
+                    "on-surface": "#1c1c18",
+                    "secondary": "#58624a",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#291805",
+                    "surface-tint": "#8d4d39",
+                    "outline": "#86736e",
+                    "tertiary-fixed": "#ffdcbd",
+                    "tertiary": "#70573f",
+                    "on-tertiary": "#ffffff",
+                    "background": "#fcf9f2",
+                    "surface-container-low": "#f6f3ec",
+                    "on-background": "#1c1c18",
+                    "on-tertiary-container": "#fffbff",
+                    "primary-fixed": "#ffdbd1",
+                    "secondary-fixed": "#dce6c9",
+                    "surface-variant": "#e5e2db",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-page": "40px",
+                    "gutter": "24px",
+                    "touch-target": "48px",
+                    "section-gap": "80px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "script-accent": ["Noto Serif"],
+                    "headline-display": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "body-md": ["Epilogue"],
+                    "headline-lg": ["Noto Serif"],
+                    "body-lg": ["Epilogue"],
+                    "label-caps": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "script-accent": ["28px", {"lineHeight": "1.0", "fontWeight": "400"}],
+                    "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .handmade-texture {
+            background-color: #fcf9f2;
+            background-image: radial-gradient(#dcdad3 0.5px, transparent 0.5px);
+            background-size: 4px 4px;
+            position: relative;
+        }
+        .handmade-texture::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(172,102,81,0.05) 50%, rgba(212,163,115,0.1) 100%);
+            pointer-events: none;
+        }
+        .deckled-edge {
+            clip-path: polygon(0% 0%, 5% 1%, 10% 0%, 15% 2%, 20% 0%, 25% 1%, 30% 0%, 35% 2%, 40% 0%, 45% 1%, 50% 0%, 55% 2%, 60% 0%, 65% 1%, 70% 0%, 75% 2%, 80% 0%, 85% 1%, 90% 0%, 95% 2%, 100% 0%, 100% 100%, 95% 98%, 90% 100%, 85% 99%, 80% 100%, 75% 98%, 70% 100%, 65% 99%, 60% 100%, 55% 98%, 50% 100%, 45% 99%, 40% 100%, 35% 98%, 30% 100%, 25% 99%, 20% 100%, 15% 98%, 10% 100%, 5% 99%, 0% 100%);
+        }
+        .polaroid-shadow {
+            box-shadow: 0 10px 30px -10px rgba(138, 75, 55, 0.15);
+        }
+        .light-leak {
+            background: radial-gradient(circle at 20% 30%, rgba(255, 220, 189, 0.4) 0%, transparent 50%);
+            filter: blur(60px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-md border-b-[0.5px] border-[#AC6651]/20 shadow-sm shadow-[#AC6651]/5 flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#AC6651] hover:opacity-70 transition-opacity duration-500 cursor-pointer" data-icon="menu">menu</span>
+</div>
+<h1 class="font-serif italic text-2xl tracking-wide text-[#AC6651]">Evelyn &amp; Julian</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#AC6651] hover:opacity-70 transition-opacity duration-500 cursor-pointer" data-icon="favorite">favorite</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-24 pb-32 flex flex-col items-center handmade-texture overflow-hidden">
+<!-- Light Leak Overlays -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+<div class="light-leak absolute -top-20 -left-20 w-96 h-96 opacity-60"></div>
+<div class="light-leak absolute bottom-1/4 -right-20 w-[500px] h-[500px] opacity-40" style="background: radial-gradient(circle, rgba(217, 228, 198, 0.3) 0%, transparent 60%);"></div>
+</div>
+<!-- Hero Section -->
+<section class="relative z-10 w-full max-w-6xl px-margin-page flex flex-col items-center text-center">
+<!-- Floral Frame (SVG Placeholder Style) -->
+<div class="absolute inset-0 pointer-events-none flex justify-center items-center opacity-40">
+<div class="w-full h-full border-[1.5rem] border-transparent rounded-[100px] relative">
+<!-- Top-Left Vine -->
+<div class="absolute -top-10 -left-10 w-64 h-64 grayscale opacity-30 transform -rotate-12">
+<img alt="" class="w-full h-full object-contain" data-alt="A detailed illustration of dried botanical elements like eucalyptus leaves and pampas grass in muted terracotta and sage tones. The style is hand-drawn and delicate, mimicking the texture of ink on handmade ivory paper. Soft natural lighting emphasizes the organic shapes against a minimalist, bright background consistent with a high-end wedding invitation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArz_bPnwThm3aqcaqv5lHMnZdhO5WPFW9a_0-1Bq3FrM1nyKL9XyCyalIMtgwBJ_cUMBtTy4uv818Gk50-BKQ8kMTcalSTu_tJtkIcfO6wNewu6MzoAtB1jFhyLnsDUqOLH58VzeRDfhVS47QGDcWdpBpXPcUjR-vpqDO1GnNiQObltgIBz-7pJYlurPKWY7fU2_Jta8By-MAL54ttVC18bbJG33k2sRxFHtRJyz43oyUtkz9FWQ36jWWNUzKv3QB7q5VhefQDLkU7"/>
+</div>
+<!-- Bottom-Right Vine -->
+<div class="absolute -bottom-10 -right-10 w-64 h-64 grayscale opacity-30 transform rotate-165">
+<img alt="" class="w-full h-full object-contain" data-alt="Intricate line art of delicate dried floral vines and autumn leaves, rendered in a soft ink style on a textured cream parchment. The composition is airy and elegant, with a focus on tactile organic textures and a palette of warm sepia and soft sage. The lighting is bright and ethereal, evoking a serene garden atmosphere in a sophisticated light-mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArMbVZIdVXA8yqmVNNQQHREbbp5d7DM-Kwm_HIokoqGrGtWcX4aL6uAs1Sav-aIcJC5U2HSwYSfMIL3uZlousncYCESSX-y2oaVf8GMHZl9Yt7xsEUDHHJgK3zwPzCe99ehN5AS-44hYq0g40xE3L76MMpYitgAJUZ5kvo7mphtZPuLqqmochqhzCN31Dh9T98ZTxLy4wcWL-74H1Qm9Z7_XpmxzKw0kJxUBfhjS-28xaEx5EtKnCSRcBdJiQgPSHsIGa3VK6HO8_g"/>
+</div>
+</div>
+</div>
+<!-- Typography Header -->
+<div class="mt-12 mb-16 relative">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block uppercase tracking-[0.3em]">We invite you to celebrate</span>
+<h2 class="font-script-accent text-[84px] md:text-[120px] text-primary leading-tight lowercase -rotate-2">
+                    evelyn <span class="font-headline-display text-4xl md:text-6xl text-secondary-fixed-dim italic align-middle px-4">&amp;</span> julian
+                </h2>
+<div class="flex items-center justify-center gap-6 mt-8">
+<div class="h-[1px] w-16 bg-outline-variant"></div>
+<p class="font-headline-md text-headline-md text-tertiary">October 24th, 2024</p>
+<div class="h-[1px] w-16 bg-outline-variant"></div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 italic">The Orchard Estate, Byron Bay</p>
+</div>
+<!-- Floating Organic Carousel -->
+<div class="w-full relative py-12 flex flex-wrap justify-center gap-8 md:gap-12">
+<!-- Polaroid 1 -->
+<div class="group relative w-64 md:w-72 bg-white p-4 pb-12 rounded-sm polaroid-shadow -rotate-3 hover:rotate-0 transition-transform duration-700 ease-in-out cursor-pointer deckled-edge">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A cinematic, low-angle shot of a couple walking through a golden sun-drenched meadow during sunset. The image is framed as a polaroid with soft, warm light leaks and a film-grain texture. The overall aesthetic is intimate and romantic, utilizing a natural color palette of ochre, sage, and ivory to match a bohemian wedding theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7iHQUjlMikcncYcYWnUBXUd90RAkvnR_PpMiGsVxylMhbKw_KqJjVDQIUuliprcrFwm98VEQoqhpQxxRq5lnLqPNLTuX7qaBHCoFQWcsQwToS64U5YQcE0kJM1gJ5cj2Vas92Lm-4ZA2_fscJCCA0o6NhDQgtHqr9skjkGdlGuYvDTwZBn2COCY7eitDXwRWX6Za8vtPtYN9_Wc8FIEUW_7Ff3F0HI4kYuyOlM55mPngNxO--lk1sb2_SSu0l39ssLJ0LlX6dQXio"/>
+</div>
+<div class="absolute bottom-4 left-0 right-0 text-center font-script-accent text-primary/60 text-lg">the beginning</div>
+</div>
+<!-- Polaroid 2 -->
+<div class="group relative w-64 md:w-72 bg-white p-4 pb-12 rounded-sm polaroid-shadow rotate-6 hover:rotate-0 transition-transform duration-700 ease-in-out cursor-pointer deckled-edge mt-8 md:mt-16">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A close-up, high-detail photograph of two hands intertwined, showing delicate wedding bands. The lighting is soft and directional, creating deep shadows and highlights on the skin and fabric. The photo is styled like an old polaroid with a creamy white border, set against an airy, bright background with organic textures and a minimalist feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ90eWbAJRH0McnKgddP3tlcpfyD-LifHb5qzU07xmfyGzhAubZoDA4jftpPEp0-LjgunYQjxz9oo48eIgmufQ0Z9QhTXkTeobssfjilP2HUIbD_RQjbF_4qEwcnkKPARiVQMhcXn5vJfA0eM61XF-YJqEWKy7XIFO2F8TDnn_uqQU-gAWT4smcOGvRosNYWiK1E8EUD0Dn70YXH0ABH_cvVcEmI-GoFkZnnkvEaADMBosKWjUrRja8d_JUjyxoyH1T4ZM62405CM6"/>
+</div>
+<div class="absolute bottom-4 left-0 right-0 text-center font-script-accent text-primary/60 text-lg">always yours</div>
+</div>
+<!-- Polaroid 3 -->
+<div class="group relative w-64 md:w-72 bg-white p-4 pb-12 rounded-sm polaroid-shadow -rotate-2 hover:rotate-0 transition-transform duration-700 ease-in-out cursor-pointer deckled-edge">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="An ethereal black and white portrait of a couple embracing under a sheer, blowing veil in a natural outdoor setting. The image feels timeless and artistic, with high contrast and soft focus. It is presented in a polaroid frame that has slight imperfections on the edges, reinforcing the tactile, handmade theme of the invitation design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcMyxz9BHhoYn0JdL7rwhD3tySXiFSbWCDXZ7O5u3jiM1tpaNH2gO7Pam8yKge0yrm53R4Sj1ulfTxGW9hqhPI02ahXJoR0BOSFSnc9v5BCC3xRLhF-wDzFii1DvfPdVxmRmEoEbiEESRhkqMxV4dvVWXNRPK-eUXVLuqoD6M_h55EB-I9paULR06uH0fEHv2kTfNR-j1O_WxVrYn-MbHsRQO-1Rti92lHVo3gEgARqG9jHjRJNled8PVd8jpehqk-FX7Yt6_ugoHF"/>
+</div>
+<div class="absolute bottom-4 left-0 right-0 text-center font-script-accent text-primary/60 text-lg">forever after</div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="mt-16 flex flex-col items-center gap-8">
+<button class="bg-primary text-on-primary px-12 py-4 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20 flex items-center gap-3 group">
+                    R.S.V.P.
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+<div class="flex flex-col items-center gap-2">
+<span class="w-[1px] h-12 bg-primary/30"></span>
+<span class="font-label-caps text-[10px] text-tertiary uppercase tracking-tighter">Scroll for details</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Details Section -->
+<section class="w-full max-w-6xl px-margin-page mt-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<!-- Location Card -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 border border-[#AC6651]/10 flex flex-col md:flex-row gap-8 items-center deckled-edge">
+<div class="w-full md:w-1/2 aspect-video bg-surface-dim rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Map View" class="w-full h-full object-cover" data-alt="An aerial, minimalist map-style photograph of a lush coastal estate in Byron Bay. The landscape features rolling green hills, tall eucalyptus trees, and a distant view of the ocean under a clear, bright morning sky. The image has a calm, peaceful mood and a natural color palette of deep greens and soft blues, fitting the light-mode UI aesthetic." data-location="Byron Bay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArZynwIZTGSxkNtynSdBjubIMzv_OUN-M061XG4roAu_EAaIqG--0kZfPIQCAT-UaB5ivA3Y8J-t9d6Ifvq7RSkg21_4J8GD3ZTJuENa-pSHjYPhKDha98268K1ibU8tN5_80DC80eltMYeNmm0qzVJT_An_LIlY9yHUkxc8UUe5TkbhAizNB-YxyKJ_6hZY-BLpTk4b8tFTxwJd4l4tnPf37Ce2G4JRR0sFVMjmHLzOKxLODKHG3ofODGRqmun8gmsz5KtJ6jivHK"/>
+</div>
+<div class="w-full md:w-1/2 space-y-4 text-left">
+<h3 class="font-headline-lg text-headline-lg text-primary">The Orchard Estate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Nestled in the hinterland, a serene sanctuary where the air is sweet with citrus and the light falls soft on the rolling hills.</p>
+<a class="inline-flex items-center gap-2 text-primary border-b border-primary/20 pb-1 font-label-caps text-[10px] uppercase hover:gap-4 transition-all" href="#">
+                        View Location <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Schedule Card -->
+<div class="md:col-span-4 bg-tertiary-container text-on-tertiary-container rounded-xl p-8 flex flex-col justify-between border border-white/10 shadow-xl deckled-edge">
+<div class="space-y-6">
+<span class="material-symbols-outlined text-3xl opacity-50" data-icon="schedule">schedule</span>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-white/20 pb-2">
+<span class="font-label-caps text-[10px] uppercase">Ceremony</span>
+<span class="font-headline-md text-xl">3:30 PM</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/20 pb-2">
+<span class="font-label-caps text-[10px] uppercase">Reception</span>
+<span class="font-headline-md text-xl">6:00 PM</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/20 pb-2">
+<span class="font-label-caps text-[10px] uppercase">Farewell</span>
+<span class="font-headline-md text-xl">11:00 PM</span>
+</div>
+</div>
+</div>
+<button class="mt-8 border border-white/40 px-6 py-3 rounded-full font-label-caps text-[10px] uppercase tracking-widest hover:bg-white hover:text-tertiary transition-all duration-500">
+                    Full Itinerary
+                </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-[40px] border border-[#AC6651]/10 bg-[#F4F1EA]/90 dark:bg-stone-800/90 backdrop-blur-lg z-50 flex justify-around items-center px-4 py-2 shadow-[0_8px_30px_rgb(172,102,81,0.12)]">
+<a class="bg-[#E5E1D8] dark:bg-stone-700 text-[#AC6651] rounded-full p-3 transition-all duration-500 ease-in-out hover:scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+</a>
+<a class="text-stone-400 p-3 transition-all duration-500 hover:scale-110 hover:text-[#AC6651]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</a>
+<a class="text-stone-400 p-3 transition-all duration-500 hover:scale-110 hover:text-[#AC6651]" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</a>
+<a class="text-stone-400 p-3 transition-all duration-500 hover:scale-110 hover:text-[#AC6651]" href="#">
+<span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+</a>
+</nav>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Organic Boho Template Initialization -->
+<script src="organic-boho-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

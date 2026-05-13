@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#665c5e",
+                    "surface-dim": "#ddd9d6",
+                    "surface-container-low": "#f7f3ef",
+                    "on-surface-variant": "#4d4546",
+                    "inverse-on-surface": "#f4f0ec",
+                    "surface-container": "#f1ede9",
+                    "surface": "#fdf9f5",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#f1e9da",
+                    "on-primary-fixed-variant": "#4e4446",
+                    "primary-fixed": "#eedfe1",
+                    "primary-container": "#f5e6e8",
+                    "on-tertiary-container": "#6d685d",
+                    "inverse-surface": "#31302e",
+                    "surface-bright": "#fdf9f5",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e5e2de",
+                    "on-tertiary-fixed": "#1e1b13",
+                    "outline": "#7f7576",
+                    "on-secondary-container": "#745c00",
+                    "surface-container-high": "#ebe7e4",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1c1c19",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#d0c3c5",
+                    "primary-fixed-dim": "#d1c3c5",
+                    "tertiary-fixed-dim": "#cdc6b8",
+                    "surface-tint": "#665c5e",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e9e2d3",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#211a1b",
+                    "on-background": "#1c1c19",
+                    "on-primary-container": "#716668",
+                    "on-secondary-fixed-variant": "#574500",
+                    "surface-variant": "#e5e2de",
+                    "inverse-primary": "#d1c3c5",
+                    "tertiary": "#635e53",
+                    "secondary": "#735c00",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#fed65b",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed-variant": "#4b463c",
+                    "on-primary": "#ffffff",
+                    "background": "#fdf9f5",
+                    "secondary-fixed": "#ffe088"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "2rem",
+                    "section-gap": "4rem",
+                    "gutter": "1.5rem",
+                    "element-gap": "1rem",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-xl": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "script-accent": ["Noto Serif"],
+                    "label-sm": ["Be Vietnam Pro"],
+                    "headline-lg": ["Noto Serif"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "script-accent": ["28px", {"lineHeight": "1", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(245, 230, 232, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 10px 40px rgba(212, 175, 55, 0.1);
+        }
+        .satin-button {
+            background: linear-gradient(135deg, #F5E6E8 0%, #EEDFE1 100%);
+            border: 1px solid #D4AF37;
+            position: relative;
+            overflow: hidden;
+        }
+        .satin-button::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: radial-gradient(circle, rgba(212, 175, 55, 0.2) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+  <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-primary overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F5E6E8]/70 backdrop-blur-md dark:bg-stone-900/80 border-b border-white/30 dark:border-stone-800/50 shadow-[0_8px_32px_0_rgba(212,175,55,0.1)] flex justify-between items-center px-12 py-6">
+<div class="text-2xl font-serif text-amber-700 dark:text-amber-100 italic">Evelyn &amp; Julian</div>
+<nav class="hidden md:flex items-center gap-8 font-serif italic tracking-widest text-sm">
+<a class="text-amber-800 dark:text-amber-100 border-b-2 border-amber-600/50 pb-1 hover:text-amber-500 hover:tracking-tighter transition-all duration-500 cursor-pointer active:opacity-70" href="#">Our Story</a>
+<a class="text-rose-400 dark:text-stone-400 hover:text-amber-500 hover:tracking-tighter transition-all duration-500 cursor-pointer active:opacity-70" href="#">The Ceremony</a>
+<a class="text-rose-400 dark:text-stone-400 hover:text-amber-500 hover:tracking-tighter transition-all duration-500 cursor-pointer active:opacity-70" href="#">Details</a>
+<a class="text-rose-400 dark:text-stone-400 hover:text-amber-500 hover:tracking-tighter transition-all duration-500 cursor-pointer active:opacity-70" href="#">Registry</a>
+</nav>
+<button class="bg-amber-600 text-white px-6 py-2 rounded-full text-label-sm font-label-sm uppercase tracking-widest transition-transform active:scale-95 shadow-lg shadow-amber-600/20">RSVP</button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+<!-- Immersive Photo Background -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10"></div>
+<img alt="" class="w-full h-full object-cover scale-105" data-alt="A breathtaking and romantic wide-angle shot of a couple walking through a sun-drenched meadow at golden hour. Soft glowing light filters through blooming ivory flowers, creating a dreamlike and ethereal atmosphere. The image is styled with a soft-focus lens effect, emphasizing warm blush and gold tones to evoke a sense of timeless elegance and high-end luxury. Delicate floating particles of light mimic floating petals in the air, enhancing the immersive and magical feeling of an intimate celebration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbs1QB2q6Rl7eqnLzpSXdSyNaIbkvb7liCZuJTOcJeGvb0CjuNXgrNY-ZAxjxV-tngVl5JIWfF75Q22H38oT4x57lAFg-Ov5TLBcujXYNg_mkigd1yQ4fwXfe2HQ9Cc8NP88oEApngjwWwrotNjeW01lvmAmqZmBbouIwej9hTubwoSaWuBsmzHwb4T-jg35GIoI8yT4tx1J1pKqd81xTL3srMpyUr2jbZOWIvSfr9WSRUnHaRwl0JeAZolahKkAduQRIoQpmoZKJ5"/>
+<div class="floating-particles opacity-40"></div>
+</div>
+<!-- Content Card -->
+<div class="relative z-20 max-w-4xl mx-auto px-container-padding text-center">
+<div class="glass-card p-12 md:p-20 rounded-xl inline-block border-white/50">
+<span class="font-label-sm text-label-sm text-secondary tracking-[0.3em] uppercase block mb-8">Save the Date</span>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2 italic">Evelyn</h1>
+<div class="flex items-center justify-center gap-6 my-4">
+<div class="h-px w-12 bg-outline-variant"></div>
+<span class="font-script-accent text-script-accent italic text-secondary">&amp;</span>
+<div class="h-px w-12 bg-outline-variant"></div>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-12 italic">Julian</h1>
+<div class="space-y-4 mb-12">
+<p class="font-headline-md text-headline-md text-on-surface-variant font-light italic">Saturday, October 12, 2024</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant tracking-widest uppercase opacity-80">The Glass House • New York City</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="satin-button px-10 py-4 rounded-full font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] shadow-xl hover:shadow-secondary/10 transition-all active:scale-95 flex items-center gap-2 group">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            Save to Calendar
+                        </button>
+<button class="bg-secondary text-on-secondary px-12 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-[0.2em] shadow-xl shadow-secondary/30 hover:brightness-110 transition-all active:scale-95 flex items-center gap-2">
+                            RSVP Now
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-secondary opacity-60">
+<span class="font-label-sm text-[10px] tracking-widest uppercase">Scroll to Explore</span>
+<div class="w-px h-16 bg-gradient-to-b from-secondary to-transparent"></div>
+</div>
+</section>
+<!-- Elegant Details Section (Bento Style) -->
+<section class="max-w-6xl mx-auto px-container-padding py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Our Story Preview -->
+<div class="md:col-span-8 group cursor-pointer overflow-hidden rounded-xl h-[400px] relative">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up, high-fashion photograph of two hands intertwined, featuring a brilliant vintage-style engagement ring. The hands rest on a soft, ivory silk fabric that catches the light with a gentle shimmer. The lighting is intimate and warm, with a high-key light-mode aesthetic. The composition is artistic and minimalist, focusing on the texture of the fabric and the sparkle of the gem, reflecting a sophisticated and romantic brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdv1Tj7q6KU9HzaQajjMHYbl5AcoILGon5W8BKQZpS_RxApAvQSfw0GT1dZ1pAbi-y7brzuYkUsa-fXoCvdOUhIAxS31IvySzlnf0A9CzsX6GtHyG4gDZCtS0aV_57dR5MupqVRxmlxEdhYCYG8WElNWzRI9J2fYyT3KUZeWzIRhhBkOVq3APYQFG1fx1M6IQKOV7Jzc4oZBg6vOYyqVJG7yrXYDo4A48OU2JvdnVR6ihmO5kth-GySO7p4yqmEZf76hgNIgkQCxoT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-10">
+<h3 class="font-headline-lg text-headline-lg text-white mb-2 italic">Our Story</h3>
+<p class="text-white/80 font-body-md text-body-md max-w-md">From a shared rainy afternoon in a Parisian café to this beautiful moment.</p>
+</div>
+</div>
+<!-- Ceremony Detail -->
+<div class="md:col-span-4 glass-card p-10 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-amber-600 text-4xl mb-6" data-weight="fill">church</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 italic">The Ceremony</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Join us for the exchange of vows at four o'clock in the afternoon.</p>
+<a class="text-secondary font-label-sm text-label-sm underline underline-offset-8 tracking-widest uppercase" href="#">Location Map</a>
+</div>
+<!-- Registry Teaser -->
+<div class="md:col-span-4 satin-button p-10 rounded-xl flex flex-col justify-between group">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 italic">Gift Registry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your presence is our greatest gift, but if you wish to honor us with a token...</p>
+</div>
+<button class="mt-8 flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-secondary group-hover:translate-x-2 transition-transform">
+                        View List <span class="material-symbols-outlined">card_giftcard</span>
+</button>
+</div>
+<!-- Large Scenic Image -->
+<div class="md:col-span-8 rounded-xl overflow-hidden h-[300px] relative">
+<img alt="" class="w-full h-full object-cover" data-alt="A wide panoramic view of an elegant wedding reception setup in a glass house. Long wooden tables are adorned with runners of blush roses and tall, slender ivory candles. The space is filled with soft, warm golden light as evening begins to fall, creating a magical glow throughout the room. The atmosphere is one of sophisticated celebration, featuring high-end décor and a romantic, ethereal aesthetic consistent with the blush and ivory theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0uf-RSACAHKK3Nrp6ORDnaIL8MVbe70Sd9_SLZApoEOMdePWUWp9-Pqgqipv2334J_9iO5nDngGhwuUVcBadblreuUVcQ0dEbEi2vMtJ1K-cFb6e5o1Hq61k0aHrkeqQ8COJ61OQzWXOqSaU6f1a1aPwXvu512uk_jdbUj14jCj-Lb9RDYeQxIdJ8yF_A2CFsI8_ULtnwZl7hcgXXBOwL2y-HQrMclFNtxWEb29VTNB0WvyLBKXSo5LU2GJ-t1pAnbUU3ze5Ir_O6"/>
+<div class="absolute inset-0 bg-primary-container/20 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-transparent flex flex-col items-center gap-6 max-w-4xl mx-auto">
+<div class="flex gap-8 mb-4">
+<a class="font-serif text-xs uppercase tracking-[0.2em] text-rose-300 dark:text-stone-500 hover:text-amber-500 transition-colors duration-300" href="#">Our Registry</a>
+<a class="font-serif text-xs uppercase tracking-[0.2em] text-rose-300 dark:text-stone-500 hover:text-amber-500 transition-colors duration-300" href="#">Contact Us</a>
+<a class="font-serif text-xs uppercase tracking-[0.2em] text-rose-300 dark:text-stone-500 hover:text-amber-500 transition-colors duration-300" href="#">Privacy</a>
+</div>
+<div class="font-serif text-xs uppercase tracking-[0.2em] text-amber-600 dark:text-amber-200">
+            With love, Evelyn &amp; Julian © 2024
+        </div>
+</footer>
+<!-- Floating Sparkle Elements (Decorative only) -->
+<div class="fixed top-20 left-10 w-24 h-24 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="fixed bottom-20 right-10 w-32 h-32 bg-primary-container/30 rounded-full blur-3xl pointer-events-none"></div>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Ultra Romantic Template Initialization -->
+<script src="ultra-romantic-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

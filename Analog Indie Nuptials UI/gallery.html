@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gallery — The Wedding Zine</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#516051","secondary":"#775750","background":"#fcf9f8","on-background":"#1b1c1c","surface":"#fcf9f8","on-surface":"#1b1c1c","on-surface-variant":"#434842","surface-container-lowest":"#ffffff","surface-container-low":"#f6f3f2","surface-container":"#f0eded","surface-container-high":"#eae7e7","surface-dim":"#dcd9d9","outline":"#747872","outline-variant":"#c4c8c0","secondary-fixed":"#ffdad3","on-secondary-fixed":"#2c1511","primary-fixed":"#d7e7d4","inverse-surface":"#303030"},borderRadius:{none:"0px",lg:"0px",xl:"0px",full:"9999px"},spacing:{"margin-edge":"40px","offset-lg":"64px","gutter":"24px"},fontFamily:{"body-md":["Newsreader"],"mono-sm":["Space Grotesk"],"headline-lg":["Newsreader"],"body-lg":["Newsreader"],"headline-md":["Newsreader"],"display-xl":["Newsreader"],"mono-label":["Space Grotesk"]}}}}
+</script>
+<style>
+body{background-color:#fcf9f8;color:#1b1c1c}
+.grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;animation:gs .15s steps(1) infinite}
+@keyframes gs{0%,100%{transform:translate(0,0)}20%{transform:translate(-1px,1px)}40%{transform:translate(1px,-1px)}60%{transform:translate(-1px,-1px)}80%{transform:translate(1px,1px)}}
+#vows-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(252,249,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(116,120,114,.2);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:44px;font-family:'Space Grotesk',sans-serif;transform:translateY(-100%);animation:navIn .6s .4s cubic-bezier(.25,.46,.45,.94) forwards}
+.vn-link{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#747872;text-decoration:none;padding:5px 12px;border:1px solid transparent;transition:all .2s;font-weight:500}
+.vn-link:hover,.vn-link.active{color:#516051;border-color:rgba(81,96,81,.4);background:rgba(81,96,81,.06)}
+@keyframes navIn{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+.gallery-item{opacity:0;filter:saturate(0) brightness(1.3);transform:scale(.97);transition:opacity .7s ease,filter .9s ease,transform .7s ease}
+.gallery-item.in{opacity:1;filter:saturate(1) brightness(1);transform:scale(1)}
+.polaroid{border:8px solid #fff;box-shadow:0 4px 16px rgba(27,28,28,.1);transition:transform .3s ease}
+.polaroid:hover{transform:rotate(0deg) scale(1.02)!important}
+/* lightbox */
+#lb{display:none;position:fixed;inset:0;z-index:10000;background:rgba(27,28,28,.92);align-items:center;justify-content:center;cursor:pointer}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:88vh;object-fit:contain;border:8px solid #fff}
+</style>
+  <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="font-body-md" style="padding-top:44px">
+<div class="grain-overlay"></div>
+
+<nav id="vows-nav">
+  <a href="../index.html" style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#516051;text-decoration:none;font-weight:600">Said Yes Belize</a>
+  <div style="display:flex;gap:4px">
+    <a class="vn-link" href="invitation.html">💌 Invitation</a>
+    <a class="vn-link" href="our-story.html">📖 Story</a>
+    <a class="vn-link" href="event-details.html">📅 Details</a>
+    <a class="vn-link active" href="gallery.html">🖼 Gallery</a>
+    <a class="vn-link" href="rsvp.html">✉️ RSVP</a>
+  </div>
+  <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c4c8c0;font-family:'Space Grotesk',sans-serif">Analog Indie Nuptials</span>
+</nav>
+
+<main>
+  <!-- Header -->
+  <section class="py-16 px-margin-edge bg-surface border-b border-outline-variant">
+    <p class="font-mono-label text-primary text-xs uppercase tracking-[0.3em] mb-4">Issue No. 03 — Photo Archive</p>
+    <h1 class="font-display-xl leading-[0.88] tracking-tighter" style="font-size:clamp(3.5rem,8vw,7rem)">The <em>Archive</em></h1>
+    <p class="font-body-lg text-on-surface-variant mt-4 max-w-md">Shot on Portra 400. Developed with care. Kept forever.</p>
+  </section>
+
+  <!-- Grid -->
+  <section class="py-offset-lg px-gutter bg-surface-container-low">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[280px] md:auto-rows-[340px]">
+
+      <div class="col-span-2 row-span-2 gallery-item cursor-pointer" onclick="openLb(this)" style="transition-delay:0s">
+        <img class="w-full h-full object-cover polaroid p-1 bg-white"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9CUKgicPv89XWMcdfFehz3gwM69QsvaH-ucdj2zztTfYXUG4xy559G_tRhHXUGv1h0ZKoISzjHzTEfV-TFSvBCsgycMSECmjKsA0cekzM81Py_9AU6i4ETx-5SH2UBGTqmYQ47y17Btw1EbwDv1YY-G5UrkWmqixu2Ryu6N-0hxkamSmqzU0z6nUKtRMsgXjH98uoSIuKglQvabeMKqB41mBzH1-3YwlUOh2JQjeRcpVYgU6r2_KzimjKJWlBC-zdhiYzcOtjHhs"
+          alt="Bridal veil"/>
+      </div>
+
+      <div class="col-span-1 border border-on-surface/20 gallery-item cursor-pointer" onclick="openLb(this)" style="transition-delay:.15s">
+        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbyk3NP-_HtaMFYYuImYqIZf_SiZt008WmpahSfvglxtiRzl7zYEyMyiqOdYhfaHKncnYDrdOHF0blgEKRtT9-CZKlFzkgd_kijqk6i6qnYL6yDHDRvJBvzNHtrLLfWUJ44DCFWjqyvZbW2I1wZED4fwfhjXEKjm6hwU2yL2_JvbghBH69hD55emqb-n3sE76ReUJNFUT2AG82L2QS7HTo-O5hyZWZkpV_3jcSUD434vfPDafb_RHdZR-CxQ"
+          alt="Vinyl record"/>
+      </div>
+
+      <div class="col-span-1 translate-y-8 gallery-item cursor-pointer" onclick="openLb(this)" style="transition-delay:.3s">
+        <img class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXIMeKhrf38QYFW0u9OBEFdvCK52Jif7GMXYGWcDqfZLcUj12RHdlz-yd04s8ISUkQV85hZz4lkqHTe8w-n6oWGyjpUvvhtoBTeUJwRYIIUGUZmMbGrBZJzXySRPDsVUnOJJadYUH3UeKd0Sum0XTA5uT7017jtaW-mww47QeATmnXh-Qf0WiqjTnRCQnxsA73DMMoICd5fffn5UeKw89OZRQnrOEVrkjaK8Nz5eRYOtuZHWmBH4Zxi-JEZDX3va5ta7Sb1s3J8NE"
+          alt="Mismatched chairs"/>
+      </div>
+
+      <div class="col-span-2 md:col-span-1 gallery-item" style="transition-delay:.2s">
+        <div class="h-full bg-secondary-fixed p-6 flex flex-col justify-end">
+          <span class="font-mono-label text-on-secondary-fixed text-xs uppercase mb-4">Note —</span>
+          <p class="font-headline-md text-on-secondary-fixed italic">Captured on Portra 400.</p>
+        </div>
+      </div>
+
+      <div class="col-span-1 border-4 border-surface shadow-lg -rotate-2 z-10 gallery-item cursor-pointer" onclick="openLb(this)" style="transition-delay:.45s">
+        <img class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaGSA4CNyuIzQAT1RHpDA1ujv3Cxg0Pmxj3XphWippqM5y15_dOCjJPinUXfIxWM9OaTd1PpgHSjiJOG0dc8u7_pB-SMb3y61ZE0WyvEIqoEo1xTnlv0crjZclvnqlF9La8FSjxEdVS3_EGfnPEehjXDp4AHhqVl9jVQac9WUs-O3xg5fW9J00cp72LZtKZnukWkqEs9GGOFNQ5LOJO02WnkT6B12w4bdeHbdqzTNUKIVz_uPDJkD8iNVU8ZKAE4BYgW9X_d_oEHI"
+          alt="Groom laughing"/>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-offset-lg px-margin-edge text-center bg-surface border-t border-outline-variant">
+    <h2 class="font-display-xl text-4xl mb-8">See you there.</h2>
+    <a href="rsvp.html" class="px-10 py-4 bg-primary text-surface font-mono-label uppercase tracking-widest hover:bg-on-surface transition-colors no-underline inline-block">Send Your RSVP</a>
+  </section>
+</main>
+
+<footer class="bg-on-surface text-surface-variant py-12 px-margin-edge text-center">
+  <p class="font-mono-sm text-[10px] opacity-40 uppercase tracking-[0.5em]">Printed on 100% Recycled Digital Paper</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lb" onclick="closeLb()">
+  <img id="lb-img" src="" alt=""/>
+  <button onclick="closeLb()" style="position:absolute;top:1.5rem;right:1.5rem;background:#fcf9f8;border:none;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'Space Grotesk',sans-serif">✕</button>
+</div>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.08});
+document.querySelectorAll('.gallery-item').forEach(el=>io.observe(el));
+function openLb(card){const img=card.querySelector('img');document.getElementById('lb-img').src=img.src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+</script>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Analog Indie Nuptials UI Template Initialization -->
+<script src="analog-indie-nuptials-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>
+

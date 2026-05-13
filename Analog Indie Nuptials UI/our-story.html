@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Our Story — The Wedding Zine</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#7a5952","surface":"#fcf9f8","on-surface-variant":"#434842","surface-dim":"#dcd9d9","secondary":"#775750","primary":"#516051","surface-container-highest":"#e4e2e1","on-secondary":"#ffffff","on-surface":"#1b1c1c","background":"#fcf9f8","error":"#ba1a1a","inverse-surface":"#303030","on-tertiary":"#ffffff","surface-variant":"#e4e2e1","secondary-fixed":"#ffdad3","on-background":"#1b1c1c","surface-container-low":"#f6f3f2","inverse-primary":"#bbcbb9","surface-container-high":"#eae7e7","tertiary":"#5d5c58","on-primary":"#ffffff","outline":"#747872","primary-fixed":"#d7e7d4","surface-tint":"#546254","primary-fixed-dim":"#bbcbb9","tertiary-container":"#767470","primary-container":"#6a7869","surface-bright":"#fcf9f8","surface-container-lowest":"#ffffff","secondary-container":"#ffd3ca","surface-container":"#f0eded","on-tertiary-container":"#fdffdf","on-primary-container":"#f7fff3","outline-variant":"#c4c8c0","on-secondary-fixed-variant":"#5d3f39"},borderRadius:{none:"0px",lg:"0px",xl:"0px",full:"9999px"},spacing:{"margin-edge":"40px","offset-lg":"64px","gutter":"24px","unit":"4px"},fontFamily:{"body-md":["Newsreader"],"mono-sm":["Space Grotesk"],"headline-lg":["Newsreader"],"body-lg":["Newsreader"],"headline-md":["Newsreader"],"display-xl":["Newsreader"],"mono-label":["Space Grotesk"]}}}}
+</script>
+<style>
+body{background-color:#fcf9f8;color:#1b1c1c}
+.grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");opacity:.05;animation:grainShift .15s steps(1) infinite}
+@keyframes grainShift{0%,100%{transform:translate(0,0)}20%{transform:translate(-1px,1px)}40%{transform:translate(1px,-1px)}60%{transform:translate(-1px,-1px)}80%{transform:translate(1px,1px)}}
+#vows-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(252,249,248,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(116,120,114,0.2);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:44px;font-family:'Space Grotesk',sans-serif;transform:translateY(-100%);animation:navSlideDown .6s .4s cubic-bezier(.25,.46,.45,.94) forwards}
+#vows-nav .vn-brand{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#516051;text-decoration:none;font-weight:600}
+#vows-nav .vn-links{display:flex;align-items:center;gap:4px}
+#vows-nav .vn-link{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#747872;text-decoration:none;padding:5px 12px;border:1px solid transparent;transition:all .2s;font-weight:500}
+#vows-nav .vn-link:hover{color:#516051;border-color:rgba(81,96,81,.3)}
+#vows-nav .vn-link.active{color:#516051;border-color:rgba(81,96,81,.4);background:rgba(81,96,81,.06)}
+@keyframes navSlideDown{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+.anim-ready{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.25,.46,.45,.94),transform .75s cubic-bezier(.25,.46,.45,.94)}
+.anim-ready.in{opacity:1;transform:translateY(0)}
+.anim-delay-1{transition-delay:.1s}.anim-delay-2{transition-delay:.22s}.anim-delay-3{transition-delay:.36s}
+.polaroid-entry{opacity:0;transform:rotate(-3deg) translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.34,1.56,.64,1)}
+.polaroid-entry.in{opacity:1;transform:rotate(-1deg) translateY(0)}
+.polaroid-entry:hover{transform:rotate(0deg) translateY(-4px) scale(1.01)!important;transition:transform .3s ease}
+.polaroid-entry-r{opacity:0;transform:rotate(3deg) translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.34,1.56,.64,1)}
+.polaroid-entry-r.in{opacity:1;transform:rotate(1.5deg) translateY(0)}
+.polaroid-entry-r:hover{transform:rotate(0deg) translateY(-4px) scale(1.01)!important;transition:transform .3s ease}
+.air-mail-border{background:repeating-linear-gradient(-45deg,#ba1a1a,#ba1a1a 10px,#ffffff 10px,#ffffff 20px,#516051 20px,#516051 30px,#ffffff 30px,#ffffff 40px)}
+</style>
+  <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="font-body-md selection:bg-primary-fixed" style="padding-top:44px">
+<div class="grain-overlay"></div>
+
+<nav id="vows-nav">
+  <a class="vn-brand" href="../index.html">Said Yes Belize</a>
+  <div class="vn-links">
+    <a class="vn-link" href="invitation.html">💌 Invitation</a>
+    <a class="vn-link active" href="our-story.html">📖 Our Story</a>
+    <a class="vn-link" href="event-details.html">📅 Details</a>
+    <a class="vn-link" href="gallery.html">🖼 Gallery</a>
+    <a class="vn-link" href="rsvp.html">✉️ RSVP</a>
+  </div>
+  <span style="font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c4c8c0">Analog Indie Nuptials</span>
+</nav>
+
+<!-- Hero -->
+<section class="relative bg-surface-dim overflow-hidden" style="min-height:60vh;display:flex;align-items:flex-end">
+  <div class="absolute inset-0">
+    <img class="w-full h-full object-cover filter grayscale-[15%] brightness-75"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCndutsTYd16Lr-bGmThJk4NT7f5a8jjCvkPmQR7Jd-3dCNnaHJ8cLzqXzkIf5Rip0F37hkAtkCgWu8NugVLKhSxTIccQyfNj2915OWUv6AG41HkEd5M8phtSpZ1wf1im-w8lWx5uoYhfithZcHlShDel49tSaSk6PGWxQ-tZjh6QCgPkBvdiB5Q1kaZtRitYyTQbFWcZ_mGv6M2IbSFiu6r_1yYTMTjHE-XayJSIxE8Stkg_Hwwf731OUwjf_ekXEsLDweHaPIHf0"
+      alt="Wedding hero"/>
+  </div>
+  <div class="relative z-10 px-margin-edge pb-16">
+    <p class="font-mono-label text-surface text-xs uppercase tracking-[0.3em] mb-4 opacity-70">Vol. II — The Origin Story</p>
+    <h1 class="font-display-xl text-surface leading-[0.88] tracking-tighter mix-blend-overlay" style="font-size:clamp(4rem,10vw,9rem)">How<br><em>We</em><br>Began</h1>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="bg-surface py-offset-lg">
+  <div class="max-w-screen-lg mx-auto px-margin-edge">
+
+    <!-- Entry 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-24 items-center anim-ready">
+      <div class="border border-on-surface/10 p-2 bg-surface-container-lowest polaroid-entry">
+        <img class="w-full grayscale-[10%]"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQZsX5Mz_7xaUjqNc1Pj-SMNvxvEYR8VsQwmGx-lnHm6r3pN2uyPVOO3LyJzxfG9qRN1tzp3ELy3sqQEqpdkpdy_jxshKe3CnSxQ_vlw2AxjBXCKDUOStMz1IQ00PG00OQ4cP88q29jYGtL-z7SiNxXPqOMSLoR7RfLMMErKxdEqTCMY-D1Uv5GeYXmL3CLMaWwrB9zGDROz6XCfy7vdRvdgbE0o5IL2fTs3z67UuyvJSDgsQLcpxHzyNDQrkXBWKp-uCVbLIipBA"
+          alt="Hands"/>
+        <p class="font-mono-sm text-[10px] text-center text-outline mt-2 uppercase tracking-wider">Sept 2018</p>
+      </div>
+      <div class="md:pl-8">
+        <span class="font-mono-label text-primary text-xs uppercase tracking-[0.25em] block mb-3">Chapter One</span>
+        <h2 class="font-headline-lg text-3xl mb-4">A Rainy Tuesday</h2>
+        <p class="font-body-lg text-on-surface-variant leading-relaxed">It started in a small café, rain against the windows. No grand gestures — just two people realizing the world felt a little quieter, a little clearer, when they were together.</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex items-center gap-4 mb-24 anim-ready anim-delay-1">
+      <div class="flex-grow h-px bg-outline-variant"></div>
+      <span class="font-mono-label text-xs text-outline uppercase tracking-widest">·  ·  ·</span>
+      <div class="flex-grow h-px bg-outline-variant"></div>
+    </div>
+
+    <!-- Entry 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-24 items-center anim-ready anim-delay-1">
+      <div class="md:order-2 border border-on-surface/10 p-2 bg-surface-container-lowest polaroid-entry-r">
+        <img class="w-full"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWdFuCpHb25oMpG98AF0x1veY6PBA-HEgGkPbXCzbuOiC39kN60zxz3z8WU55v5ulvoZpKI03ZnbDM7nGBqdox7JlTX0CboxJtZMgt0h_anEzU0xkR_FI7O9aRBxZzQuND1ECNIdmPCTeEWaK_QDQs5zSoxYJsSxIdhaGrunQKUWR2LiTB3Wn04CAIl12AgfZW4YW7eQS_tGkAYueQnggpyK7BxdVp8BpfqiYRofLcB2lqIOafac-2QkX2lJozUTcIo2j5tyN58mk"
+          alt="Meadow"/>
+        <p class="font-mono-sm text-[10px] text-center text-outline mt-2 uppercase tracking-wider">Summer 2020</p>
+      </div>
+      <div class="md:order-1 md:pr-8">
+        <span class="font-mono-label text-primary text-xs uppercase tracking-[0.25em] block mb-3">Chapter Two</span>
+        <h2 class="font-headline-lg text-3xl mb-4">The Wild Meadow</h2>
+        <p class="font-body-lg text-on-surface-variant leading-relaxed">A spontaneous road trip south, barefoot in a meadow at dusk — they knew quietly that wherever life led, they'd choose the same direction.</p>
+        <p class="font-body-lg text-on-surface-variant leading-relaxed italic mt-4">"We wanted this day to feel like a scanned memory. Not a perfect production, but a physical record of the people we love."</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex items-center gap-4 mb-24 anim-ready anim-delay-2">
+      <div class="flex-grow h-px bg-outline-variant"></div>
+      <span class="font-mono-label text-xs text-outline uppercase tracking-widest">·  ·  ·</span>
+      <div class="flex-grow h-px bg-outline-variant"></div>
+    </div>
+
+    <!-- Entry 3 — The Proposal -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-24 items-center anim-ready anim-delay-2">
+      <div class="border border-on-surface/10 p-2 bg-secondary-fixed polaroid-entry">
+        <div class="p-6 flex flex-col justify-center" style="min-height:220px">
+          <span class="font-mono-label text-on-secondary-fixed text-xs uppercase mb-4">Note —</span>
+          <p class="font-headline-md text-on-secondary-fixed italic text-xl">"The answer was yes before the question was finished."</p>
+          <span class="font-mono-sm text-[10px] text-outline mt-6 uppercase tracking-wider">December 2022</span>
+        </div>
+      </div>
+      <div class="md:pl-8">
+        <span class="font-mono-label text-primary text-xs uppercase tracking-[0.25em] block mb-3">Chapter Three</span>
+        <h2 class="font-headline-lg text-3xl mb-4">The Question</h2>
+        <p class="font-body-lg text-on-surface-variant leading-relaxed">Under the Great Oak, on the shortest day of the year, he knelt. The world was perfectly still. And then it wasn't.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-surface-container py-offset-lg px-margin-edge text-center anim-ready">
+  <h3 class="font-display-xl text-4xl md:text-6xl mb-8">See you there.</h3>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="gallery.html" class="px-10 py-4 bg-primary text-surface font-mono-label uppercase tracking-widest hover:bg-on-surface transition-colors no-underline">View Gallery</a>
+    <a href="rsvp.html" class="px-10 py-4 border border-on-surface text-on-surface font-mono-label uppercase tracking-widest hover:bg-surface-dim transition-colors no-underline">RSVP</a>
+  </div>
+</section>
+
+<footer class="bg-on-surface text-surface-variant py-16 px-margin-edge text-center">
+  <p class="font-mono-sm text-[10px] opacity-40 uppercase tracking-[0.5em]">Printed on 100% Recycled Digital Paper</p>
+</footer>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.1});
+document.querySelectorAll('.anim-ready,.polaroid-entry,.polaroid-entry-r').forEach(el=>io.observe(el));
+</script>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Analog Indie Nuptials UI Template Initialization -->
+<script src="analog-indie-nuptials-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>
+

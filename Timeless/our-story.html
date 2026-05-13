@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&amp;family=Newsreader:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#1c1c19",
+                    "surface-variant": "#e7e1dc",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "on-secondary-container": "#5a6650",
+                    "surface-tint": "#6a5b5b",
+                    "inverse-primary": "#d5c2c2",
+                    "surface-container": "#f3ede7",
+                    "on-tertiary-container": "#5e5d59",
+                    "primary-fixed-dim": "#d5c2c2",
+                    "inverse-on-surface": "#f6f0ea",
+                    "surface-container-highest": "#e7e1dc",
+                    "on-background": "#1d1b18",
+                    "on-tertiary-fixed-variant": "#474743",
+                    "tertiary-fixed": "#e5e2dd",
+                    "tertiary": "#5f5e5b",
+                    "surface-container-high": "#ede7e1",
+                    "primary": "#6a5b5b",
+                    "primary-container": "#e6d2d2",
+                    "outline": "#807474",
+                    "on-surface": "#1d1b18",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#fff8f2",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#becbb0",
+                    "inverse-surface": "#33302c",
+                    "secondary-fixed": "#dae7cb",
+                    "on-secondary-fixed-variant": "#3f4a36",
+                    "background": "#fff8f2",
+                    "outline-variant": "#d1c3c3",
+                    "surface-container-low": "#f9f2ed",
+                    "on-surface-variant": "#4e4445",
+                    "tertiary-container": "#d9d6d1",
+                    "on-primary-fixed": "#241919",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#514344",
+                    "surface": "#fff8f2",
+                    "secondary": "#56624c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#f2dede",
+                    "on-primary-container": "#68595a",
+                    "on-secondary-fixed": "#141e0d",
+                    "surface-dim": "#dfd9d3",
+                    "secondary-container": "#d7e4c8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1120px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Noto Serif"],
+                    "display-lg": ["Newsreader"],
+                    "body-md": ["Noto Serif"],
+                    "headline-md": ["Newsreader"],
+                    "label-sm": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .paper-shadow {
+            box-shadow: 0 10px 40px -10px rgba(86, 98, 76, 0.08);
+        }
+        .backdrop-blur-custom {
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#FDFCFB]/80 backdrop-blur-md border-b border-stone-200/30 shadow-sm shadow-stone-200/20 px-6 h-16 flex justify-between items-center w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-stone-800" data-icon="local_florist">local_florist</span>
+</div>
+<div class="font-serif italic text-lg tracking-wider text-stone-800">E &amp; J</div>
+<div class="w-8"></div> <!-- Spacer for center alignment -->
+</header>
+<main class="pt-24 pb-32 max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<section class="text-center mb-16">
+<h1 class="font-display-lg text-display-lg text-primary mb-4 italic">Event Details</h1>
+<div class="flex items-center justify-center gap-4 text-secondary">
+<div class="h-px w-12 bg-outline-variant"></div>
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<div class="h-px w-12 bg-outline-variant"></div>
+</div>
+</section>
+<!-- Events Grid (Ceremony & Reception) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+<!-- Ceremony Card -->
+<div class="bg-surface-container-low border border-secondary-container/30 rounded-xl p-10 paper-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="local_florist">local_florist</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 italic">The Ceremony</h3>
+<div class="space-y-4 text-on-surface-variant">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Saturday, June 14, 2025</p>
+<p class="font-body-lg text-body-lg">Two o'clock in the afternoon</p>
+<p class="font-body-md text-body-md leading-relaxed">
+                        St. Jude’s Cathedral<br/>
+                        123 Heritage Lane, Old Town<br/>
+                        Charleston, South Carolina
+                    </p>
+</div>
+<div class="mt-8">
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-6 py-3 rounded-lg hover:opacity-80 transition-opacity duration-300">
+                        ADD TO CALENDAR
+                    </button>
+</div>
+</div>
+<!-- Reception Card -->
+<div class="bg-surface-container-low border border-secondary-container/30 rounded-xl p-10 paper-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="restaurant">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 italic">The Reception</h3>
+<div class="space-y-4 text-on-surface-variant">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Reception to Follow</p>
+<p class="font-body-lg text-body-lg">Five o'clock in the evening</p>
+<p class="font-body-md text-body-md leading-relaxed">
+                        The Magnolia Estate<br/>
+                        45 Gardenia Way, River Oaks<br/>
+                        Charleston, South Carolina
+                    </p>
+</div>
+<div class="mt-8">
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-6 py-3 rounded-lg hover:opacity-80 transition-opacity duration-300">
+                        VIEW MENU
+                    </button>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<section class="mb-24">
+<div class="bg-surface-container rounded-xl overflow-hidden paper-shadow border border-outline-variant/20">
+<div class="relative h-[400px] w-full">
+<img class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="A sophisticated, high-end digital map rendering of Charleston, South Carolina, styled in soft cream and sage green tones. The map features minimalist street lines and elegant, thin typography for landmarks. The overall aesthetic is clean and artistic, mimicking the look of a boutique travel guide with warm, sun-drenched lighting and a serene, professional mood." data-location="Charleston, South Carolina" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcw-0ov7buQfgLYvebqUiIqbhHVpwetxAHnn4Hqg3JsIaSl6N12Zryhmbel9l-8QUm1Zx8SO5uz0cUAfMmU4bzsOT1pyLbOy0FVNT2yyln7oGC7Mp3yIRWAX1K4fHH4G_f-BBeQ1N04WknmgNnFywirn8b6L5FppZur2y59vPEulh3j6na14V38YrsjNr8yjfE2tsXVA9ozBX2vPTkN6p_mUuhPYkwBTIYH5KB4JsMPFczZIpZ0zvd_SweKAsHybAkhS-BZOW3-DMI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 bg-surface-bright/90 backdrop-blur-md p-6 border border-outline-variant/30 max-w-sm rounded-lg">
+<h4 class="font-headline-md text-headline-md text-primary italic mb-2">Getting There</h4>
+<p class="text-on-surface-variant font-body-md mb-4">Shuttle services will be provided between the Cathedral and the Estate starting at 4:00 PM.</p>
+<a class="text-secondary font-label-sm text-label-sm flex items-center gap-2 hover:underline" href="#">
+<span class="material-symbols-outlined" data-icon="directions">directions</span>
+                            OPEN IN GOOGLE MAPS
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- RSVP Formal Section -->
+<section class="max-w-2xl mx-auto mb-20">
+<div class="bg-surface-container-lowest border-2 border-primary-container p-12 rounded-lg paper-shadow relative">
+<!-- Floral Corner Accents -->
+<div class="absolute top-4 left-4 opacity-20">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="local_florist">local_florist</span>
+</div>
+<div class="absolute bottom-4 right-4 rotate-180 opacity-20">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="local_florist">local_florist</span>
+</div>
+<div class="text-center mb-10">
+<h2 class="font-display-lg text-display-lg text-primary italic mb-2">RSVP</h2>
+<p class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Kindly respond by May 1st, 2025</p>
+</div>
+<form class="space-y-8">
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-1">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-secondary-container focus:ring-0 focus:border-primary px-0 py-2 font-body-lg text-on-surface placeholder:text-stone-300 transition-colors" placeholder="Your name as it appears on invitation" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-3">Attendance</label>
+<div class="flex gap-4">
+<label class="flex-1 cursor-pointer">
+<input class="hidden peer" name="attendance" type="radio"/>
+<div class="text-center p-3 border border-outline-variant rounded peer-checked:bg-primary-container peer-checked:border-primary-container font-label-sm text-label-sm transition-all duration-300">
+                                        JOYFULLY ATTEND
+                                    </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="hidden peer" name="attendance" type="radio"/>
+<div class="text-center p-3 border border-outline-variant rounded peer-checked:bg-surface-container-high peer-checked:border-outline-variant font-label-sm text-label-sm transition-all duration-300">
+                                        REGRETFULLY DECLINE
+                                    </div>
+</label>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-3">Guests</label>
+<select class="w-full bg-transparent border-0 border-b border-secondary-container focus:ring-0 focus:border-primary px-0 py-2 font-body-lg text-on-surface transition-colors">
+<option>Just Myself</option>
+<option>2 Guests</option>
+<option>3 Guests</option>
+</select>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-1">Dietary Requirements</label>
+<input class="w-full bg-transparent border-0 border-b border-secondary-container focus:ring-0 focus:border-primary px-0 py-2 font-body-lg text-on-surface placeholder:text-stone-300 transition-colors" placeholder="E.g. Vegetarian, Nut Allergy" type="text"/>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-sm text-label-sm tracking-[0.2em] hover:opacity-90 transition-all duration-300 paper-shadow uppercase" type="submit">
+                            Submit Response
+                        </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Story Teaser Section -->
+<section class="text-center py-20 border-t border-stone-200/40">
+<p class="font-body-lg text-body-lg text-secondary italic mb-4">"And so the adventure begins..."</p>
+<span class="material-symbols-outlined text-stone-300" data-icon="favorite">favorite</span>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#FDFCFB] border-t border-stone-100 shadow-[0_-4px_20px_rgba(230,210,210,0.1)] z-50">
+<a class="flex flex-col items-center justify-center text-stone-400 opacity-60 hover:text-[#E6D2D2] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Invitation</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E6D2D2] font-bold scale-105 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="event" data-weight="fill" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Details</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 opacity-60 hover:text-[#E6D2D2] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Our Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 opacity-60 hover:text-[#E6D2D2] transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">RSVP</span>
+</a>
+</nav>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- Timeless Template Initialization -->
+<script src="timeless-init.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>

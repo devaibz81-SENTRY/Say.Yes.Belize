@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#e3c370",
+                    "tertiary-fixed": "#e4e4cc",
+                    "on-surface": "#1a1c1a",
+                    "primary-fixed": "#ffdf91",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#5e604d",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-container": "#c5c6ae",
+                    "secondary": "#665c60",
+                    "surface-bright": "#faf9f6",
+                    "on-background": "#1a1c1a",
+                    "on-secondary-fixed-variant": "#4e4448",
+                    "primary": "#735b11",
+                    "on-secondary-fixed": "#211a1d",
+                    "surface-dim": "#dbdad7",
+                    "on-primary-fixed": "#241a00",
+                    "secondary-fixed": "#eddfe4",
+                    "outline": "#7e7666",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "inverse-on-surface": "#f2f1ee",
+                    "surface-tint": "#735b11",
+                    "on-primary-fixed-variant": "#584400",
+                    "on-primary-container": "#654e02",
+                    "secondary-container": "#eadce1",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "background": "#faf9f6",
+                    "primary-fixed-dim": "#e3c370",
+                    "on-error": "#ffffff",
+                    "surface-container": "#efeeeb",
+                    "surface": "#faf9f6",
+                    "surface-container-high": "#e9e8e5",
+                    "on-secondary-container": "#6a6064",
+                    "surface-variant": "#e3e2e0",
+                    "on-tertiary-container": "#515240",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "on-surface-variant": "#4c4638",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e3e2e0",
+                    "surface-container-low": "#f4f3f1",
+                    "secondary-fixed-dim": "#d1c3c8",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "outline-variant": "#cfc5b3",
+                    "primary-container": "#e1c16e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-edge": "40px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "section-gap": "80px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Noto Serif"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Noto Serif"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(225, 193, 110, 0.2);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+.vows-countdown .vows-cd-num { color: #735b11; }
+.vows-countdown .vows-cd-label { color: #735b11; opacity: 0.6; }
+.vows-countdown .vows-cd-digits { color: #735b11; }
+.vows-countdown .vows-cd-celebrate { color: #735b11; }
+</style>
+    <link href="../fonts.css" rel="stylesheet"/>
+  <link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Top Navigation Anchor -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/70 dark:bg-stone-900/70 backdrop-blur-xl border-b border-[#E1C16E]/20 shadow-[0_10px_40px_rgba(225,193,110,0.1)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#E1C16E] cursor-pointer hover:opacity-80 transition-all">menu</span>
+</div>
+<div class="font-serif italic text-2xl text-[#E1C16E]">E &amp; J</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#E1C16E] cursor-pointer hover:opacity-80 transition-all">favorite</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Cinematic Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Wedding Ceremony Venue" class="w-full h-full object-cover" data-alt="A cinematic, wide-angle photograph of a serene outdoor wedding aisle at dusk. The scene is bathed in golden hour light with soft, hazy sunbeams filtering through ancient oak trees. Delicate white floral arrangements line the wooden chairs, and the overall mood is deeply romantic and ethereal. The color palette features warm golds, soft beiges, and muted ivory tones, perfectly aligning with a high-end luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGATC3qvboo1V9M5abP1Erqytjzafp1mlYLfHw00Pa2mKVMniydE8B3cVaNQWPPW6_8pICLBw90frxRFR_vFnemXdEPs7bTDT3uqttSYYZNwmxq2VDRDiEThiBFO_39djqM0y1AiXMiS1pt2IHwuvVQEsYDG41e_UBqlod5tvOJbp6Ibt5n952-biOFCAOYKlIbenjPe5d3oSdb2SOTOnbTm_CuVLau2ZeW36bZRNkbJA7JDoNXnNxhf7dioHGw9JEsrgPgtL9poVu"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<!-- Hero Content / Invitation Canvas -->
+<div class="relative z-10 w-full max-w-[1200px] px-gutter flex flex-col items-center">
+<div class="glass-panel p-12 md:p-24 rounded-xl shadow-[0_10px_40px_rgba(225,193,110,0.15)] max-w-2xl w-full text-center relative overflow-hidden">
+<!-- Corner Accents (SVG) -->
+<div class="absolute top-4 left-4 w-16 h-16 opacity-40">
+<svg fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 90C10 90 15 60 40 40C65 20 90 10 90 10" stroke="#E1C16E" stroke-width="0.5"></path>
+<circle cx="40" cy="40" fill="#E1C16E" r="2"></circle>
+<path d="M10 70C10 70 25 55 45 55" stroke="#E1C16E" stroke-width="0.5"></path>
+</svg>
+</div>
+<div class="absolute bottom-4 right-4 w-16 h-16 rotate-180 opacity-40">
+<svg fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 90C10 90 15 60 40 40C65 20 90 10 90 10" stroke="#E1C16E" stroke-width="0.5"></path>
+<circle cx="40" cy="40" fill="#E1C16E" r="2"></circle>
+<path d="M10 70C10 70 25 55 45 55" stroke="#E1C16E" stroke-width="0.5"></path>
+</svg>
+</div>
+<p class="font-label-caps text-label-caps text-primary tracking-[0.25em] mb-8">TOGETHER WITH THEIR FAMILIES</p>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 italic">Elizabeth &amp; James</h1>
+<div class="flex items-center justify-center gap-6 mb-8">
+<div class="h-[1px] w-12 bg-primary-container"></div>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant">ARE GETTING MARRIED</p>
+<div class="h-[1px] w-12 bg-primary-container"></div>
+</div>
+<div class="space-y-2 mb-12">
+<p class="font-body-lg text-body-lg text-on-surface-variant">Saturday, the Twelfth of October</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Two Thousand and Twenty Four</p>
+<p class="font-label-caps text-label-caps text-primary mt-4 tracking-widest">THE BOTANICAL GARDENS, PARIS</p>
+</div>
+<a href="rsvp.html" class="bg-primary-container text-on-primary-container font-body-md px-10 py-4 rounded-full hover:shadow-lg transition-all active:scale-95 border border-[#E1C16E]/20 inline-block">
+                    REQUEST THE PLEASURE OF YOUR COMPANY
+                </a>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-4 text-[#E1C16E]/80">
+<span class="font-label-caps text-[10px] tracking-[0.3em] uppercase">Scroll to discover</span>
+<div class="w-[1px] h-16 bg-gradient-to-b from-[#E1C16E] to-transparent"></div>
+</div>
+</main>
+<div class="vows-countdown" style="margin: 24px 0;"></div>
+<!-- Content Preview Section (To show typography and grid) -->
+<section class="bg-surface py-section-gap px-gutter">
+<div class="max-w-[1200px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5">
+<img alt="Invitation Detail" class="w-full aspect-[4/5] object-cover rounded-xl shadow-2xl" data-alt="A macro close-up of a high-end wedding invitation printed on heavy-weight, ivory textured paper with gold foil lettering. The shot is taken from an artistic angle with a shallow depth of field, highlighting the tactile quality of the paper. Soft sunlight hits the card, creating warm highlights and gentle shadows. The aesthetic is minimal, luxurious, and timelessly elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFhUc5Jfvcdio3-wrQK50KokQATKZAgwHdrhWETQNb_3g9kMTtK8m5S2qS6IPmuwDbie4ti_KU2HTMsSv2Kls3aRd_0ssN1RNCaCUxbvBo7DlYRzpAYgg9TGF-IBqe0vA3jQyTHoNO7Ko2tXqEATYN47ShYSRhBxHiqQSbeEqRSo5csrw-sU_BqSHBol9_o7kn-Nob5cimKT_k1DHEZRyhOCyYpa4S0-NY1DF-Q89lfYLxKWY5s6aYKYED6CJCH8IcNnclgq_84KLN"/>
+</div>
+<div class="md:col-span-7 space-y-8">
+<span class="font-label-caps text-label-caps text-primary bg-secondary-container px-4 py-2 rounded-full">OUR STORY</span>
+<h2 class="font-headline-md text-display-lg text-on-surface">A Journey of Love &amp; Light</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        It began with a shared glance in a small garden café and blossomed into a lifetime of adventure. We invite you to join us as we begin our most beautiful chapter yet, surrounded by the warmth of our dearest friends and family.
+                    </p>
+<div class="pt-4">
+<div class="w-24 h-[1px] bg-primary mb-4"></div>
+<p class="font-headline-sm text-headline-sm italic text-primary">"Whatever our souls are made of, his and mine are the same."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Shell -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-white/70 dark:bg-stone-900/70 backdrop-blur-xl border-t border-[#E1C16E]/20 rounded-t-2xl shadow-[0_-10px_40px_rgba(225,193,110,0.1)]">
+<div class="flex flex-col items-center justify-center text-[#E1C16E] scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#E1C16E] transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">Story</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#E1C16E] transition-colors">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">Event</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#E1C16E] transition-colors">
+<span class="material-symbols-outlined" data-icon="mailed_it">mail_off</span>
+<span class="font-serif text-[10px] uppercase tracking-tighter">RSVP</span>
+</div>
+</div>
+
+<!-- Core Interactive Systems -->
+<script src="../guided-tour.js"></script>
+<script src="../photo-uploader.js"></script>
+<script src="../editable-fields.js"></script>
+<script src="../interactive-template-init.js"></script>
+
+<!-- soft luxury Template Initialization -->
+<script src="soft-luxury-init.js"></script>
+<script src="../countdown-widget.js"></script>
+
+<script src="../mobile-optimize.js"></script>
+  <script src="../font-picker.js"></script>
+  <script src="../premium.js"></script>
+</body></html>
