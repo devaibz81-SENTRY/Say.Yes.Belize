@@ -98,39 +98,27 @@
         return text.length >= 3 && text.length <= 80 && !closestInteractive(el);
       });
 
-    titleCandidates.slice(0, 5).forEach(function (el, index) {
+    titleCandidates.slice(0, 3).forEach(function (el, index) {
       var text = visibleText(el);
       var label = /&| and /.test(text) ? 'couple names' : 'headline';
       var id = 'headline_' + index + '_' + slugify(text);
-      if (!used.has(id)) {
+      
+      // Only allow editing if it's likely a name or date
+      if (text.length < 50 && !used.has(id)) {
         used.add(id);
-        editable.makeEditable(el, id, { label: label, placeholder: text || 'Enter headline' });
+        editable.makeEditable(el, id, { label: label, placeholder: text || 'Enter names' });
       }
     });
 
-    Array.from(document.querySelectorAll('p,li,h3,h4,span'))
-      .filter(function (el) {
+    // Handle Dates specifically
+    Array.from(document.querySelectorAll('p,span,h3'))
+      .filter(function(el) {
         var text = visibleText(el);
-        if (closestInteractive(el)) return false;
-        if (el.querySelector('input,button,a,img,svg')) return false;
-        if (text.length < 10 || text.length > 420) return false;
-        if (/^(days|hrs|mins|secs|story|details|gallery|rsvp)$/i.test(text)) return false;
-        return true;
+        return /october|june|saturday|2024|2025|september|wedding date/i.test(text);
       })
-      .slice(0, config.maxEditableFields || 36)
-      .forEach(function (el, index) {
+      .forEach(function(el, index) {
         var text = visibleText(el);
-        var type = text.length > 90 ? 'textarea' : 'text';
-        var hint = /address|venue|location|resort|chapel|estate|hotel/i.test(text) ? 'venue details' :
-          /dress|attire|black tie|formal/i.test(text) ? 'dress code' :
-          /rsvp|respond|reply/i.test(text) ? 'RSVP instructions' :
-          /october|june|saturday|2024|2025|o.clock|afternoon|evening/i.test(text) ? 'date and time' :
-          'wedding copy';
-        editable.makeEditable(el, 'copy_' + index + '_' + slugify(text), {
-          label: hint,
-          type: type,
-          placeholder: text
-        });
+        editable.makeEditable(el, 'wedding_date_' + index, { label: 'wedding date', placeholder: text });
       });
   }
 
@@ -144,19 +132,43 @@
       })
       .slice(0, config.maxPhotoZones || 18);
 
+    var premiumPhotos = [
+      '../images/newlywed-caucasian-young-couple-with-face-to-face-2026-01-09-09-27-56-utc.jpg',
+      '../images/young-loving-happy-couple-on-tropical-island-with-2026-01-07-06-31-39-utc.jpg',
+      '../images/groom-hugs-bride-in-a-veil-fluttering-in-the-wind-2026-03-17-00-03-13-utc.jpg'
+    ];
+
     images.forEach(function (img, index) {
       var wrapper = document.createElement('div');
       wrapper.id = (config.slug || 'template') + '_photo_container_' + index;
       wrapper.className = img.className || '';
+      
+      // Preserve layout
+      var style = getComputedStyle(img);
       wrapper.style.cssText = img.getAttribute('style') || '';
-      wrapper.style.minHeight = wrapper.style.minHeight || (index === 0 ? '280px' : '180px');
-      wrapper.style.position = /absolute|fixed|relative/.test(getComputedStyle(img).position) ? getComputedStyle(img).position : (wrapper.style.position || 'relative');
+      wrapper.style.width = '100%';
+      wrapper.style.height = '100%';
+      wrapper.style.position = style.position === 'static' ? 'relative' : style.position;
+      wrapper.style.minHeight = wrapper.style.minHeight || (index === 0 ? '400px' : '180px');
+      
       wrapper.setAttribute('data-photo-zone-wrapper', 'true');
-      wrapper.dataset.photoKicker = index === 0 ? 'Hero image' : 'Template photo';
-      wrapper.dataset.photoLabel = index === 0 ? 'Upload the first photo guests will see' : 'Replace this image';
-      wrapper.dataset.photoHint = index === 0 ? 'Use a wide couple portrait or venue image' : 'Click to browse or drag a photo here';
+      wrapper.dataset.photoKicker = index === 0 ? '✨ Hero Moment' : 'Template Photo';
+      wrapper.dataset.photoLabel = index === 0 ? 'Upload your main invitation photo' : 'Replace this image';
+      wrapper.dataset.photoHint = index === 0 ? 'Click here to personalize your hero image' : 'Click to browse or drag a photo';
+      
       img.replaceWith(wrapper);
-      photoUploader.createPhotoZone(wrapper.id, (index === 0 ? 'hero_image' : 'gallery_' + index));
+
+      // Pre-populate with premium default if no saved photo exists
+      var photoId = (index === 0 ? 'hero_image' : 'gallery_' + index);
+      if (!photoUploader.getPhoto(photoId) && index < premiumPhotos.length) {
+         photoUploader.photos[photoId] = {
+           data: premiumPhotos[index],
+           timestamp: new Date().toISOString(),
+           isDefault: true
+         };
+      }
+      
+      photoUploader.createPhotoZone(wrapper.id, photoId);
     });
   }
 
@@ -318,8 +330,13 @@
 
     injectTheme(config);
     var editable = new EditableFields({ storageKey: config.storageKey + '_fields' });
+    window.editableFields = editable;
+    
     var photoUploader = new PhotoUploader({ storageKey: config.storageKey + '_photos' });
+    window.photoUploader = photoUploader;
+    
     var tour = new GuidedTour();
+    window.guidedTour = tour;
 
     makeTextEditable(editable, config);
     makePhotoZones(photoUploader, config);
