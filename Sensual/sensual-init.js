@@ -28,12 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize editable fields system
   const editable = new EditableFields({ storageKey: 'sensual_fields' });
+  window.editableFields = editable;
   
   // Initialize photo uploader
   const photoUploader = new PhotoUploader({ storageKey: 'sensual_photos' });
+  window.photoUploader = photoUploader;
   
   // Initialize guided tour
   const tour = new GuidedTour();
+  window.guidedTour = tour;
 
   // ──────────────────────────────────────────────────────────
   // MAKE TITLE EDITABLE
@@ -57,19 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // ──────────────────────────────────────────────────────────
-  // MAKE STORY TEXT EDITABLE
-  // ──────────────────────────────────────────────────────────
-  const storyParagraphs = document.querySelectorAll('.glass-card.p-10 .space-y-6 p');
-  if (storyParagraphs.length > 0) {
-    storyParagraphs.forEach((para, index) => {
-      editable.makeEditable(para, `story_${index}`, {
-        label: `story paragraph ${index + 1}`,
-        type: 'textarea',
-        placeholder: 'Enter your story...'
-      });
-    });
-  }
 
   // ──────────────────────────────────────────────────────────
   // REPLACE HERO IMAGE WITH PHOTO ZONE
@@ -196,50 +186,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // ──────────────────────────────────────────────────────────
   tour.addStep({
     target: 'h1.gold-foil-text',
-    title: 'Start with the essentials',
-    text: 'Edit the couple names or main headline now. Save it, then continue to the next setup step.',
+    title: 'Update your names',
+    text: 'Edit the couple names for your announcement.',
     actionLabel: 'Edit names',
     padding: 16,
     borderRadius: 8
   })
   .addStep({
     target: '.italic.text-primary',
-    title: 'Set the date and place',
-    text: 'Update the wedding date, city, and venue details so guests know exactly where to be.',
+    title: 'Save the date',
+    text: 'Set your wedding date and location.',
     actionLabel: 'Edit date',
     padding: 16,
     borderRadius: 8
   })
   .addStep({
     target: '#hero-photo-zone, .absolute.inset-0',
-    title: 'Drop in the first photo',
-    text: 'Upload the first image guests will see. A wide couple portrait or venue photo works best.',
+    title: 'Choose your hero photo',
+    text: 'Upload a beautiful photo for the main invitation.',
     actionLabel: 'Upload photo',
     padding: 20,
     borderRadius: 12
-  })
-  .addStep({
-    target: '.space-y-6',
-    title: 'Make the words yours',
-    text: 'Update the story, venue notes, dress code, and RSVP language. Save the text before moving on.',
-    actionLabel: 'Edit text',
-    padding: 16,
-    borderRadius: 8
-  })
-  .addStep({
-    target: '[data-photo-experience="sensual"]',
-    title: 'Create the scrollable album',
-    text: 'Add 3 story photos and 7 gallery photos. You can upload the first album slot now, then keep filling the rest.',
-    actionLabel: 'Upload album photo',
-    padding: 20,
-    borderRadius: 12
-  })
-  .addStep({
-    target: '.liquid-gold-btn',
-    title: 'Finish each page',
-    text: 'Move through the template navigation and repeat the same simple flow: text, photos, RSVP details.',
-    padding: 16,
-    borderRadius: 8
   });
   // AUTO-START TOUR FOR FIRST-TIME VISITORS
   // ──────────────────────────────────────────────────────────

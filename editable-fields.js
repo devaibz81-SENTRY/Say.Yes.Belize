@@ -11,6 +11,7 @@ class EditableFields {
   constructor(options = {}) {
     this.storageKey = options.storageKey || 'wedding_fields';
     this.fields = this.loadFields();
+    this.isLocked = options.isLocked !== undefined ? options.isLocked : true;
     this.createEditableStyles();
   }
 
@@ -218,8 +219,21 @@ class EditableFields {
 
     // Click handler
     element.addEventListener('click', (e) => {
+      if (this.isLocked) return;
       if (e.target === indicator || e.target === tooltip) return;
       this.enterEditMode(element, fieldId, fieldType, placeholder);
+    });
+  }
+
+  setLock(isLocked) {
+    this.isLocked = isLocked;
+    const fields = document.querySelectorAll('.editable-field');
+    fields.forEach(f => {
+      if (isLocked) {
+        f.classList.remove('can-edit');
+      } else {
+        f.classList.add('can-edit');
+      }
     });
   }
 

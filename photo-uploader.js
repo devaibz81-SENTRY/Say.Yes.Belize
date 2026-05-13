@@ -13,6 +13,7 @@ class PhotoUploader {
     this.maxFileSize = options.maxFileSize || 5 * 1024 * 1024; // 5MB
     this.acceptedTypes = options.acceptedTypes || ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
     this.photos = this.loadPhotos();
+    this.isLocked = options.isLocked !== undefined ? options.isLocked : true;
     this.createPhotoZoneStyles();
   }
 
@@ -272,15 +273,18 @@ class PhotoUploader {
   bindPhotoZoneEvents(zone, photoId, input) {
     // Drag events
     zone.addEventListener('dragover', (e) => {
+      if (this.isLocked) return;
       e.preventDefault();
       zone.classList.add('dragover');
     });
 
     zone.addEventListener('dragleave', () => {
+      if (this.isLocked) return;
       zone.classList.remove('dragover');
     });
 
     zone.addEventListener('drop', (e) => {
+      if (this.isLocked) return;
       e.preventDefault();
       zone.classList.remove('dragover');
       const files = e.dataTransfer.files;
@@ -289,6 +293,7 @@ class PhotoUploader {
 
     // Click event
     zone.addEventListener('click', (e) => {
+      if (this.isLocked) return;
       if (e.target.dataset.action === 'change') {
         input.click();
       } else if (e.target.dataset.action === 'remove') {
@@ -300,8 +305,25 @@ class PhotoUploader {
 
     // Input change
     input.addEventListener('change', (e) => {
+      if (this.isLocked) return;
       if (e.target.files.length) {
         this.handleFileSelect(e.target.files[0], photoId, zone);
+      }
+    });
+  }
+
+  setLock(isLocked) {
+    this.isLocked = isLocked;
+    const zones = document.querySelectorAll('.photo-zone');
+    zones.forEach(z => {
+      if (isLocked) {
+        z.style.cursor = 'default';
+        const overlay = z.querySelector('.photo-overlay');
+        if (overlay) overlay.style.display = 'none';
+      } else {
+        z.style.cursor = 'pointer';
+        const overlay = z.querySelector('.photo-overlay');
+        if (overlay) overlay.style.display = 'flex';
       }
     });
   }

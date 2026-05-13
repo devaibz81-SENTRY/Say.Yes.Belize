@@ -37,8 +37,8 @@ class GuidedTour {
     bubble.className = 'tour-bubble';
     bubble.innerHTML = `
       <div class="tour-bubble-content">
-        <h3 class="tour-bubble-title">Welcome!</h3>
-        <p class="tour-bubble-text">A quick setup guide will help you edit this template while you move through it.</p>
+        <h3 class="tour-bubble-title">Welcome to Said Yes Belize</h3>
+        <p class="tour-bubble-text">Let's personalize your site in 3 quick steps: update your names, set your date, and add your favorite photos.</p>
         <div class="tour-bubble-actions">
           <button class="tour-btn tour-btn-skip-all">Skip all</button>
           <button class="tour-btn tour-btn-next">Start setup</button>
@@ -301,6 +301,11 @@ class GuidedTour {
 
     this.isActive = true;
     this.currentStep = 0;
+    
+    // Unlock editing for the tour
+    if (window.editableFields) window.editableFields.setLock(false);
+    if (window.photoUploader) window.photoUploader.setLock(false);
+    
     this.overlay.classList.add('active');
     this.showStep(0);
   }
@@ -464,6 +469,11 @@ class GuidedTour {
     this.overlay.classList.remove('active');
     this.spotlight.classList.remove('active');
     this.bubble.classList.remove('active');
+    
+    // Lock editing after tour
+    if (window.editableFields) window.editableFields.setLock(true);
+    if (window.photoUploader) window.photoUploader.setLock(true);
+    
     localStorage.setItem('guidedTour_seen', 'true');
     
     if (this.onComplete) {
