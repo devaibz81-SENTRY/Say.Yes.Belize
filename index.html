@@ -8,13 +8,6 @@
 <meta http-equiv="Expires" content="0"/>
 <title>Said Yes Belize - Wedding Template Atelier</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<script type="importmap">
-{
-  "imports": {
-    "convex/browser": "https://unpkg.com/convex@1.17.0/dist/esm/browser.js"
-  }
-}
-</script>
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -266,8 +259,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .pricing-card li::before{content:"\2713";position:absolute;left:-20px;color:var(--gold);font-weight:bold}
 
 /* ── Filters & Catalog ── */
-.catalog-section{display:none}
-.catalog-section.active{display:block}
+.catalog-section{display:block}
 .filters{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
 .filter-group{display:flex;gap:8px;flex-wrap:wrap}
 .search-wrap{position:relative;flex:1;max-width:320px}
@@ -435,8 +427,8 @@ h1 em{font-style:italic;color:var(--gold)}
         <div>
           <p class="eyebrow">Said Yes Belize · Wedding website collection</p>
           <h1>Choose the <em>feeling</em><br/>then add<br/>the photos.</h1>
-          <p class="hero-copy">Ten destination-wedding templates, fully editable.<br/>Tell us what you need — we'll calculate your perfect package.</p>
-          <a href="#onboarding" class="hero-cta">Start Your Build →</a>
+          <p class="hero-copy">Ten destination-wedding templates, fully designed.<br/>Browse below, then preview any template live.</p>
+          <a href="#catalogSection" class="hero-cta">Browse Templates ↓</a>
         </div>
         <aside class="summary" aria-label="Collection at a glance">
           <div class="summary-row"><span class="summary-num">10</span><span class="summary-label">Templates</span></div>
@@ -575,18 +567,7 @@ h1 em{font-style:italic;color:var(--gold)}
   </div>
 </footer>
 
-<script type="module">
-import { ConvexClient } from "convex/browser";
-
-// ── Convex setup ──
-const CONVEX_URL = "__CONVEX_URL__"; // Replace with your Convex deployment URL
-let convex;
-try {
-  convex = new ConvexClient(CONVEX_URL);
-} catch(e) {
-  console.warn("Convex not configured. Data won't be saved.");
-}
-
+<script>
 // ── Template Data ──
 const templates = [
   {id:"analog",name:"Analog Indie Nuptials",tags:["Vintage","Film","Indie"],themes:["dark","cinematic"],main:"Analog Indie Nuptials UI/index.html"},
@@ -651,18 +632,6 @@ function calculatePrice(selectedFeatures) {
   return { total, tierName, included };
 }
 
-// ── Submit to Convex ──
-async function submitToConvex(data) {
-  if (!convex) return null;
-  try {
-    const id = await convex.mutation("submitOnboarding", data);
-    return id;
-  } catch(e) {
-    console.warn("Failed to save to Convex:", e);
-    return null;
-  }
-}
-
 // ── Calculate button ──
 document.getElementById("calculateBtn").addEventListener("click", async () => {
   const guestCount = parseInt(document.getElementById("guestCount").value) || 50;
@@ -687,22 +656,12 @@ document.getElementById("calculateBtn").addEventListener("click", async () => {
   const tierMap = { "Tier 1":"tier1Card", "Tier 2":"tier2Card", "Tier 3":"tier3Card" };
   document.getElementById(tierMap[tierName])?.classList.add("recommended");
 
-  // Save to Convex
-  await submitToConvex({
-    guestCount,
-    features: selected,
-    calculatedPrice: total,
-    tier: tierName,
-  });
-
   document.getElementById("pricingSection").classList.add("active");
   document.getElementById("pricingSection").scrollIntoView({ behavior:"smooth" });
 });
 
 // ── View Templates button ──
 document.getElementById("viewTemplatesBtn").addEventListener("click", () => {
-  document.getElementById("pricingSection").classList.remove("active");
-  document.getElementById("catalogSection").classList.add("active");
   document.getElementById("catalogSection").scrollIntoView({ behavior:"smooth" });
 });
 
@@ -715,16 +674,21 @@ function cardMarkup(template, index) {
   const grad = dark
     ? `linear-gradient(160deg,${accent}55 0%,#1a1714 100%)`
     : `linear-gradient(160deg,${accent}55 0%,#1a1a1a 100%)`;
+  const mainUrl = encodeURI(template.main);
+  const rsvpBase = mainUrl.substring(0, mainUrl.lastIndexOf("/") + 1);
 
   return `
     <article class="template-card${dark ? " dark-card" : ""}" data-id="${template.id}" data-themes="${template.themes.join(" ")}" data-name="${template.name.toLowerCase()}">
       <div class="card-hero" style="background:${grad}">
-        <span class="template-index">${number}</span>
-        <h2>${template.name}</h2>
+        <span class="template-index" style="opacity:0.5">${number}</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic">${template.name}</h2>
       </div>
       <div class="card-body">
         <div class="tags">${tags}</div>
-        <a class="view-btn" href="${encodeURI(template.main)}">View Template →</a>
+        <div style="display:flex;gap:8px;margin-top:auto">
+          <a class="view-btn" href="${mainUrl}" style="flex:1">View Invitation →</a>
+          <a class="view-btn" href="${rsvpBase}rsvp.html" style="flex:1">View RSVP →</a>
+        </div>
       </div>
     </article>
   `;
