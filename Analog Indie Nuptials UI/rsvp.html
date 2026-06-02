@@ -3,6 +3,7 @@
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>RSVP — The Wedding Zine</title>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
 tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#516051","secondary":"#775750","on-surface":"#1b1c1c","on-surface-variant":"#434842","surface":"#fcf9f8","surface-container-lowest":"#ffffff","surface-container":"#f0eded","surface-dim":"#dcd9d9","outline":"#747872","outline-variant":"#c4c8c0","secondary-fixed":"#ffdad3","primary-fixed":"#d7e7d4","on-secondary-fixed":"#2c1511"},borderRadius:{none:"0px",lg:"0px",xl:"0px",full:"9999px"},fontFamily:{"body-md":["Newsreader"],"mono-sm":["Space Grotesk"],"headline-lg":["Newsreader"],"body-lg":["Newsreader"],"headline-md":["Newsreader"],"display-xl":["Newsreader"],"mono-label":["Space Grotesk"]},spacing:{"margin-edge":"40px","offset-lg":"64px","gutter":"24px"}}}}
@@ -10,6 +11,8 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#516051","se
 <style>
 body{background:#fcf9f8;color:#1b1c1c}
 #vows-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(252,249,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(116,120,114,.2);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:44px;font-family:'Space Grotesk',sans-serif;transform:translateY(-100%);animation:navIn .6s .4s ease forwards}
+#vows-nav .vn-brand{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#516051;text-decoration:none;font-weight:600}
+#vows-nav .vn-links{display:flex;align-items:center;gap:4px}
 .vn-link{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#747872;text-decoration:none;padding:5px 12px;border:1px solid transparent;transition:all .2s;font-weight:500}
 .vn-link:hover,.vn-link.active{color:#516051;border-color:rgba(81,96,81,.4);background:rgba(81,96,81,.06)}
 @keyframes navIn{to{transform:translateY(0)}}
@@ -18,99 +21,103 @@ body{background:#fcf9f8;color:#1b1c1c}
 .postcard-entry.in{opacity:1;transform:translateY(0) rotate(0)}
 input,textarea,select{font-family:'Newsreader',serif}
 input:focus,textarea:focus{outline:2px solid #516051;outline-offset:0}
-/* success */
 #success-state{display:none}
 #success-state.show{display:block}
 </style>
-  <link href="../fonts.css" rel="stylesheet"/>
-  <link href="../premium.css" rel="stylesheet"/>
+<link href="../fonts.css" rel="stylesheet"/>
+<link href="../premium.css" rel="stylesheet"/>
 </head>
-<body class="font-body-md" style="padding-top:44px;min-height:100dvh">
+<body class="font-body-md" style="min-height:100dvh">
 
+<!-- Fixed Top Nav with Breadcrumb -->
 <nav id="vows-nav">
-  <a href="../index.html" style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#516051;text-decoration:none;font-weight:600">Said Yes Belize</a>
-  <div style="display:flex;gap:4px">
-    <a class="vn-link" href="invitation.html">💌 Invitation</a>
-    <a class="vn-link" href="our-story.html">📖 Story</a>
-    <a class="vn-link" href="event-details.html">📅 Details</a>
-    <a class="vn-link" href="gallery.html">🖼 Gallery</a>
-    <a class="vn-link active" href="#">✉️ RSVP</a>
+  <a class="vn-brand" href="index.html" data-slide="index.html" data-direction="right">Analog Indie Nuptials</a>
+  <div class="vn-links">
+    <span style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#747872;display:flex;align-items:center;gap:4px"><a href="index.html" data-slide="index.html" data-direction="right" style="color:#516051;text-decoration:none">INVITATION</a> <span style="opacity:0.5">&nbsp;● ———&nbsp;</span> <span style="color:#516051">○ RSVP</span></span>
   </div>
-  <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c4c8c0;font-family:'Space Grotesk',sans-serif">Analog Indie Nuptials</span>
+  <span style="font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c4c8c0">Issue No. 04</span>
 </nav>
 
-<section class="py-16 px-margin-edge bg-surface-dim border-b border-outline-variant">
-  <p class="font-mono-label text-primary text-xs uppercase tracking-[0.3em] mb-4">Issue No. 04 — Your Reply</p>
-  <h1 class="font-display-xl leading-[0.88] tracking-tighter" style="font-size:clamp(3.5rem,8vw,7rem)">RSVP</h1>
+<!-- Back Button -->
+<section class="premium-section py-16 px-margin-edge bg-surface-dim border-b border-outline-variant">
+<a href="index.html" data-slide="index.html" data-direction="right" class="btn-feedback font-mono-label text-primary text-xs uppercase tracking-[0.3em] flex items-center gap-2 no-underline hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-sm">arrow_back</span>← Back to Invitation</a>
+<p class="font-mono-label text-primary text-xs uppercase tracking-[0.3em] mb-2 mt-4">Issue No. 04 — Your Reply</p>
+<h1 class="font-display-xl leading-[0.88] tracking-tighter" style="font-size:clamp(3.5rem,8vw,7rem)">RSVP</h1>
 </section>
 
-<section class="py-offset-lg bg-surface-container px-margin-edge">
-  <div class="max-w-2xl mx-auto">
+<section class="premium-section py-offset-lg bg-surface-container px-margin-edge">
+<div class="max-w-2xl mx-auto">
+<div id="form-wrap" class="bg-surface-container-lowest border border-outline relative p-1 air-mail-border postcard-entry">
+<div class="bg-surface-container-lowest p-8 md:p-12">
+<div class="flex flex-col md:flex-row justify-between gap-12">
+<div class="flex-1">
+<h2 class="font-display-xl text-4xl mb-8">Your Response</h2>
+<div class="vows-countdown flex justify-center gap-6 my-8"></div>
 
-    <!-- Postcard form -->
-    <div id="form-wrap" class="bg-surface-container-lowest border border-outline relative p-1 air-mail-border postcard-entry">
-      <div class="bg-surface-container-lowest p-8 md:p-12">
-        <div class="flex flex-col md:flex-row justify-between gap-12">
-          <!-- Form side -->
-          <div class="flex-1">
-            <h2 class="font-display-xl text-4xl mb-8">Your Response</h2>
-            <form class="space-y-8" onsubmit="submitForm(event)">
-              <div>
-                <label class="font-mono-sm uppercase text-primary block mb-1 text-sm">Your Name(s)</label>
-                <input class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2" placeholder="Write here..." type="text" required/>
-              </div>
-              <div>
-                <label class="font-mono-sm uppercase text-primary block mb-2 text-sm">Will you join us?</label>
-                <div class="flex gap-6 mt-2">
-                  <label class="flex items-center gap-2 cursor-pointer">
-                    <input class="text-primary focus:ring-primary" name="attending" type="radio" value="yes" required/>
-                    <span class="font-mono-label text-sm">YES, WITH BELLS ON</span>
-                  </label>
-                  <label class="flex items-center gap-2 cursor-pointer">
-                    <input class="text-primary focus:ring-primary" name="attending" type="radio" value="no"/>
-                    <span class="font-mono-label text-sm">SADLY, NO</span>
-                  </label>
-                </div>
-              </div>
-              <div class="vows-countdown"></div>
-              <div>
-                <label class="font-mono-sm uppercase text-primary block mb-1 text-sm">Dietary Curiosities</label>
-                <input class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2" placeholder="Allergies, preferences, etc." type="text"/>
-              </div>
-              <div>
-                <label class="font-mono-sm uppercase text-primary block mb-1 text-sm">A Note (optional)</label>
-                <textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2" placeholder="Song requests, a memory..." rows="2"></textarea>
-              </div>
-              <button class="mt-8 px-10 py-4 bg-primary text-surface font-mono-label uppercase tracking-widest hover:bg-on-surface transition-colors w-full md:w-auto" type="submit">Send Response</button>
-            </form>
-          </div>
-          <!-- Stamp side -->
-          <div class="md:w-56 flex flex-col items-center md:items-end justify-between border-t md:border-t-0 md:border-l border-outline-variant pt-12 md:pt-0 md:pl-10">
-            <div class="w-32 h-40 border border-dashed border-outline-variant flex items-center justify-center relative p-2 text-center">
-              <span class="font-mono-sm text-[10px] uppercase text-outline-variant">Place Stamp Here</span>
-              <div class="absolute -top-2 -right-2 bg-secondary text-surface w-8 h-8 rounded-full flex items-center justify-center rotate-12 text-sm">✿</div>
-            </div>
-            <div class="text-right mt-8">
-              <p class="font-mono-sm text-xs leading-loose text-outline">THE WEDDING ZINE HQ<br/>123 ARCHIVAL WAY<br/>SAGE VALLEY, CA 90210</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Success state -->
-    <div id="success-state" class="text-center py-20">
-      <p class="font-mono-label text-primary text-xs uppercase tracking-[0.3em] mb-6">Postmark Confirmed</p>
-      <h2 class="font-display-xl text-5xl mb-6">See you<br><em>there.</em></h2>
-      <p class="font-body-lg text-on-surface-variant">Your reply has been received. We can't wait to celebrate with you.</p>
-      <a href="gallery.html" class="inline-block mt-10 px-10 py-4 bg-primary text-surface font-mono-label uppercase tracking-widest hover:bg-on-surface transition-colors no-underline">View Gallery</a>
-    </div>
-
-  </div>
+<form class="space-y-8" onsubmit="submitForm(event)">
+<div>
+<label class="font-mono-sm uppercase text-primary block mb-1 text-sm">Your Name(s)</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2" placeholder="Write here..." type="text" required/>
+</div>
+<div>
+<label class="font-mono-sm uppercase text-primary block mb-1 text-sm">Email Address</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2" placeholder="your@email.com" type="email" required/>
+</div>
+<div>
+<label class="font-mono-sm uppercase text-primary block mb-2 text-sm">Will you join us?</label>
+<div class="flex gap-6 mt-2">
+<label class="flex items-center gap-2 cursor-pointer btn-feedback">
+<input class="text-primary focus:ring-primary" name="attending" type="radio" value="yes" required/>
+<span class="font-mono-label text-sm">YES, WITH BELLS ON</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer btn-feedback">
+<input class="text-primary focus:ring-primary" name="attending" type="radio" value="no"/>
+<span class="font-mono-label text-sm">SADLY, NO</span>
+</label>
+</div>
+</div>
+<div>
+<label class="font-mono-sm uppercase text-primary block mb-1 text-sm">Number of Guests</label>
+<select class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2">
+<option>1 Guest</option>
+<option>2 Guests</option>
+<option>3 Guests</option>
+<option>4 Guests</option>
+</select>
+</div>
+<div>
+<label class="font-mono-sm uppercase text-primary block mb-1 text-sm">Dietary Requirements</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2" placeholder="Allergies, preferences, etc." rows="2"></textarea>
+</div>
+<div>
+<label class="font-mono-sm uppercase text-primary block mb-1 text-sm">A Message for the Couple</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b border-on-surface/20 focus:border-primary focus:ring-0 p-0 font-body-lg text-lg py-2" placeholder="Song requests, a memory..." rows="2"></textarea>
+</div>
+<button class="btn-feedback mt-8 px-10 py-4 bg-primary text-surface font-mono-label uppercase tracking-widest hover:bg-on-surface transition-colors w-full md:w-auto" type="submit">Send Response</button>
+</form>
+</div>
+<div class="md:w-56 flex flex-col items-center md:items-end justify-between border-t md:border-t-0 md:border-l border-outline-variant pt-12 md:pt-0 md:pl-10">
+<div class="w-32 h-40 border border-dashed border-outline-variant flex items-center justify-center relative p-2 text-center">
+<span class="font-mono-sm text-[10px] uppercase text-outline-variant">Place Stamp Here</span>
+<div class="absolute -top-2 -right-2 bg-secondary text-surface w-8 h-8 rounded-full flex items-center justify-center rotate-12 text-sm">✿</div>
+</div>
+<div class="text-right mt-8">
+<p class="font-mono-sm text-xs leading-loose text-outline">THE WEDDING ZINE HQ<br/>123 ARCHIVAL WAY<br/>SAGE VALLEY, CA 90210</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="success-state" class="text-center py-20">
+<p class="font-mono-label text-primary text-xs uppercase tracking-[0.3em] mb-6">Postmark Confirmed</p>
+<h2 class="font-display-xl text-5xl mb-6">See you<br/><em>there.</em></h2>
+<p class="font-body-lg text-on-surface-variant">Your reply has been received. We can't wait to celebrate with you.</p>
+</div>
+</div>
 </section>
 
 <footer class="bg-on-surface text-surface-variant py-12 px-margin-edge text-center">
-  <p class="font-mono-sm text-[10px] opacity-40 uppercase tracking-[0.5em]">Kindly respond by September 1st</p>
+<p class="font-mono-sm text-[10px] opacity-40 uppercase tracking-[0.5em]">Kindly respond by September 1st</p>
 </footer>
 
 <script>
@@ -123,19 +130,9 @@ function submitForm(e){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
-
-<!-- Core Interactive Systems -->
-<script src="../guided-tour.js"></script>
-<script src="../photo-uploader.js"></script>
-<script src="../editable-fields.js"></script>
-<script src="../interactive-template-init.js"></script>
-
-<!-- Analog Indie Nuptials UI Template Initialization -->
-<script src="analog-indie-nuptials-init.js"></script>
 <script src="../countdown-widget.js"></script>
-
+<script src="../page-transition.js"></script>
+<script src="../font-picker.js"></script>
+<script src="../premium.js"></script>
 <script src="../mobile-optimize.js"></script>
-  <script src="../font-picker.js"></script>
-  <script src="../premium.js"></script>
 </body></html>
-

@@ -8,6 +8,13 @@
 <meta http-equiv="Expires" content="0"/>
 <title>Said Yes Belize - Wedding Template Atelier</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script type="importmap">
+{
+  "imports": {
+    "convex/browser": "https://unpkg.com/convex@1.17.0/dist/esm/browser.js"
+  }
+}
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -24,12 +31,8 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:#fdfcf8 !important;
-  background:
-    radial-gradient(circle at 15% 0%,var(--accent-glow),transparent 45%),
-    radial-gradient(circle at 85% 15%,rgba(0,0,0,0.02),transparent 25%),
-    linear-gradient(180deg,#fdfcf8,#f7f4ec) !important;
-  color:var(--ink) !important;
+  background:var(--paper);
+  color:var(--ink);
   font-family:"Plus Jakarta Sans",system-ui,sans-serif;
   min-height:100vh;
 }
@@ -69,7 +72,8 @@ button,a{font:inherit}
 .brand-text{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
 .nav-meta{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .nav-dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
-/* ── Full-bleed hero ── */
+
+/* ── Hero ── */
 .hero{
   position:relative;
   min-height:92vh;
@@ -94,10 +98,7 @@ button,a{font:inherit}
     linear-gradient(to bottom, rgba(253,252,248,0) 0%, rgba(253,252,248,.05) 40%, rgba(253,252,248,.85) 75%, rgba(247,244,236,1) 100%),
     linear-gradient(to right, rgba(253,252,248,.55) 0%, transparent 60%);
 }
-.hero-inner{
-  position:relative;z-index:2;
-  padding:0 0 56px;
-}
+.hero-inner{position:relative;z-index:2;padding:0 0 56px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:end}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
 h1{
@@ -107,7 +108,6 @@ h1{
   line-height:.82;
   letter-spacing:-.03em;
   margin:0;
-  color: var(--ink);
 }
 h1 em{font-style:italic;color:var(--gold)}
 .hero-copy{max-width:520px;margin:22px 0 28px;color:rgba(26,26,26,.65);font-size:16px;line-height:1.7}
@@ -120,8 +120,7 @@ h1 em{font-style:italic;color:var(--gold)}
 }
 .hero-cta:hover{background:var(--gold);transform:translateY(-2px)}
 .hero-scroll-cue{
-  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
-  z-index:3;
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;
 }
 .hero-scroll-cue span{
   display:block;width:1px;height:52px;
@@ -149,6 +148,126 @@ h1 em{font-style:italic;color:var(--gold)}
 .summary-row:last-child{border-bottom:0;padding-bottom:0}
 .summary-num{font-family:"Cormorant Garamond",serif;font-size:52px;line-height:.85;color:var(--ink)}
 .summary-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:right}
+
+/* ── Onboarding Survey ── */
+.onboarding{
+  padding:80px 0;
+  background:rgba(247,241,232,.5);
+}
+.onboarding h2{font-family:"Cormorant Garamond",serif;font-size:48px;text-align:center;margin:0 0 12px}
+.onboarding .sub{text-align:center;color:var(--muted);margin-bottom:48px;font-size:15px}
+.survey-form{max-width:640px;margin:0 auto}
+.survey-section{margin-bottom:32px}
+.survey-section label{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.survey-section input[type="number"]{
+  width:100%;height:52px;
+  border:1px solid var(--line);border-radius:10px;
+  padding:0 18px;font-size:18px;
+  background:rgba(255,250,243,.6);
+  outline:none;transition:border-color .2s;
+}
+.survey-section input[type="number"]:focus{border-color:var(--gold)}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.feature-option{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  cursor:pointer;
+  transition:all .2s;
+  background:rgba(255,250,243,.6);
+  user-select:none;
+}
+.feature-option:hover{border-color:rgba(184,142,68,.3)}
+.feature-option.selected{border-color:var(--gold);background:rgba(184,142,68,.06)}
+.feature-option input{display:none}
+.feature-check{
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  transition:all .2s;
+  font-size:11px;color:transparent;
+}
+.feature-option.selected .feature-check{border-color:var(--gold);background:var(--gold);color:#fff}
+.feature-label{font-size:13px;font-weight:600;line-height:1.2}
+.feature-label small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
+.survey-actions{text-align:center;margin-top:40px}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:var(--paper);
+  border-radius:999px;padding:0 32px;height:48px;
+  border:none;cursor:pointer;
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  transition:transform .2s,background .2s;
+}
+.btn-primary:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-primary:disabled{opacity:.4;pointer-events:none}
+.survey-result{
+  display:none;
+  text-align:center;
+  padding:40px;
+  margin-top:32px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,250,243,.82);
+}
+.survey-result.visible{display:block}
+.survey-result .price-big{
+  font-family:"Cormorant Garamond",serif;
+  font-size:72px;
+  color:var(--gold);
+  margin:16px 0;
+}
+.survey-result .tier-badge{
+  display:inline-block;
+  padding:4px 16px;
+  border-radius:999px;
+  background:rgba(184,142,68,.12);
+  color:var(--gold);
+  font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.survey-result .features-included{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0;
+}
+.survey-result .features-included span{
+  padding:4px 12px;
+  border-radius:999px;
+  background:rgba(0,0,0,.04);
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ── Dynamic Pricing ── */
+.pricing-section{
+  padding:80px 0;
+  display:none;
+}
+.pricing-section.active{display:block}
+.pricing-section h2{font-family:"Cormorant Garamond",serif;font-size:48px;text-align:center;margin:0 0 40px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1100px;margin:0 auto}
+.pricing-card{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:40px;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 10px 30px rgba(0,0,0,.03);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.pricing-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.pricing-card.recommended{border-color:var(--gold);box-shadow:0 0 0 2px rgba(184,142,68,.15)}
+.pricing-card h3{margin:0 0 16px;font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:400}
+.price-amount{font-size:42px;font-weight:500;color:var(--gold);margin:0 0 32px;font-family:"Cormorant Garamond",serif}
+.pricing-card ul{margin:0 0 32px;padding:0 0 0 20px;list-style-type:none;font-size:14px;color:var(--muted);line-height:2}
+.pricing-card li{position:relative;margin-bottom:8px}
+.pricing-card li::before{content:"\2713";position:absolute;left:-20px;color:var(--gold);font-weight:bold}
+
+/* ── Filters & Catalog ── */
+.catalog-section{display:none}
+.catalog-section.active{display:block}
 .filters{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
 .filter-group{display:flex;gap:8px;flex-wrap:wrap}
 .search-wrap{position:relative;flex:1;max-width:320px}
@@ -170,196 +289,93 @@ h1 em{font-style:italic;color:var(--gold)}
   transition:background .2s,border-color .2s,color .2s,transform .2s;
 }
 .filter-btn:hover,.filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-/* ── Scroll reveal ── */
-.sr{opacity:0;transform:translateY(22px);transition:opacity .25s ease,transform .25s ease}
-.sr.visible{opacity:1;transform:none}
 
 .catalog{padding:34px 0 80px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
 .template-card{
   --accent:#a9823c;
-  --bg1:#f8efe5;
-  --bg2:#dcc5ad;
-  --thumb-bg:#f0ebe0;
   border:1px solid var(--line);
   background:rgba(255,250,243,.82);
   border-radius:14px;
   overflow:hidden;
-  min-height:560px;
-  display:grid;
-  grid-template-rows:300px 1fr;
-  box-shadow:0 4px 24px rgba(45,34,22,.06),0 18px 60px rgba(45,34,22,.07);
-  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,border-color .3s ease;
-}
-.template-card:hover{transform:translateY(-6px) scale(1.005);box-shadow:0 12px 40px rgba(45,34,22,.1),0 32px 100px rgba(45,34,22,.14);border-color:rgba(169,130,60,.4)}
-.dark-card{background:#1a1714!important;border-color:rgba(255,255,255,.08)!important;color:#f0e8d8}
-.dark-card:hover{border-color:rgba(200,160,80,.35)!important}
-.thumb{
-  position:relative;
-  overflow:hidden;
-  background:var(--thumb-bg,#f0ebe0);
-  min-height:300px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  isolation:isolate;
-}
-.dark-card .thumb{background:var(--bg1,#1a1410)}
-.thumb-label{
-  position:absolute;left:20px;top:18px;z-index:10;
-  font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--accent);opacity:.85;
-}
-.thumb-title{
-  position:absolute;left:24px;right:24px;bottom:20px;z-index:10;
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(2rem,5vw,3.6rem);
-  line-height:.88;
-  letter-spacing:-.02em;
-  color:var(--ink);
-  pointer-events:none;
-}
-.dark-card .thumb-title{color:#f0e8d8}
-.thumb-title em{font-family:"Plus Jakarta Sans";font-style:normal;font-size:9px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);display:block;margin-top:8px}
-
-/* ── Per-template animated mini-browser ── */
-.mini-browser{
-  width:260px;height:172px;
-  border-radius:7px;
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.22),0 2px 8px rgba(0,0,0,.1);
-  transform:perspective(600px) rotateX(6deg) rotateY(-6deg) scale(.97);
-  transition:transform .45s cubic-bezier(.22,1,.36,1);
-  position:relative;
-  flex-shrink:0;
-}
-.template-card:hover .mini-browser{transform:perspective(600px) rotateX(0deg) rotateY(0deg) scale(1.02)}
-.mb-chrome{
-  height:22px;
-  display:flex;align-items:center;gap:5px;
-  padding:0 10px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.mb-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.mb-url{
-  flex:1;height:11px;border-radius:2px;
-  margin-left:6px;
-  background:rgba(255,255,255,.12);
-}
-.mb-hero{
-  height:90px;position:relative;
-  display:flex;align-items:flex-end;padding:10px;
-}
-.mb-h1{height:10px;border-radius:2px;margin-bottom:4px;background:currentColor;opacity:.75}
-.mb-sub{height:6px;width:60%;border-radius:2px;background:currentColor;opacity:.4}
-.mb-body{padding:8px 10px;display:flex;gap:6px;flex-direction:column}
-.mb-line{height:5px;border-radius:2px;background:currentColor;opacity:.18}
-.mb-btn{height:14px;width:60px;border-radius:10px;margin-top:4px;background:var(--accent);opacity:.85}
-.card-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:22px}
-.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
-.template-name{
-  font-family:"Cormorant Garamond",serif;
-  font-size:42px;
-  font-weight:400;
-  line-height:.95;
-  margin:0;
-  letter-spacing:-.025em;
-}
-.template-index{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--gold)}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,250,243,.54)}
-.requirements{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.metric{
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:14px;
-  background:var(--soft);
-}
-.metric strong{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:36px;line-height:.92;color:var(--accent)}
-.metric span{display:block;margin-top:7px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.breakdown{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:8px;
-}
-.breakdown-item{
-  min-height:66px;
-  border:1px dashed color-mix(in srgb,var(--accent),transparent 45%);
-  border-radius:8px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  padding:10px;
-  background:color-mix(in srgb,var(--accent),transparent 92%);
+  box-shadow:0 4px 24px rgba(45,34,22,.06),0 18px 60px rgba(45,34,22,.07);
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
-.breakdown-item b{font-size:18px;color:var(--accent)}
-.breakdown-item span{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.page-list{display:flex;flex-wrap:wrap;gap:8px 12px}
-.page-chip{
-  color:var(--muted);
-  border-bottom:1px solid var(--line-strong);
-  padding-bottom:3px;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  text-decoration:none;
-  transition:color .2s,border-color .2s;
+.template-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(45,34,22,.1),0 32px 100px rgba(45,34,22,.14);border-color:rgba(169,130,60,.4)}
+.dark-card{background:#1a1714!important;border-color:rgba(255,255,255,.08)!important;color:#f0e8d8}
+.card-hero{
+  padding:40px 28px 28px;
+  min-height:160px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  position:relative;
+  overflow:hidden;
 }
-.page-chip:hover{color:var(--gold);border-color:var(--gold)}
-.card-actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid var(--line);padding-top:18px}
-.open-template{
-  min-height:44px;
+.card-hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.3));
+  pointer-events:none;
+}
+.card-hero .template-index{
+  font-size:11px;font-weight:700;letter-spacing:.18em;
+  color:rgba(255,255,255,.6);
+  position:relative;z-index:1;
+  margin-bottom:8px;
+}
+.card-hero h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(1.6rem,4vw,2.8rem);
+  line-height:.9;
+  letter-spacing:-.02em;
+  margin:0;
+  color:#fff;
+  position:relative;z-index:1;
+}
+.dark-card .card-hero h2{color:#f0e8d8}
+.card-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:16px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:rgba(255,250,243,.54)}
+.dark-card .tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(240,232,216,.65)}
+.view-btn{
+  margin-top:auto;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:8px;
   border:1px solid var(--ink);
   border-radius:999px;
-  background:var(--ink);
-  color:var(--paper);
-  padding:0 20px;
+  background:transparent;
+  color:var(--ink);
+  padding:12px 20px;
   text-decoration:none;
   font-size:11px;
   font-weight:700;
   letter-spacing:.14em;
   text-transform:uppercase;
-  transition:transform .2s,background .2s,color .2s;
+  transition:all .2s;
+  min-height:44px;
 }
-.open-template:hover{transform:translateY(-1px);background:var(--accent);border-color:var(--accent);color:#fffaf3}
-.note{font-size:11px;color:var(--muted);line-height:1.5;text-align:right}
+.view-btn:hover{background:var(--ink);color:var(--paper)}
+.dark-card .view-btn{border-color:var(--accent);color:var(--accent)}
+.dark-card .view-btn:hover{background:var(--accent);color:#1a1410}
+.sr{opacity:0;transform:translateY(22px);transition:opacity .25s ease,transform .25s ease}
+.sr.visible{opacity:1;transform:none}
+
 .footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .footer a{text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:4px}
 .footer a:hover{color:var(--gold)}
-.dark-card .card-body{background:#201c18;color:#f0e8d8}
-.dark-card .template-name{color:#f0e8d8}
-.dark-card .template-index{color:var(--accent)}
-.dark-card .tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(240,232,216,.65)}
-.dark-card .metric{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
-.dark-card .metric strong{color:var(--accent)}
-.dark-card .metric span,.dark-card .breakdown-item span,.dark-card .note{color:rgba(240,232,216,.5)}
-.dark-card .breakdown-item{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)}
-.dark-card .breakdown-item b{color:var(--accent)}
-.dark-card .page-chip{color:rgba(240,232,216,.5);border-color:rgba(255,255,255,.12)}
-.dark-card .page-chip:hover{color:var(--accent);border-color:var(--accent)}
-.dark-card .card-actions{border-top-color:rgba(255,255,255,.08)}
-.dark-card .open-template{background:var(--accent);color:#1a1410;border-color:var(--accent)}
-.dark-card .open-template:hover{filter:brightness(1.12)}
-[data-id="analog"]{--accent:#bc4637;--bg1:#23201b;--bg2:#c7a565}
-[data-id="bloom"]{--accent:#c65878;--bg1:#fff8f9;--bg2:#ebb1c1}
-[data-id="editorial"]{--accent:#b08a2e;--bg1:#151515;--bg2:#6f604a}
-[data-id="garden"]{--accent:#7d8e4d;--bg1:#f7f5e3;--bg2:#b4bd82}
-[data-id="film"]{--accent:#d7b55a;--bg1:#100d0a;--bg2:#745529}
-[data-id="boho"]{--accent:#ac6651;--bg1:#fbefe2;--bg2:#c58c66}
-[data-id="sensual"]{--accent:#d4af37;--bg1:#240808;--bg2:#8a243f}
-[data-id="soft"]{--accent:#c8a95a;--bg1:#fbfaf7;--bg2:#d9c48e}
-[data-id="timeless"]{--accent:#8a9a79;--bg1:#f8f4ea;--bg2:#b9c3a2}
-[data-id="romantic"]{--accent:#c9778d;--bg1:#fff7f3;--bg2:#f0bdc8}
+
 @media(max-width:1080px){
   .hero-grid{grid-template-columns:1fr}
   .summary{grid-template-columns:repeat(3,minmax(0,1fr))}
   .summary-row{display:block;border-bottom:0;border-right:1px solid var(--line);padding:0 18px 0 0}
   .summary-row:last-child{border-right:0}
   .summary-label{text-align:left;margin-top:8px}
+  .feature-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .pricing-card{padding:30px}
   .catalog{grid-template-columns:1fr}
 }
 @media(max-width:720px){
@@ -370,32 +386,34 @@ h1 em{font-style:italic;color:var(--gold)}
   .shell{width:calc(100% - 28px)}
   .topbar-inner{height:auto;min-height:56px;align-items:flex-start;flex-direction:column;padding:12px 0;gap:6px}
   .nav-meta{font-size:10px;gap:10px;flex-wrap:wrap}
-  .hero{padding:40px 0 30px}
   h1{font-size:clamp(3.2rem,16vw,5.5rem)}
-  .summary{grid-template-columns:1fr;padding:18px}
-  .summary-row{border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px}
-  .catalog{padding-top:18px;gap:16px}
-  .template-card{grid-template-rows:240px 1fr;min-height:auto;border-radius:10px}
-  .thumb{min-height:240px}
-  .mini-browser{width:200px;height:132px}
-  .requirements,.breakdown{grid-template-columns:1fr}
-  .card-head{display:flex;align-items:center;justify-content:space-between}
-  .card-actions{display:flex;flex-direction:column;gap:10px;align-items:stretch}
-  .open-template{width:100%;justify-content:center;padding:0 16px;min-height:48px}
-  .note{text-align:center}
-  .footer{display:block;line-height:2}
+  .survey-form{padding:0}
+  .feature-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
   .filters{flex-direction:column;align-items:flex-start;gap:12px}
   .filter-group{gap:6px}
   .filter-btn{min-height:36px;padding:0 14px;font-size:10px}
   .search-wrap{max-width:100%;width:100%}
+  .catalog{padding-top:18px;gap:16px}
+  .card-hero{min-height:120px;padding:28px 20px 20px}
 }
 
-
+/* ── Accent colors per template ── */
+[data-id="analog"]{--accent:#bc4637}
+[data-id="bloom"]{--accent:#c65878}
+[data-id="editorial"]{--accent:#b08a2e}
+[data-id="garden"]{--accent:#7d8e4d}
+[data-id="film"]{--accent:#d7b55a}
+[data-id="boho"]{--accent:#ac6651}
+[data-id="sensual"]{--accent:#d4af37}
+[data-id="soft"]{--accent:#c8a95a}
+[data-id="timeless"]{--accent:#8a9a79}
+[data-id="romantic"]{--accent:#c9778d}
 </style>
-  <link href="fonts.css" rel="stylesheet"/>
-  <link href="premium.css" rel="stylesheet"/>
+<link href="fonts.css" rel="stylesheet"/>
 </head>
 <body>
+
 <header class="topbar">
   <div class="shell topbar-inner">
     <div class="brand" aria-label="Said Yes Belize">
@@ -410,183 +428,338 @@ h1 em{font-style:italic;color:var(--gold)}
 
 <main>
   <section class="hero" aria-label="Said Yes Belize — Wedding Template Atelier">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-vignette"></div>
-  <div class="hero-inner shell">
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">Said Yes Belize · Wedding website collection</p>
-        <h1>Choose the <em>feeling</em><br/>then add<br/>the photos.</h1>
-        <p class="hero-copy">Ten destination-wedding templates, fully editable.<br/>Names, dates, and photos — changed in minutes.</p>
-        <a href="#catalog" class="hero-cta">Browse the collection ↓</a>
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-inner shell">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Said Yes Belize · Wedding website collection</p>
+          <h1>Choose the <em>feeling</em><br/>then add<br/>the photos.</h1>
+          <p class="hero-copy">Ten destination-wedding templates, fully editable.<br/>Tell us what you need — we'll calculate your perfect package.</p>
+          <a href="#onboarding" class="hero-cta">Start Your Build →</a>
+        </div>
+        <aside class="summary" aria-label="Collection at a glance">
+          <div class="summary-row"><span class="summary-num">10</span><span class="summary-label">Templates</span></div>
+          <div class="summary-row"><span class="summary-num">100</span><span class="summary-label">Album photo slots</span></div>
+          <div class="summary-row"><span class="summary-num">3+7</span><span class="summary-label">Story + Gallery</span></div>
+        </aside>
       </div>
-      <aside class="summary" aria-label="Collection at a glance">
-        <div class="summary-row"><span class="summary-num">10</span><span class="summary-label">Templates</span></div>
-        <div class="summary-row"><span class="summary-num">100</span><span class="summary-label">Album photo slots</span></div>
-        <div class="summary-row"><span class="summary-num">3+7</span><span class="summary-label">Story + Gallery</span></div>
-      </aside>
     </div>
-  </div>
-  <div class="hero-scroll-cue" aria-hidden="true">
-    <span></span>
-  </div>
-</section>
+    <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
 
-
-  <section class="shell filters" aria-label="Filter templates">
-    <div class="filter-group">
-      <button class="filter-btn active" type="button" data-filter="all">All</button>
-      <button class="filter-btn" type="button" data-filter="light">Light</button>
-      <button class="filter-btn" type="button" data-filter="dark">Dark</button>
-      <button class="filter-btn" type="button" data-filter="romantic">Romantic</button>
-      <button class="filter-btn" type="button" data-filter="editorial">Editorial</button>
-      <button class="filter-btn" type="button" data-filter="cinematic">Cinematic</button>
-      <button class="filter-btn" type="button" data-filter="boho">Boho</button>
-    </div>
-    <div class="search-wrap">
-      <input type="text" id="templateSearch" placeholder="Search templates or styles..." aria-label="Search templates">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+  <section class="onboarding" id="onboarding">
+    <div class="shell">
+      <h2>Build Your Wedding Website</h2>
+      <p class="sub">Tell us what you need — we'll match you with the right package and templates.</p>
+      <div class="survey-form" id="surveyForm">
+        <div class="survey-section">
+          <label for="guestCount">How many guests are you expecting?</label>
+          <input type="number" id="guestCount" min="1" max="5000" value="80" step="1">
+        </div>
+        <div class="survey-section">
+          <label>Which features do you need?</label>
+          <div class="feature-grid" id="featureGrid">
+            <div class="feature-option selected" data-feature="rsvp">
+              <input type="checkbox" checked>
+              <span class="feature-check">✓</span>
+              <span class="feature-label">RSVP + Admin Panel<small>Manage your yes's</small></span>
+            </div>
+            <div class="feature-option" data-feature="song_request">
+              <input type="checkbox">
+              <span class="feature-check">✓</span>
+              <span class="feature-label">Song Request<small>Guests pick the tunes</small></span>
+            </div>
+            <div class="feature-option" data-feature="message_couple">
+              <input type="checkbox">
+              <span class="feature-check">✓</span>
+              <span class="feature-label">Message to Couple<small>Notes from guests</small></span>
+            </div>
+            <div class="feature-option" data-feature="qr_checkin">
+              <input type="checkbox">
+              <span class="feature-check">✓</span>
+              <span class="feature-label">QR Code Check-in<small>Scan-to-enter guest access</small></span>
+            </div>
+            <div class="feature-option" data-feature="menu_meals">
+              <input type="checkbox">
+              <span class="feature-check">✓</span>
+              <span class="feature-label">Menu &amp; Meal Choices<small>Meal selection + allergies</small></span>
+            </div>
+            <div class="feature-option" data-feature="photo_drive">
+              <input type="checkbox">
+              <span class="feature-check">✓</span>
+              <span class="feature-label">Photo Drive App<small>Guest photo uploads</small></span>
+            </div>
+            <div class="feature-option" data-feature="seating">
+              <input type="checkbox">
+              <span class="feature-check">✓</span>
+              <span class="feature-label">Seating Arrangements<small>Interactive seat map</small></span>
+            </div>
+          </div>
+        </div>
+        <div class="survey-actions">
+          <button class="btn-primary" id="calculateBtn">Calculate My Price</button>
+        </div>
+        <div class="survey-result" id="surveyResult">
+          <div class="tier-badge" id="resultTier">Tier 1</div>
+          <div class="price-big" id="resultPrice">$300</div>
+          <p style="color:var(--muted);margin:0 0 8px">Your custom package includes:</p>
+          <div class="features-included" id="resultFeatures"></div>
+          <button class="btn-primary" id="viewTemplatesBtn" style="margin-top:24px">View Our Templates ↓</button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="shell catalog" id="catalog" aria-label="Wedding templates"></section>
+  <section class="pricing-section" id="pricingSection">
+    <div class="shell">
+      <h2>Pricing Tiers</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card" id="tier1Card">
+          <h3>Tier 1</h3>
+          <div class="price-amount">$300</div>
+          <ul>
+            <li>RSVP + Admin Panel</li>
+            <li>Song Requests</li>
+            <li>Message to Couple</li>
+          </ul>
+        </div>
+        <div class="pricing-card recommended" id="tier2Card">
+          <h3>Tier 2</h3>
+          <div class="price-amount">$700</div>
+          <ul>
+            <li>Everything in Tier 1</li>
+            <li>QR Code Check-in</li>
+            <li>Menu &amp; Meal Choices</li>
+            <li>Allergy Tracking</li>
+          </ul>
+        </div>
+        <div class="pricing-card" id="tier3Card">
+          <h3>Tier 3</h3>
+          <div class="price-amount">$1,200</div>
+          <ul>
+            <li>Everything in Tier 2</li>
+            <li>Seating Arrangements</li>
+            <li>Photo Drive App</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-section" id="catalogSection">
+    <div class="shell filters">
+      <div class="filter-group">
+        <button class="filter-btn active" type="button" data-filter="all">All</button>
+        <button class="filter-btn" type="button" data-filter="light">Light</button>
+        <button class="filter-btn" type="button" data-filter="dark">Dark</button>
+        <button class="filter-btn" type="button" data-filter="romantic">Romantic</button>
+        <button class="filter-btn" type="button" data-filter="editorial">Editorial</button>
+        <button class="filter-btn" type="button" data-filter="cinematic">Cinematic</button>
+        <button class="filter-btn" type="button" data-filter="boho">Boho</button>
+      </div>
+      <div class="search-wrap">
+        <input type="text" id="templateSearch" placeholder="Search templates..." aria-label="Search templates">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </div>
+    </div>
+    <div class="shell catalog" id="catalog" aria-label="Wedding templates"></div>
+  </section>
 </main>
 
 <footer class="shell footer">
   <span>Said Yes Belize - curated wedding websites</span>
-  <a href="guest-book.html">Open shared guest book</a>
+  <div>
+    <a href="guest-book.html" style="margin-right:20px">Open shared guest book</a>
+    <a href="admin.html">Admin</a>
+  </div>
 </footer>
 
-<script>
+<script type="module">
+import { ConvexClient } from "convex/browser";
+
+// ── Convex setup ──
+const CONVEX_URL = "__CONVEX_URL__"; // Replace with your Convex deployment URL
+let convex;
+try {
+  convex = new ConvexClient(CONVEX_URL);
+} catch(e) {
+  console.warn("Convex not configured. Data won't be saved.");
+}
+
+// ── Template Data ──
 const templates = [
-  {id:"analog",name:"Analog Indie Nuptials",tags:["Vintage","Film","Indie"],themes:["dark","cinematic"],main:"Analog Indie Nuptials UI/invitation.html",pages:["Invitation","Our Story","Event Details","Gallery","RSVP"]},
-  {id:"bloom",name:"Bloom",tags:["Romantic","Floral","Watercolor"],themes:["light","romantic"],main:"Bloom/event-details.html",pages:["Event Details","Our Story","Gallery"]},
-  {id:"editorial",name:"Editorial Luxury",tags:["Editorial","Couture","Minimal"],themes:["dark","editorial"],main:"Editorial Luxury/invitation.html",pages:["Our Story","Invitation","Gallery","RSVP"]},
-  {id:"garden",name:"Eternal Garden",tags:["Garden","Botanical","Sage"],themes:["light","romantic"],main:"Eternal Garden/invitation.html",pages:["Our Story","Event Details","RSVP","Gallery"]},
-  {id:"film",name:"Forever Film",tags:["Cinematic","Dark","Moody"],themes:["dark","cinematic"],main:"Forever Film/invitation.html",pages:["Feature","Our Story","RSVP","Gallery"]},
-  {id:"boho",name:"Organic Boho",tags:["Boho","Earthy","Natural"],themes:["light","boho"],main:"Organic Boho/invitation.html",pages:["Invitation","Our Story","RSVP","Gallery"]},
-  {id:"sensual",name:"Sensual",tags:["Dark","Moody","Intimate"],themes:["dark","editorial"],main:"Sensual/invitation.html",pages:["Invitation","Our Story","Event Details","Gallery","RSVP"]},
-  {id:"soft",name:"Soft Luxury",tags:["Champagne","Soft","Elegant"],themes:["light","romantic"],main:"soft luxury/invitation.html",pages:["Invitation","Our Story","Event Details","Gallery","RSVP"]},
-  {id:"timeless",name:"Timeless",tags:["Classic","Ivory","Elegant"],themes:["light","editorial"],main:"Timeless/invitation.html",pages:["Invitation","Our Story","RSVP"]},
-  {id:"romantic",name:"Ultra Romantic",tags:["Romantic","Blush","Dreamy"],themes:["light","romantic"],main:"Ultra Romantic/invitation.html",pages:["Invitation","Event & Gallery","Our Story","RSVP Mobile","RSVP Desktop","Gallery","Event Details","Photo Gallery"]}
+  {id:"analog",name:"Analog Indie Nuptials",tags:["Vintage","Film","Indie"],themes:["dark","cinematic"],main:"Analog Indie Nuptials UI/index.html"},
+  {id:"bloom",name:"Bloom",tags:["Romantic","Floral","Watercolor"],themes:["light","romantic"],main:"Bloom/index.html"},
+  {id:"editorial",name:"Editorial Luxury",tags:["Editorial","Couture","Minimal"],themes:["dark","editorial"],main:"Editorial Luxury/index.html"},
+  {id:"garden",name:"Eternal Garden",tags:["Garden","Botanical","Sage"],themes:["light","romantic"],main:"Eternal Garden/index.html"},
+  {id:"film",name:"Forever Film",tags:["Cinematic","Dark","Moody"],themes:["dark","cinematic"],main:"Forever Film/index.html"},
+  {id:"boho",name:"Organic Boho",tags:["Boho","Earthy","Natural"],themes:["light","boho"],main:"Organic Boho/index.html"},
+  {id:"sensual",name:"Sensual",tags:["Dark","Moody","Intimate"],themes:["dark","editorial"],main:"Sensual/index.html"},
+  {id:"soft",name:"Soft Luxury",tags:["Champagne","Soft","Elegant"],themes:["light","romantic"],main:"soft luxury/index.html"},
+  {id:"timeless",name:"Timeless",tags:["Classic","Ivory","Elegant"],themes:["light","editorial"],main:"Timeless/index.html"},
+  {id:"romantic",name:"Ultra Romantic",tags:["Romantic","Blush","Dreamy"],themes:["light","romantic"],main:"Ultra Romantic/index.html"}
 ];
 
-function encodePath(path){
-  return path.replace(/ /g,"%20").replace(/\(/g,"%28").replace(/\)/g,"%29");
+const accentMap = {
+  analog:'#bc4637', bloom:'#c65878', editorial:'#b08a2e',
+  garden:'#7d8e4d', film:'#d7b55a', boho:'#ac6651',
+  sensual:'#d4af37', soft:'#c8a95a', timeless:'#8a9a79', romantic:'#c9778d'
+};
+
+// ── Feature pricing ──
+const featureConfig = {
+  rsvp:            { label:"RSVP + Admin Panel",   price:300,  tier:1 },
+  song_request:    { label:"Song Request",          price:0,    tier:1 },
+  message_couple:  { label:"Message to Couple",     price:0,    tier:1 },
+  qr_checkin:      { label:"QR Code Check-in",      price:200,  tier:2 },
+  menu_meals:      { label:"Menu & Meal Choices",   price:200,  tier:2, includes:"Allergy Tracking" },
+  photo_drive:     { label:"Photo Drive App",       price:250,  tier:3 },
+  seating:         { label:"Seating Arrangements",  price:300,  tier:3 }
+};
+
+// ── Feature checkbox click handling ──
+document.querySelectorAll(".feature-option").forEach(opt => {
+  opt.addEventListener("click", () => {
+    opt.classList.toggle("selected");
+    const cb = opt.querySelector("input");
+    cb.checked = !cb.checked;
+  });
+});
+
+// ── Calculate price ──
+function calculatePrice(selectedFeatures) {
+  let total = 0;
+  let maxTier = 0;
+  const included = [];
+
+  selectedFeatures.forEach(f => {
+    const cfg = featureConfig[f];
+    if (!cfg) return;
+    total += cfg.price;
+    maxTier = Math.max(maxTier, cfg.tier);
+    included.push(cfg.label);
+    if (cfg.includes) included.push(cfg.includes);
+  });
+
+  // Apply tier minimums
+  if (maxTier >= 3) total = Math.max(total, 1200);
+  else if (maxTier >= 2) total = Math.max(total, 700);
+  else total = Math.max(total, 300);
+
+  const tierName = maxTier >= 3 ? "Tier 3" : maxTier >= 2 ? "Tier 2" : "Tier 1";
+  return { total, tierName, included };
 }
 
-function guidedEditPath(path){
-  return `${encodePath(path)}?edit=1&fresh=1`;
+// ── Submit to Convex ──
+async function submitToConvex(data) {
+  if (!convex) return null;
+  try {
+    const id = await convex.mutation("submitOnboarding", data);
+    return id;
+  } catch(e) {
+    console.warn("Failed to save to Convex:", e);
+    return null;
+  }
 }
 
-function thumbnailMarkup(t){
-  const dark = t.themes.includes('dark');
-  const bg   = dark ? '#1a1410' : '#f8f4ed';
-  const chrome = dark ? '#26221e' : '#ede8e0';
-  const textCol = dark ? '#f0e8d8' : '#2a2218';
-  const accent = {
-    analog:'#bc4637', bloom:'#c65878', editorial:'#b08a2e',
-    garden:'#7d8e4d', film:'#d7b55a', boho:'#ac6651',
-    sensual:'#d4af37', soft:'#c8a95a', timeless:'#8a9a79', romantic:'#c9778d'
-  }[t.id] || '#b88e44';
-  const heroGrad = dark
-    ? `linear-gradient(160deg,${accent}22 0%,${bg} 100%)`
-    : `linear-gradient(160deg,${accent}18 0%,${bg} 100%)`;
+// ── Calculate button ──
+document.getElementById("calculateBtn").addEventListener("click", async () => {
+  const guestCount = parseInt(document.getElementById("guestCount").value) || 50;
+  const selected = [];
+  document.querySelectorAll(".feature-option.selected").forEach(opt => {
+    selected.push(opt.dataset.feature);
+  });
+
+  const { total, tierName, included } = calculatePrice(selected);
+  const resultEl = document.getElementById("surveyResult");
+  const resultTier = document.getElementById("resultTier");
+  const resultPrice = document.getElementById("resultPrice");
+  const resultFeatures = document.getElementById("resultFeatures");
+
+  resultTier.textContent = tierName;
+  resultPrice.textContent = "$" + total.toLocaleString();
+  resultFeatures.innerHTML = included.map(f => `<span>${f}</span>`).join("");
+  resultEl.classList.add("visible");
+
+  // Highlight matching tier in pricing section
+  document.querySelectorAll(".pricing-card").forEach(c => c.classList.remove("recommended"));
+  const tierMap = { "Tier 1":"tier1Card", "Tier 2":"tier2Card", "Tier 3":"tier3Card" };
+  document.getElementById(tierMap[tierName])?.classList.add("recommended");
+
+  // Save to Convex
+  await submitToConvex({
+    guestCount,
+    features: selected,
+    calculatedPrice: total,
+    tier: tierName,
+  });
+
+  document.getElementById("pricingSection").classList.add("active");
+  document.getElementById("pricingSection").scrollIntoView({ behavior:"smooth" });
+});
+
+// ── View Templates button ──
+document.getElementById("viewTemplatesBtn").addEventListener("click", () => {
+  document.getElementById("pricingSection").classList.remove("active");
+  document.getElementById("catalogSection").classList.add("active");
+  document.getElementById("catalogSection").scrollIntoView({ behavior:"smooth" });
+});
+
+// ── Catalog rendering ──
+function cardMarkup(template, index) {
+  const dark = template.themes.includes("dark");
+  const accent = accentMap[template.id] || "#b88e44";
+  const number = String(index + 1).padStart(2, "0");
+  const tags = template.tags.map(t => `<span class="tag">${t}</span>`).join("");
+  const grad = dark
+    ? `linear-gradient(160deg,${accent}55 0%,#1a1714 100%)`
+    : `linear-gradient(160deg,${accent}55 0%,#1a1a1a 100%)`;
+
   return `
-    <div class="mini-browser" aria-hidden="true" style="background:${bg};color:${textCol}">
-      <div class="mb-chrome" style="background:${chrome}">
-        <span class="mb-dot" style="background:#ff5f57"></span>
-        <span class="mb-dot" style="background:#febc2e"></span>
-        <span class="mb-dot" style="background:#28c840"></span>
-        <span class="mb-url" style="background:${dark?'rgba(255,255,255,.1)':'rgba(0,0,0,.08)'}"></span>
+    <article class="template-card${dark ? " dark-card" : ""}" data-id="${template.id}" data-themes="${template.themes.join(" ")}" data-name="${template.name.toLowerCase()}">
+      <div class="card-hero" style="background:${grad}">
+        <span class="template-index">${number}</span>
+        <h2>${template.name}</h2>
       </div>
-      <div class="mb-hero" style="background:${heroGrad};flex-direction:column;justify-content:flex-end">
-        <div style="width:38%;height:2px;border-radius:2px;background:${accent};opacity:.5;margin-bottom:6px"></div>
-        <div class="mb-h1" style="width:72%"></div>
-        <div class="mb-sub"></div>
-      </div>
-      <div class="mb-body">
-        <div class="mb-line" style="width:90%"></div>
-        <div class="mb-line" style="width:70%"></div>
-        <div class="mb-btn" style="background:${accent}"></div>
-      </div>
-    </div>
-    <span class="thumb-label">${t.tags[0]}</span>
-    <div class="thumb-title">${t.name.split(' ')[0]}<br/><em>${t.name.split(' ').slice(1).join(' ')||'Wedding'}</em></div>
-  `;
-}
-
-function getPagePath(template, pageName) {
-  const folder = template.main.split('/')[0];
-  const fileName = pageName.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-") + ".html";
-  return `${folder}/${fileName}`;
-}
-
-function cardMarkup(template,index){
-  const dark = template.themes.includes("dark") ? " dark-card" : "";
-  const tags = template.tags.map(tag=>`<span class="tag">${tag}</span>`).join("");
-  const pages = template.pages.map(page=>`<a class="page-chip" href="${getPagePath(template, page)}">${page}</a>`).join("");
-  const number = String(index + 1).padStart(2,"0");
-  return `
-    <article class="template-card${dark}" data-id="${template.id}" data-themes="${template.themes.join(" ")}" data-name="${template.name.toLowerCase()}">
-      <div class="thumb" aria-hidden="true">${thumbnailMarkup(template)}</div>
       <div class="card-body">
-        <div class="card-head">
-          <h2 class="template-name">${template.name}</h2>
-          <span class="template-index">${number}</span>
-        </div>
         <div class="tags">${tags}</div>
-        <div class="requirements" aria-label="${template.name} requirements">
-          <div class="metric"><strong>10</strong><span>Album photos</span></div>
-          <div class="metric"><strong>${template.pages.length}</strong><span>Pages included</span></div>
-        </div>
-        <div class="breakdown" aria-label="Photo breakdown">
-          <div class="breakdown-item"><b>3</b><span>Story photos</span></div>
-          <div class="breakdown-item"><b>7</b><span>Gallery photos</span></div>
-          <div class="breakdown-item"><b>1</b><span>Hero swap</span></div>
-        </div>
-        <div class="page-list" aria-label="Included pages">${pages}</div>
-        <div class="card-actions">
-          <a class="open-template" href="${guidedEditPath(template.main)}">Start guided edit</a>
-          <span class="note">Starts fresh and clears saved browser photos.</span>
-        </div>
+        <a class="view-btn" href="${encodeURI(template.main)}">View Template →</a>
       </div>
     </article>
   `;
 }
 
-const catalog = document.getElementById("catalog");
-catalog.innerHTML = templates.map(cardMarkup).join("");
+document.getElementById("catalog").innerHTML = templates.map(cardMarkup).join("");
 
+// ── Filter & Search ──
 function filterTemplates() {
   const filter = document.querySelector(".filter-btn.active").dataset.filter;
   const search = document.getElementById("templateSearch").value.toLowerCase();
-  
-  document.querySelectorAll(".template-card").forEach(card=>{
+  document.querySelectorAll(".template-card").forEach(card => {
     const themeMatch = filter === "all" || card.dataset.themes.includes(filter);
-    const nameMatch = card.dataset.name.includes(search) || card.textContent.toLowerCase().includes(search);
+    const nameMatch = card.dataset.name.includes(search);
     card.hidden = !(themeMatch && nameMatch);
   });
 }
 
-document.querySelectorAll(".filter-btn").forEach(button=>{
-  button.addEventListener("click",()=>{
-    document.querySelectorAll(".filter-btn").forEach(item=>item.classList.remove("active"));
-    button.classList.add("active");
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
     filterTemplates();
   });
 });
-
 document.getElementById("templateSearch").addEventListener("input", filterTemplates);
 
-// Scroll reveal
-(function(){
-  const cards = document.querySelectorAll('.template-card');
-  cards.forEach(c => c.classList.add('sr'));
-  const io = new IntersectionObserver((entries) => {
+// ── Scroll reveal ──
+(function() {
+  const cards = document.querySelectorAll(".template-card");
+  cards.forEach(c => c.classList.add("sr"));
+  const io = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
-      if(e.isIntersecting){
-        setTimeout(() => e.target.classList.add('visible'), Math.min(i * 60, 150));
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add("visible"), Math.min(i * 60, 150));
         io.unobserve(e.target);
       }
     });
@@ -594,19 +767,20 @@ document.getElementById("templateSearch").addEventListener("input", filterTempla
   cards.forEach(c => io.observe(c));
 })();
 
-// Hero parallax
-(function(){
-  const bg = document.getElementById('heroBg');
-  if(!bg) return;
-  bg.classList.add('loaded');
-  window.addEventListener('scroll', () => {
+// ── Hero parallax ──
+(function() {
+  const bg = document.getElementById("heroBg");
+  if (!bg) return;
+  bg.classList.add("loaded");
+  window.addEventListener("scroll", () => {
     const y = window.scrollY;
-    if(y < window.innerHeight * 1.2)
-      bg.style.transform = 'scale(1) translateY(' + (y * 0.28) + 'px)';
+    if (y < window.innerHeight * 1.2)
+      bg.style.transform = `scale(1) translateY(${y * 0.28}px)`;
   }, { passive: true });
 })();
 </script>
-  <script src="premium.js"></script>
-  <script src="mobile-optimize.js"></script>
+
+<script src="premium.js"></script>
+<script src="mobile-optimize.js"></script>
 </body>
 </html>

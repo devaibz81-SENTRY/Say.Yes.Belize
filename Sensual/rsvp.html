@@ -2,13 +2,13 @@
 <html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>RSVP — Evelyn & Julian</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#ffdad5","tertiary-container":"#4a001a","on-background":"#ffdad7","primary-container":"#4a0404","surface-container-lowest":"#210504","surface-container-highest":"#512a27","on-surface-variant":"#dcc0bd","secondary-container":"#871f23","outline-variant":"#554240","surface-dim":"#280908","surface-container":"#371513","primary":"#ffb4aa","background":"#280908","on-surface":"#ffdad7","on-primary-container":"#d26a5f","surface-container-high":"#441f1d","tertiary":"#ffb2bf","outline":"#a38b88"},spacing:{"stack-lg":"5rem","container-max":"1140px","gutter":"24px","stack-md":"2.5rem","stack-sm":"1rem"},fontFamily:{"headline-xl":["Noto Serif"],"headline-lg":["Noto Serif"],"headline-md":["Noto Serif"],"body-md":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"]},fontSize:{"headline-xl":["48px",{"lineHeight":"1.1","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"1.2","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"1.3","fontWeight":"500"}],"label-caps":["12px",{"lineHeight":"1","letterSpacing":"0.15em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}]}}}}
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#ffdad5","tertiary-container":"#4a001a","on-background":"#ffdad7","primary-container":"#4a0404","surface-container-lowest":"#210504","surface-container-highest":"#512a27","on-surface-variant":"#dcc0bd","secondary-container":"#871f23","outline-variant":"#554240","surface-dim":"#280908","surface-container":"#371513","primary":"#ffb4aa","background":"#280908","on-surface":"#ffdad7","on-primary-container":"#d26a5f","surface-container-high":"#441f1d","tertiary":"#ffb2bf","outline":"#a38b88"},spacing:{"stack-lg":"5rem","container-max":"1140px","gutter":"24px","stack-md":"2.5rem","stack-sm":"1rem"},fontFamily:{"headline-xl":["Noto Serif"],"headline-lg":["Noto Serif"],"headline-md":["Noto Serif"],"body-md":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"]},fontSize:{"headline-xl":["48px",{lineHeight:"1.1",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"1.2",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"1.3",fontWeight:"500"}],"label-caps":["12px",{lineHeight:"1",letterSpacing:"0.15em",fontWeight:"600"}],"body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}]}}}}
 </script>
 <style>
 html{scroll-behavior:smooth}
@@ -16,241 +16,175 @@ body{min-height:100dvh}
 .velvet-grain::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.035;pointer-events:none;z-index:9999;mix-blend-mode:overlay}
 .gold-foil-text{background:linear-gradient(135deg,#D4AF37,#FFFACD,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .glass-card{background:rgba(55,21,19,.65);backdrop-filter:blur(24px);box-shadow:0 4px 40px rgba(139,30,63,.18)}
-.gold-foil-border{border:1px solid transparent;background-image:linear-gradient(rgba(55,21,19,.65),rgba(55,21,19,.65)),linear-gradient(135deg,#D4AF37,#8B1E3F,#D4AF37);background-origin:border-box;background-clip:padding-box,border-box}
 .liquid-gold-btn{background:linear-gradient(135deg,#D4AF37,#F9E79F,#D4AF37);transition:all .4s ease}
 .liquid-gold-btn:hover{filter:brightness(1.12);box-shadow:0 0 24px rgba(212,175,55,.45)}
 .orb{position:fixed;border-radius:50%;pointer-events:none;filter:blur(120px);opacity:.18;z-index:0}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.reveal.visible{opacity:1;transform:none}
-/* Floating label inputs */
 .field-wrap{position:relative;margin-top:1.5rem}
-.field-wrap input,.field-wrap textarea,.field-wrap select{
-  width:100%;background:transparent;border:none;border-bottom:1px solid rgba(84,66,64,.8);
-  padding:1rem 0 .5rem;color:#ffdad7;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;
-  outline:none;transition:border-color .3s;resize:none;appearance:none
-}
+.field-wrap input,.field-wrap textarea,.field-wrap select{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(84,66,64,.8);padding:1rem 0 .5rem;color:#ffdad7;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;outline:none;transition:border-color .3s;resize:none;appearance:none}
 .field-wrap input:focus,.field-wrap textarea:focus,.field-wrap select:focus{border-color:#D4AF37}
-.field-wrap label{
-  position:absolute;left:0;top:1rem;color:rgba(220,192,189,.4);font-size:16px;
-  pointer-events:none;transition:all .25s ease
-}
-.field-wrap input:focus~label,.field-wrap input:not(:placeholder-shown)~label,
-.field-wrap textarea:focus~label,.field-wrap textarea:not(:placeholder-shown)~label{
-  top:0;font-size:11px;letter-spacing:.12em;color:#D4AF37
-}
-.attend-btn{
-  flex:1;padding:.75rem 1.5rem;border:1px solid rgba(212,175,55,.2);
-  color:#ffdad7;background:rgba(55,21,19,.4);backdrop-filter:blur(8px);
-  font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:all .3s;border-radius:.25rem
-}
+.field-wrap label{position:absolute;left:0;top:1rem;color:rgba(220,192,189,.4);font-size:16px;pointer-events:none;transition:all .25s ease}
+.field-wrap input:focus~label,.field-wrap input:not(:placeholder-shown)~label,.field-wrap textarea:focus~label,.field-wrap textarea:not(:placeholder-shown)~label{top:0;font-size:11px;letter-spacing:.12em;color:#D4AF37}
+.attend-btn{flex:1;padding:.75rem 1.5rem;border:1px solid rgba(212,175,55,.2);color:#ffdad7;background:rgba(55,21,19,.4);backdrop-filter:blur(8px);font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:all .3s;border-radius:.25rem}
 .attend-btn.selected,.attend-btn:hover{background:rgba(74,0,26,.7);border-color:#D4AF37;color:#D4AF37}
-.diet-chip{
-  padding:.375rem 1rem;border-radius:999px;border:1px solid rgba(212,175,55,.2);
-  color:#ffdad7;font-size:11px;letter-spacing:.1em;cursor:pointer;transition:all .3s;
-  font-family:'Plus Jakarta Sans',sans-serif
-}
+.diet-chip{padding:.375rem 1rem;border-radius:999px;border:1px solid rgba(212,175,55,.2);color:#ffdad7;font-size:11px;letter-spacing:.1em;cursor:pointer;transition:all .3s;font-family:'Plus Jakarta Sans',sans-serif}
 .diet-chip.active,.diet-chip:hover{background:rgba(74,0,26,.7);border-color:#D4AF37;color:#D4AF37}
-/* success */
 #success{display:none}
 #success.show{display:flex}
-/* countdown */
-.count-box{display:flex;flex-direction:column;align-items:center;gap:.25rem}
-.count-num{font-family:'Noto Serif',serif;font-size:2rem;font-weight:700;color:#D4AF37;line-height:1}
-.count-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(220,192,189,.5)}
 </style>
-  <link href="../fonts.css" rel="stylesheet"/>
-  <link href="../premium.css" rel="stylesheet"/>
+<link href="../fonts.css" rel="stylesheet"/>
+<link href="../premium.css" rel="stylesheet"/>
 </head>
 <body class="bg-background text-on-background font-body-md velvet-grain overflow-x-hidden">
-
 <div class="orb w-[600px] h-[600px] bg-red-900" style="top:0;left:-20%"></div>
 <div class="orb w-[500px] h-[500px] bg-amber-900" style="bottom:10%;right:-15%"></div>
-
-<!-- NAV -->
 <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-red-950/60 backdrop-blur-2xl border-b border-amber-500/20 shadow-[0_4px_20px_rgba(139,30,63,0.3)]">
-  <div class="flex items-center gap-2">
-    <span class="material-symbols-outlined text-amber-200" style="font-variation-settings:'FILL' 1">flare</span>
-    <span class="text-amber-400 font-serif italic text-lg">Evelyn &amp; Julian</span>
-  </div>
-  <nav class="hidden md:flex gap-8 font-serif tracking-[0.2em] uppercase text-xs">
-    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="invitation.html">Invitation</a>
-    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="our-story.html">Story</a>
-    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="event-details.html">Details</a>
-    <a class="text-amber-100/50 hover:text-amber-300 transition-colors" href="gallery.html">Gallery</a>
-    <a class="text-amber-400 border-b border-amber-400 pb-px" href="#">RSVP</a>
-  </nav>
-  <span class="material-symbols-outlined text-amber-200">mail</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-200" style="font-variation-settings:'FILL'1">flare</span>
+<div class="vows-breadcrumb text-amber-200/80">
+<a href="index.html" data-slide="index.html" data-direction="right" class="step no-underline text-inherit hover:text-amber-300 transition-colors" data-step="1">
+<span class="dot"></span>
+<span class="step-label">INVITATION</span>
+</a>
+<span class="connector"></span>
+<div class="step active" data-step="2">
+<span class="dot"></span>
+<span class="step-label">RSVP</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-amber-200">mail</span>
 </header>
-
 <main class="relative z-10 pt-28 pb-36 px-6">
-
-  <!-- Hero text -->
-  <section class="text-center max-w-2xl mx-auto mb-16 reveal">
-    <span class="font-label-caps text-label-caps text-amber-400 uppercase tracking-[0.35em] block mb-4">Reply Requested</span>
-    <h1 class="font-headline-xl gold-foil-text mb-4" style="font-size:clamp(2.5rem,7vw,4rem)">Will You Join Us?</h1>
-    <div class="w-24 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-6"></div>
-    <p class="font-body-md text-body-md text-on-surface-variant italic">Kindly let us know by <strong class="text-amber-300/80 not-italic">October 12th, 2024</strong> so we may properly arrange your place at our table.</p>
-  </section>
-
-  <!-- Countdown -->
-  <section class="flex justify-center mb-16 reveal">
-    <div class="glass-card gold-foil-border rounded-2xl px-10 py-6 flex gap-8 items-center">
-      <div class="vows-countdown"></div>
-    </div>
-  </section>
-
-  <!-- Form card -->
-  <div class="max-w-xl mx-auto">
-    <div class="glass-card gold-foil-border rounded-2xl p-10 md:p-12 relative reveal" id="form-card">
-      <!-- floating badge -->
-      <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-background px-6 py-2 border border-amber-500/30 rounded-full whitespace-nowrap">
-        <span class="font-label-caps text-label-caps text-amber-400 tracking-[0.3em]">RSVP FORM</span>
-      </div>
-
-      <form id="rsvp-form" class="space-y-8 pt-4" onsubmit="submitRsvp(event)">
-        <!-- Name -->
-        <div class="field-wrap">
-          <input type="text" id="name" placeholder=" " required/>
-          <label for="name">Your Full Name</label>
-        </div>
-
-        <!-- Email -->
-        <div class="field-wrap">
-          <input type="email" id="email" placeholder=" " required/>
-          <label for="email">Email Address</label>
-        </div>
-
-        <!-- Attendance -->
-        <div class="space-y-3">
-          <span class="font-label-caps text-[10px] text-amber-400/80 uppercase tracking-widest block">Attendance</span>
-          <div class="flex gap-3">
-            <button type="button" id="btn-yes" class="attend-btn" onclick="selectAttend('yes')">
-              <span class="material-symbols-outlined text-[16px] align-middle mr-1">check_circle</span>
-              Joyfully Accept
-            </button>
-            <button type="button" id="btn-no" class="attend-btn" onclick="selectAttend('no')">
-              <span class="material-symbols-outlined text-[16px] align-middle mr-1">cancel</span>
-              Regretfully Decline
-            </button>
-          </div>
-          <input type="hidden" id="attendance" required/>
-        </div>
-
-        <!-- Guests -->
-        <div class="field-wrap">
-          <select id="guests">
-            <option value="" disabled selected></option>
-            <option value="1">Just me (1 guest)</option>
-            <option value="2">2 guests</option>
-            <option value="3">3 guests</option>
-            <option value="4">4 guests</option>
-          </select>
-          <label for="guests" style="top:0;font-size:11px;letter-spacing:.12em;color:#D4AF37">Number of Guests</label>
-        </div>
-
-        <!-- Dietary -->
-        <div class="space-y-3">
-          <span class="font-label-caps text-[10px] text-amber-400/80 uppercase tracking-widest block">Dietary Notes</span>
-          <div class="flex flex-wrap gap-2">
-            <button type="button" class="diet-chip" onclick="toggleDiet(this)">Vegan</button>
-            <button type="button" class="diet-chip" onclick="toggleDiet(this)">Vegetarian</button>
-            <button type="button" class="diet-chip" onclick="toggleDiet(this)">Gluten Free</button>
-            <button type="button" class="diet-chip" onclick="toggleDiet(this)">Nut Allergy</button>
-            <button type="button" class="diet-chip" onclick="toggleDiet(this)">Shellfish Free</button>
-          </div>
-        </div>
-
-        <!-- Message -->
-        <div class="field-wrap">
-          <textarea id="message" rows="3" placeholder=" "></textarea>
-          <label for="message">A note for the couple (optional)</label>
-        </div>
-
-        <button type="submit" class="w-full py-5 liquid-gold-btn text-red-950 font-headline-md font-bold tracking-widest uppercase rounded-lg shadow-[0_0_24px_rgba(212,175,55,0.25)] active:scale-[0.98]">
-          Confirm My RSVP
-        </button>
-      </form>
-    </div>
-
-    <!-- Success state -->
-    <div id="success" class="max-w-xl mx-auto glass-card gold-foil-border rounded-2xl p-12 flex-col items-center text-center space-y-6">
-      <span class="material-symbols-outlined text-amber-400 text-6xl" style="font-variation-settings:'FILL' 1">favorite</span>
-      <h2 class="font-headline-lg text-headline-lg gold-foil-text">Thank You!</h2>
-      <p class="font-body-md text-body-md text-on-surface-variant">Your RSVP has been received. We can't wait to celebrate with you under the Caribbean sky.</p>
-      <a href="gallery.html" class="liquid-gold-btn text-red-950 font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2 no-underline">
-        <span class="material-symbols-outlined text-[18px]">photo_library</span>
-        View Gallery
-      </a>
-    </div>
-  </div>
-
+<a href="index.html" data-slide="index.html" data-direction="right" class="btn-feedback inline-flex items-center gap-2 text-amber-400/70 hover:text-amber-300 font-body-md mb-8 no-underline transition-colors">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+← Back to Invitation
+</a>
+<section class="premium-section text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-caps text-label-caps text-amber-400 uppercase tracking-[0.35em] block mb-4">Reply Requested</span>
+<h1 class="font-headline-xl gold-foil-text mb-4" style="font-size:clamp(2.5rem,7vw,4rem)">Will You Join Us?</h1>
+<div class="w-24 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-6"></div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Kindly let us know by <strong class="text-amber-300/80 not-italic">October 12th, 2024</strong> so we may properly arrange your place at our table.</p>
+</section>
+<section class="premium-section flex justify-center mb-16">
+<div class="glass-card rounded-2xl px-10 py-6" style="border:1px solid transparent;background-image:linear-gradient(rgba(55,21,19,.65),rgba(55,21,19,.65)),linear-gradient(135deg,#D4AF37,#8B1E3F,#D4AF37);background-origin:border-box;background-clip:padding-box,border-box">
+<div class="vows-countdown"></div>
+</div>
+</section>
+<div class="max-w-xl mx-auto">
+<div class="premium-section glass-card rounded-2xl p-10 md:p-12 relative" id="form-card" style="border:1px solid transparent;background-image:linear-gradient(rgba(55,21,19,.65),rgba(55,21,19,.65)),linear-gradient(135deg,#D4AF37,#8B1E3F,#D4AF37);background-origin:border-box;background-clip:padding-box,border-box">
+<div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-background px-6 py-2 border border-amber-500/30 rounded-full whitespace-nowrap">
+<span class="font-label-caps text-label-caps text-amber-400 tracking-[0.3em]">RSVP FORM</span>
+</div>
+<form id="rsvp-form" class="space-y-8 pt-4" onsubmit="submitRsvp(event)">
+<div class="field-wrap">
+<input type="text" id="name" placeholder=" " required/>
+<label for="name">Your Full Name</label>
+</div>
+<div class="field-wrap">
+<input type="email" id="email" placeholder=" " required/>
+<label for="email">Email Address</label>
+</div>
+<div class="space-y-3">
+<span class="font-label-caps text-[10px] text-amber-400/80 uppercase tracking-widest block">Attendance</span>
+<div class="flex gap-3">
+<button type="button" id="btn-yes" class="btn-feedback attend-btn" onclick="selectAttend('yes')">
+<span class="material-symbols-outlined text-[16px] align-middle mr-1">check_circle</span>
+Joyfully Accept
+</button>
+<button type="button" id="btn-no" class="btn-feedback attend-btn" onclick="selectAttend('no')">
+<span class="material-symbols-outlined text-[16px] align-middle mr-1">cancel</span>
+Regretfully Decline
+</button>
+</div>
+<input type="hidden" id="attendance" required/>
+</div>
+<div class="field-wrap">
+<select id="guests">
+<option value="" disabled selected></option>
+<option value="1">Just me (1 guest)</option>
+<option value="2">2 guests</option>
+<option value="3">3 guests</option>
+<option value="4">4 guests</option>
+</select>
+<label for="guests" style="top:0;font-size:11px;letter-spacing:.12em;color:#D4AF37">Number of Guests</label>
+</div>
+<div class="space-y-3">
+<span class="font-label-caps text-[10px] text-amber-400/80 uppercase tracking-widest block">Dietary Notes</span>
+<div class="flex flex-wrap gap-2">
+<button type="button" class="btn-feedback diet-chip" onclick="toggleDiet(this)">Vegan</button>
+<button type="button" class="btn-feedback diet-chip" onclick="toggleDiet(this)">Vegetarian</button>
+<button type="button" class="btn-feedback diet-chip" onclick="toggleDiet(this)">Gluten Free</button>
+<button type="button" class="btn-feedback diet-chip" onclick="toggleDiet(this)">Nut Allergy</button>
+<button type="button" class="btn-feedback diet-chip" onclick="toggleDiet(this)">Shellfish Free</button>
+</div>
+</div>
+<div class="field-wrap">
+<textarea id="message" rows="3" placeholder=" "></textarea>
+<label for="message">A note for the couple (optional)</label>
+</div>
+<button type="submit" class="btn-feedback w-full py-5 liquid-gold-btn text-background font-headline-md font-bold tracking-widest uppercase rounded-lg shadow-[0_0_24px_rgba(212,175,55,0.25)] active:scale-[0.98]">
+Confirm My RSVP
+</button>
+</form>
+</div>
+<div id="success" class="max-w-xl mx-auto glass-card rounded-2xl p-12 flex-col items-center text-center space-y-6" style="border:1px solid transparent;background-image:linear-gradient(rgba(55,21,19,.65),rgba(55,21,19,.65)),linear-gradient(135deg,#D4AF37,#8B1E3F,#D4AF37);background-origin:border-box;background-clip:padding-box,border-box">
+<span class="material-symbols-outlined text-amber-400 text-6xl" style="font-variation-settings:'FILL'1">favorite</span>
+<h2 class="font-headline-lg text-headline-lg gold-foil-text">Thank You!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Your RSVP has been received. We can't wait to celebrate with you under the Caribbean sky.</p>
+<a href="index.html" data-slide="index.html" data-direction="right" class="btn-feedback liquid-gold-btn text-background font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2 no-underline">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+Back to Invitation
+</a>
+</div>
+</div>
 </main>
-
-<!-- MOBILE NAV -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe pt-2 bg-red-950/80 backdrop-blur-3xl border-t border-amber-500/10 rounded-t-lg">
-  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="invitation.html">
-    <span class="material-symbols-outlined">auto_awesome</span>
-    <span class="font-serif text-[10px] tracking-widest uppercase">Invite</span>
-  </a>
-  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="our-story.html">
-    <span class="material-symbols-outlined">favorite</span>
-    <span class="font-serif text-[10px] tracking-widest uppercase">Story</span>
-  </a>
-  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="event-details.html">
-    <span class="material-symbols-outlined">event_note</span>
-    <span class="font-serif text-[10px] tracking-widest uppercase">Details</span>
-  </a>
-  <a class="flex flex-col items-center text-red-200/30 pt-2 hover:text-amber-200 transition-all" href="gallery.html">
-    <span class="material-symbols-outlined">photo_library</span>
-    <span class="font-serif text-[10px] tracking-widest uppercase">Gallery</span>
-  </a>
-  <a class="flex flex-col items-center text-amber-400 font-bold border-t-2 border-amber-400 pt-2 scale-105" href="#">
-    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">mail</span>
-    <span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span>
-  </a>
+<footer class="relative z-10 py-12 text-center text-on-surface-variant/60 font-body-md text-sm border-t border-amber-500/10">
+<div class="vows-breadcrumb justify-center mb-4 text-amber-200/60">
+<a href="index.html" data-slide="index.html" data-direction="right" class="step no-underline text-inherit hover:text-amber-300 transition-colors" data-step="1">
+<span class="dot"></span>
+<span class="step-label">INVITATION</span>
+</a>
+<span class="connector"></span>
+<div class="step active" data-step="2">
+<span class="dot"></span>
+<span class="step-label">RSVP</span>
+</div>
+</div>
+<p class="font-serif text-xs tracking-widest uppercase opacity-50">Evelyn & Julian • 2024</p>
+</footer>
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe pt-2 bg-red-950/80 backdrop-blur-3xl border-t border-amber-500/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] rounded-t-lg">
+<a href="index.html" data-slide="index.html" data-direction="right" class="btn-feedback flex flex-col items-center justify-center text-red-200/30 pt-2 hover:text-amber-200 transition-all no-underline">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">Invitation</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center text-amber-400 font-bold border-t-2 border-amber-400 pt-2 scale-105 no-underline">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL'1">mail</span>
+<span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span>
+</a>
 </nav>
 <div class="h-20 md:hidden"></div>
-
 <script>
-// Scroll reveal
-const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Attendance selection
 let attendVal = '';
 function selectAttend(v){
-  attendVal = v;
-  document.getElementById('attendance').value = v;
-  document.getElementById('btn-yes').classList.toggle('selected', v==='yes');
-  document.getElementById('btn-no').classList.toggle('selected', v==='no');
+  attendVal=v;
+  document.getElementById('attendance').value=v;
+  document.getElementById('btn-yes').classList.toggle('selected',v==='yes');
+  document.getElementById('btn-no').classList.toggle('selected',v==='no');
 }
-
-// Diet chips
-function toggleDiet(el){ el.classList.toggle('active'); }
-
-// Submit
+function toggleDiet(el){el.classList.toggle('active');}
 function submitRsvp(e){
   e.preventDefault();
-  if(!attendVal){ alert('Please select your attendance.'); return; }
+  if(!attendVal){alert('Please select your attendance.');return;}
   document.getElementById('form-card').style.display='none';
-  const s = document.getElementById('success');
+  const s=document.getElementById('success');
   s.classList.add('show');
   s.scrollIntoView({behavior:'smooth'});
 }
 </script>
-
-<!-- Core Interactive Systems -->
-<script src="../guided-tour.js"></script>
-<script src="../photo-uploader.js"></script>
-<script src="../editable-fields.js"></script>
 <script src="../countdown-widget.js"></script>
-
-<!-- Sensual Template Initialization -->
-<script src="sensual-init.js"></script>
-
+<script src="../page-transition.js"></script>
+<script src="../font-picker.js"></script>
+<script src="../premium.js"></script>
 <script src="../mobile-optimize.js"></script>
-  <script src="../font-picker.js"></script>
-  <script src="../premium.js"></script>
 </body>
 </html>
-

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eternal Garden — Invitation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-high": "#ede7df", "inverse-primary": "#dac0c2", "error-container": "#ffdad6",
+        "on-primary-fixed": "#26181a", "surface-container-low": "#f9f3ea", "tertiary-fixed": "#d6e8ce",
+        "on-tertiary-fixed-variant": "#3b4b38", "inverse-surface": "#32302a", "primary-container": "#fde2e4",
+        "surface-bright": "#fff9f0", "on-error-container": "#93000a", "on-primary-fixed-variant": "#544244",
+        "surface-container-highest": "#e7e2d9", "on-error": "#ffffff", "on-surface": "#1d1b16",
+        "on-secondary": "#ffffff", "on-background": "#1d1b16", "surface-variant": "#e7e2d9",
+        "on-tertiary-fixed": "#111f0f", "primary": "#6d595b", "on-secondary-fixed": "#241a00",
+        "on-tertiary-container": "#5c6d58", "surface-dim": "#dfd9d1", "secondary-container": "#fed65b",
+        "secondary": "#735c00", "outline": "#807475", "surface-container": "#f3ede4",
+        "on-secondary-fixed-variant": "#574500", "on-tertiary": "#ffffff", "primary-fixed": "#f7dcde",
+        "secondary-fixed-dim": "#e9c349", "tertiary-fixed-dim": "#baccb3", "tertiary": "#53634e",
+        "surface-container-lowest": "#ffffff", "surface": "#fff9f0", "inverse-on-surface": "#f6f0e7",
+        "on-secondary-container": "#745c00", "on-surface-variant": "#4e4445", "surface-tint": "#6d595b",
+        "secondary-fixed": "#ffe088", "on-primary-container": "#776365", "background": "#fff9f0",
+        "tertiary-container": "#dbeed4", "on-primary": "#ffffff", "outline-variant": "#d2c3c4",
+        "error": "#ba1a1a", "primary-fixed-dim": "#dac0c2"
+      },
+      fontFamily: {
+        "display-lg": ["Noto Serif"], "display-md": ["Noto Serif"], "headline-lg": ["Noto Serif"],
+        "headline-md": ["Noto Serif"], "body-lg": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"]
+      },
+      fontSize: {
+        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+        "display-md": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "300"}],
+        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24; }
+.ease-out-cubic { transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+.glass-petal { backdrop-filter: blur(12px); background: rgba(255, 249, 240, 0.6); border: 1px solid rgba(254, 214, 91, 0.3); }
+.crystal-card { backdrop-filter: blur(20px); background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(253, 226, 228, 0.2) 100%); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px 0 rgba(253, 226, 228, 0.3); }
+@keyframes float { 0% { transform: translateY(0) rotate(0deg); opacity: 0; } 50% { opacity: 0.8; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
+.petal { position: absolute; pointer-events: none; animation: float 15s linear infinite; }
+.vows-countdown .vows-cd-num { color: #6d595b; }
+.vows-countdown .vows-cd-label { color: #6d595b; opacity: 0.6; }
+.vows-countdown .vows-cd-digits { color: #6d595b; }
+.vows-countdown .vows-cd-celebrate { color: #6d595b; }
+.bg-mesh { background: radial-gradient(circle at 10% 20%, rgba(253, 226, 228, 0.4) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(214, 232, 206, 0.3) 0%, transparent 40%); }
+.timeline-line { background: linear-gradient(to bottom, transparent, #FDE2E4 15%, #FDE2E4 85%, transparent); width: 1px; }
+</style>
+<link href="../fonts.css" rel="stylesheet"/>
+<link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container min-h-screen overflow-x-hidden font-body-md">
+<!-- Floating Petals -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="petal text-primary-container" style="left: 10%; animation-delay: 0s; font-size: 24px;">🌸</div>
+<div class="petal text-primary-container" style="left: 30%; animation-delay: 5s; font-size: 18px;">🌸</div>
+<div class="petal text-primary-container" style="left: 70%; animation-delay: 2s; font-size: 20px;">🌸</div>
+<div class="petal text-primary-container" style="left: 90%; animation-delay: 8s; font-size: 22px;">🌸</div>
+<div class="petal text-primary-container" style="left: 50%; animation-delay: 12s; font-size: 16px;">🌸</div>
+</div>
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FFF9F0]/70 backdrop-blur-md border-b border-amber-200/30 shadow-[0_4px_20px_rgba(253,226,228,0.2)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-800" data-icon="local_florist">local_florist</span>
+<span class="font-serif italic text-2xl text-amber-700 tracking-widest uppercase">Eternal Garden</span>
+</div>
+<div class="vows-breadcrumb text-amber-800 hidden md:flex">
+<div class="step active" data-step="1"><span class="dot"></span><span class="step-label">INVITATION</span></div>
+<span class="connector">———</span>
+<div class="step" data-step="2"><span class="dot"></span><span class="step-label">RSVP</span></div>
+</div>
+<button class="material-symbols-outlined text-stone-400 hover:text-amber-800 transition-colors duration-500" data-icon="menu_book">menu_book</button>
+</nav>
+<main class="relative z-20 flex flex-col items-center pt-24 pb-32 px-4">
+<!-- Hero Section -->
+<section class="premium-section flex flex-col items-center text-center space-y-12 w-full max-w-4xl mx-auto">
+<div class="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center">
+<div class="absolute inset-0 animate-pulse-slow">
+<svg class="w-full h-full text-secondary opacity-40 fill-none stroke-current stroke-1" viewbox="0 0 200 200">
+<path d="M100,20 C120,20 140,30 150,50 C160,70 160,90 150,110 C140,130 120,140 100,140 C80,140 60,130 50,110 C40,90 40,70 50,50 C60,30 80,20 100,20"></path>
+<circle cx="100" cy="80" r="75" stroke-dasharray="10 5"></circle>
+<path d="M40,40 Q100,0 160,40 T160,120 Q100,160 40,120 T40,40"></path>
+</svg>
+</div>
+<div class="relative z-10 space-y-2">
+<h1 class="font-display-lg text-display-lg text-secondary">Eleanor <span class="block italic font-display-md text-display-md text-primary opacity-60">&amp;</span> Julian</h1>
+</div>
+</div>
+<div class="crystal-card px-12 py-8 rounded-[2rem] max-w-md w-full animate-fade-in group hover:scale-105 transition-transform duration-700 ease-out-cubic">
+<span class="font-label-lg text-label-lg text-secondary uppercase tracking-[0.2em] block mb-4">Save the Date</span>
+<div class="space-y-1">
+<p class="font-headline-md text-headline-md text-on-surface">September 24, 2024</p>
+<p class="font-body-lg text-body-lg text-outline italic">The Glasshouse Arboretum, London</p>
+</div>
+<div class="mt-8 pt-6 border-t border-amber-200/20">
+<a href="rsvp.html" data-slide="rsvp.html" data-direction="left" class="btn-feedback inline-block bg-gradient-to-r from-secondary-fixed to-secondary-container text-on-secondary-fixed px-8 py-3 rounded-full font-label-lg text-label-lg shadow-lg shadow-secondary/20 hover:shadow-secondary/40 transition-all duration-300">RSVP TO THE WEDDING</a>
+</div>
+</div>
+<div class="vows-countdown flex justify-center gap-6"></div>
+</section>
+<!-- Our Story Section -->
+<section class="premium-section w-full max-w-4xl mx-auto mt-[120px] px-6">
+<div class="text-center mb-16">
+<h2 class="font-display-md text-display-md text-primary mb-4 italic">Our Story</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">A collection of moments that bloomed into a lifetime together.</p>
+</div>
+<div class="relative">
+<div class="absolute left-1/2 -translate-x-1/2 h-full timeline-line"></div>
+<div class="relative mb-24">
+<div class="flex flex-col md:flex-row items-center justify-between w-full">
+<div class="w-full md:w-[45%] mb-8 md:mb-0">
+<div class="glass-petal p-8 rounded-3xl relative overflow-hidden">
+<div class="absolute -top-4 -right-4 opacity-20 text-tertiary"><span class="material-symbols-outlined text-[120px]" data-icon="yard">yard</span></div>
+<div class="relative z-10">
+<span class="font-label-lg text-label-lg text-secondary block mb-2 uppercase tracking-widest">May 2018</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">The First Encounter</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">It began under the canopy of the old library oaks, a simple question about a book that led to a three-hour conversation.</p>
+<div class="rounded-2xl overflow-hidden border border-amber-100/30">
+<img class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition-opacity duration-700" data-alt="A soft-focus library with golden sunlight streaming through tall windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSi1p9vHfGwVS-9_o4SeqZjv20H3xCoeFXVmXtedrwMtfulB8D7GHi7DBsidCGhHt8L_QtlC82vrvABTXoFclKlSceedz0sUoQjqaxCG304nBl2G8NTrMQeM0Mejy4URS7_26mmkSUA0BF29IziWZJbPoIkpAg2GQxWZnm-q0emBTW_5_YXcz3bcXzmQKAfoyKN7HiHp10sy2FzNZCzCMGP45hD7IhezS39oJME_pjzOCkIOpAIAwBNQAhYCvxF7_pVafjXvkEqPQH"/>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 z-20">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-primary-container shadow-lg"><span class="material-symbols-outlined text-amber-700" data-icon="local_florist" style="font-variation-settings: 'FILL' 1;">local_florist</span></div>
+</div>
+<div class="hidden md:block w-[45%]"></div>
+</div>
+</div>
+<div class="relative mb-24">
+<div class="flex flex-col md:flex-row-reverse items-center justify-between w-full">
+<div class="w-full md:w-[45%] mb-8 md:mb-0">
+<div class="glass-petal p-8 rounded-3xl relative overflow-hidden">
+<div class="absolute -top-4 -left-4 opacity-20 text-tertiary"><span class="material-symbols-outlined text-[120px]" data-icon="eco">eco</span></div>
+<div class="relative z-10 text-right md:text-left">
+<span class="font-label-lg text-label-lg text-secondary block mb-2 uppercase tracking-widest">August 2019</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Summer of Discovery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Road trips and handwritten letters. We discovered that the best adventures aren't the destinations, but the ones seated beside us.</p>
+<div class="rounded-2xl overflow-hidden border border-amber-100/30">
+<img class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition-opacity duration-700" data-alt="Rolling hills during golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpnG5MLfIPs_nmFmdeI2pFqBI5s96CkVDIfxZ5qLlhhQfsnUhw9P3NCzMQuLu37FR5oAwhzwKgOBocz-w1dNg34AnT-SNTTpFodijWcZHg1DxFldl2t6bb4NFokkLUe3M-pXGmfrjRo0gx9ZLCUp1ydgc26hUu9OJOAaRZnsVcP3tTqp35T3645lwsHceIgZY2jzHDHTyZ_GPGT_rRAbUAFz52pNJyar_r2ZhPLTVWApB4NxnCuxvJ3lw4wFRt4c_4LRe3O6x8EB5g"/>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 z-20">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-primary-container shadow-lg"><span class="material-symbols-outlined text-amber-700" data-icon="filter_vintage" style="font-variation-settings: 'FILL' 1;">filter_vintage</span></div>
+</div>
+<div class="hidden md:block w-[45%]"></div>
+</div>
+</div>
+<div class="relative">
+<div class="flex flex-col md:flex-row items-center justify-between w-full">
+<div class="w-full md:w-[45%] mb-8 md:mb-0">
+<div class="glass-petal p-8 rounded-3xl relative overflow-hidden">
+<div class="absolute -bottom-4 -right-4 opacity-20 text-tertiary"><span class="material-symbols-outlined text-[120px]" data-icon="spa">spa</span></div>
+<div class="relative z-10">
+<span class="font-label-lg text-label-lg text-secondary block mb-2 uppercase tracking-widest">December 2022</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">The Proposal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">In a garden frozen by winter's first kiss, time stood still as one word changed our forever. The answer was always yes.</p>
+<div class="rounded-2xl overflow-hidden border border-amber-100/30">
+<img class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition-opacity duration-700" data-alt="Vintage engagement ring on velvet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK_RZEV5luL19xQ8OZsjYR1kmdSTlxzhBR9RzEoXvAM6ICiWoyx_VRJuaIwFjCLsGEh8a-bOCBrxgDcjFRB9zoVsNRXrJfD0Cvithvvg6kd5ODgrwnFYZLIZnxIPhF2kXCEXwU9CQIjxzFBEknbFpDiRNo6j_yTiSgtv5b6T2b80SGL7DF_lUzBigrBtnjieNapApW5rEskuVcsxypswRBWBwkQx6omS4iI3N_7yeiQaHokJSrui06f5BMeNcGVnlDP0Sdi4Sozlhq"/>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 z-20">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-primary-container shadow-lg"><span class="material-symbols-outlined text-amber-700" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span></div>
+</div>
+<div class="hidden md:block w-[45%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Event Details Section -->
+<section class="premium-section w-full max-w-4xl mx-auto mt-[120px] px-6 bg-mesh py-16 rounded-[3rem]">
+<div class="text-center mb-16">
+<h2 class="font-display-md text-display-md text-primary mb-4">Event Details</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">Join us as we write the first chapter of our forever under the canopy of the Eternal Garden.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-petal rounded-[2rem] p-8 relative overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity"><span class="material-symbols-outlined text-6xl text-primary" data-icon="church">church</span></div>
+<div class="relative z-10">
+<span class="font-label-md text-amber-700 tracking-widest uppercase mb-2 block">Part One</span>
+<h3 class="font-headline-lg text-primary mb-6">The Ceremony</h3>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span><span class="text-on-surface-variant">4:30 PM — Afternoon Sun</span></div>
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span><span class="text-on-surface-variant">The Weeping Willow Grove</span></div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-8 leading-relaxed">Exchange of vows beneath the ancient willow trees, followed by a shower of fresh rose petals.</p>
+<button class="btn-feedback w-full py-4 bg-primary-container text-on-primary-container font-label-lg uppercase tracking-widest rounded-full hover:bg-inverse-primary transition-colors duration-500 flex justify-center items-center gap-2">Directions <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span></button>
+</div>
+</div>
+<div class="glass-petal rounded-[2rem] p-8 relative overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity"><span class="material-symbols-outlined text-6xl text-primary" data-icon="restaurant">restaurant</span></div>
+<div class="relative z-10">
+<span class="font-label-md text-amber-700 tracking-widest uppercase mb-2 block">Part Two</span>
+<h3 class="font-headline-lg text-primary mb-6">The Reception</h3>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span><span class="text-on-surface-variant">6:30 PM — Twilight</span></div>
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span><span class="text-on-surface-variant">The Glass Orangery</span></div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-8 leading-relaxed">A formal dinner featuring local botanical flavors, candlelit toasts, and our first dance.</p>
+<button class="btn-feedback w-full py-4 border border-primary-container text-primary font-label-lg uppercase tracking-widest rounded-full hover:bg-primary-container/30 transition-all duration-500">View Menu</button>
+</div>
+</div>
+</div>
+<div class="glass-petal rounded-[2rem] p-10 mt-8 relative overflow-hidden group hover:shadow-xl transition-all duration-500 flex flex-col md:flex-row gap-8 items-center">
+<div class="md:w-1/2">
+<span class="font-label-md text-amber-700 tracking-widest uppercase mb-2 block">The Finale</span>
+<h3 class="font-display-md text-primary mb-4">Midnight Revelry</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">Dancing under the stars with signature botanical cocktails and late-night sweet treats.</p>
+<div class="flex gap-6 mb-8">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary" data-icon="nightlight">nightlight</span><span class="text-label-md uppercase tracking-tighter">10 PM Onwards</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span><span class="text-label-md uppercase tracking-tighter">Cocktail Attire</span></div>
+</div>
+</div>
+<div class="md:w-1/2 w-full h-64 rounded-2xl overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2000ms]" data-alt="Reception space with fairy lights and glass ceiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4kXzzHaSJxE0MBAAn5wxoga6DusT8vsZlSLyHWlGDYn-watuAlefPJK1HM8vTRhllyl-yf1wJRr3LYg2ynT_r43vDvHGRDnQ-Fb_GFgMz_EcCzjHwtP8BfxFo_kfsvndPNOHKu1g_xSlZZMrUBKArI9mf-R_Kl5Sbe3_2PnMxnvKZ_MJdT0h06z7s9iwEq3q7U77NSWZpHQuwAwkNx6JSI1ll17rSaJ0WC2hflL7w2P4X1hQ58F7t1uUMHBqxoMSoZrEM60XYSbZz"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="premium-section w-full max-w-6xl mx-auto mt-[120px] px-6">
+<div class="text-center mb-16">
+<h2 class="font-display-md text-display-md text-primary mb-4">The Garden Archives</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">Captured moments from our botanical love story.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-7 relative group">
+<div class="glass-petal p-4 rounded-3xl group-hover:translate-y-[-8px] transition-transform duration-700">
+<img class="w-full aspect-[4/3] object-cover rounded-2xl" data-alt="Couple walking through sun-drenched botanical garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjHGS0ccuGIeRclBRd6vPXPLBa4kif92aX8FT7JHrpc6zS6xK1PNDwrlWXS0HXBGhy-QG0MTiIgczYLMLfsQkTCBkLi-odI19jeOnbsyH6msZKXuuoPHKYQtf7QoEPjOwRQNnLR_hsC9hzq3TTxHMGMMe83A0y92IFYpsqHcyqdisLNmIdRNoo8dWKuZ-_tNgcc1fSBrTzlk4wByJNJIXEFNGMlmRThfEMIJsIw2n9_SjR4wuE3Ct0RgGneMlXx9PEKQ202XgiqxXD"/>
+</div>
+</div>
+<div class="md:col-span-5 relative mt-12 md:mt-32">
+<div class="glass-petal p-4 rounded-3xl group hover:translate-y-[-8px] transition-transform duration-700">
+<img class="w-full aspect-[3/4] object-cover rounded-2xl" data-alt="Wedding invitations on silk with petals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFRNuIvWzIj2ifiQ6b-fhqCDX9vEJak-j_XVPN-_3xIYXrXtE88xC9D3A1RvxF3QVSMY6cjKeKZIAvSX7063IcUxGY-sqch5YOhZr7U9jBZcfGSFsXRbcEuim6LDpwTFG_yVFLF9ZNG2tzjh2qQAQJcFYoNHUATLLNKnkkvB6tGy8Q53aWGvp0XvNQx5MJIn0U-tUJXL8t_Vx3zxEB9DyEzunqvwLyltaaUy7k5MmTktpgtR_kwK0amchTO1zjh7X0Ybdo4CtHYRmt"/>
+</div>
+</div>
+<div class="md:col-span-4 relative md:-mt-24">
+<div class="glass-petal p-4 rounded-3xl group hover:translate-y-[-8px] transition-transform duration-700">
+<img class="w-full aspect-square object-cover rounded-2xl" data-alt="Garden table setting with crystal glassware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLa-0WUgcBaRAuxSqN9Cp4C9Kiw-pZ3VhrR_ZL9b_vXWXFD5pKVw9S-XsSeKZmTNZZAnKZ6rVYEHKkurPYQa6azglv7NZ1E5o9NIuD_HuFH-X4BWXVLlQDv_gOtWDMBTDFxnDrjh41mobBZRtkHLcfCiVNhkAJIZgUaZfZY1by36PKu516iGkCp82R2KlqHtHZV25sIGE82gXKoL_8UUzsAL0o1a9wnkqgxzzmTqCv6P-0h0w2M-NJaIPMPd9g0Fkd8thT6KtLBZfK"/>
+</div>
+</div>
+<div class="md:col-span-8 relative md:mt-8">
+<div class="glass-petal p-4 rounded-3xl group hover:translate-y-[-8px] transition-transform duration-700">
+<img class="w-full aspect-[16/9] object-cover rounded-2xl" data-alt="Misty estate garden at dawn with marble gazebo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5IgcqzvD0CIyBf1P3sd_kFiLURR0gyKVPWb60wE_XzgvzcYN5JEkvLe7IVItMg2LiyDvMgDDlS7AC4FkQBnEgwsHALsLGhyZ5-VrsGYkxxD7HJ36lcTCb9rLVkGHfuWLc0vNiGuUKsZR9XCTiG4_f7Sk0-3VZRW5kEq8Yk02lXvVn-aZyKNwqqg43kd52TqpYEUD0IBJMH6deyM71sz8Jpt4N2ODcq2_yEz-p2iFhn7T8KBFBT2AEHnoqzqMBGt6EZSIG1nB5EknN"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="premium-section w-full max-w-4xl mx-auto mt-[120px] px-6 text-center">
+<h2 class="font-display-md text-display-md text-primary mb-8">Will You Bloom With Us?</h2>
+<a href="rsvp.html" data-slide="rsvp.html" data-direction="left" class="btn-feedback inline-block px-12 py-5 bg-secondary text-on-secondary rounded-full font-label-lg uppercase tracking-widest shadow-lg hover:shadow-secondary/40 hover:-translate-y-1 transition-all duration-300">RSVP TO THE WEDDING</a>
+</section>
+<!-- Footer -->
+<footer class="premium-section w-full mt-[120px] py-12 text-center border-t border-amber-200/20">
+<div class="vows-breadcrumb justify-center text-amber-800 mb-6">
+<div class="step active" data-step="1"><span class="dot"></span><span class="step-label">INVITATION</span></div>
+<span class="connector">———</span>
+<div class="step" data-step="2"><span class="dot"></span><span class="step-label">RSVP</span></div>
+</div>
+<p class="font-body-md text-on-surface-variant/60">Eleanor & Julian — September 24, 2024</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#FFF9F0]/80 backdrop-blur-xl border-t border-amber-100/50 shadow-[0_-10px_40px_rgba(253,226,228,0.3)] rounded-t-3xl md:hidden">
+<a href="#" class="btn-feedback flex flex-col items-center justify-center text-amber-800 bg-[#FDE2E4]/40 rounded-full px-4 py-1 transition-transform duration-500 hover:scale-105">
+<span class="material-symbols-outlined" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-serif text-[10px] tracking-tight">Invite</span>
+</a>
+<a href="#" class="btn-feedback flex flex-col items-center justify-center text-stone-500 opacity-60 transition-transform duration-500 hover:scale-105">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[10px] tracking-tight">Our Story</span>
+</a>
+<a href="rsvp.html" data-slide="rsvp.html" data-direction="left" class="btn-feedback flex flex-col items-center justify-center text-stone-500 opacity-60 transition-transform duration-500 hover:scale-105">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-serif text-[10px] tracking-tight">RSVP</span>
+</a>
+<a href="#" class="btn-feedback flex flex-col items-center justify-center text-stone-500 opacity-60 transition-transform duration-500 hover:scale-105">
+<span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
+<span class="font-serif text-[10px] tracking-tight">Registry</span>
+</a>
+</nav>
+<script src="../countdown-widget.js"></script>
+<script src="../page-transition.js"></script>
+<script src="../font-picker.js"></script>
+<script src="../premium.js"></script>
+<script src="../lead-inject.js"></script>
+<script src="../mobile-optimize.js"></script>
+</body></html>

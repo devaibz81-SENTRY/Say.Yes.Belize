@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Forever Film — Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary":"#fbc66f","background":"#131313","surface-container":"#201f1f","surface-container-high":"#2a2a2a","surface-container-highest":"#353534","on-surface":"#e5e2e1","on-surface-variant":"#d0c5af","primary":"#f2ca50","primary-container":"#d4af37","on-primary":"#3c2f00","outline-variant":"#4d4635","outline":"#99907c"},spacing:{"frame-margin":"4rem","section-padding":"8rem"},fontFamily:{"hero-title":["Noto Serif"],"body-classic":["Be Vietnam Pro"],"movie-headline":["Noto Serif"],"caption-info":["Be Vietnam Pro"],"credit-label":["Be Vietnam Pro"]},fontSize:{"hero-title":["84px",{"lineHeight":"92px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-classic":["18px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"300"}],"movie-headline":["48px",{"lineHeight":"56px","letterSpacing":"0.05em","fontWeight":"400"}],"caption-info":["14px",{"lineHeight":"20px","fontWeight":"400"}],"credit-label":["12px",{"lineHeight":"16px","letterSpacing":"0.3em","fontWeight":"600"}]}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24}
+.film-grain{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;pointer-events:none}
+.projector-beam{background:linear-gradient(45deg,rgba(212,175,55,.08) 0%,transparent 70%)}
+.halation-glow{text-shadow:0 0 12px rgba(212,175,55,.4),0 0 24px rgba(212,175,55,.2)}
+  <div class="vows-countdown flex justify-center gap-6 my-12"></div>
+.hide-scrollbar::-webkit-scrollbar{display:none}
+.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+.develop{opacity:0;filter:saturate(0) brightness(1.4);transform:scale(.97);transition:opacity .9s ease,filter 1.1s ease,transform .8s ease}
+.develop.in{opacity:1;filter:saturate(1) brightness(1);transform:scale(1)}
+.reel-hole{width:12px;height:12px;border-radius:50%;background:#131313;border:2px solid rgba(242,202,80,.15)}
+.reel-track{background:repeating-linear-gradient(90deg,transparent,transparent 8px,rgba(242,202,80,.08) 8px,rgba(242,202,80,.08) 10px)}
+#lb{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.95);align-items:center;justify-content:center;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:88vh;object-fit:contain}
+</style>
+<link href="../fonts.css" rel="stylesheet"/>
+<link href="../premium.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-classic" style="min-height:100dvh">
+<div class="fixed inset-0 film-grain z-[100]"></div>
+<div class="fixed inset-0 projector-beam z-0 pointer-events-none"></div>
+<header class="fixed top-0 left-0 w-full z-[60] bg-black/80 backdrop-blur-2xl border-b border-yellow-600/20 shadow-[0_0_15px_rgba(212,175,55,.1)] flex justify-between items-center px-6 py-4">
+<span class="material-symbols-outlined text-yellow-600 cursor-pointer">menu</span>
+<h1 class="text-lg italic font-serif tracking-[0.4em] text-yellow-600">FOREVER FILM</h1>
+<div class="vows-breadcrumb text-primary hidden md:flex">
+<div class="step active" data-step="1"><span class="dot"></span><span class="step-label">INVITATION</span></div>
+<span class="connector">———</span>
+<div class="step" data-step="2"><span class="dot"></span><span class="step-label">RSVP</span></div>
+</div>
+</header>
+<main class="relative z-10 pt-24 pb-32">
+<!-- Hero -->
+<section class="premium-section relative min-h-screen flex flex-col items-center justify-center px-6 md:px-frame-margin text-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/90 z-0"></div>
+<div class="absolute inset-0 reel-track z-0"></div>
+<div class="relative z-10 max-w-5xl mx-auto">
+<p class="font-credit-label text-credit-label text-primary-container mb-6 tracking-[0.6em]">A FOREVER FILM PRODUCTION</p>
+<div class="flex justify-center gap-4 mb-8"><div class="reel-hole"></div><div class="reel-hole"></div><div class="reel-hole"></div></div>
+<h1 class="font-hero-title italic text-primary halation-glow leading-none mb-6" style="font-size:clamp(3.5rem,12vw,7rem)">Sarah<br/><span class="text-3xl md:text-5xl font-body-classic font-light tracking-[0.3em] text-on-surface-variant block my-4">&amp;</span> Michael</h1>
+<p class="font-movie-headline text-xl md:text-2xl text-primary/80 mb-6">Together With Their Families</p>
+<div class="w-24 h-px bg-primary/30 mx-auto mb-8"></div>
+<p class="font-body-classic text-on-surface/60 text-lg mb-2">August Fifteenth · Twenty Twenty-Six</p>
+<p class="font-body-classic text-on-surface/60 text-lg mb-10">The Grand Ballroom · The Ritz-Carlton</p>
+<div class="flex justify-center gap-4 mb-12"><div class="reel-hole"></div><div class="reel-hole"></div><div class="reel-hole"></div></div>
+<p class="font-credit-label text-credit-label text-primary-container mb-10">A FILM BY SARAH & MICHAEL</p>
+<a href="rsvp.html" data-slide="rsvp.html" data-direction="left" class="btn-feedback px-14 py-5 border border-primary text-primary font-credit-label hover:bg-primary hover:text-on-primary transition-all duration-500 tracking-[0.4em] no-underline inline-block text-sm">RESERVE YOUR SEAT</a>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+<span class="material-symbols-outlined text-primary/50" style="font-size:2rem">expand_circle_down</span>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="premium-section px-6 md:px-frame-margin py-20 max-w-6xl mx-auto">
+<div class="text-center mb-16">
+<p class="font-credit-label text-credit-label text-primary-container mb-4">A LOVE STORY FOR THE BIG SCREEN</p>
+<h2 class="font-hero-title italic text-primary halation-glow" style="font-size:clamp(2.5rem,8vw,5rem)">The Story</h2>
+<div class="w-24 h-px bg-primary/30 mx-auto mt-8"></div>
+</div>
+<div class="flex items-center gap-4 mb-12">
+<div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+<h3 class="font-movie-headline text-2xl md:text-3xl text-primary">ACT I — The Meeting</h3>
+<div class="flex-grow h-px bg-primary/20"></div>
+<div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-center develop">
+<div class="aspect-[4/3] relative overflow-hidden rounded-sm group cursor-pointer" onclick="openLb(this)">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr-88btaTWoStSrWVtM1yD871dYhPNXKA8ftP1eaGCJTq1-QcT5TOZ7S8agruQJoeT-nYrDCFvdhyNlF_aSMLpyv9RCLvecdDRPjTu6Ku7uk3g0EWkX8tDf3qnSNVQHT3fwIZ98YeCp4Nit5tSVwK6ftmT5stEx7yUozREpuAMR3c-jANRvYwYt6M6MAyMc8_iHKdqVOlmVBS4-40EmXgvOmfqPI0JR4mjyNZAoFryXnSvnIeXhUmH6Ix6lBIQIq4SzUT3l0CJwCyy" alt="The first encounter"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="space-y-6">
+<p class="font-caption-info text-caption-info text-primary-container">SCENE 1 — THE COFFEE SHOP</p>
+<p class="font-body-classic text-on-surface/80 leading-relaxed">It began on an unseasonably cold autumn morning. Sarah was tucked into the corner booth of a tiny bookstore café, lost in the pages of a worn paperback. Michael walked in looking for an escape from the rain—and found something far more compelling. Two lattes, a shared umbrella, and three hours later, a story was born.</p>
+<p class="font-body-classic text-on-surface/60 leading-relaxed">Neither of them knew it then, but that chance collision of timing and weather would rewrite the script of their lives.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-12 mt-20 flex-row-reverse">
+<div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+<h3 class="font-movie-headline text-2xl md:text-3xl text-primary">ACT II — The Courtship</h3>
+<div class="flex-grow h-px bg-primary/20"></div>
+<div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-center develop">
+<div class="md:order-2 aspect-[4/3] relative overflow-hidden rounded-sm group cursor-pointer" onclick="openLb(this)">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbrBtVTOzObCEGROeV7ecCRoao7ZBp_-Emri4A925sQVEngS_j-6oEygRm5wbzHcth3HEayzUsvufTIYwfaLfPAwnU53UdNnbBH4PRIgahr0MN99KPrH90mKQBL4_2LP4j3rN6_VOrbz3FY-tBu0UFp4Sb9e-ft8OjAzCxg_s9RZond3hFACWd1EczwjdTjnq7PIkV1KyDGiTtEJKNDWhI31inu6SkXFC1IzdJqfI_FP65SjoR6B8jdvPUC8rDKDPtvkNvjAFs2UD" alt="Garden walk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="md:order-1 space-y-6">
+<p class="font-caption-info text-caption-info text-primary-container">SCENE 2 — THE YEAR OF YES</p>
+<p class="font-body-classic text-on-surface/80 leading-relaxed">What followed was a montage of sun-drenched weekends, spontaneous road trips, and late-night conversations that stretched until dawn. They explored hidden bookshops, climbed mountains they were not prepared for, and built a world that belonged only to the two of them.</p>
+<p class="font-body-classic text-on-surface/60 leading-relaxed">Every photograph from that year told the same story: two people who had found in each other something they did not know they were looking for.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-12 mt-20">
+<div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+<h3 class="font-movie-headline text-2xl md:text-3xl text-primary">ACT III — The Proposal</h3>
+<div class="flex-grow h-px bg-primary/20"></div>
+<div class="w-2 h-4 bg-primary/20 rounded-sm"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-center develop">
+<div class="aspect-[4/3] relative overflow-hidden rounded-sm group cursor-pointer" onclick="openLb(this)">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHUccs5bYlYrYjrnCAJ70UZbOoRPSrj9IFWuVz8yhsEmSxsu0mZBv6g7ojFGoytqWlvpZIdWfRy7i2-62F33OhQIbjsu94XQVAVLAOrvkysRcjdq5sfcAZErsyNms96mltV8XyriU-4rDwy61-nXxveXVh3i7ClJnRxNOd6q3QxQZrSxn7L_vJTWg6NC3L6gfNlrmVHpodbc2f4n7v0iXRH0wg-ZzLlFZbQClWmHG3Y-7HzwzjlLVG2zhgDq2cpUHwQ7fAplckMeIr" alt="The proposal"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="space-y-6">
+<p class="font-caption-info text-caption-info text-primary-container">SCENE 3 — THE FINAL FRAME</p>
+<p class="font-body-classic text-on-surface/80 leading-relaxed">On the same cliff where they had watched their first sunset together, Michael dropped to one knee. The sky was painted in shades of amber and rose—as if the universe itself had designed the perfect backdrop for the question that would change everything.</p>
+<p class="font-body-classic text-on-surface/60 leading-relaxed">Sarah said yes before he could finish asking. The waves crashed below them in applause.</p>
+</div>
+</div>
+</section>
+<!-- Event Details Section -->
+<section class="premium-section px-6 md:px-frame-margin py-20 max-w-6xl mx-auto">
+<div class="text-center mb-16">
+<p class="font-credit-label text-credit-label text-primary-container mb-4">THE PRODUCTION SCHEDULE</p>
+<h2 class="font-hero-title italic text-primary halation-glow" style="font-size:clamp(2.5rem,8vw,5rem)">Event Details</h2>
+<div class="w-24 h-px bg-primary/30 mx-auto mt-6"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-surface-container/60 backdrop-blur-xl border border-primary/20 rounded-sm p-8 develop group hover:border-primary/40 transition-all duration-500">
+<div class="flex items-center gap-3 mb-6">
+<div class="reel-hole"></div>
+<span class="font-credit-label text-credit-label text-primary-container tracking-[0.3em]">SCENE 1</span>
+</div>
+<h3 class="font-movie-headline text-2xl text-primary mb-4">The Ceremony</h3>
+<div class="space-y-4 mb-6">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">schedule</span><span class="font-caption-info text-caption-info text-on-surface-variant">4:00 PM — Golden Hour</span></div>
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">location_on</span><span class="font-caption-info text-caption-info text-on-surface-variant">The Grand Ballroom</span></div>
+</div>
+<p class="font-body-classic text-on-surface/70 mb-8">Join us as we exchange our vows beneath the crystal chandeliers, surrounded by candlelight and the warmth of our closest family and friends.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-credit-label text-[10px] tracking-wider rounded-sm">FORMAL ATTIRE</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-credit-label text-[10px] tracking-wider rounded-sm">INDOOR</span>
+</div>
+</div>
+<div class="bg-surface-container/60 backdrop-blur-xl border border-primary/20 rounded-sm p-8 develop group hover:border-primary/40 transition-all duration-500">
+<div class="flex items-center gap-3 mb-6">
+<div class="reel-hole"></div>
+<span class="font-credit-label text-credit-label text-primary-container tracking-[0.3em]">SCENE 2</span>
+</div>
+<h3 class="font-movie-headline text-2xl text-primary mb-4">The Reception</h3>
+<div class="space-y-4 mb-6">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">restaurant</span><span class="font-caption-info text-caption-info text-on-surface-variant">6:30 PM — Twilight</span></div>
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">nightlife</span><span class="font-caption-info text-caption-info text-on-surface-variant">The Ritz-Carlton Terrace</span></div>
+</div>
+<p class="font-body-classic text-on-surface/70 mb-8">A grand feast with cocktail hour, a plated dinner, heartfelt toasts, and dancing that will carry us into the night.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-credit-label text-[10px] tracking-wider rounded-sm">BLACK TIE</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary font-credit-label text-[10px] tracking-wider rounded-sm">OPEN BAR</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container/40 border border-primary/10 rounded-sm p-8 develop max-w-2xl mx-auto mt-8 text-center">
+<div class="reel-track absolute inset-0 opacity-20"></div>
+<div class="relative z-10">
+<p class="font-credit-label text-credit-label text-primary-container mb-2">ACCOMMODATIONS</p>
+<h4 class="font-movie-headline text-xl text-primary mb-4">Where to Stay</h4>
+<p class="font-body-classic text-on-surface/70 mb-6">A room block has been reserved at The Ritz-Carlton for our guests. Mention the Sarah & Michael wedding for a special rate.</p>
+<button class="btn-feedback px-8 py-3 border border-primary text-primary font-credit-label hover:bg-primary hover:text-on-primary transition-all duration-500 tracking-[0.3em] text-sm rounded-sm">BOOK YOUR STAY</button>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="premium-section py-20">
+<div class="px-6 md:px-frame-margin text-center mb-12">
+<p class="font-credit-label text-credit-label text-primary-container mb-4">THE PRODUCTION STILLS</p>
+<h2 class="font-hero-title italic text-primary halation-glow" style="font-size:clamp(2.5rem,8vw,5rem)">Gallery</h2>
+<div class="w-24 h-px bg-primary/30 mx-auto mt-6"></div>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar px-6 md:px-frame-margin snap-x pb-6">
+<div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr-88btaTWoStSrWVtM1yD871dYhPNXKA8ftP1eaGCJTq1-QcT5TOZ7S8agruQJoeT-nYrDCFvdhyNlF_aSMLpyv9RCLvecdDRPjTu6Ku7uk3g0EWkX8tDf3qnSNVQHT3fwIZ98YeCp4Nit5tSVwK6ftmT5stEx7yUozREpuAMR3c-jANRvYwYt6M6MAyMc8_iHKdqVOlmVBS4-40EmXgvOmfqPI0JR4mjyNZAoFryXnSvnIeXhUmH6Ix6lBIQIq4SzUT3l0CJwCyy" alt="Frame 01"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+<div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 01 — The First Encounter</span></div>
+</div>
+<div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)" style="transition-delay:.15s">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSDZuXHckWgGsP2pvzTRBhxD7HwukiC6KuWUDWrlV6ocMwPmo_-5G3kh-oA8q0Nv2-QmFAcndcX3-oPDRS1-uN7VLY-gsc5QM__LHEYQblgEjSkrHHDk3hcPNgCX7_VQoI9Xm_ewEX8e5KJ_abK5TsciiXmEWogf3AfQtmslN9H_j5s8S4ECjs_v2hxQi8JxR0DuC257c_gaVXNJKKXIf94-LQ6YIS5pcoHICXf29Jh1H9z9eiEjyWW4mLTbzbKyQgxikqNB9RTaBk" alt="Frame 02"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+<div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 02 — The Almost Touch</span></div>
+</div>
+<div class="flex-none w-[80vw] md:w-[40vw] aspect-video relative snap-center group develop cursor-pointer" onclick="openLb(this)" style="transition-delay:.3s">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbrBtVTOzObCEGROeV7ecCRoao7ZBp_-Emri4A925sQVEngS_j-6oEygRm5wbzHcth3HEayzUsvufTIYwfaLfPAwnU53UdNnbBH4PRIgahr0MN99KPrH90mKQBL4_2LP4j3rN6_VOrbz3FY-tBu0UFp4Sb9e-ft8OjAzCxg_s9RZond3hFACWd1EczwjdTjnq7PIkV1KyDGiTtEJKNDWhI31inu6SkXFC1IzdJqfI_FP65SjoR6B8jdvPUC8rDKDPtvkNvjAFs2UD" alt="Frame 03"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-sm"></div>
+<div class="absolute bottom-4 left-4"><span class="font-credit-label text-[10px] text-primary">FRAME 03 — The Garden Walk</span></div>
+</div>
+</div>
+<div class="px-6 md:px-frame-margin mt-8">
+<div class="w-full max-w-6xl mx-auto aspect-[21/9] relative rounded-sm overflow-hidden shadow-2xl group develop cursor-pointer" onclick="openLb(this)">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1500ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHUccs5bYlYrYjrnCAJ70UZbOoRPSrj9IFWuVz8yhsEmSxsu0mZBv6g7ojFGoytqWlvpZIdWfRy7i2-62F33OhQIbjsu94XQVAVLAOrvkysRcjdq5sfcAZErsyNms96mltV8XyriU-4rDwy61-nXxveXVh3i7ClJnRxNOd6q3QxQZrSxn7L_vJTWg6NC3L6gfNlrmVHpodbc2f4n7v0iXRH0wg-ZzLlFZbQClWmHG3Y-7HzwzjlLVG2zhgDq2cpUHwQ7fAplckMeIr" alt="The proposal"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-[1500ms]"></div>
+<div class="absolute bottom-8 left-8"><span class="px-4 py-2 bg-primary text-on-primary font-credit-label text-[10px] rounded-full">PRODUCTION WRAP — THE PROPOSAL</span></div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="premium-section max-w-2xl mx-auto text-center px-6 md:px-frame-margin py-16">
+<h2 class="font-hero-title italic text-primary halation-glow mb-8" style="font-size:clamp(2rem,6vw,4rem)">Be Part of the Story</h2>
+<p class="font-body-classic text-on-surface/70 mb-10">The premiere is just the beginning. Reserve your seat and celebrate with us.</p>
+<a href="rsvp.html" data-slide="rsvp.html" data-direction="left" class="btn-feedback px-12 py-4 border border-primary text-primary font-credit-label hover:bg-primary hover:text-on-primary transition-all duration-500 tracking-[0.4em] no-underline inline-block">RESERVE YOUR SEAT</a>
+</section>
+<!-- Footer -->
+<footer class="text-center py-12 border-t border-yellow-600/10">
+<div class="vows-breadcrumb justify-center text-primary mb-6">
+<div class="step active" data-step="1"><span class="dot"></span><span class="step-label">INVITATION</span></div>
+<span class="connector">———</span>
+<div class="step" data-step="2"><span class="dot"></span><span class="step-label">RSVP</span></div>
+</div>
+<p class="font-caption-info text-on-surface-variant/60">Sarah & Michael — August 15, 2026</p>
+</footer>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-black/90 backdrop-blur-3xl border-t border-yellow-600/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<div class="flex justify-around items-center px-4 pb-6 pt-2">
+<a href="#" class="flex flex-col items-center text-yellow-600 border-t-2 border-yellow-600 pt-2"><span class="material-symbols-outlined mb-1" style="font-variation-settings:'FILL' 1">movie</span><span class="font-serif text-[10px] tracking-widest uppercase">Feature</span></a>
+<a href="#" class="flex flex-col items-center text-gray-500 pt-2 opacity-60"><span class="material-symbols-outlined mb-1">history_edu</span><span class="font-serif text-[10px] tracking-widest uppercase">Story</span></a>
+<a href="rsvp.html" data-slide="rsvp.html" data-direction="left" class="flex flex-col items-center text-gray-500 pt-2 opacity-60 hover:opacity-100"><span class="material-symbols-outlined mb-1">confirmation_number</span><span class="font-serif text-[10px] tracking-widest uppercase">RSVP</span></a>
+<a href="#" class="flex flex-col items-center text-gray-500 pt-2 opacity-60"><span class="material-symbols-outlined mb-1">photo_library</span><span class="font-serif text-[10px] tracking-widest uppercase">Gallery</span></a>
+</div>
+</nav>
+<div id="lb" onclick="closeLb()">
+<img id="lb-img" src="" alt=""/>
+<button onclick="closeLb()" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(242,202,80,.15);border:1px solid rgba(242,202,80,.3);color:#f2ca50;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer">×</button>
+</div>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.08});
+document.querySelectorAll('.develop').forEach(el=>io.observe(el));
+function openLb(card){const img=card.querySelector('img');document.getElementById('lb-img').src=img.src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+</script>
+<script src="../countdown-widget.js"></script>
+<script src="../page-transition.js"></script>
+<script src="../font-picker.js"></script>
+<script src="../premium.js"></script>
+<script src="../lead-inject.js"></script>
+<script src="../mobile-optimize.js"></script>
+</body></html>

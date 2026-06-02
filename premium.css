@@ -176,6 +176,82 @@ a, button, input, select, textarea {
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
+/* ── Page Slide Transitions ── */
+@keyframes slideOutLeft {
+  to { transform: translateX(-100%); opacity: 0.6; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0.6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0.6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+html.page-slide-out-left {
+  animation: slideOutLeft 0.4s cubic-bezier(0.55, 0, 1, 0.45) both;
+}
+html.page-slide-in-right {
+  animation: slideInRight 0.4s cubic-bezier(0, 0.55, 0.45, 1) both;
+}
+html.page-slide-in-left {
+  animation: slideInLeft 0.4s cubic-bezier(0, 0.55, 0.45, 1) both;
+}
+html.page-sliding { overflow: hidden; }
+
+/* ── Breadcrumb ── */
+.vows-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.vows-breadcrumb .step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
+}
+.vows-breadcrumb .step.active { opacity: 1; }
+.vows-breadcrumb .step .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  transition: all 0.3s ease;
+}
+.vows-breadcrumb .step.active .dot {
+  background: currentColor;
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+.vows-breadcrumb .step-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+.vows-breadcrumb .connector {
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.2;
+}
+
+/* ── Touch feedback ── */
+.btn-feedback {
+  transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.2s ease,
+              background 0.2s ease !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.btn-feedback:active {
+  transform: scale(0.94) !important;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .premium-fade-up,

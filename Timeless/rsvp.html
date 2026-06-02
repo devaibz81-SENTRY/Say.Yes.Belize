@@ -1,245 +1,153 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RSVP — Evelyn & James</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Newsreader:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "on-tertiary-fixed": "#1c1c19",
-            "surface-variant": "#e7e1dc",
-            "on-secondary": "#ffffff",
-            "error-container": "#ffdad6",
-            "tertiary-fixed-dim": "#c8c6c2",
-            "on-secondary-container": "#5a6650",
-            "surface-tint": "#6a5b5b",
-            "inverse-primary": "#d5c2c2",
-            "surface-container": "#f3ede7",
-            "on-tertiary-container": "#5e5d59",
-            "primary-fixed-dim": "#d5c2c2",
-            "inverse-on-surface": "#f6f0ea",
-            "surface-container-highest": "#e7e1dc",
-            "on-background": "#1d1b18",
-            "on-tertiary-fixed-variant": "#474743",
-            "tertiary-fixed": "#e5e2dd",
-            "tertiary": "#5f5e5b",
-            "surface-container-high": "#ede7e1",
-            "primary": "#6a5b5b",
-            "primary-container": "#e6d2d2",
-            "outline": "#807474",
-            "on-surface": "#1d1b18",
-            "error": "#ba1a1a",
-            "on-primary": "#ffffff",
-            "surface-bright": "#fff8f2",
-            "on-tertiary": "#ffffff",
-            "secondary-fixed-dim": "#becbb0",
-            "inverse-surface": "#33302c",
-            "secondary-fixed": "#dae7cb",
-            "on-secondary-fixed-variant": "#3f4a36",
-            "background": "#fff8f2",
-            "outline-variant": "#d1c3c3",
-            "surface-container-low": "#f9f2ed",
-            "on-surface-variant": "#4e4445",
-            "tertiary-container": "#d9d6d1",
-            "on-primary-fixed": "#241919",
-            "on-error-container": "#93000a",
-            "on-primary-fixed-variant": "#514344",
-            "surface": "#fff8f2",
-            "secondary": "#56624c",
-            "surface-container-lowest": "#ffffff",
-            "on-error": "#ffffff",
-            "primary-fixed": "#f2dede",
-            "on-primary-container": "#68595a",
-            "on-secondary-fixed": "#141e0d",
-            "surface-dim": "#dfd9d3",
-            "secondary-container": "#d7e4c8"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "margin-desktop": "64px",
-            "container-max": "1120px",
-            "gutter": "24px",
-            "margin-mobile": "20px",
-            "unit": "8px"
-          },
-          "fontFamily": {
-            "body-lg": ["Noto Serif"],
-            "display-lg": ["Newsreader"],
-            "body-md": ["Noto Serif"],
-            "headline-md": ["Newsreader"],
-            "label-sm": ["Noto Serif"]
-          },
-          "fontSize": {
-            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-            "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "400"}],
-            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
-          }
-        },
-      },
-    }
-  </script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed":"#1c1c19","surface-variant":"#e7e1dc","on-secondary":"#ffffff","error-container":"#ffdad6","tertiary-fixed-dim":"#c8c6c2","on-secondary-container":"#5a6650","surface-tint":"#6a5b5b","inverse-primary":"#d5c2c2","surface-container":"#f3ede7","on-tertiary-container":"#5e5d59","primary-fixed-dim":"#d5c2c2","inverse-on-surface":"#f6f0ea","surface-container-highest":"#e7e1dc","on-background":"#1d1b18","on-tertiary-fixed-variant":"#474743","tertiary-fixed":"#e5e2dd","tertiary":"#5f5e5b","surface-container-high":"#ede7e1","primary":"#6a5b5b","primary-container":"#e6d2d2","outline":"#807474","on-surface":"#1d1b18","error":"#ba1a1a","on-primary":"#ffffff","surface-bright":"#fff8f2","on-tertiary":"#ffffff","secondary-fixed-dim":"#becbb0","inverse-surface":"#33302c","secondary-fixed":"#dae7cb","on-secondary-fixed-variant":"#3f4a36","background":"#fff8f2","outline-variant":"#d1c3c3","surface-container-low":"#f9f2ed","on-surface-variant":"#4e4445","tertiary-container":"#d9d6d1","on-primary-fixed":"#241919","on-error-container":"#93000a","on-primary-fixed-variant":"#514344","surface":"#fff8f2","secondary":"#56624c","surface-container-lowest":"#ffffff","on-error":"#ffffff","primary-fixed":"#f2dede","on-primary-container":"#68595a","on-secondary-fixed":"#141e0d","surface-dim":"#dfd9d3","secondary-container":"#d7e4c8"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"margin-desktop":"64px","container-max":"1120px","gutter":"24px","margin-mobile":"20px","unit":"8px"},fontFamily:{"body-lg":["Noto Serif"],"display-lg":["Newsreader"],"body-md":["Noto Serif"],"headline-md":["Newsreader"],"label-sm":["Noto Serif"]},fontSize:{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["32px",{"lineHeight":"40px","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.1em","fontWeight":"600"}]}}}}
+</script>
 <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-    .paper-shadow {
-      box-shadow: 0 10px 40px -10px rgba(86, 98, 76, 0.06);
-    }
-    .stationery-border {
-      border-bottom: 1px solid #d7e4c8;
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-    <link href="../fonts.css" rel="stylesheet"/>
-  <link href="../premium.css" rel="stylesheet"/>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+.paper-shadow{box-shadow:0 10px 40px -10px rgba(86,98,76,0.06)}
+body{min-height:100dvh}
+</style>
+<link href="../fonts.css" rel="stylesheet"/>
+<link href="../premium.css" rel="stylesheet"/>
 </head>
-<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top Navigation Shell -->
-<header class="bg-[#FDFCFB]/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200/30 dark:border-stone-800/50 shadow-sm shadow-stone-200/20 fixed top-0 w-full z-50">
-<div class="flex justify-between items-center w-full px-6 h-16 max-w-screen-xl mx-auto">
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#FDFCFB]/80 backdrop-blur-md border-b border-stone-200/30 shadow-sm">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-stone-800 dark:text-stone-100" data-icon="local_florist">local_florist</span>
-<h1 class="font-serif text-stone-900 dark:text-stone-50 italic text-2xl tracking-wider">E &amp; J</h1>
+<span class="material-symbols-outlined text-primary">local_florist</span>
+<div class="vows-breadcrumb text-primary/70 font-serif">
+<a href="index.html" data-slide="index.html" data-direction="right" class="step no-underline text-inherit hover:text-primary transition-colors" data-step="1">
+<span class="dot"></span>
+<span class="step-label">INVITATION</span>
+</a>
+<span class="connector"></span>
+<div class="step active" data-step="2">
+<span class="dot"></span>
+<span class="step-label">RSVP</span>
 </div>
-<nav class="hidden md:flex gap-8">
-<a class="font-serif italic text-lg text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity duration-300" href="#">Invitation</a>
-<a class="font-serif italic text-lg text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity duration-300" href="#">Details</a>
-<a class="font-serif italic text-lg text-stone-900 dark:text-white font-semibold transition-opacity duration-300" href="#">Our Story</a>
-<a class="font-serif italic text-lg text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity duration-300" href="#">RSVP</a>
-</nav>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
 </div>
 </div>
+<div class="font-serif italic text-2xl text-primary">E & J</div>
 </header>
-<!-- Main Canvas -->
-<main class="pt-16 pb-32 overflow-x-hidden">
-<!-- Hero Section -->
-<section class="relative py-24 md:py-32 flex flex-col items-center text-center px-4">
-<div class="absolute top-10 left-10 opacity-20 hidden lg:block">
-<span class="material-symbols-outlined text-secondary scale-[4]" data-icon="eco">eco</span>
-</div>
-<div class="absolute bottom-10 right-10 opacity-20 hidden lg:block">
-<span class="material-symbols-outlined text-secondary scale-[4]" data-icon="filter_vintage">filter_vintage</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.3em] mb-4">The Journey of</span>
-<h2 class="font-display-lg text-display-lg italic text-primary md:text-6xl mb-8">Our Story</h2>
-<div class="vows-countdown"></div>
-<div class="max-w-2xl mx-auto space-y-6">
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-          From a chance encounter in a quiet bookstore to a decade of shared sunsets, our paths converged into a beautiful tapestry of laughter, growth, and unwavering support.
-        </p>
-<div class="flex items-center justify-center gap-4 py-8">
+<main class="pt-24 pb-32 max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop">
+<a href="index.html" data-slide="index.html" data-direction="right" class="btn-feedback inline-flex items-center gap-2 text-secondary/70 hover:text-primary font-body-md mb-8 no-underline transition-colors">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+← Back to Invitation
+</a>
+<section class="premium-section text-center mb-section-gap">
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em] mb-4">SAVE THE DATE</p>
+<h1 class="font-display-lg text-display-lg italic text-primary mb-6">Evelyn & James</h1>
+<p class="font-body-lg text-body-lg text-secondary italic max-w-lg mx-auto">
+Join us for a weekend of celebration, love, and timeless memories in Charleston, South Carolina.
+</p>
+<div class="mt-8 flex justify-center items-center gap-4">
 <div class="h-[1px] w-12 bg-outline-variant"></div>
-<span class="material-symbols-outlined text-secondary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-secondary">favorite</span>
 <div class="h-[1px] w-12 bg-outline-variant"></div>
 </div>
-</div>
+<div class="vows-countdown flex justify-center mt-6"></div>
 </section>
-<!-- Gallery Slideshow (Bento Layout) -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
-<div class="grid grid-cols-12 gap-gutter">
-<!-- Main Highlight -->
-<div class="col-span-12 md:col-span-8 aspect-[4/3] relative rounded-xl overflow-hidden paper-shadow">
-<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="A cinematic, high-key photograph of a couple walking through a sun-drenched meadow during golden hour. The soft warmth of the evening sun creates a romantic glow across the landscape, perfectly capturing a moment of intimacy and peace. The visual style is inspired by premium editorial wedding photography with subtle pastel tones and soft focus backgrounds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5lH7A_54hPnzwzLTMoHp1M-m7nxw-PdgOMKFtADeFLVy-lWv1kP86xc-Ma4NInj-JiixOS7Va720fDAKdvuGIsgKpaO7bnCkRM5gdHGDEbLjCFg_OdTb63fFTQb45savlf94RdXBwe_qKmBAOyPSWMfLRPuCsmoh4RTZorSx74nocAELcPC_CS4iQkv7Jbwox04qprVRiG0rX-CnAr5-AjG9H3wYD3mrE-bwA8E0rr1WT6EgY0mi5lqpxhluW5rsWUPPNmiYxrbiY"/>
-<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/40 to-transparent">
-<p class="text-white font-serif italic text-xl">The First Summer, 2018</p>
+<section class="premium-section mb-section-gap flex justify-center" id="rsvp">
+<div class="bg-surface-container-lowest border-2 border-primary-container p-12 rounded-lg paper-shadow max-w-2xl w-full relative">
+<div class="absolute top-4 left-4 opacity-20">
+<span class="material-symbols-outlined text-4xl text-secondary">local_florist</span>
 </div>
+<div class="absolute bottom-4 right-4 rotate-180 opacity-20">
+<span class="material-symbols-outlined text-4xl text-secondary">local_florist</span>
 </div>
-<!-- Vertical Accent -->
-<div class="col-span-12 md:col-span-4 grid grid-rows-2 gap-gutter">
-<div class="relative rounded-xl overflow-hidden paper-shadow">
-<img class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500" data-alt="A close-up artistic shot of two hands intertwined, resting on a textured linen surface. The lighting is soft and natural, coming from a nearby window, highlighting the fine details and jewelry. The overall aesthetic is one of quiet luxury and timeless commitment, utilizing a muted palette of creams and soft greys to evoke a sense of heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP0WfSSdn9q9x0Uxv1GgnCpZEk9-ey0pUtnlfTOeR8foaKVMN50F9cWEfnKC13qThF3LZyh13fMoRxJHoHHquqe4-GbrAIZhhONbSB42wOqvQ-Bbvoj0Ei32GenMRcPqzwPZ8bxneFaQPwDQ8R6QN9-EXsS21435Zhb0YtYjexUyQAQVbI4xeuNaG_nIk4ftpuVewC12eX8659uyTwCd-o-VTliMsHuwsgCjmR6Y3e9bvB8vuAzW3BGZA1neFNA5yMoCu-7GkIgeSO"/>
+<div class="text-center mb-10">
+<h2 class="font-display-lg text-display-lg text-primary italic mb-2">RSVP</h2>
+<p class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Kindly respond by September 1st, 2024</p>
 </div>
-<div class="relative rounded-xl overflow-hidden paper-shadow">
-<img class="w-full h-full object-cover" data-alt="A candid moment captured between a couple laughing during an outdoor dinner party. The scene is lit by delicate string lights in the background, creating a soft bokeh effect. The mood is joyful and authentic, reflecting a sophisticated celebration of love within a garden setting. The color palette emphasizes soft sage greens and warm blush pinks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMD-bNHVspeVEUhY4AFgoqSZ37UfYCpjepJnYSJd-9CoMqdJjdM8hf8ayWcBJi2lHtMVecLvNJJ53JNSZr0r-ugXhritClXaThUKR6cXCBIRoTPtILAGTzXo0F_Bi6RquILPAAHnorvnI7EELHGTmlQcChbC6jDt4T7duDdgeSknM3yuNzFAo3kzS5GsK43S0CAjR9T7R8JDMf_M5x9Z0uYyx3Ob6ZeVaiEJ-1gAuhJ2gz5qdstQ-n784V0Oo-4ujp7jJKNQ6eGeUe"/>
+<form class="space-y-8" onsubmit="event.preventDefault();handleSubmit(event)">
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-1">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-secondary-container focus:ring-0 focus:border-primary px-0 py-2 font-body-lg text-on-surface placeholder:text-stone-300 transition-colors" id="name" placeholder="Your name as it appears on invitation" type="text"/>
 </div>
-</div>
-<!-- Horizontal Secondary -->
-<div class="col-span-12 md:col-span-5 aspect-square relative rounded-xl overflow-hidden paper-shadow">
-<img class="w-full h-full object-cover" data-alt="A portrait of a couple standing on a rocky shoreline at dawn. The atmosphere is ethereal, with soft mist rolling in from the ocean and a palette of muted blues and silvers. The style is minimalist and evocative, focusing on the silhouette and the vastness of the landscape to symbolize the enduring nature of their journey together." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDeBTmbWEcnqXDOHwBmF86kLIuxpnQN8rVW8l24e1NQJZRGk0SPvyU3NUTJWvpsZRC92cJ_U5Yuky2QZiZwzaC1HbSHDmHiT7RBr39y7AOF9lnpwgRJNg7NfF3YN-1dz03fyQPqyTc_v_vrZ7TvnYcARI_GApGtJlug-jyZDyYv2n4eFUhrB93jgjv2hdL4lteKSspBbJNRvR102NMoteh3l3ba6oWqQky8VFQsGG4A2aFo3n2bU_zt6KzRNZgLNF2OcWfQHUtpUVK"/>
-</div>
-<div class="col-span-12 md:col-span-7 flex flex-col justify-center p-8 bg-surface-container-low rounded-xl border border-secondary-container/30">
-<h3 class="font-headline-md text-headline-md text-primary mb-4 italic">The Proposal</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic leading-relaxed">
-            "It wasn't a grand gesture on a mountain top, but a whispered promise over morning coffee. In that quiet, ordinary moment, the extraordinary became our forever."
-          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-3">Attendance</label>
 <div class="flex gap-4">
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-sm hover:opacity-90 transition-opacity">
-              View Journal
-            </button>
-<button class="border border-secondary text-secondary px-6 py-2 rounded-full font-label-sm hover:bg-secondary/5 transition-colors">
-              Our Milestones
-            </button>
+<label class="flex-1 cursor-pointer">
+<input class="hidden peer" name="attendance" type="radio"/>
+<div class="text-center p-3 border border-outline-variant rounded peer-checked:bg-primary-container peer-checked:border-primary-container font-label-sm text-label-sm transition-all duration-300">
+JOYFULLY ATTEND
+</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="hidden peer" name="attendance" type="radio"/>
+<div class="text-center p-3 border border-outline-variant rounded peer-checked:bg-surface-container-high peer-checked:border-outline-variant font-label-sm text-label-sm transition-all duration-300">
+REGRETFULLY DECLINE
+</div>
+</label>
 </div>
 </div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-3">Guests</label>
+<select class="w-full bg-transparent border-0 border-b border-secondary-container focus:ring-0 focus:border-primary px-0 py-2 font-body-lg text-on-surface transition-colors" id="guests">
+<option>Just Myself</option>
+<option>2 Guests</option>
+<option>3 Guests</option>
+</select>
 </div>
-</section>
-<!-- Narrative Section -->
-<section class="max-w-3xl mx-auto px-4 text-center">
-<div class="mb-20">
-<span class="material-symbols-outlined text-secondary block mb-4" data-icon="church">church</span>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Join Our Celebration</h4>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
-          We are so honored to have you as part of our lives and cannot wait to celebrate the start of our next chapter with you. Every detail has been curated with love, reflecting the quiet elegance of the life we are building.
-        </p>
-<div class="h-[1px] w-full max-w-xs mx-auto bg-gradient-to-r from-transparent via-secondary-container to-transparent"></div>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-1">Dietary Requirements</label>
+<input class="w-full bg-transparent border-0 border-b border-secondary-container focus:ring-0 focus:border-primary px-0 py-2 font-body-lg text-on-surface placeholder:text-stone-300 transition-colors" id="diet" placeholder="E.g. Vegetarian, Nut Allergy" type="text"/>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-secondary uppercase mb-1">Message for the Couple</label>
+<textarea class="w-full bg-transparent border border-secondary-container rounded p-3 focus:ring-0 focus:border-primary font-body-lg text-on-surface placeholder:text-stone-300 transition-colors resize-none" id="message" placeholder="Share a special note..." rows="2"></textarea>
+</div>
+<div class="pt-4">
+<button type="submit" class="btn-feedback w-full bg-primary text-on-primary py-4 rounded-full font-label-sm text-label-sm tracking-[0.2em] hover:opacity-90 transition-all duration-300 paper-shadow uppercase">
+Submit Response
+</button>
+</div>
+</form>
 </div>
 </section>
 </main>
-<!-- Bottom Navigation Shell (Mobile) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-[#FDFCFB] border-t border-stone-100 z-50 shadow-[0_-4px_20px_rgba(230,210,210,0.1)]">
-<div class="flex flex-col items-center justify-center text-stone-400 opacity-60">
-<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
-<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Invitation</span>
+<footer class="py-12 text-center text-secondary/60 font-body-md text-sm border-t border-stone-200/40">
+<div class="vows-breadcrumb justify-center mb-4 text-primary/60 font-serif">
+<a href="index.html" data-slide="index.html" data-direction="right" class="step no-underline text-inherit hover:text-primary transition-colors" data-step="1">
+<span class="dot"></span>
+<span class="step-label">INVITATION</span>
+</a>
+<span class="connector"></span>
+<div class="step active" data-step="2">
+<span class="dot"></span>
+<span class="step-label">RSVP</span>
 </div>
-<div class="flex flex-col items-center justify-center text-stone-400 opacity-60">
-<span class="material-symbols-outlined" data-icon="event">event</span>
-<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Details</span>
 </div>
-<div class="flex flex-col items-center justify-center text-[#E6D2D2] font-bold scale-105">
-<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
-<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Our Story</span>
-</div>
-<div class="flex flex-col items-center justify-center text-stone-400 opacity-60">
-<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<p class="font-serif text-xs tracking-widest uppercase opacity-50">Evelyn & James • 2024</p>
+</footer>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-[#FDFCFB] border-t border-stone-100 shadow-[0_-4px_20px_rgba(230,210,210,0.1)]">
+<a href="index.html" data-slide="index.html" data-direction="right" class="btn-feedback flex flex-col items-center justify-center text-stone-400 opacity-60 hover:text-primary transition-colors no-underline">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-serif text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center text-primary font-bold scale-105 no-underline">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL'1">mail</span>
 <span class="font-serif text-[10px] uppercase tracking-widest mt-1">RSVP</span>
-</div>
+</a>
 </nav>
-<!-- Contextual FAB -->
-<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 bg-primary text-on-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform z-40">
-<span class="material-symbols-outlined" data-icon="edit_calendar">edit_calendar</span>
-</button>
-
-<!-- Core Interactive Systems -->
-<script src="../guided-tour.js"></script>
-<script src="../photo-uploader.js"></script>
-<script src="../editable-fields.js"></script>
-<script src="../interactive-template-init.js"></script>
-
-<!-- Timeless Template Initialization -->
-<script src="timeless-init.js"></script>
+<script>
+function handleSubmit(e){
+  alert('Thank you! Your RSVP has been received.');
+}
+</script>
 <script src="../countdown-widget.js"></script>
-
+<script src="../page-transition.js"></script>
+<script src="../font-picker.js"></script>
+<script src="../premium.js"></script>
 <script src="../mobile-optimize.js"></script>
-  <script src="../font-picker.js"></script>
-  <script src="../premium.js"></script>
-</body></html>
+</body>
+</html>

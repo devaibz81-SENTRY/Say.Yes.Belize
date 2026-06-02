@@ -317,11 +317,39 @@
     }
   }
 
+  function detectPreviewMode() {
+    var p = new URLSearchParams(window.location.search);
+    return p.has('preview') || p.has('lead');
+  }
+
+  function loadLeadInject(callback) {
+    if (document.getElementById('lead-inject-loaded')) {
+      if (callback) callback();
+      return;
+    }
+    var script = document.createElement('script');
+    script.id = 'lead-inject-loaded';
+    script.src = '../lead-inject.js';
+    script.onload = callback || function(){};
+    script.onerror = function() {
+      console.warn('LeadInject: Could not load lead-inject.js');
+      if (callback) callback();
+    };
+    document.body.appendChild(script);
+  }
+
   window.initializeWeddingTemplate = function initializeWeddingTemplate(config) {
     config = config || {};
     config.slug = config.slug || slugify(config.templateName || document.title || 'template');
     config.storageKey = config.storageKey || config.slug;
     applyEditMode(config);
+
+    // ── Preview mode: inject lead data, skip all interactive setup ──
+    if (detectPreviewMode()) {
+      loadLeadInject();
+      console.log((config.templateName || config.slug) + ' loaded in preview mode.');
+      return;
+    }
 
     if (!window.EditableFields || !window.PhotoUploader || !window.GuidedTour) {
       console.warn('Interactive systems are not loaded for', config.templateName || config.slug);

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Organic Boho — Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400&family=Noto+Serif:ital,wght@0,400;1,400&family=Be+Vietnam+Pro:wght@600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "secondary-container": "#F2F0E6", "surface-dim": "#F5F3EF", "on-primary-fixed-variant": "#703624",
+        "surface-bright": "#FAF9F6", "on-secondary-fixed-variant": "#414a34", "tertiary-container": "#F0EDE7",
+        "outline-variant": "#E8E1DE", "primary-container": "#F5EBE8", "on-primary": "#ffffff",
+        "on-primary-container": "#390c01", "inverse-primary": "#ffb59f", "on-surface-variant": "#53433f",
+        "primary": "#8a4b37", "secondary-fixed-dim": "#c0caae", "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#59422b", "on-error": "#ffffff", "surface-container": "#F7F5F0",
+        "on-primary-fixed": "#390c01", "inverse-on-surface": "#f3f0e9", "surface": "#FAF9F6",
+        "surface-container-high": "#F0EDE7", "tertiary-fixed-dim": "#e1c1a2", "surface-container-highest": "#EBE8E1",
+        "on-secondary-container": "#5c664e", "primary-fixed-dim": "#ffb59f", "error": "#ba1a1a",
+        "inverse-surface": "#31312c", "on-surface": "#2D2926", "secondary": "#58624a",
+        "error-container": "#ffdad6", "on-tertiary-fixed": "#291805", "surface-tint": "#8d4d39",
+        "outline": "#86736e", "tertiary-fixed": "#ffdcbd", "tertiary": "#70573f",
+        "on-tertiary": "#ffffff", "background": "#FAF9F6", "surface-container-low": "#FBF9F5",
+        "on-background": "#2D2926", "on-tertiary-container": "#390c01", "primary-fixed": "#ffdbd1",
+        "secondary-fixed": "#dce6c9", "surface-variant": "#F0EDE7", "on-error-container": "#93000a"
+      },
+      borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+      spacing: { "margin-page": "40px", "gutter": "24px", "touch-target": "48px", "section-gap": "80px", "unit": "8px" },
+      fontFamily: {
+        "script-accent": ["Noto Serif"], "headline-display": ["Noto Serif"], "headline-md": ["Noto Serif"],
+        "body-md": ["Epilogue"], "headline-lg": ["Noto Serif"], "body-lg": ["Epilogue"], "label-caps": ["Be Vietnam Pro"]
+      },
+      fontSize: {
+        "script-accent": ["28px", { lineHeight: "1.0", fontWeight: "400" }],
+        "headline-display": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
+        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "400" }],
+        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "300" }],
+        "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.1em", fontWeight: "600" }]
+      }
+    }
+  }
+}
