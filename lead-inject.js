@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var CONVEX_SITE_URL = 'https://valiant-crab-320.convex.site';
+  var CONVEX_SITE_URL = 'https://outstanding-guanaco-830.convex.site';
   var params = new URLSearchParams(window.location.search);
   var isPreview = params.has('preview') || params.has('lead');
   if (!isPreview) return;
