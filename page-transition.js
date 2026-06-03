@@ -13,7 +13,10 @@
     html.classList.add(slideOut);
 
     setTimeout(function () {
-      window.location.href = url;
+      // Preserve current query params (e.g. ?preview=1&leadId=xxx)
+      var currentSearch = window.location.search;
+      var separator = url.indexOf("?") === -1 ? "?" : "&";
+      window.location.href = url + (currentSearch ? separator + currentSearch.slice(1) : "");
     }, SLIDE_DURATION);
   }
 
