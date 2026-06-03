@@ -43,10 +43,23 @@ http.route({
   }),
 });
 
+function corsHeaders() {
+  return { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
+}
+
+function corsOk() {
+  return new Response(null, { status: 204, headers: corsHeaders() });
+}
+
 function checkPassword(password: string) {
   const correct = process.env.ADMIN_PASSWORD;
   if (password !== correct) throw new Error("Unauthorized");
 }
+
+// CORS preflight
+["/createLead", "/getLead", "/admin/listLeads", "/admin/getLead", "/admin/updateStatus"].forEach(function(p) {
+  http.route({ path: p, method: "OPTIONS", handler: httpAction(async () => corsOk()) });
+});
 
 http.route({
   path: "/admin/listLeads",
