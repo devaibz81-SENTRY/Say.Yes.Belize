@@ -427,11 +427,8 @@ h1 em{font-style:italic;color:var(--gold)}
         <div>
           <p class="eyebrow">Said Yes Belize · Wedding website collection</p>
           <h1>Choose the <em>feeling</em><br/>then add<br/>the photos.</h1>
-          <p class="hero-copy">Ten destination-wedding templates, fully designed.<br/>Browse below, or open the <strong style="color:var(--gold)">Big Red Book</strong> to create your preview.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <a href="#catalogSection" class="hero-cta">Browse Templates ↓</a>
-            <a href="big-red-book.html" class="hero-cta" style="background:var(--gold)">📖 The Big Red Book</a>
-          </div>
+          <p class="hero-copy">Ten destination-wedding templates, fully designed.<br/>Browse below, or scroll to the bottom to <strong style="color:var(--gold)">Start Your Wedding Site</strong>.</p>
+          <a href="#catalogSection" class="hero-cta">Browse Templates ↓</a>
         </div>
         <aside class="summary" aria-label="Collection at a glance">
           <div class="summary-row"><span class="summary-num">10</span><span class="summary-label">Templates</span></div>
@@ -565,8 +562,7 @@ h1 em{font-style:italic;color:var(--gold)}
 <footer class="shell footer">
   <span>Said Yes Belize - curated wedding websites</span>
   <div>
-    <a href="guest-book.html" style="margin-right:20px">Open shared guest book</a>
-    <a href="big-red-book.html" style="margin-right:20px">📖 Big Red Book</a>
+    <a href="guest-book.html" style="margin-right:20px">Guest book</a>
     <a href="admin.html">Admin</a>
   </div>
 </footer>
@@ -741,14 +737,15 @@ document.getElementById("templateSearch").addEventListener("input", filterTempla
   if (!bg) return;
   bg.classList.add("loaded");
   window.addEventListener("scroll", () => {
-    const y = window.scrollY;
+      const y = window.scrollY;
     if (y < window.innerHeight * 1.2)
-      bg.style.transform = `scale(1) translateY(${y * 0.28}px)`;
+      bg.style.transform = `scale(1) translateY(${Math.min(y * 0.12, 40)}px)`;
   }, { passive: true });
 })();
 </script>
 
 <script src="premium.js"></script>
 <script src="mobile-optimize.js"></script>
+<script src="cta-form.js"></script>
 </body>
 </html>
